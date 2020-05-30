@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+  <script src="js/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+  <ul>
+    <li v-for="(p,i) of products" :key="i">
+      {{p.pid}} | {{p.title}} <a href="javascript:;" @click="del(i)">×</a>
+    </li>
+  </ul>
+  <a href="javascript:;" @click="destory">销毁当前new Vue()</a>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    products:[],//先定义一个空数组等着接axios请求回来的6个商品对象
+  },
+  methods:{
+    del(i){
+      this.products.splice(i,1);//复习数组函数
+    },
+    destory(){
+      this.$destroy()
+    }
+  },
+  beforeCreate(){
+    console.log(`创建data对象前自动触发...`)
+  },
+  created(){
+    console.log(`创建data对象后自动触发...`)
+  },
+  beforeMount(){
+    console.log(`创建虚拟DOM树前自动触发...`)
+  },
+  mounted(){
+    console.log(`创建虚拟DOM树后自动触发...`)
+    console.log(`    发送axios请求`);
+    axios.get("http://xzserver.applinzi.com/index")
+    .then(result=>{
+      console.log(`收到响应结果，并放入data中的products变量`)
+      this.products=result.data;//修改了data中的products，就会触发update阶段
+    })
+  },
+  beforeUpdate(){
+    console.log(`更新data中的变量前自动触发...`)
+  },
+  updated(){
+    console.log(`更新data中的变量后自动触发...`)
+  },
+  beforeDestroy(){
+    console.log(`在销毁当前组件或页面前自动触发...`)
+  },
+  destroyed(){
+    console.log(`销毁当前组件或页面后自动触发...`)
+  }
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ajax</title>
+	<script type="text/javascript">
+		function show(){
+			// 创建xhr异步对象
+			var xhr = new XMLHttpRequest();
+			// console.log(xhr)
+			// 创建监听，接收响应
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState == 4 && xhr.status == 200){
+					var r = xhr.responseText;
+					d1.innerHTML = r;
+				};
+			};
+			// 创建请求，打开链接
+			// http://127.0.0.1:8080/ex.html <--静态文件的位置
+			// xhr.open("get","http://127.0.0.1:8080/test/ajax",true) <--地址为绝对路径，可以写成相对路径
+			xhr.open("get","/test/ajax",true) // <--相对路径
+			// 发送请求
+			xhr.send(null)
+		};
+	</script>
+</head>
+<body>
+	<button onclick="show()">显示</button>
+	<div id="d1">这是一个没有改变的ajax div</div>
+</body>
+</html>

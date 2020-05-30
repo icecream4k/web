@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    img{
+      position:fixed;
+      margin-left:-100px;
+      margin-top:-50px;
+    }
+  </style>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <img src="img/p5.png" :style="{left, top}" alt="">
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    left:window.innerWidth/2+"px",
+    top:window.innerHeight-50+"px"
+  }
+})
+window.onkeydown=function(e){
+  if(e.keyCode==38){//如果按↑
+    vm.top=parseInt(vm.top)-10+"px";
+  }else if(e.keyCode==39){//按→
+    vm.left=parseInt(vm.left)+10+"px";
+  }else if(e.keyCode==40){//按↓
+    vm.top=parseInt(vm.top)+10+"px";
+  }else if(e.keyCode==37){//按←
+    vm.left=parseInt(vm.left)-10+"px";
+  }
+}
+</script>
+</body>
+</html>

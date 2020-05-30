@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .msg{
+      padding:5px 10px;
+    }
+    .success{
+      background-color:green;
+      color:lightgreen
+    }
+    .fail{
+      background-color:red;
+      color:#fff;
+    }
+  </style>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  手机号: <input type="text" v-model="phone" @blur="vali">
+          <span class="msg" :class="spanClass">{{msg}}</span>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    phone:"",//通过双向绑定获得文本框中的手机号
+    spanClass:{//控制span的样式
+      success:false,
+      fail:false
+    },
+    msg:""//控制span的错误提示
+  },
+  methods:{
+    vali(){
+      var reg=/^1[3-9]\d{9}$/;
+      if(reg.test(this.phone.trim())){
+        this.spanClass={success:true, fail:false}
+        this.msg="手机号格式正确"
+      }else{
+        this.spanClass={success:false, fail:true}
+        this.msg="手机号格式不正确"
+      }
+    }
+  },
+  watch:{
+    phone(){//只要phone变化就自动执行验证操作
+      this.vali();
+    }
+  }
+})
+</script>
+</body>
+</html>

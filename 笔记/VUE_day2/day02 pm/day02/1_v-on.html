@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #d1,#d2{
+      width:300px;
+      height:100px;
+    }
+    #d1{
+      background-color:#aaf
+    }
+    #d2{
+      background-color:#ffa
+    }
+  </style>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <div id="d1" @click="han('d1',$event)"></div>
+  <div id="d2" @click="han('d2',$event)"></div>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    
+  },
+  methods:{
+    han(name,e){
+      alert(`点在${name}的x:${e.offsetX},y:${e.offsetY}位置，疼！`)
+    }
+  }
+})
+</script>
+</body>
+</html>

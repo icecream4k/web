@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .pages{
+      list-style:none;
+    }
+    .pages>li{
+      float:left;
+      padding:5px 10px;
+      border:1px solid #555;
+    }
+  </style>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <ul>
+    <!--先只保留一个要反复生成的元素当模板-->
+    <li v-for="(elem,i) of names" :key="i">{{i+1}} - {{elem}}</li>
+  </ul>
+  <h3>lilei的个人资料：</h3>
+  <ul>
+    <li v-for="(value,key) of lilei" :key="key">{{key}} : {{value}}</li>
+  </ul>
+  <ul class="pages">
+    <li v-for="i of pageCount" :key="i">{{i}}</li>
+  </ul>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    names:["亮亮","然然","东东"],
+    lilei:{
+      sname:"Li Lei",
+      sage:11
+    },
+    pageCount:10 //共10页数据
+  }
+})
+</script>
+</body>
+</html>

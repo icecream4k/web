@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <input type="text" placeholder="请输入用户名" :disabled="isAgree==false"><br/>
+  <input type="password" placeholder="请输入密码" :disabled="isAgree==false"><br/>
+  <label><input type="checkbox" v-model:checked="isAgree">同意本网站的管理条款</label><br/>
+  <button :disabled="isAgree==false">注册</button>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    isAgree:false, //记录是否同意
+  }
+})
+</script>
+</body>
+</html>

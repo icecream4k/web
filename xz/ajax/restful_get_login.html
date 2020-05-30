@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>resful_get</title>
+	<!-- resful强制我们在前台做非空验证 -->
+	<script type="text/javascript">
+		function login(){
+			// 获取用户填写值
+			var $uname = uname.value;
+			var $upwd = upwd.value;
+			if(!$uname){j};
+			// 1 创建异步对象
+			var xhr = new XMLHttpRequest();
+			// 4 创建监听，接收响应
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState==4&xhr.status==200){
+					var r = xhr.responseText;
+					di.innerHTML = r;
+				};
+			};
+			// 2 打开链接，创建请求
+			xhr.open('get','/test/restful_login/'+$uname+'&'+$upwd,true);
+			// 3 发送请求
+			xhr.send();
+		};
+	</script>
+</head>
+<body>
+	<input type="text" name="" id="uname"><br>
+	<input type="text" name="" id="upwd"><br>
+	<button onclick="login()">登陆</button>
+	<div id="d1"></div>
+</body>
+</html>

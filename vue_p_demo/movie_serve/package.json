@@ -1,0 +1,19 @@
+{
+  "name": "movie_serve",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "express-session": "^1.16.2",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

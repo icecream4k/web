@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--0. 引入vue.js-->
+  <script src="js/vue.js"></script>
+</head>
+<body>
+  <!--1. 先定义界面: 要求:
+  1.1 整个界面必须包裹在一个唯一的父元素内
+  1.2 界面中可能发生变化的位置用{{变量名}}标记出来
+  1.3 界面中可能触发事件的元素用@事件名="处理函数名"标记出来-->
+  <div id="app"><!--小区-->
+    <!--住户-->
+    <button @click="minus">-</button>
+    <span>{{n}}</span>
+    <button @click="add">+</button>
+  </div>
+  <script>
+    //2. 定义所有页面上所需的数据和函数,要求: 
+    //2.1 页面中所需的变量和初始值，应该放在一个名为data的对象中
+    var data={ //仓库1: 专门存变量
+      //页面上需要几个变量，data中就定义几个变量
+      n:1
+    }
+    //2.2 页面中所需的事件处理函数，必须放在一个名为methods的对象中
+    var methods={ //仓库2: 咱们存函数
+      //页面上需要几个事件处理函数，methods中就要有几个方法
+      //methods中的方法只管操作data中的变量即可,不用关心变量将来放在那里，如何放！——信任
+      add(){ //复习ES6
+        //特别的要求: methods中的方法想操作data中的变量，必须加"this."——暂时不要问为什么!
+        this.n++;
+      },
+      minus(){
+        this.n--;
+        //如果n==0，就将n重置回1
+        this.n==0&&(this.n=1)
+      }
+    }
+
+    //3. 创建一个Vue类型的对象——快递员
+    var vm=new Vue({
+      el:"#app", //element:"选择器" 告诉这个快递员，负责哪个小区的业务
+      data,//data:data,
+      methods//methods:methods
+    })
+    console.log(vm);
+  </script>
+</body>
+</html>

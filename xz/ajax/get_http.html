@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		// 接收用户填写的数据
+		function login(){
+			var $uname = uname.value;
+			var $upwd = upwd.value;
+			// 创建xhr异步对象
+			var xhr = new XMLHttpRequest();
+			// 创建监听
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var r = xhr.responseText;
+				};
+			};
+			// 创建请求打开链接/test/get_http?uname=dingding&upwd=123456
+			// xhr.open('get','/test/get_http?uname='+$uname+'&upwd='+$upwd,true);
+			// restful_login/:uname&:upwd
+			// 前台值放入url中，不要加冒号
+			xhr.open('get','/test/restful_login/uname&upwd'+$uname+'&upwd='+$upwd,true);
+			// 发送请求
+			xhr.send(null);
+		};
+	</script>
+</head>
+<body>
+	<input type="text" name="" id="uname"><br>
+	<input type="password" name="" id="upwd"><br>
+	<button onclick="login()">登陆</button>
+	<div id="d1">login....</div>
+</body>
+</html>

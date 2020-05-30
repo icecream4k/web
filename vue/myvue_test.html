@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="js/axios.min.js"></script>
+	<script src="vue.js"></script>
+	<script src="myvuejs.js">
+	</script>
+</head>
+<body>
+	<!-- <div id="app">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, aut! Quaerat, debitis expedita cumque nemo dolor officiis saepe facere nam laboriosam unde minus, sed, excepturi ex accusamus impedit voluptas aspernatur?
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, aut! Quaerat, debitis expedita cumque nemo dolor officiis saepe facere nam laboriosam unde minus, sed, excepturi ex accusamus impedit voluptas aspernatur?
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, aut! Quaerat, debitis expedita cumque nemo dolor officiis saepe facere nam laboriosam unde minus, sed, excepturi ex accusamus impedit voluptas aspernatur?
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, aut! Quaerat, debitis expedita cumque nemo dolor officiis saepe facere nam laboriosam unde minus, sed, excepturi ex accusamus impedit voluptas aspernatur?
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, aut! Quaerat, debitis expedita cumque nemo dolor officiis saepe facere nam laboriosam unde minus, sed, excepturi ex accusamus impedit voluptas aspernatur?
+		<hl-hr></hl-hr>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, aut! Quaerat, debitis expedita cumque nemo dolor officiis saepe facere nam laboriosam unde minus, sed, excepturi ex accusamus impedit voluptas aspernatur?
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, aut! Quaerat, debitis expedita cumque nemo dolor officiis saepe facere nam laboriosam unde minus, sed, excepturi ex accusamus impedit voluptas aspernatur?
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, aut! Quaerat, debitis expedita cumque nemo dolor officiis saepe facere nam laboriosam unde minus, sed, excepturi ex accusamus impedit voluptas aspernatur?
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, aut! Quaerat, debitis expedita cumque nemo dolor officiis saepe facere nam laboriosam unde minus, sed, excepturi ex accusamus impedit voluptas aspernatur?
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, aut! Quaerat, debitis expedita cumque nemo dolor officiis saepe facere nam laboriosam unde minus, sed, excepturi ex accusamus impedit voluptas aspernatur?
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, aut! Quaerat, debitis expedita cumque nemo dolor officiis saepe facere nam laboriosam unde minus, sed, excepturi ex accusamus impedit voluptas aspernatur?
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, aut! Quaerat, debitis expedita cumque nemo dolor officiis saepe facere nam laboriosam unde minus, sed, excepturi ex accusamus impedit voluptas aspernatur?
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, aut! Quaerat, debitis expedita cumque nemo dolor officiis saepe facere nam laboriosam unde minus, sed, excepturi ex accusamus impedit voluptas aspernatur?
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, aut! Quaerat, debitis expedita cumque nemo dolor officiis saepe facere nam laboriosam unde minus, sed, excepturi ex accusamus impedit voluptas aspernatur?
+	</div>
+	<script>
+		new Vue({
+			el:'#app',
+			data:{
+
+			}
+		})
+	</script> -->
+	<script>
+		// axios.defaults.baseURL='http://xzserver.applinzi.com';
+		axios.defaults.baseURL='http://www.kuaidi100.com';
+		//获得学子商城首页6个商品
+		//get请求
+		// axios.get('/index').then(result=>{
+		// 	console.log(result.data);
+		// })
+		axios.get('/query',{params:{'type':'yunda','postid':'4304926503813'}}).then(result=>{
+			console.log(result.data)
+		})
+		// axios.post('/query',
+		// 	{type:'yunda',postid:'4304926503813'}).then(result=>{
+		// 		console.log(result.data);
+		// 	})
+		//获得5号商品的详细信息
+		// axios.get('/details',{params:{lid:5}}).then(result=>{
+		// 	console.log(result.data);
+		// })
+		// //发送登陆请求
+		// axios.post('/users/signin',
+		// 	{uname:'dingding',upwd:'123456'}).then(result=>{
+		// 		console.log(result.data);
+		// })
+
+	</script>
+</body>
+</html>

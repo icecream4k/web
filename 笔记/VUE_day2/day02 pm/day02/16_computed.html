@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <h3>总价: ¥{{total.toFixed(2)}}</h3>
+  <ul>
+    <li v-for="(p,i) of cart" :key="i">
+      {{p.pid}} | {{p.pname}} | ¥{{p.price.toFixed(2)}} | {{p.count}} | 小计:¥{{(p.price*p.count).toFixed(2)}}
+    </li>
+  </ul>
+  <h3>总价: ¥{{total.toFixed(2)}}</h3>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    cart:[
+      {pid:1, pname:"华为", price:5688, count:2},
+      {pid:2, pname:"小米", price:3688, count:3},
+      {pid:3, pname:"苹果", price:8688, count:1}
+    ]
+  },
+  methods:{
+    
+  },
+  computed:{
+    total(){
+      console.log(`计算了一次总价`)
+      var sum=0;
+      for(var p of this.cart){
+        sum+=p.price*p.count;
+      }
+      return sum;
+    }
+  }
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/axios.min.js"></script>
+</head>
+<body>
+<script>
+/*回顾: 
+$.ajax({
+  url:"服务器端接口地址",
+  data:"get或post",
+  dataType:"json",
+  success:function(result){//请求成功后自动调用
+
+  }
+})*/
+axios.defaults.baseURL="http://xzserver.applinzi.com";
+//获得学子商城首页6个商品
+axios.get("/index")
+.then(result=>{//请求成功后自动调用
+  console.log(result.data);
+})
+//获得5号商品的详细信息:
+axios.get("/details",{
+  params:{ lid:5 }
+}).then(result=>{
+  console.log(result.data);
+})
+//发送登录请求
+axios.post("/users/signin",{uname:"dingding", upwd:"123456"})
+.then(result=>{
+  console.log(result.data);
+})
+</script>
+</body>
+</html>

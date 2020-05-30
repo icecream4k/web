@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<input type="text" v-model:value="keywords"><button @click="search">百度一下</button>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    keywords:""
+  },
+  methods:{
+    search(){
+      console.log(`搜索 ${this.keywords} 相关的内容...`)
+    }
+  }
+})
+</script>
+</body>
+</html>

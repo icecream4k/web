@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MyTestHtml</title>
+	<link rel="icon" href="logo\code.png"><!--设置标签的图片-->
+	<link rel="stylesheet" type="text/css" href=".\mycss.css">
+	<script type="text/javascript" async src="myjs.js"></script>
+	<!-- <style type="text/css">
+		*{
+			margin: 0;padding:0;
+		}
+	</style> -->
+</head>
+<body style="width:980px;background-color: #fdfcf8;margin: 0 auto;"><!-- 网页的主体,bgcolor = "" 指定网页背景色 text="" 指定网页字体颜色 -->
+<!-- <div style="width:1000px;"> -->
+<p><b style="font-style: italic"><h1 class="c-center"><span style="color: blue">My</span><span id="dingbu" style="color:red">Te</span><span style="color:yellow">st</span><span style="color:blue">Ht</span><span style="color:green">ml</span></h1></b></p>
+<div style="
+			border:4px !important;
+			border-color: red !important;
+			width: 140px;
+		    height: 470px;
+		    text-align: center;
+		    background-color:rgba(0,0,0,0);
+		    position: fixed;
+		    top: 30%;
+		    left: 90%;"
+		    >
+		    <fieldset style="border-radius:10px;">
+		    	<legend> <span style="color: skyblue"><b>目&nbsp;&nbsp;&nbsp;录</b></span><br></legend>
+		    <a href="#dingbu"><img src="logo/shouye.png" style="width: 35%;"></a><br>
+		    <hr> 
+		    <a id="test-a-01" href="#jianli">简历</a><br>
+		    <a id="test-a-01" href="#kuahang">跨行跨列</a><br>
+		    <a id="test-a-01" href="#kechengbiao">课程表</a><br>
+		    <a id="test-a-01" href="#ulyuli">ul与li标签</a><br>
+		    <a id="test-a-01" href="#biaodankongjian">表单控件</a><br>
+		    <a id="test-a-01" href="#zhuceshuju">注册数据</a><br>
+		    <a id="test-a-01" href="#fudongkuangjia">浮动框架</a><br>
+		    <a id="test-a-01" href="#jingdong">京东登陆</a><br>
+		    <a id="test-a-01" href="#css">CSS</a><br>
+		    <a id="test-a-01" href="#xuanzeqi">选择器</a><br>
+		    <a id="test-a-01" href="#chicun">尺寸</a><br>
+		    <a id="test-a-01" href="#yichu">溢出</a><br>
+		    <a id="test-a-01" href="#neibianju">内边距</a><br>
+		    <a id="test-a-01" href="#wenbengeshihua">文本格式化</a><br><br>
+		    <a href="#code_here"><img src="logo/dibu.png" style="width: 35%;"></a>
+		    </fieldset>
+    </div>
+
+
+	<div align="content">
+		<audio autoplay="autoplay" controls="controls"loop="loop" preload="auto"
+            	src=".\Thomas Greenberg - The Right Path.mp3" align="content">
+		</audio>	
+	</div>
+
+
+	<div align="content">div标签</div>
+	<br><!-- 换行 -->
+	<!-- size = 粗细 width = 长度 -->
+
+	<b align="content">b标签</b>
+	<p align="content">p标签</p>
+	<!-- 
+	1、属性不管单双标签,都必须放在开始的标签中
+	2、多个属性之间,使用空格分割
+	3、标准属性(通用属性),所有元素都有,都生效
+	id:当前页面中元素的唯一标识
+	title:鼠标悬停在元素上时,显示的文本
+	style:css中,定义行内样式
+	class:css中,应用类型选择器
+	4、专属属性,只对某个,某些元素生效 
+	-->
+	<span id="jianli"></span>
+	<hr  color="black" width="100%"><!-- 水平线,再页面中画一期条线 -->
+	<h2>XXX的个人简历</h2>
+	<h4>基本信息</h4>
+	<p>姓名:XX</p>
+	<p>爱好:不详</p>
+	<p>英文名:godlen</p>
+	<p>地址:XXX</p>
+	<p>联系方式:133XXX</p>
+
+	<pre><!-- 可以包含空格和换行 -->
+		1 1 1 1 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 1 1 1 1 1 1 1 1 1 1 1 
+	</pre>
+
+
+
+	<!-- 空格 &nbsp;牛~逼~是~屁~ -->
+	<!-- < 和 > 分别是 &lt;&gt; -->
+	<div>
+			苹果®
+	</div>
+	<u style="color:blue">
+		<b>
+			<span style="color:red">今儿</span>又是<spa\
+			n style="color:red">开开心心</span>_<span style="color:red">的一天</span>呢
+		</b>
+	</u>
+	<hr  color="black" width="100%">	
+	<!-- <span style="color:red">达内</span> -->
+	<!-- ===================================================== -->
+	<!-- 元素的显示方式 -->
+	<!-- 
+	块级元素 - 页面中单独成行就是块级元素 ==>支持align属性 =>不设置宽度,默认占据父元素宽度的100%·
+		h1~h6  p  pre  hr  div
+	行内元素 - 页面中多个元素在一行显示 ==>都不支持align属性 =>靠内容撑开,没有内容就不撑开
+		i  em  s  del  b  strong  span  sub  sup
+	行内块 - 浏览器默认给input的一个宽高,但是不同浏览器给的默认宽高不一样
+		input
+	table - 是一种特殊的表现方式
+		table
+	 -->
+	<!-- ===================================================== -->
+	<img src="https://s1.ax1x.com/2020/03/21/8RDqmT.md.jpg" width="20%">
+	<!-- width 设置图片宽度 -->
+	<!-- height 设置图片高度 -->
+	<!-- 注意:图片失真,设置的宽高比不符合,图片就会失真,只
+		需要设置宽高一个数据,另一个则会根据情况等比例缩放 -->
+	<!-- 常用的图片格式 jpg png gif -->
+	<!-- ===================================================== -->
+	<a target="_blank" href="https://s1.ax1x.com/2020/03/21/8RDqmT.md.jpg">点我~</a>
+	<a href="" target="_self">刷新</a>
+	<a href="Thomas Greenberg - The Right Path.rar">下载歌曲</a>
+	<hr  color="black" width="100%">
+
+
+<!-- 
+<div id="content" style="height:150px;line-height:150px;text-align:center; color: #fff;background-color:#ccc;font-size:80px;">123</div>
+<script>
+    let num = 1;
+    let content = document.getElementById('content');
+    function count() {
+        content.innerHTML = num++;
+    };
+    content.onmousemove = count;
+</script>
+-->
+<span id="kuahang"></span>
+<table width = "200px" height='200px' border="2">
+	<caption>跨列与跨行</caption>
+	<!-- caption必须要紧贴table,在tr的上面 -->
+	<!-- rowspan -->
+	<!-- colspan -->
+	<!-- <th></th> 某一行,某一列的标题,替代td让文本加粗,居中 -->
+	<tr>
+		<td colspan="3" bgcolor="red"></td >
+		<td rowspan="3" bgcolor="blue"></td>
+	</tr>
+	<tr>
+		<td rowspan="3" bgcolor="yellow"></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td ></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td colspan="3" bgcolor="green"></td>
+	</tr>
+</table>
+<br>
+<hr  color="black" width="100%">
+<br>
+<!-- 表格的复杂应用
+行分组 - 行分组是不可见的
+将连续几行/1行,放到一个组中,进行统一管理
+没有写行分组的表格,浏览器自动添加tbody
+<table>
+	<thead></thead>
+	<tbody></tbody>
+	<tfoot></tfoot>
+</table>
+ -->
+
+<!-- 表格的嵌套
+表格的嵌套必须写在td当中
+ -->
+<table border="1" width="150px" height="150px">
+	<caption>表格嵌套</caption>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>
+			<table border="2" width="10px" height="10px" align="center">
+				<tr>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<hr color="black">
+<span id="kechengbia"></span>
+<table border="1" width="600px" height="450px" cellpadding="3" 
+cellspacing="3" bordercolor="#665a5ff">
+	<caption>课程表</caption>
+	<thead>
+		<tr>
+			<th>项目</th>
+			<th colspan="5">上课</th>
+			<th colspan="2">休息</th>
+		</tr>
+		<tr>
+			<th>星期</th>
+			<th>星期一</th>
+			<th>星期二</th>
+			<th>星期三</th>
+			<th>星期四</th>
+			<th>星期五</th>
+			<th>星期六</th>
+			<th>星期日</th>
+		</tr>
+	</thead>
+	<tbody align="content">
+		<tr>
+			<td rowspan="4">上午</td>
+			<td>语文</td>
+			<td>语文</td>
+			<td>数学</td>
+			<td>语文</td>
+			<td>数学</td>
+			<td>语文</td>
+			<td rowspan="4">下午</td>
+		</tr>
+		<tr>
+			<td>语文</td>
+			<td>语文</td>
+			<td>语文</td>
+			<td>语文</td>
+			<td>语文</td>
+			<td>语文</td>
+		</tr>
+		<tr>
+			<td>语文</td>
+			<td>语文</td>
+			<td>语文</td>
+			<td>语文</td>
+			<td>语文</td>
+			<td>语文</td>
+		</tr>
+		<tr>
+			<td>语文</td>
+			<td>语文</td>
+			<td>语文</td>
+			<td>语文</td>
+			<td>语文</td>
+			<td>语文</td>
+		</tr>
+		<tr>
+			<td rowspan="2">休息</td>
+			<td>地理</td>
+			<td>化学</td>
+			<td>生物</td>
+			<td>电脑</td>
+			<td>啦啦</td>
+			<td>开心</td>
+			<td rowspan="2">休息</td>
+		</tr>
+		<tr>
+			<td>加油</td>
+			<td>要放</td>
+			<td>马上</td>
+			<td>毛泽</td>
+			<td>语文</td>
+			<td>英语</td>
+		</tr>
+	</tbody>
+</table>
+<hr color="black">
+<span id="ulyuli"></span>
+<ol start="6"> <!-- ol标签中的li标签,会自动添加整数数据,自增 -->
+	<!-- start 属性可以设置自增数据的起始编号 -->
+	<li>西红柿炒鸡蛋</li>
+	<li>西红柿炒鸡蛋</li>
+	<li>西红柿炒鸡蛋</li>
+	<li>西红柿炒鸡蛋</li>
+	<li>西红柿炒鸡蛋</li>
+	<li>西红柿炒鸡蛋</li>
+</ol>
+<ul type="none">  <!-- ul标签中的li标签,会自动在标签前面添加一个实心的点 -->
+	<!-- ul中的 disc->实心圆 circle->空心圆 square->小方块 none->前面没有任何的小标志 -->
+	<li>西红柿炒鸡蛋</li>
+	<li>西红柿炒鸡蛋</li>
+</ul>
+
+<!-- 所有的嵌套内容都要放在li中 -->
+<!-- li中可以嵌套其他元素(a,img,p,h....),还可以嵌套其他列表,是语意要求 -->
+<hr>
+<ul>
+	<li>美国的超级英雄
+		<ul>
+			<li>超人</li>
+			<li>蝙蝠侠</li>
+			<li>死侍</li>
+		</ul>
+	</li>
+	<li>日本的超级英雄
+		<ul>
+			<li>奥特曼</li>
+			<li>阿拉蕾</li>
+		</ul>
+	</li>
+	<li>中国的超级英雄
+		<ul>
+			<li>孙悟空</li>
+			<li>猪八戒</li>
+		</ul>
+	</li>
+</ul>
+<hr>
+<dl>
+	<dt>定义的话/事物</dt>
+	<dd>解释说明</dd>
+</dl>
+<dl>
+	<dt>不吃饭能减肥</dt>
+	<dd>每天不吃饭,减少热量摄入,可以少摄入</dd>
+</dl>
+<br>
+<hr color="black">
+<br>
+<!-- 结构标记 -->
+<!-- 和div一模一样,但是有语义,被搜索时更容易被找到 -->
+<!-- <header></header>定义网页的头部,或者某个区域的顶部 -->
+<!-- <footer></footer>定义网页的底部,或者某个区域的底部 -->
+<!-- <nav></nav>定义网页的导航链接 -->
+<!-- <aside></aside>定义网页的侧边栏 -->
+<!-- <section></section>定义网页的主体 -->
+<!-- <article></article>定义与文字相关的内容,比如回帖,评论等等 -->
+<span><b>结构标记见注释</b></span>
+<br><hr color="black">
+<!-- ***********表单*********** -->
+<!-- 提供了可视化输入控件 -->
+<!-- 自动收集用户输入的信息,并提交请求给服务器 -->
+<!-- 注意:form表单,没有接受相应的能力 -->
+<!-- 使用ajax来发送请求,并接受响应 -->
+<!-- 提交请求,使用form,就不用ajxa,使用ajax,就不用form -->
+<!-- 但是,使用ajax,没有自动收集信息的能力,要是使用js的dom去手写代码收集 -->
+
+<!-- action 定义表单提交时,发生的动作(要把数据提交的接口),如果不写,
+默认值是把数据提交给自己 -->
+<!-- method 定义表单提交的方式,提交的方法 -->
+<!-- get 默认值缺省值,明文提交,提交的内容显示在地址栏上,靠查询字符串传递参数,
+像服务器要数据的时候,使用get,提交的数据有大小限制,最大是2Kb -->
+<!-- post 隐式提交,提交的内容不会系那是在地址栏,靠请求主体(formdata)传递参数,
+向服务器传递数据的时候使用,post提交数据,没有大小限制 -->
+<!-- enctype 设置要提交的数据的编码方式(表单中数据的编码方式)
+设置允许将什么类型的数据传递给服务器
+默认值 application/x-www-form-urlencoded
+text/plain 允许提交普通字符(不包含特殊符号)
+multipart/form-data 允许提交文件 -->
+<span><b>表单</b></span>
+<!-- <form action="" method="get" enctype="">
+	<input type="text" name="" value="test">
+	<input type="submit" name="">
+</form> -->
+<br><hr>
+<span id="biaodankongjian"></span>
+<span><b>表单控件</b></span>
+<br>
+<input type="text" name="utest" disabled="">
+<!-- 所有input天生都是行内块,且天生自带宽高,不同的浏览器,自动带的宽高不同 -->
+<!-- 共有的input属性 -->
+<!-- type:指定input元素的类型 -->
+<!-- name:为控件定义名称,如果以form提交,那么name必须提交,使用ajax,不需要name -->
+<!-- value:控件的值,整整提交给服务器的值；例外,在按钮中,value是设置按钮的文本 -->
+<!-- disabled:无值属性,禁用input标签,输入不了 -->
+<!-- maxlength:用户最多输入的字符长度 -->
+<!-- readonly:只读,只能看不能改 -->
+<!-- placeholder:提前输入预览文本,提示占位符 -->
+<!-- <input type="submit" onclick="show()" name=""> -->
+
+<span><b>按钮联动JS</b></span>
+<br>
+<script type="text/javascript">
+	function show(){
+		alert("我真tm屌")
+	};
+</script>
+<!-- <input  type="" name=""> -->
+<button onclick="show()">这是一个引发alert的按钮</button>
+<br><hr>
+<span><b>单选按钮</b></span>
+<form method="get">
+	<input type="radio" name="boy">男
+	<input type="radio" name="girl">女
+	<input type="submit" name="">
+</form>
+<span><b>多选按钮</b></span>
+<br>
+<form method="get">
+	<input type="checkbox" name="eat">吃
+	<input type="checkbox" name="drink">喝
+	<input type="checkbox" name="play">玩
+	<input type="checkbox" name="happy">乐
+	<input type="submit" name="">
+</form>
+<br><hr>
+<span><b>隐藏域</b></span> <!-- 默认会追加在url里面数据的提交方式 -->
+<form method="get">
+	<input type="hidden" name="proname" value="test_pro_name">
+	<input type="submit" name="">
+</form>
+<br><hr>
+<span><b>发送文件</b></span><br>
+<form action="" method="post" enctype="multipart/form-data">
+	<input type="file" name="ufile" multiple="" width="150px" height="150px">
+	<!-- 无值属性 multiple 无值属性,设置可发送多个文件 -->
+</form>
+<br><hr>
+<span><b>多行文本域</b></span>
+<!-- div和form的宽高并不能限制多行文本域的宽高,多行文本域 -->
+<!-- 缺点就是用户点击右下角能随意调节宽高 -->
+<div width = "200px" height='200px'>
+<form action="" width = "200px" height='200px'>
+	<textarea name="txt" cols="30" rows="10"></textarea>
+	<br><input type="submit" name="">
+</form>
+</div>
+<br><hr>
+<span><b>下拉选择框</b></span><br>
+<!-- 最后提交的是select的name=select的value -->
+<!-- select的value是选中的那个option的内容区域 -->
+<!-- option有value的时候,提交的则是value=""的值 -->
+<!-- size属性 取值>1的时候会变成滚动选择框 -->
+<!-- selected 无值属性,默认选中 -->
+<div>
+	<form>
+	<select name="city" size="3" multiple="">
+		<option value="bj" selected="">北京</option>
+		<option value="sh">上海</option>
+		<option value="nj">南京</option>
+		<option value="hz">杭州</option>
+		<option value='gz'>广州</option>
+		<option value="jms">佳木斯</option>
+	</select><br>
+	<input type="submit" name="">
+	</form>
+</div>
+<br>
+<hr color="black">
+<br>
+<span id="zhuceshuju"></span>
+<form method="post">
+	<p class="c-center"><strong>注册数据</strong></p>
+	<table width="400px" height="200px" cellpadding="1" >
+		<tr>
+			<td>用户名:</td>
+			<td><input type="text" name="uname"></td>
+		</tr>
+		<tr>
+			<td>密码:</td>
+			<td><input type="text" name="uname"></td>
+		</tr>
+		<tr>
+			<td>籍贯:</td>
+			<td>
+				<select name="home_city">
+					<option value="home_bj" selected="">北京</option>
+					<option value="home_sh">上海</option>
+					<option value="home_hz">杭州</option>
+					<option value="home_sz">深圳</option>
+					<option value="home_gz">广州</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>性别:</td>
+			<td>
+				<label>
+					<input type="radio" name="sex_01">男
+				</label>
+				<label>
+					<input type="radio" name="sex_01">女
+				</label>
+				<label>
+					<input type="radio" name="sex_01" checked="">不透露
+				</label>
+			</td>
+		</tr>
+		<tr>
+			<td>头像:</td>
+			<td>
+				<input type="file" name="">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">愿意到以下城市工作:</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<select name="want_city" size="5">
+					<option value="want_bj" selected="">北京</option>
+					<option value="want_sh">上海</option>
+					<option value="want_hz">杭州</option>
+					<option value="want_gd">广东</option>
+					<option value="want_cd">成都</option>
+					<option value="now_city">本地</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>留言:</td>
+			<td>
+				<textarea name="txt" cols="30" rows="10"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type="submit" name="">
+				<button>清除</button>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type="checkbox" name="Public_information" value="No">不要公开我的信息
+			</td>
+		</tr>
+	</table>
+</form>
+<br>
+<hr color="black">
+<br>
+<strong><p class="c-center">控件分组</p></strong><hr>
+<form>
+	<strong><p class="c-center">考生注册</p></strong>
+	<fieldset>
+	<!-- fieldset可以有一个框,框住下方的内容 -->
+	<table>
+		<legend><b>基本信息</b></legend>
+		<!-- fieldset中使用legend标签可以在框上方添加信息 -->
+		<div>
+		<tr>
+			<td>证件类型</td>
+			<td>
+				<select name="uid">
+					<option value="Second_generation_ID_card" selected="">二代身份证</option>
+					<option value="ID_card_of_Hong_Kong,_Macao_and_Taiwan">港澳台身份证</option>
+					<option value="passport">护照</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>登录密码</td>
+			<td>
+				<input type="text" name="" placeholder="请输入6-18位密码" maxlength="18">
+			</td>
+		</tr>
+		</div>
+	</table>
+	</fieldset>
+	<fieldset>
+	<!-- fieldset可以有一个框,框住下方的内容 -->
+	<table>
+		<legend><b>又一个被分组的小标签</b></legend>
+		<!-- fieldset中使用legend标签可以在框上方添加信息 -->
+		<div>
+		<tr>
+			<td>证件类型</td>
+			<td>
+				<select name="uid">
+					<option value="Second_generation_ID_card" selected="">二代身份证</option>
+					<option value="ID_card_of_Hong_Kong,_Macao_and_Taiwan">港澳台身份证</option>
+					<option value="passport">护照</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>登录密码</td>
+			<td>
+				<input type="text" name="" placeholder="请输入6-18位密码" maxlength="18">
+			</td>
+		</tr>
+		</div>
+	</table>
+	</fieldset>
+</form>
+<br>,
+<hr color="black">
+<br>
+<span id="fudongkuangjia"></span>
+<strong><p class="c-center">浮动框架</p></strong><br>
+<iframe src=".\xz\public\user_reg.html"></iframe>
+<!-- src 中写上引入html的路径 -->
+<!-- 在一个html中引入其他的html文件 -->
+<!-- frameborder="int" 设置边框 -->
+<!-- scrolling="no" 关闭滚动条 -->
+<!-- height="" 设置高 -->
+<!-- widht="" 设置宽-->
+<br>
+<hr color="black">
+<br>
+<form>
+	<fieldset>
+		<legend><b>用户基本信息</b></legend>
+		<table>
+			<tr>
+				<td>用户名称:</td>
+				<td><input type="text" name="" placeholder="请输入您的用户名"></td>
+			</tr>		
+			<tr>
+				<td>用户密码:</td>
+				<td><input type="password" name=""></td>
+			</tr>
+			<tr>
+				<td>用户性别:</td>
+				<td>
+					<label><input type="radio" name="usex">男</label>
+					<label><input type="radio" name="usex">女</label>
+					<label><input type="radio" name="uno_sex">暂不透露</label>
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+	<br>
+	<fieldset>
+		<legend><b>用户其他信息</b></legend>
+		<table>
+			<tr>
+				<td>用户爱好:</td>
+				<td>
+					<input type="checkbox" name="">吃
+					<input type="checkbox" name="">喝
+					<input type="checkbox" name="">玩
+					<input type="checkbox" name="">乐
+				</td>
+			</tr>
+			<tr>
+				<td>选择头像:</td>
+				<td><input type="file" name=""></td>
+			</tr>
+			<tr>
+				<td>自我介绍:</td>
+				<td>
+					<textarea name="txt" cols="30" rows="10"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>工作城市:</td>
+				<td>
+					<select>
+						<option value="bj">&nbsp;&nbsp;&nbsp;北京&nbsp;&nbsp;</option>
+						<option value="hz">&nbsp;&nbsp;&nbsp;杭州&nbsp;&nbsp;</option>
+						<option value="nj">&nbsp;&nbsp;&nbsp;南京&nbsp;&nbsp;</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<input type="submit" name="" value="登录">
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+</form>
+<br>
+<hr color="black">
+<br>
+<span id="jingdong"></span>
+<form>
+	<div widht="500px" height="500px">
+		<h1 align="content"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585137620086&di=d556c371251b596734a818d5e7cc1324&imgtype=0&src=http%3A%2F%2Fs1.knowsky.com%2F20140816%2F2014081913215010445.png" width="20%">欢迎登陆</h1>
+	</div>
+	<table border="2">
+		<tr>
+			<td rowspan="8"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1585137992557&di=cac38c099f663293d8fed832a58597f1&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171213%2Feb0543e10dbd41c08ff9a8e972178fe3.jpeg" width="75%"></td>
+			<td><span>用户名/邮箱</span></td>
+		</tr>
+		<tr>
+			<td>
+				<input type="email" name="" placeholder="请输入用户名或者邮箱">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span>密码</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="password" name="" placeholder="">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="checkbox" name="">自动登录
+			</td>
+		</tr>
+		<tr>
+			<td align="content">
+				<input type="submit" name="" value="登陆">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span>使用京东合作账号登陆</span>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<input type="radio" name="pay" >QQ
+				<input type="radio" name="pay" >京东钱包
+			</td>
+		</tr>
+		<tr align="right">
+			<td colspan="2">
+				<button color="green">免费注册&gt;&gt;</button>
+			</td>
+		</tr>
+	</table>
+<p class="c-center">
+<a href="">关于我们</a><span>&nbsp;|</span>
+<a href="">联系我们</a><span>&nbsp;|</span>
+<a href="">人才招聘</a><span>&nbsp;|</span>
+<a href="">联系我们</a><span>&nbsp;|</span>
+<a href="">联系我们</a>
+</p>
+</form>
+<br><hr color="black"><br>
+<span id="css"></span>
+<h1 class="c-center">CSS</h1>
+<br>
+<hr>
+<br>
+<h2 class="c-center">行内样式</h2>
+<!-- 行内样式在任意元素的style里面定义样式声明 -->
+<span style="color:red;background-color:
+ yellow;font-size:26px">这是一句被行内样式修饰的span文本</span>
+<!-- color:red 文本颜色 -->
+<!-- background-color:yellow 背景颜色 -->
+<!-- font-size:15px  文本字号 -->
+<br><hr><br>
+<h2 class="c-center">内部样式</h2>
+<b>汝乃天骄,何不上九霄</b>
+<br><hr><br>
+<h2 class="c-center">外部样式</h2>
+<p>这是一个由外部css文件更变的p标签/CSS已被注释</p>
+<!-- 在外部单独创建一个css文件 -->
+<!-- 在html中的head中,使用link引入css -->
+<!-- <link rel="stylesheet" href="***/**.css"> -->
+<!-- 这样就可以实现多个页面代码重用了 -->
+
+<h5 style="background-color: pink;color:purple">这是一个内联样式_01</h5>
+<h5 style="background-color: purple;color:red">这是一个内联样式_02</h5>
+<h6>这是一个外部样式<span style="background-color: blue;color: white">|这是一个被包含的span,自己可以被包含了h6的标签中,用style更改|</span></h6>
+<!-- 大部分的css效果,是可以直接被子元素继承(尺寸,内外边距等,不能被继承) -->
+<div style="font-size: 36px">
+	<p>test</p>
+	<span>
+		<p>test_2</p>
+	</span>
+</div>
+<!-- 必须是子元素继承父元素[祖先]的样式 -->
+<!-- a标签字体颜色是不继承的 -->
+<!-- 样式优先级 -->
+<!-- =============================================== -->
+<!-- 如果多个样式规则作用到一个元素上时 -->
+<!-- 样式属性发生了冲突,根据优先级来应用 -->
+<!-- 默认优先级:最高 - 内联样式 -->
+			   <!-- 中间   内部样式,外部样式---就近原则 -->
+		  <!-- 最低 - 浏览器默认样式 -->
+<!-- 调整优先级 -->
+<!-- 可以根据就近原则css位置,或者在css元素后面增加important -->
+<br><hr><br>
+<h3 style="color: white">优先级</h3>
+<i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</i>
+<br><hr><br>
+<span id="xuanzeqi"></span>
+<p class="c-center"><span style="background-color: red;color: white">基础选择器[重点]</span></p><hr>
+<!-- 项目中卫衣使用通用选择器方式 -->
+<!-- *{margin:0;padding:0} 所有元素的内外边距清空,css reset;---样式重置 -->
+<p id='My'>id选择器</p>
+<p id="test_p_css">123</p>
+<br><hr><br>
+<p class="c-center">类选择器与多类选择器;<span style="color:blue">这一段知识点基本都在注释里</span></p>
+<!-- 把一类样式,封装成一个小模块,起一个类名,哪个元素想使用,都可以使用,直接用class调用类名
+类名的规范:只能包含-和_,不能以数字开头,做到见名知意
+语法:
+	.类名{样式声明;}
+	<xx class="类名"></xx> -->
+<!-- 分类选择器 -->
+<!-- 元素选择器.类选择器{样式声明} -->
+<!-- 必须同时满足元素与类的一致,才能使用此样式 -->
+<span class="c-font-36 c-text-danger">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</span><br>
+<p class="c-center">第二种分类选择器</p><br>
+<!-- .类选择器.类选择器{样式声明} -->
+<span class="c-bg-warning c-font-24">Lorem ipsum dolor sit amet, consectetur adipisicing elit</span><br>
+<!-- 群组选择器 -->
+<!-- 将多个选择器,放在一起,用逗号分隔,定义公共样式 -->
+<!-- 语法 选择器1,选择器2,选择器3,选择器4,选择器5,..{样式声明} -->
+<p class="c-center">后代选择器</p><br>
+<fieldset>
+	<legend><b><b>被后代选择器选中的a标签</b></b></legend>
+		<ul>
+			<li><a href="">戴尔</a></li>
+			<li><a href="">thinkpad</a></li>
+			<li><a href="">mac</a></li>
+			<li><a href="">华硕</a></li>
+		</ul>
+</fieldset>
+<fieldset>
+	<legend><b><b>没有被后代选择器选中的a标签</b></b></legend>
+	<a href="">柯基</a>
+	<a href="">金毛</a>
+</fieldset>
+<fieldset>
+	<legend><b>小demo</b></legend>
+<span class="c-center" style="color:blue">把div中的p中的span设置成红色字体&nbsp;把div中两个span设置成蓝色背景&nbsp;把div的儿子span,设置斜体
+</span>
+<div>
+	<span>我是div的儿子span</span>
+	<p>我是div的p
+		<span>我是div中的p的是span</span>
+	</p>
+</div>
+</fieldset>
+<p class="c-center">子代选择器</p>
+<!-- 根据元素的父子关系,匹配元素
+子代:div>span{font-style: italic} 大于号指向的是一种包含关系 -->
+<fieldset>
+	<legend><b>后代选择器和自带选择器的demo</b></legend><br>
+	<fieldset>
+		<legend><b>需求</b></legend>
+		<span >1111,5555字体颜色为红色</span><br>
+		<span>2222,3333,4444背景颜色为黄色</span><br>
+		<span>1111,3333,4444字号大小为30px</span><br>
+		<span>3333,5555为斜体</span><br>
+	</fieldset>
+	<div id="text-div">
+		<a href="" class="c-test-color-red c-text-size-30">1111</a>
+		<div>
+			<a href="" class="c-bg-color-yellow c-text-size-30">2222</a>
+			<span>
+				<a href="" class="c-bg-color-yellow c-text-size-30 c-text-italic">3333</a>
+			</span>
+		</div>
+		<p>
+			<a href="" class="c-bg-color-yellow c-text-size-30">4444</a>
+			<span>
+				<a href="" class="c-test-color-red c-text-italic">5555</a>
+			</span>
+		</p>
+	</div>
+</fieldset>
+<p class='c-center'>伪类选择器</p>
+<fieldset>
+	<legend><b>demo</b></legend>
+	<div id="test-div-01">
+		<a href="https://www.baidu.com">百度</a>
+	</div>
+</fieldset>
+<fieldset>
+	<legend><b>打地鼠demo</b></legend>
+	<img src=".\u=18875190,1331278310&fm=26&gp=0.jpg" style="width:300px" style="active{width:300px;height:20px}" id="test_img_01">
+	<img src=".\u=18875190,1331278310&fm=26&gp=0.jpg" style="width:300px" style="active{width:300px;height:20px}" id="test_img_01">
+</fieldset>
+<fieldset>
+	<legend><b>demo</b></legend>
+	<!-- 注意,当4个伪类同时作用到一个元素上,需要有特定的编写顺序 -->
+	<div id="test-div-02">
+		<span style="color: black;background-color: white">1,访问过后,文本颜色orange</span><br>
+		<span style="color: black;background-color: white">2,被激活时,文本颜色green</span><br>
+
+		<span style="color: black;background-color: white">3,鼠标悬停时,文本颜色red</span><br>
+		<span style="color: black;background-color: white">4,未访问时,文本颜色pink</span><br>
+		<a href="">Baidu</a>
+	</div>
+</fieldset>
+<fieldset>
+	<legend><b>获取焦点时的状态</b></legend>
+	<input type="text" name="" class="test-input-01">←点击输入框变色
+</fieldset>
+<fieldset>
+	<legend><b>选择器的权值</b></legend>
+	<ul>
+		<span>权值:表示当前选择器的重要程度,权值越大,优先级越高</span>
+		<li>!important >1000</li>
+		<li>内联样式 1000</li>
+		<li>id选择器 100</li>
+		<li>类/伪类选择器 10</li>
+		<li>元素选择器 1</li>
+		<li>*通用选择器 0</li>
+		<li>继承的样式 无</li>
+	</ul>
+	<fieldset>
+		<legend><b>demo</b></legend>
+		<!-- div #d2 .c3{color:purple;background-color: white} 1+100+10=111 --> 
+		<!-- #d1 .c2 #d3{color:blue}100+10+100=210 -->
+		<!-- #d1 #d2 #d3{color:yellow}100+100+100=300 √ -->
+		<div id="d1" class="c1">
+			<p id="d2" class="c2">
+				<span id="d3" class="c3">Lorem ipsum dolor sit amet</span>
+			</p>
+		</div>
+	</fieldset>
+	<ul>
+		<li>当一个选择器,包含多个选择器时,需要将所有选择器权值进行相加,结果大的优先显示</li>
+		<li>权值相同,使用就近原则</li>
+		<li>群组选择器的权值,单独计算,不能相加</li>
+		<li>如果样式和加了!important的,直接获得最高优先级,但是内联样式不能添加!important</li>
+		<li>选择器权值的计算,不会超过本身权值的最大数量级</li>
+	</ul>
+</fieldset>
+<br><hr style="color:black"><br>
+<span id="chicun"></span>
+<p class="c-center">尺寸</p>
+<fieldset>
+	<legend><b>改变元素在页面上的宽度和高度</b></legend>
+<div id="test-div-03"></div>
+	<fieldset>
+		<legend><b>参数与属性</b></legend>
+		<ul>
+			<li>宽度-width</li>
+			<li>高度-height</li>
+			<li>取值:怡px为单位的数字</li>
+			<li>特殊:父元素如果是body,高度的百分比时效,宽度可以用%</li>
+			<fieldset>
+				<legend><b>宽度与高度</b></legend>
+				<ul>
+					<li>max-width 最大宽度</li>
+					<li>max-height</li>
+					<li>min-width 最小宽度</li>
+					<li>min-height</li>
+				</ul>
+				<fieldset style="border-color: skyblue">
+					<legend><b>demo</b></legend>
+					<div id="test-div-05"></div>
+				</fieldset>
+			</fieldset>
+		</ul>
+		<ul>
+			<li>
+				<table border="1" style="border-color: skyblue">
+					<tr style="background-color:#9e9e9e40 ">
+						<td >块级元素</td>
+						<td>行内元素</td>
+						<td>行内块</td>
+					</tr>
+					<tr>
+						<td>可以设置宽高</td>
+						<td>无法设置宽高</td>	
+						<td>可以设置宽高</td>
+					</tr>
+					<tr>
+						<td>默认宽:父元素宽度100%<br>默认高,靠内容撑开,<br>没有内容,高度就位0</td>
+						<td>默认宽<br>默认高,都是被内容撑开的<br>没有内容就是没有宽高</td>
+					</tr>
+				</table>
+				<span>特殊情况:自带宽高属性的元素,可以设置样式宽高&lt;img&gt;&lt;table&gt;&lt;/table&gt;</span>
+				<li>
+					<fieldset>
+						<legend><b>demo</b></legend>
+						<p id="test-p-01">test,test-p-01</p><br>
+						<span id="test-span-01">test,test-span-01</span><br><br>
+						<input type="" name="" id="test-input-02">
+					</fieldset>
+				</li>
+			</li>
+		</ul>
+	</fieldset>
+	<fieldset>
+		<legend><b>附加知识点-尺寸单位</b></legend>
+		<ul>绝对值单位
+			<li>px 像素</li>
+			<li>in 英寸 1in=2.54cm</li>
+			<li>pt 磅值 1pt=1/72in 修饰字体大小</li>
+			<li>cm 厘米</li>
+			<li>mm 毫米</li>
+		</ul>
+		<hr>
+		<ul>相对单位</ul>
+		<li>% 一般都是父元素的某一个对应属性的百分比</li>
+		<li>em 以父元素的取值为一个基本单位,1em就是父元素取值的1倍</li>
+		<li>rem 以html的取值为一个基本单位,1rem就是html取值的1倍</li>
+		<fieldset style="border-color: skyblue">
+			<legend><b>相对单位demo,css见id <span style="color:red">test-div-04</span></b></legend>
+			<div id="test-div-04">
+				<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+			</div>
+		</fieldset>
+	</fieldset>
+</fieldset>
+<span id="yichu"></span>
+<fieldset>
+	<legend><b>溢出情况</b></legend>
+	<!-- 对于溢出部分的控制 -->
+	css见id <span style="color:red">test-p-02</span>
+	<ul>
+		<li>overflow: visible===>溢出部分可见</li>
+		<li>overflow: hidden===>溢出部分不可见</li>
+		<li>overflow: scroll===>溢出部分添加滚动头条-但是不管溢出不溢出,滚动条都在</li>
+		<li>overflow: auto===>如果溢出,则有滚动条,不然的话就没有滚动条</li>
+		<li>overflow-x 单独设置x轴滚动条</li>
+		<li>overflow-y 单独设置y轴滚动条</li>
+	</ul>
+	<p id="test-p-02">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. </p>
+	<div style="background-color: skyblue;width: 200px;height: 200px;overflow-x:auto ">
+		<h4 style="width: 800px;background-color: pink">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
+	</div>
+</fieldset>
+<fieldset>
+	<legend><b>图片联排显示demo</b></legend>
+	<div style="width: 1000px;border-color: red" >
+		<img src="u=3403193749,2001604402&fm=26&gp=0.jpg"><img src="u=3403193749,2001604402&fm=26&gp=0.jpg">
+	</div>
+</fieldset>
+<fieldset>
+	<legend><b>外边距</b></legend>
+	<ul>
+		<li>改变元素外边距,元素有位移效果,把其他带框的元素挤开</li>
+		<li>margin没有颜色,优先满足上外边距和做外边距的值保持正确</li>
+	</ul>
+	<ul>语法
+		<li>margin:v1;同时设置4个方向的外边距</li>
+		<li>margin-top/right/bottom/left  单独设置某一个方向的外边距<span style="color: blue">当左右冲突的时候看左设置,上下冲突的时候看上设置</span></li>
+		取值
+		<li>以px为单位的数字</li>
+		<li>左外边距 + -→   - ←-</li>
+		<li>上外边距 + ↓    - ↑</li>
+		<li>%  是父元素宽度的百分比,跟父元素高度没关系</li>
+		<li>auto  设置对上下外边距无效,只对左右外边距有效,设置后的效果为当前元素水平居中 <br>
+		对于航年内元素和块元素无效,只对设置了宽度的块级元素有效</li>
+	</ul>
+	<ul>简写方式
+		<li>margin:v1  设置4个方向的外边距</li>
+		<li>margin:v1 v2 设置来年各个方向的外边距;v1代表上下,v2是左右</li>
+		<li>margin:v1 v2 v3   v1代表上,v2代表左右,v3代表下</li>
+		<li>margin:v1 v2 v3 v4 v1至v4分别为上右下左</li>
+	</ul>
+	<fieldset>
+		<legend><b>demo</b></legend>
+		<span>创建两个div,尺寸都是300px*300px;不同的背景颜色,<br>设置两个div之间的间距为50px</span><br><br>
+		<div style="width:100%;height: 450px">
+			<div style="width:200px;height:200px;background-color: skyblue;margin:0px 0px 25px 0px"></div>
+			<div style="width:200px;height:200px;background-color: skyblue;margin:25px 0px 0px 0px"></div>
+		</div>
+		<ul>
+			<li>两个垂直的外边距相遇时,会发生外边距的合并 <br>最后的值,以大的为准</li>
+			<li>解决方案:单独设置一个外边距,在页面设计的时候直接规避</li>
+		</ul> 
+	</fieldset>
+	<fieldset>
+		<legend><b>demo</b></legend>
+		<span>页面中两个div,宽高200px,设置不同背景色 <br>
+			为两个div设置4个方向外边距,观察效果 <br>
+			页面中两个span,内容随意,设置不同背景色,为两个span设置4个方向外边距,观察效果,<br>页面中两个input,为两个input设置4个方向外边距,观察效果</span>
+		<div style="width: 200px;height: 200px;background-color: skyblue;margin:20px"></div>
+		<div style="width: 200px;height: 200px;background-color: skyblue;margin:20px"></div>
+		<span style="background-color: skyblue;margin: 20px">this is test span</span>
+		<span style="background-color: skyblue;margin: 20px">this is test span</span><br>
+		<input type="text" name="" style="margin: 20px">this is test
+		<input type="text" name="" style="margin: 20px">this is test
+		<ul>
+			<li>块级元素-4个方向都有效</li>
+			<li>只有左右外边距生效,上下外边距无效-行内元素</li>
+			<li>4个方向外边距都生效,改变上下外边距,会连同同一行其他行内元素和行内块元素一起移动</li>
+		</ul>
+	</fieldset>
+	<fieldset>
+		<legend><b>外边距溢出demo</b></legend>
+		<span>两个div id为d1和d2<br>尺寸200px*200px,分别设置不同背景颜色<br>在d2中添加一个子元素div 宽高50px,设置不同背景色<br>给里层div添加上外边距50px,观察效果</span>
+		<div style="width: 200px;height:200px;background-color: skyblue">
+			<div style="width: 50px;height: 50px;background-color: orange;margin: 20px"></div>
+		</div>
+		<span>在特殊情况下,为子元素设置上外边距,会作用到父元素上</span>
+		<ul>
+			<li>1,父元素没有上边框</li>
+			<li>子元素内容区域的上边沿和父元素内容区域的上边沿重合</li>
+		</ul>
+		<ul>解决方案
+			<li>1,给父元素添加上边框,弊端 增加了父元素的实际占地高度</li>
+			<li>2,给父元素加上内边距,弊端 增加了父元素的实际占地高度</li>
+			<li>在第一个兄弟未知,添加回车&lt;br&gt;,弊端 内部多了一行</li>
+			<li>父元素添加overflow:auto,但是,如果想要溢出显示,就不行了</li>
+			<li>在第一个元素的位置处,添加一个空的&lt;table&gt;&lt;/tabel&gt;这样浏览器就认为上边沿分开了</li>
+		</ul>
+	</fieldset>
+</fieldset>
+<span id="neibianju"></span>
+<fieldset>
+<legend><b>内边距</b></legend>
+<span><span style="color: purple">紫色</span>的部分为内边距</span><br>
+<div style="width: 200px;height: 200px;background-color: purple;padding: 20px"><div style="width: 100%;height: 100%;background-color: red"></div></div>
+<ul>
+	<li>padding,边框到内容区域之间的距离</li>
+	<li>改变内边距,会改变整个元素的占地大小,但是内容区域大小没有变化</li>
+	<li>内边距的颜色,和元素背景色相同</li>
+</ul>
+<ul>语法
+	<li>padding:v1 同时设置4个方向的内边距</li>
+	<li>padding-top/right/bottom/left</li>
+</ul>
+<ul>取值
+	<li>1,以px为单位的数字</li>
+	<li>2,% 不管上下左右,都是以父元素的宽度为基准</li>
+	<li>3,padding没有auto值</li>
+</ul>
+<ul>简写方式
+	<li>padding:v1  设置4个方向的外边距</li>
+	<li>padding:v1 v2 设置来年各个方向的外边距;v1代表上下,v2是左右</li>
+	<li>padding:v1 v2 v3   v1代表上,v2代表左右,v3代表下</li>
+	<li>padding:v1 v2 v3 v4 v1至v4分别为上右下左</li>
+</ul>
+</fieldset>
+<br><hr><br>
+<ul>
+	总结
+	<li>margin的使用场合</li>
+	<li>1,块级元素本身需要相对父元素水平居中 margin:auto; margin:0 auto;</li>
+	<li>2,元素之间,有距离,可以用margin</li>
+	<li>3,元素的位置微调</li>
+</ul>
+<br><hr><br>
+<p class="c-center"><b>背景</b></p>
+	<div style="width: 500px;height: 500px;background-color: #faa;background-image: url(u=2502099547,4293409651&fm=26&gp=0.jpg);"></div>
+	<!-- 这个地方url加不加引号都对 -->
+<br><hr><br>
+<p class="c-center"><b>背景的平铺</b></p>
+<div style="width: 500px;height: 500px;background-color: #faa;background-image: url(u=2502099547,4293409651&fm=26&gp=0.jpg);background-repeat: repeat-x;">X轴平铺</div>
+<hr>
+<div style="width: 500px;height: 500px;background-color: #faa;background-image: url(u=2502099547,4293409651&fm=26&gp=0.jpg);background-repeat: repeat-y;">Y轴平铺</div>
+<ul>background-repeat
+	<li>repeat 默认缺省值</li>
+	<li>no-repeat</li>
+	<li>repeat-x</li>
+	<li>repeat-y</li>
+</ul>
+<br><hr><br>
+<p class="c-center"><b>背景图片的定位</b></p>
+<div style="width: 500px;height: 500px;background-color: #faa;background-image: url(u=2502099547,4293409651&fm=26&gp=0.jpg);background-repeat: no-repeat;background-position: 50% 50%;">background-position: 50% 50%的居中位置</div>
+<ul>background-position
+	<li>取一个值,这个值是在控制x轴的位置,y轴默认垂直居中</li>
+	<li>取两个值,第一个值,设置的x轴,第二个值设置的y轴</li>
+	<li>以px为单位的数字</li>
+	<li>% 直接取当前背景的百分比位置</li>
+	<li>关键字  x:left/center/right  y:top/center/bottom</li>
+</ul>
+<br><hr><br>
+<p class="c-center"><b>背景图片的尺寸</b></p>
+<div style="width: 500px;height: 500px;background-color: #faa;background-image: url(u=2502099547,4293409651&fm=26&gp=0.jpg);background-repeat: no-repeat;background-position: 50% 50%;background-size: 20%">background-size:20%的情况</div>
+<ul>background-size
+	<li>取一个值,同时设置x和y</li>
+	<li>去两个值,分别设置x和y</li>
+	<li>% 直接设置image的百分比大小</li>
+	<li>cover 填充,覆盖,让图片充满整个容器,保证容器全部被填充上,图片有可能显示不全</li>
+	<li>contain 包含,让容器包含一张完整的图片,保证图片是完全现实的,可能会出现空白区域</li>
+</ul>
+<br><hr color= 'black'><br>
+<span class="c-center">用户登录demo</span><br><br>
+<div style="width: 100%;height:497px;margin: 0 auto;padding: 0;background-image:url(http://doc.canglaoshi.org/tstore_v1/images/regist.png);background-repeat: no-repeat;">
+	<table></table>
+	<div style="width:355px;height: 350px;margin-top:90px;margin-left: 545px;background-color: rgba(0,0,0,0.3);padding: 5px;border-radius:10px;" id="denglu_div_01">
+		<table width='350px' height='350px' cellpadding="2" cellspacing="5" border="0" padding="0">
+			<tr height='40px'>
+				<td><strong><span style="color: white">&nbsp;登&nbsp;陆&nbsp;商&nbsp;城</span></strong></td>
+				<td class="c-center">
+					<a href="javascript:saoma_01()">
+						<img src="logo/saoma.png" style="width: 40px; margin-right: -30px">
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" height="8px"><hr></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="c-center" height="50px" style="padding:0">
+					<input type="text" name="" placeholder="    请输入您的用户名" id="test-input-04" style="background-image: url(logo/id.png);">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" height="10px"><span id="denglu_span"></span></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="c-center" height="50px"style="padding:0">
+				<input type="password" name="" placeholder="    请输入您的密码" id="test-input-04" style="background-image: url(logo/pwd.png);">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" height="10px"><span id="denglu_span"></span></td>
+			</tr>
+			<tr>
+				<td>
+					<label>
+						<input type="checkbox" name=""><span style="color: white;">记住密码</span>
+					</label>
+					<label>
+						<input type="checkbox" name=""><span style="color: white;">自动登录</span>
+					</label>
+				</td>
+				<td>
+					<a href="" style="color: white; text-decoration:none;float: right;">忘记密码？</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="c-center" style="padding:0;text-align: center;" width="75%">
+					<input type="button" class="c-center" name="" value="登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录" id="test-input-03">
+				</td>
+				<td>
+					<input type="button" name="" value="注&nbsp;&nbsp;册" id="test-input-05" width="25%">
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<br><hr color= 'black'><br>
+<fieldset>
+	<legend>背景图片的固定</legend>
+	<ul>
+		<li>默认值 background-attachment:scroll <br>
+			背景跟随滚动条的滚动而滚动</li>
+		<li>可选值 fixed <br>
+			背景不跟随滚动条的滚动而滚动,但是只会在原容器中显示 <br>
+			会影响background-position的位置</li>
+	</ul>
+	<ul>最简方式
+		<li>
+			background:color image repeat attachment position；
+		</li>
+		<li>
+			或者直接 background:color    background:image;
+		</li>
+		<li>
+			注意,不要用简写方式来去重置属性
+		</li>
+	</ul>
+
+
+	<div style="width: 500px;height: 1000px;background-color: #faa;
+		background-image: url(u=2502099547,4293409651&fm=26&gp=0.jpg);
+		background-repeat: no-repeat;
+		background-attachment: fixed;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</fieldset>
+<br><hr><br>
+<fieldset>
+	<legend>渐变</legend>
+	<ul>什么是渐变
+		<li>多种颜色平缓变化的一种显示效果</li>
+	</ul>
+	<ul>影响渐变的因素
+		<li>色标:一种颜色和这种颜色的出现位置</li>
+		<li>一个渐变至少有两个色标,多至不限</li>
+	</ul>
+	<ul>渐变的分类
+		<li><span style="color: red">线性渐变,以直线的方式来填充渐变色</span></li>
+		<li>径向渐变,以圆形的方式来填充渐变色</li>
+		<li>重复渐变,把线性渐变,径向渐变,反复执行几次</li>
+	</ul>
+	<ul>
+		<li>低版本浏览器不支持渐变，我们需要添加</li>
+	</ul>
+	<fieldset>
+		<legend>线性渐变demo</legend>
+		<ul>
+			<li>
+			background-image:linear-gradient(方向,色标1,色标2....)
+		</li>
+			<li>
+			方向的取值要用终点 to right;to top; to left; to bottom;
+		</li>
+			<li>
+				角度 0deg相当于to top;<br>90deg相当于to right; <br>180deg 相当于to bottom; <br>270deg/-90deg 相当于to left<
+				/li>
+			<li>
+				色标 颜色 + 位置 <br>
+				位置:1,  %     0% ~ 100%
+					 2,  px  
+					 3,  如果不写位置，所有颜色平均分配 
+			</li>
+		</ul>
+		<div style="width: 200px;height: 200px;
+		background-image:linear-gradient(90deg,
+			#000 0%,
+			#ff0 25%,
+			#000 50%,
+			#0ff 75%,
+			#000 100%)
+		"></div>
+	</fieldset>
+	<fieldset>
+		<legend>径向渐变</legend>
+		<ul>
+			<li>background-image:radial-gradient(半径 at  圆形，色标1，色标2...)</li>
+			<li>半径:以px为单位的数字，注意:只有色标是%的时候，半径才生效</li>
+			<li>圆心:关键字 x:left/center/right y:top/center/bottom	<br>
+					 x y ,px 为单位的</li>
+		</ul>
+		<div style="width: 200px;height: 200px;
+		background-image:radial-gradient(100px at center center,
+		skyblue 0%,
+		blue 50%,
+		skyblue 100%);"></div>
+	</fieldset>
+	<fieldset>
+		<legend>重复的线性渐变</legend>
+		<div style="width: 200px;height: 200px;background-image: repeating-linear-gradient(to bottom,
+			red 0px,
+			green 1px,
+			blue 2px)"></div>
+	</fieldset>
+	<fieldset>
+		<legend>重复的径向渐变</legend>
+		<div style="width: 200px;height: 200px;background-image: repeating-radial-gradient(1px at center center,red 0%,green 1%,blue 3%)"></div>
+	</fieldset>
+	<fieldset>
+		<legend>兼容性</legend>
+		<span>需要在浏览器前面添加前缀，内核名称<br>
+		-moz - 火狐  <br>
+		-webkit - chrome/safari <br>
+		-o  -  opera 	<br>		
+		-ms  -  ie <br>
+		**方向一定要写起点，不能加to</span>
+		<div style="width: 200px;height: 200px;
+		background-image:-webkit-linear-gradient(top,#ff0,#0ff);
+		background-image:-moz-linear-gradient(top,#ff0,#0ff);
+		background-image:-o-linear-gradient(top,#ff0,#0ff);
+		background-image:-ms-linear-gradient(top,#ff0,#0ff);"></div>
+
+	</fieldset>
+</fieldset>
+<br><hr><br>
+<span id="wenbengeshihua"></span>
+<fieldset>
+	<legend><b><span style="color: red">文本格式化</span></b></legend>
+	<ul>font-size
+		<li>font-size 指定字号大小，取值 - px/pt/rem/em</li>
+	</ul>
+	<ul>字体系列
+		<li>需要客户端用相对的字体库</li>
+		<li>font-family:跟上相对应的字体</li>
+		<li>字体使用版权-注意</li>
+	</ul>
+	<ul>字体的粗细
+		<li>取值:1 normal 普通，不加粗</li>
+		<li>2 bold 加粗</li>
+		<li>3 bolder 比粗更粗</li>
+		<li>4 ligter 细</li>
+		<li>5 不带单位的数字，必须是100的整数倍，最大1000 <br>
+			300-lighter 400-normal 600-bold 700-bolder</li>
+	</ul>
+	<ul>文字样式
+		<li>font-style:normal/italic</li>
+	</ul>
+	<ul>小型大写字母
+		<li>font-variant:small-caps;</li>
+	</ul>
+	<ul>字体属性的简写方式
+		<li>font;size family</li>
+	</ul>
+	<div style="width: 500px;height:250px;background-color: black">
+		<span id="test-span-02">
+		武汉加油
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</span>
+	</div>
+	<br><hr><br>
+	<div style="width: 400px;height:500px;border:2px solid #f00;
+				color:#f00;background-color: black;
+				font:24px chiller;text-align: center ">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+	<ul>字体颜色
+		<li>color</li>
+	</ul>
+	<ul>文本的对齐方式
+		<li>text-align 默认缺省值 left</li>
+		<li>text-align:left,center,right</li>
+		<li>justify 两端对齐</li>
+	</ul>
+	<ul>容易混淆的两个样式比较
+		<li>text-align:center;</li>
+		<li>margin:0 auto</li>
+	</ul>
+	<br><hr><br>
+<ul>文本的垂直对齐方式
+	<li>行高---定义一行文本的高度</li>
+	<li>行高的特点，如果行高大于文本字号，那么文本会默认在行高的范围内，垂直居中	<br>
+		line-height: XXpx </li>
+	<li>通常会把行高设置成容器高度，让文本在容器垂居中显示</li>
+	<li>但是，多行文本不建议使用</li>
+</ul>
+<ul>行高的取值
+	<li>以px为单位的数字</li>
+	<li>不带单位的数字</li>
+</ul>
+<ul>文本线条的修饰
+	<li>text-decoration:overline 上划线 <br>underline 下划线 <br>line-through 删除线 <br>none 去除所有线条修饰  a标签去掉下划线</li>
+</ul>
+	<div style="width: 200px;height: 200px;
+	    border:2px solid #f00;background-color: black;
+	    color: yellow;">
+	    <!-- 这里的margin : 0 auto是让块级元素自己(本身)，水平居中对齐 -->
+		<p style="text-align: center;line-height: 30px;text-decoration: underline;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+		<!-- text-align:center; -->
+		<!-- 让元素内部的，文本/行内元素/行内块，水平居中对齐 -->
+		<!-- margin:0 auto; -->
+		<!-- 让块级元素自己(本身)，水平居中对齐 -->
+	</div>
+</fieldset>
+
+
+
+<span id="code_here"></span>
+</body>
+</html> 

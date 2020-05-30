@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <h1>{{msg}}</h1>
+  <h1 v-text="msg"></h1>
+  <h1 v-html="msg"></h1>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    msg:`<p>来自<a href="javascript:;">&lt;&lt;新华社&gt;&gt;</a>的消息</p>`
+  }
+})
+</script>
+</body>
+</html>

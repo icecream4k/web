@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <script src="../js/vue-router.js"></script>
+    <script src="Index.js"></script>
+    <script src="Details.js"></script>
+    <script src="NotFound.js"></script>
+    <script src="Login.js"></script>
+    <script src="router.js"></script>
+    <script src="MyHeader.js"></script>
+    <link rel="stylesheet" href="./test.css">
+</head>
+<body>
+    <div id="app">
+        <router-view></router-view>
+        <router-link>这是一个激活404的链接</router-link>
+        <a href="file:///Users/hanlong/Desktop/Code/Web/vue/%E5%8D%95%E9%A1%B5%E9%9D%A2%E7%BD%91%E9%A1%B5/index.html#/Login">这是一个去login的链接</a><br>
+        <a href="file:///Users/hanlong/Desktop/Code/Web/vue/%E5%8D%95%E9%A1%B5%E9%9D%A2%E7%BD%91%E9%A1%B5/index.html#/details">这是一个去details的链接</a><br>
+        <a href="file:///Users/hanlong/Desktop/Code/Web/vue/%E5%8D%95%E9%A1%B5%E9%9D%A2%E7%BD%91%E9%A1%B5/index.html#/aaa">这是一个激活404的链接</a><br>
+        <br><hr><br>
+        <fieldset>
+            <legend>NotFound组件</legend>
+            <ul>
+                <li>
+                    其实所有网站都应该有友好的404页面
+                </li>
+                <li>
+                    不同点：每个普通页面都有一个唯一的地址与之对应，但是404页面应该是除了正确的地址之外，其余所有地址都应该可以跳到404页面
+                </li>
+                <li>
+                    如何实现：
+                    <ul>
+                        <li>定义404页面组件</li>
+                        <li>
+                            在routes数组中末尾添加：{path:"*",component:404组件}<br>
+                            其中: 
+                            <ul>
+                                <li>*代表所有其余路径的意思</li>
+                                <li>因为当地址栏发生变化时，路由器router是按从上向下的顺序匹配routes 数组中每个路径，如果*放在前面，泽永远匹配，就无法跳转到其他页面了</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </fieldset> 
+        <br><hr><br>
+        <fieldset>
+            <legend>"页面"中跳转</legend>
+            <ul>
+                <li>
+                    HTML中：用&lt;router-link&gt;代替 a<br>
+                    &lt;router-link to='/相对路径'&gt;文本&lt;/router-link&gt;<br>
+                    强调:to中的相对地址不要加#<br>
+                    原理:router-link to 会被自动翻译成 a href = xxx<br>
+                    链接激活样式:<br>
+                    &nbsp;&nbsp;1.所有和地址栏中相对路径吻合的router-link 元素上都会被自动加上class='router-link-exact-active'<br>
+                    &nbsp;&nbsp;2.我们只要在css中定义同名的class选择器，就可以无代码定义链接样式的激活样式<br>
+                </li>
+                <li>
+                    JS中:this.$router.push('相对路径')
+                </li>
+            </ul>
+        </fieldset>
+        <br><hr><br>
+        <fieldset>
+            <legend>"页面"间传递数据</legend>
+            <ul>
+                <li>
+                    修改路由字典数组中的路由对象定义:<br>
+                    a.{path:'/相对路径/:变量名',component:页面组件对象名,props:true}<br>
+                    b.其中:
+                    <ul>
+                        <li>将来传值都是通过地址栏里的url传递的，:变量名，就是传值时所使用的变量</li>
+                        <li>props:true，意思是让地址栏中的变量名以及变量值成为下个页面的组件的props中的自定义属性，可将传过来的参数当做普通的比那辆一样在下个页面中用于绑定</li>
+                    </ul>
+                </li>
+                <li>
+                    下一个页面组件中使用props借助传来的同名的变量值<br>
+                    props:['变量名']
+                </li>
+                <li>
+                    跳转时:<br>
+                    &nbsp;&nbsp;a.HTML跳转:&lt;router-link to = '/相对路径/变量值' # 强调，不要加: 冒号&gt;<br>
+                    &nbsp;&nbsp;b.js中跳转:this.$router.push('/相对路径/变量值')<br>
+                </li>
+            </ul>
+        </fieldset>
+        <br><hr><br>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+
+            },
+            router
+        })
+    </script>
+</body>
+</html>

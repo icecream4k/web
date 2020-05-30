@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<span id="dingbu"></span>
+<html>
+<meta charset="utf-8">
+
+<head>
+	<title>MyVue</title>
+	<link rel="icon" href="..\logo\vue.png">
+	<!-- 引入vue.js文件 -->
+	<script src="vue.js"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="myvuejs.js"></script>
+	<script>
+		Vue.component('hl-hr',{
+			template:`
+			<div class='test-hr'>
+				<br>
+				<hr style='color: black;size: 2px;'>
+				<br>
+			</div>`,
+			data(){//相当于以前的data
+				return {}
+				},
+			}
+		)
+	</script>
+	<link rel="stylesheet" type="text/css" href="myvuecss.css">
+</head>
+<body style="width:980px;background-color: #fdfcf8;margin: 0 auto;">
+	<div id="body_div">
+	<div id="fudongchuangkou">
+		<fieldset style="border-radius:10px;background-color: #fdfcf8;">
+			<legend> <span style="color: #41B883"><b>目</span>&nbsp;&nbsp;&nbsp;<span
+					style="color:#35495E ">录</b></span><br></legend>
+			<a href="#dingbu"><img src="../logo/shouye.png" style="width: 35%;"></a><br>
+			<hr noshade='noshade'>
+			<a id="test-a-01" href="#MVVM"><b>MVVM</b></a><br>
+			<hr noshade='noshade'>
+			<a id="test-a-01" href="#Vuezhiling"><b>Vue指令</b></a><br>
+			<a id="test-a-01" href="#v-bind">v-bind</a><br>
+			<a id="test-a-01" href="#v-show">v-show</a><br>
+			<a id="test-a-01" href="#v-if">v-if v-esle</a><br>
+			<a id="test-a-01" href="#v-else-if">v-else-if</a><br>
+			<a id="test-a-01" href="#v-for">v-for</a><br>
+			<a id="test-a-01" href="#shijianbangding">v-on</a><br>
+			<a id="test-a-01" href="#v-vloak">v-vloak</a><br>
+			<a id="test-a-01" href="#v-html">v-html</a><br>
+			<a id="test-a-01" href="#v-once">v-once</a><br>
+			<a id="test-a-01" href="#v-pre">v-pre</a><br>
+			<a id="test-a-01" href="#v-model">v-model</a><br>
+			<a id="test-a-01" href="#v-model-radio">v-model-radio</a><br>
+			<a id="test-a-01" href="#select">select</a><br>
+			<a id="test-a-01" href="#fuxuankuang">复选框</a><br>
+			<a id="test-a-01" href="#jianshihanshu">watch</a><br>
+			<a id="test-a-01" href="#bangdingyangshi">绑定样式</a><br>
+			<a id="test-a-01" href="#vue-class">vue-class</a><br>
+			<a id="test-a-01" href="#zidingyizhiling">自定义指令</a><br>
+			<a id="test-a-01" href="#jisuanshuxing">计算属性</a><br>
+			<a id="test-a-01" href="#guolvqi">过滤器</a><br>
+			<a id="test-a-01" href="#axios">axios</a><br>
+			<a id="test-a-01" href="#zujianshengming">组件生命周期</a><br>
+			<a id="test-a-01" href="#zujianhuakaifa">组件化</a><br>
+			<a id="test-a-01" href="#zujianchuanzhi">组件间传值</a><br>
+			<a id="test-a-01" href="#SPA">单页面应用</a>
+
+			<hr noshade='noshade'>
+			<a href="#code_here"><img src="..\logo/dibu.png" style="width: 35%;"></a>
+		</fieldset>
+	</div>
+	<p><b style="font-style: italic">
+			<h1 class="c-center"><span style="color: #41B883">V</span><span id="dingbu"
+					style="color:#41B883">U</span><span style="color:#35495E">E</span></h1>
+		</b></p>
+	<!-- 先定义界面,要求: -->
+	<!-- 1.1整个界面必须包裹在一个唯一的父元素内 -->
+	<!-- 1.2界面中可能发生变化的位置用{{变量名}}标记出来 -->
+	<!-- 1.3界面中可能触发事件的元素用@事件名="处理函数名"标记出来 -->
+	
+	<fieldset>
+		<span id="MVVM"></span>
+		<legend>
+			<p style="color: #41B883">MVVM设计模式</p>
+		</legend>
+		<ul>旧的前端项目分为三部分
+			<li>HTML 专门定义网页的内容</li>
+			<li>CSS 专门定义网页的样式</li>
+			<li>JS 专门为网页添加交互行为,负责修改HTML内容和CSS样式</li>
+		</ul>
+		<ul>问题:因为HTML和CSS缺少程序必须的要素(变量,分支和循环),生活不能自理,所以一切变化都需要js来操作。导致js中有大量重复的编码
+		</ul>
+		<ul>
+			<span style="color:green">解决</span>:MVVM设计模式:对前端内容的重新划分,3部分:
+			<li>界面(view):包括以前的HTML+CSS,切HTML还是增强版的。比如: <br>
+				MVVM设计模式中的HTML支持变量:{{n}} <br>
+				MVVM设计模式中的HTML中还可以写分支和循环</li>
+			<li>数据模型(Model):是专门保存页面所需的变量和函数的对象 <br>
+				var data={m:1}; <br>
+				var methods = {
+				add(){...},
+				minus(){...}} <br>
+				问题:数据模型不会自己长腿跑到页面上</li>
+		</ul>
+		<ul>
+			视图模型(ViewModel):是专门自动保持页面与内存中数据同步的特殊对象(快递员)
+		</ul>
+		<ul>
+			Vue的绑定原理:Vue是如何实现MVVM设计模式的:
+			<li>一切都从new Vue()开始,将来任何Vue程序想要运行,必须有一个new Vue()才可以</li>
+			<li>new Vue()的第一件事:创建Vue类型的对象,并将模型对象的呢绒包裹进Vue类型的对象中,托管!
+				<ul>
+					<li>讲原data隐姓埋名,并未data中每个变量自动请保镖(定义访问器属性) <br>
+						访问器属性直接隶属于new Vue() <br>
+						结果:今后指向操作data中的变量,必须要经过保镖才能使用。一旦经过保镖,<br>我们就可以实时监控每个变量的变化</li>
+					<li>打散引入的methods,让methods中的所有方法,都直接隶属于new Vue()</li>
+					<li>结果methods中的方法和为data中变量请的保镖就评级了!所以,对象中,平级的方法,想使用平级的访问器属性,必须加"this."</li>
+				</ul>
+			</li>
+			<li>new Vue()做的第二件事:创建虚拟DOM树(笔试),并渲染页面内容
+				<ul>
+					<li>什么是虚拟DOM树:Vue扫描原HTML页面获得的仅保存可能发生变化的元素的简化版DOM树</li>
+					<li>何时创建:在new Vue()创建完对象后,自动扫描el:"#app"所指向的页面区域。在扫描 <br>
+						过程中仅找出可能发生变化的元素,保存在一个新创建的虚拟DOM树集合中</li>
+					<li>为什么创建虚拟DOM树:(好处)
+						<ul>
+							<li>内容少:仅包含可能发生变化的元素,其余元素都不包含</li>
+							<li>遍历快:因为内容少,所以遍历快</li>
+							<li>渲染效率高:只更新受影响的元素,不受影响的元素保持不变!</li>
+							<li>已经封装了DOM增删改查操作,避免了大量重复的编码!</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+
+				<ul>当在new Vue()中任何情况下修改了变量
+					<li>修改变量其实修改的是变量的访问器属性</li>
+					<li>修改访问器属性就会触发set()</li>
+					<li>触发set(),就会自动执行set中的通知函数()</li>
+					<li>通知发给虚拟DOM树,告知哪个变量的值发生了变化</li>
+					<li>虚拟DOM树遍历自己内部的元素,只找到受本次变化影响的元素</li>
+					<li>虚拟DOM树用已经封装好的DOM操作,值更新页面中受影响的元素</li>
+				</ul>
+			</li>
+			<li>总结:BUE绑定原理的实现其实就靠:访问器属性+虚拟DOM树</li>
+		</ul>
+	</fieldset>
+	<br>
+	<hr noshade='noshade'>
+	<br>
+	<fieldset>
+		<span id="Vuezhiling"></span>
+		<legend>
+			<p style="color: #41B883">Vue 指令</p>
+		</legend>
+		<span>
+			<p>总结</p>
+		</span>
+		<li>如果一个元素的<span style="color:skyblue">内容</span>发生变化:<span class="span-skyblue">{{xxx}}</span></li>
+		<li>如果一个元素的 <span class="span-skyblue">属性值</span> 可能发生变化: <span class="span-skyblue">:属性名="xxx"</span>
+		<li>如果控制<span class="span-skyblue">一个元素显示隐藏</span>:<span class="span-skyblue">v-show</span>="bool变量或条件表达式"</li>
+		<li>
+			如果两个元素 <span class="span-skyblue">二选一显示:v-if='条件' v-else</span>
+		</li>
+		<li>
+			如果多个元素 <span class="span-skyblue">多选一显示:v-if='条件1' v-else-if='条件2' ... v-else</span>
+		</li>
+		<li>
+			<span class="span-skyblue">
+				反复生成多个相同结构</span>不同内容的元素:<span class="span-skyblue">v-for="(elem,i) in 数组/类数组对象/" key = "i"</span>
+		</li>
+		<li>
+			绑定事件<span class="span-skyblue">@事件名</span> = '处理函数(实参值或$<span class="span-skyblue">event</span>)'
+		</li>
+		<li>
+			防止用户短暂看到{{}} : <span class="span-skyblue">v-cloak</span>
+		</li>
+		<li>
+			绑定一段HTML内容:<span style="color:skyblue">v-html</span>
+		</li>
+		</li>
+		<br><hr noshade='noshade'><br>
+		<p>VUE demo</p>
+
+		<div id="app_01">
+			<button @click="minus">-</button>&nbsp;&nbsp;<span>{{n}}</span>&nbsp;&nbsp;<button @click="add">+</button>
+		</div>
+		<script type="text/javascript">
+			// 2.定义所有页面上所需的数据和函数,要求:
+			// 2.1 页面中所需的变量和初始值,应该放在一个名为data的对象中
+			var data = {//仓库1,专门存变量
+				//页面上需要几个变量,data中就要定义几个变量
+				n: 1
+			};
+			// 2.2 页面中所需的实践处理函数,必须放在一个名为methods的对象中
+			var methods = {//仓库2,专门寸函数
+				//页面上需要几个页面处理函数,methods中就有几个方法
+				// methods中的方法只管操作data中的变量即可,不用关系变量将来放在那里,如何放
+				add() {
+					// 特别的要求:methods中的方法箱操作data中的变量,必须加"this."
+					this.n++
+				},
+				minus() {
+					this.n--;
+					this.n == 0 && (this.n = 1)
+				}
+			};
+			// 3.创建一个Vue类型的对象 - 快递员
+			new Vue({
+				el: '#app_01',//element:'选择器' 告诉快递员,负责哪个小区的业务
+				data,
+				methods,
+			});
+		</script>
+		<br><hr noshade='noshade'><br>
+		<p class="c-center">双花括号的运用{{}}</p>
+		<table cellpadding='20'>
+			<tr>
+				<td id="td-vue-index">vue中的{{}}可以代替页面元素,并且在data中进行替换</td>
+				<td>
+					<div id="app_02">
+						<h1>用户名:{{uname}}</h1>
+						<h2>性别:{{usex}}</h2>
+						<!-- 		<h3>下单时间:{{orderTime}}</h3>
+						<h3>小计:￥{{price*conut}}</h3>
+						<h3>今天星期{{?}}</h3> -->
+					</div>
+					<script type="text/javascript">
+						new Vue({//快递员
+							el: '#app_02',
+							data: {
+								uname: 'icecream',
+								usex: 'man',
+							},
+						})
+					</script>
+				</td>
+			</tr>
+		</table>
+		<br><hr noshade='noshade'><br>
+		<span id="v-bind"></span>
+		<p class="c-center">v-bind</p>
+		<table cellpadding='20'>
+			<tr>
+				<td id="td-vue-index">
+						<span>问题:使用{{}}可以让元素的内容随程序种的变量自动变化,但是{{}}可以让元素的属性值可以随程序中变量自动变化!</span><br>
+						<span><span style="color:green">解决</span>:用 v-bind指令代替{{}}</span><br>
+						<span>如何:<元素 v-bind:要变化的属性="变量或JS表达式"></span><br>
+						<span><b><span style="color: red">强调</span>:一旦使用v-bind,就不能写{{}}了!""就承担了{{}}的的作用。
+						<br>之前{{}}中写什么,v-bind就可以写什么</b></span><br>
+				</td>
+				<td>
+						<div id="app_03">
+							<button @click="do_1"> &lt; </button>
+							<img :src="pm25<100?'../logo/code.png':
+									pm25<200?'../logo/sousuo.png':
+										'../logo/id.png'" style="width: 70%">
+							<!-- 此处的 img v-bind : src 可以简写成 : src -->
+							<button @click="do_2"> &gt; </button>
+						</div>
+						<script type="text/javascript">
+							var methods = {
+								do_1() {
+									this.pm25 = Math.random() * 400
+								},
+								do_2() {
+									this.pm25 = Math.random() * 400
+								}
+							}
+				
+							new Vue({//快递员
+								el: "#app_03", //快递员负责的小区
+								data: { //仓库1: 专门保存小区中所有住户所需的变量
+									// pm25:Math.random()*400
+									pm25: 0
+								},
+								methods
+							})
+						</script>
+				</td>
+			</tr>
+		</table>	
+		<br>
+		<hr noshade='noshade'><br>
+		<span id="v-show"></span>
+		<p class="c-center">v-show 控制一个元素的显示隐藏</p>
+		<table cellpadding='20'>
+			<tr>
+				<td id="td-vue-index">
+						<span>如何使用:&lt;元素 v-show="bool 类型的变量或条件表达式"&gt;</span>
+						<span>结果:</span>
+						<li>当v-show所依赖的程序中的变量发生了变化,则重新计算并渲染v-show锁在的元素</li>
+						<li>如果v-show后的变量或条件表达式值为true,则v-show什么也不干,该元素就默认显示</li>
+						<li>如果v-show后的变量或条件表达式值为false,<br>则v-show自动为当当前元素添加display:none属性,则该元素隐藏!</li>
+					<br>
+				</td>
+				<td>
+						<div id="do_3">
+							<button @click='showIt_01()'>点我显示弹框</button>
+							<div id="pop_01" v-show="show">
+								<p><a href="javascript:;" @click="hideIt_01()">X</a></p>
+								您的浏览器版本过低
+							</div>
+						</div>
+						<script type="text/javascript">
+							new Vue({
+								el: "#do_3",
+								data: {
+									show: false //记录对话框是隐藏还是显示即可
+								},
+								methods: {
+									showIt_01() {
+										this.show = true;
+									},
+									hideIt_01() {
+										this.show = false;
+									}
+								}
+							})
+						</script><br>
+				</td>
+			</tr>
+		</table>
+		<br><hr noshade='noshade'><br>
+		<span id="v-if"></span>
+		<p class="c-center">控制两个元素二选一显示隐藏:v-if v-else</p>
+		<table cellpadding='20'>
+			<tr>
+				<td id="td-vue-index">
+						&lt;元素 1 v-if = "条件"&gt;&lt;/元素 1&gt;<br>
+						&lt;元素 2 v-else&gt;&lt;/元素 2&gt;<br>
+						强调:<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;和程序中的else一样!v-else后也不写条件 <br>
+						&nbsp;&nbsp;&nbsp;&nbsp;v-if和v-else两个元素之间禁止插入任何其他元素,v-if和v-
+						else两个元素必须紧紧相连 <br>
+						原理:<br>当v-if后一来的元素发生变化时,new Vue()会重新渲染这两个元素,重新决定谁显示谁不显示
+						<br>如果v-if后的条件之为true,则保留v-if的元素,删除v-else的元素
+						<br>如果v-if后的条件之为false,则删除v-if的元素,保留v-else的元素
+						<br>v-show vs v-if 区别: (高频笔试题) <br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="span-skyblue">V-show采用display:none方式隐藏元素,而不删除元素,不影响DOM树 -- 效率高</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="span-skyblue">V-if采用删除元素方式隐藏元素,会改变DOM树 -- 效率略低一点</span>
+						<br>
+						<br>
+				</td>
+				<td>
+					<div id="app_04">
+						<h3 v-if='isLogin==false'><a href="javascript:;" @click='login()'>登录</a>|<a href="javascript:;"
+								@click=login()>注册</a></h3>
+						<h3 v-else>Welcome dingding,<a href="javascript:;" @click='logout()'>注销</a></h3>
+					</div>
+					<script type="text/javascript">
+						new Vue({
+							el: "#app_04",
+							data: {
+								isLogin: false
+							},
+							methods: {
+								login() {
+									this.isLogin = true
+								},
+								logout() {
+									this.isLogin = false
+								}
+							}
+						})
+					</script>
+					</div>
+				</td>
+			</tr>
+		</table>	
+	<br><hr noshade='noshade'><br>
+		<span id="v-else-if"></span>
+		<p class="c-center">多个元素多选一显示:v-else-if</p>
+		<table cellpadding='20'>
+			<tr>
+				<td id="td-vue-index">
+					<br>如何实现: <br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;元素 1 v-if = "条件1"&gt;&lt;/元素 1&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;元素 2 <span class="span-skyblue">v-else-if</span> = "条件2"&gt;&lt;/元素 1&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;元素 3 <span class="span-skyblue">v-else-if</span> = "条件3"&gt;&lt;/元素 1&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&lt;元素 2 v-else&gt;&lt;/元素 2&gt;<br>
+					强调:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;v-if,v-else-if,和v-else两个元素之间禁止插入任何其他元素!<br>
+				</td>
+				<td style="text-align: center;">
+					<div id="app_05" style="margin: auto;">
+						<img v-if='pm25_02<100' id="test-img-01" src="..\logo\dibu.png">
+						<img v-else-if='pm25_02<200' id="test-img-01" src="..\logo\vue.png">
+						<img v-else-if='pm25_02<300' id="test-img-01" src="..\logo\sousuo.png">
+						<img v-else id="test-img-01" src="..\logo\id.png">&nbsp;&nbsp;&nbsp;&nbsp;
+						<button @click='do_4'><img src="..\logo\shuaxin.png" style="width: 20px;height: 20px"></button>
+					</div>
+					<script type="text/javascript">
+						var vm = new Vue({
+							el: '#app_05',
+							data: {
+								pm25_02: Math.random() * 400
+							},
+							methods: {
+								do_4() {
+									this.pm25_02 = Math.random() * 400
+								}
+							}
+						})
+					</script>
+				</td>
+			</tr>
+		</table>
+		<br><hr noshade='noshade'><br>
+		<span id="v-for"></span>
+		<p class="c-center">反复生成多个相同结构的元素 v-for</p>
+		<table cellpadding='20'>
+			<tr>
+				<td id="td-vue-index">
+					<span>如何实现:&lt;要反复生成的元素 v=for="(elem,i) of 数组"&gt;....&lt;/要反复生成的元素&gt;</span>
+					<ul>原理:
+						<li>通常要反复生成多个元素时,都会遍历程序中一个数组中每个元素。 <br>遍历到几个元素,就会反复生成几个相同结构的元素副本</li>
+						<li>每遍历一个元素of都会取出数组中当前元素之elem和当前下标位置i, <br>
+							被of取出的元素之elem和i,可以继续用于当前这个元素内容中的绑定</li>
+					</ul>
+					<ul>
+						强调
+						<li><span style="color: skyblue">elem和i只是变量名,可以随便改,但是前后顺序不能换</span></li>
+					</ul>
+					<span>其实 <span class="span-skyblue"> v-for of 统一了程序中的for of 和 for in</span>, vue 中的 v-for of 即可遍历数字下标的
+						<br>索引数组、类数组对象和字符串,还可以遍历自定义下标名称的对象 <br>和关联数组</span>
+					<span>v-for of还可以数数</span><br>
+					<span><span class="span-skyblue">此处为高频笔试题</span>缺点:默认情况下,如果原数组内容中某个元素值改变, <br><span class="span-skyblue">
+							v-for会将所有元素重新生成一遍</span></span><br>
+					<span>原因:v-for 默认生成的元素处内容之外几乎都是一模一样的。当修改数组中某一个元素时,<br>
+						v-for是不知道该修改那个元素对应元素副本的
+					</span>
+					<span><span style="color:green">解决</span>:今后,凡是使用v-for,都要同时绑定一个:key='i',<br> 且为:key 属性绑定的值应该 <br>
+						是不重复的下标</span><br>
+					<span class="span-skyblue"> &lt;要反复生成的元素 v=for="(elem,i) of 数组": key = "i" &gt;....&lt;/要反复生成的元素&gt; </span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;<span>好处:从此每个反复生成的元素副本上都有一个唯一的表示key属性。如果元素中某个位置的元素发生改变,<br>则v-for完全可以根据改变的元素的下标,<br>找到对应key属性值的一个元素副本,只更新一个元素即可!不必重新生成所有元素副本</span>
+					<span>其实v-for为了适应多数人的习惯,即可写成v-for of 也可以写成v-for in <br>
+						但是其实两者完全相同!没有任何差别!
+					</span>
+				</td>
+				<td>
+					<fieldset style="width: 300px">
+						<div id="app_06">
+							<ul>
+								<!-- 先只保留一个反复生成的元素当模板 -->
+								<li v-for="(elem,i) in names" :key="i">{{i+1}} - {{elem}}</li>
+							</ul>
+							<hr noshade='noshade'>
+							<ul>han的个人资料
+								<li v-for='(elem,i) in hanlong' :key="i">{{i}}-{{elem}}</li>
+							</ul>
+						</div>
+						<script type="text/javascript">
+							new Vue({
+								el: '#app_06',
+								data: {
+									names: ["han", "xiang", "sheng"],
+									hanlong: {
+										sname: "韩某",
+										sage: 100
+									},
+								}
+							})
+						</script>
+						<hr noshade='noshade'>
+						<div id="app_07">
+							<ul id="test-ul-01">
+								<li v-for='i in getNum' :key="i">{{i}}</li>
+							</ul>
+						</div>
+
+						<script type="text/javascript">
+							new Vue({
+								el: '#app_07',
+								data: {
+									getNum: 5
+								}
+							})
+						</script>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+		<br><hr noshade='noshade'><br>
+		<span id="shijianbangding"></span>
+		<p class='c-center'>事件绑定 v-on</p>
+		<table cellpadding='20'>
+			<tr>
+				<td id="td-vue-index">
+					<ul>
+						<li>
+							标准写法:&lt;元素 v-on:事件名="处理函数(实参值)"&gt;
+						</li>
+						<li>
+							原理:v-on:事件名 类似于HTML中的&lt;元素 on 事件名 = "xxx" &gt;,<br>
+							只不过所有事件处理函数
+						</li>
+						<li>"v-on" 可以简写为@
+							<ul>
+								<li>比如:&lt;元素 v-on:click='xxx'&gt; 可以简写成 &lt;元素 @click='xxx()'&gt;</li>
+							</ul>
+						</li>
+						<li>
+							如果事件处理函数不需要传参,则可以省略()
+							<ul>
+								<li>比如L&lt;元素 @click="xxx()"&gt; 可以简写为&lt;元素 @click='xxx'&gt;</li>
+							</ul>
+						</li>
+						<li>
+							获得事件处理函数:
+							<ul>
+								<li>
+									DOM中,元素.on事件名=function(e){...}
+								</li>
+								<li>
+									Vue中,完全一样!<br>
+									&lt;@事件名="处理函数()"&gt;<br>
+									methods{<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;处理函数(<span class="span-skyblue">e</span>){<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;比如,还可以获得鼠标位置:e.offsetX,e.offsetY<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;等等..<br>
+									&nbsp;&nbsp;}<br>
+									}
+								</li>
+							</ul>
+						</li>
+						<li>
+							<span class="span-skyblue">问题:如果既想传自定义实参值,又想获取对象</span>
+							<ul> <span class="span-skyblue">错误的方法1</span>
+								<li>
+									&lt;div id="test-div-01" @click='han("1")'&gt; <br>
+									methods:{han(e,a){
+								</li>
+							</ul>
+							<ul> <span class="span-skyblue">错误的方法2</span>
+								<li>
+									&lt;div id="test-div-01" @click='han("1")'&gt; <br>
+									methods:{han(a,e){
+								</li>
+							</ul>
+						</li>
+						<li>
+							正确:手动传入一个Vue已经封装好的<span class="span-skyblue">关键词$event</span>
+						</li>
+					</ul>
+				</td>
+				<td>
+					<fieldset style="width:300px">
+						<div id="app_08">
+							<div id="test-div-01" @click='han("1",$event)'>点击此DIV</div><br>
+							<div id="test-div-02" @click='han("2",$event)'>点击此DIV</div>
+						</div>
+						<script type="text/javascript">
+							new Vue({
+								el: "#app_08",
+								data: {},
+								methods: {
+									han(a, e) {
+										// alert(`${a}被点击`)
+										alert(`点在${a}的x:${e.offsetX},Y:${e.offsetY}的位置`)
+									}
+								}
+							})
+						</script>
+					</fieldset>
+				</td>
+			</tr>
+		</table>		
+		<br>
+		<hr noshade='noshade'><br>
+		<span id="v-vloak"></span>
+		<p class="c-center">防止用户短暂看到{{}} : v-cloak</p>
+		<table cellpadding='20'>
+			<tr>
+				<td id="td-vue-index">
+					<span>放置用户短暂看到{{}}</span><br>
+					<span>问题:尤其是移动端网络不稳定,极有可能出现js下载比网页延迟的情况</span><br>
+					<span>如果js中的new Vue()延迟加载,则HTML中的{{}}就会短暂的被用户一一看到</span><br>
+					<span><span style="color:green">解决</span>:v-cloak:</span><br>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;1.在内容中含有{{}}语法的元素 添加 <span
+							class="span-skyblue">v-cloak</span>&gt;{{}}&lt;/元素&gt;</span><br>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;2.必须手动在css中定义一个属性选择器配合v-cloak: <br>
+						&nbsp;&nbsp;&nbsp;&nbsp;[v-cloak]{display:none}</span>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;1.元素 v-cloak&gt;{{}}&lt;/元素&gt;</span><br>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;当new Vue()加载完成后,会自动删除元素上的v-cloak属性,<br>
+						被隐藏的元素就重新显示出来</span><br>
+					<span>问题:必需2步,html+css都要写才能实现</span><br>
+					<span><span style="color:green">解决</span>:用v-text指令,代替{{}}</span><br>
+					<span>如何使用:&lt;元素 v-text='变量或者JS表达式'&gt;&lt;/元素&gt;</span><br>
+					<span>原理:当new Vue()加载完,会用v-text的内容,代替当前元素的textContent内容</span><br>
+					<span>优点:因为内容中没有{{}},而且v-text是写在元素属性中的,所以即使new <br>Vue()用户也不可能看到半成品内容</span>
+					<span>缺点:{{}}至少有一个有点,可以喝其他固定文字轻松拼接在一起,不用写+或${},<br>
+						但是v-text后需要的是一个js表达式,在js表达式中如果要实现拼接要么用+,<br>
+						要么用模板字符串,不能直接连着写</span>
+				</td>
+				<td>
+					<fieldset style="width: 300px">
+						<div id="app_09">
+							<h3 v-cloak>用户名:{{uname}}</h3>
+							<h3 v-cloak>年龄:{{age}}</h3>
+						</div>
+						<span class="span-skyblue">刷新看效果</span>
+						<script type="text/javascript">
+							setTimeout(function () {
+								new Vue({
+									el: '#app_09',
+									data: {
+										uname: "han",
+										age: 18
+									},
+									methods: {
+									}
+								})
+							}, 1000)
+						</script>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+		<br><hr noshade='noshade'><br>
+		<span id="v-html"></span>
+		<p class="c-center">绑定一个段HTML代码片段内容:v-html</p>
+		<table cellpadding='20'>
+			<tr>
+				<td id="td-vue-index">
+				<span>
+					问题:{{}}和v-text虽然能绑定元素的内容,但是都是以textContent方式填充元素内容。 <br>
+					如果要填充内的内容是一段HTML片段,则交给textContent后,<br>
+					不会背浏览器解析为人能看的内容,而是保持HTML代码原样显示
+				</span>
+				<span><span style="color:green">解决</span>:今后还要绑定给的内容是一段HTML,<br>
+					都要用v-html代替v-text或{{}},因为v-html相当于innerHTML,
+					赋值一段HTML代码会先交给浏览器解析后,再现实给人看!</span>
+				</td>
+				<td>
+					<fieldset style="width: 400px">
+						<div id="app_10">
+							<h3>{{msg}}</h3>
+							<h3 v-text="msg"></h3>
+							<h3 v-html="msg"></h3>
+						</div>
+						<script type="text/javascript">
+							new Vue({
+								el: '#app_10',
+								data: {
+									msg: `<p>来自<a href="javascript:;">&lt;&lt;新华社&gt;&gt;</a>的消息<p>`
+								},
+								methods: {
+
+								}
+							})
+						</script>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+		<br><hr noshade='noshade'><br>
+		<span id="v-once"></span>
+		<p class='c-center'>只在首次渲染页面时绑定一次。之后即使变量值改变,也不回重新渲染元素内容 v-once</p>
+		<table cellpadding='20'>
+			<tr>
+				<td id="td-vue-index">
+					<span>如何使用:&lt;元素 <span style="color:skyblue"> v-once </span>&gt;<br>
+						<ul>原理:
+							<li>只在首次渲染页面时,更新页面的内容</li>
+							<li>但是该元素并不加入虚拟DOM树,今后即使变量值更新,也不回重新渲染该元素</li>
+						</ul>
+						<span>何时使用:如果我们确定一个元素的内容只在首次绑定一次,<br>
+							之后无需重复绑定时,都需要用v-once修饰。可减少之后绑定的元素个数,<br>
+							提高之后每次页面渲染的效率</span>
+					</span>
+				</td>
+				<td>
+					<fieldset style="width: 400px">
+						<div id="app_11">
+							<h3 v-once>页面加载完成时间:{{now}}</h3>
+							<h3>当前系统时间:{{now}}</h3>
+						</div>
+						<script type="text/javascript">
+							var vm = new Vue({
+								el: "#app_11",
+								data: {
+									now: new Date().toLocaleString()
+								}
+							})
+							setInterval(function () {
+								vm.now = new Date().toLocaleString()
+							}, 1000);
+						</script>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+		<br><hr noshade='noshade'><br>
+		<span id="v-per"></span>
+		<p class='c-center'>组织内容中的{{}}被vue编译,保持内容中的{{}}原样显示:v-pre</p>
+		<fieldset style="width: 390px">
+			<div id="app_12">
+				<h3 v-pre>Vue框架中采用{{变量}}语法来绑定元素的内容</h3>
+			</div>
+			<script type="text/javascript">
+				new Vue({
+					el: "#app_12",
+					data: {
+
+					}
+				})
+			</script>
+		</fieldset>
+		<br>
+		<hr noshade='noshade'><br>
+		<span id="v-model"></span>
+		<p class="c-center">双向绑定 v-model 并且使用了watch</p>
+		<table cellpadding='20'>
+			<tr>
+				<td id="td-vue-index">
+					<span>需求:在vue中获得用户在表单元素中输入的内容</span>
+					<span>问题:普通的:value="变量"这种绑定方式只能把程序中的变量值自动更新到页面上。<br>但是,当页面上更改内容时,这种:的绑定,<br>无法自动将页面的修改更新会程序中对应的变量上。<br>--单向绑定(只能从data到页面,无法从页面回到data中)<br>
+						什么是双向绑定:技能将data中的变量值自动更新到页面上,<br>又能将页面上的更改实时更新会data中的变量里</span><br>
+					<span>其实v-model 会给当前表单元素自动绑定onchange时间,<br>
+						当用户修改了表单元素的值后,会自动触发onchange事件。<br>
+						在onchange事件中自动调用绑定的变量的set()访问器更新data中的变量值</span><br><br>
+				</td>
+				<td>
+					<fieldset style="width: 280px">
+						<div id="app_13">
+							<input type="text" id='test_input_01' name="" v-model:value="keywords">&nbsp;&nbsp;&nbsp;<button
+								@click="search">百度一下</button>
+						</div>
+						<script type="text/javascript">
+							new Vue({
+								el: "#app_13",
+								data: {
+									keywords: ""
+								},
+								methods: {
+									search() {
+										if(this.keywords.trim()!==""){
+											console.log(`搜索${this.keywords}相关的内容`)
+										}
+									},
+								},
+								watch:{
+									keywords(){//当变量名keywords发生变化时,自动调用
+										this.search();
+									}
+								}
+							})
+						</script>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+		<br><hr noshade='noshade'><br>
+		<span id="v-model-radio"></span>
+		<p class="c-center">各种不同表单元素的双向绑定方式 v-model-radio</p>
+		<table cellpadding='20'>
+			<tr>
+				<td id="td-vue-index">
+					<ul>
+						<li>
+							<span class="span-skyblue">用户输入值</span>,值保存在元素value属性中
+							<ul>
+								<li>普通文本框 &lt;input type='text' <span class="span-skyblue">v-model:value</span>='变量'&gt;</li>
+								<li>密码框 &lt;input type='password' <span class="span-skyblue">v-model:value</span>='变量'&gt;</li>
+								<li>文本域 &lt;textarea <span class="span-skyblue">v-model:value</span>='变量'&gt;</li>
+							</ul>
+						</li>
+						<li>
+							<span class="span-skyblue">单选按钮</span>
+							<ul>
+								<li>特点:在 定义radio时,就已经定死了value,拱用户选择,而不是随机选择<br>
+									单选按钮:&lt;input type='radio' value='固定值' name='分组' <span
+										class="span-skyblue">v-model:checked='变量/条件表达式'</span>&gt;</li>
+							</ul>
+						</li>
+						<li>
+							原理
+							<ul>
+								<li>
+									从data中到页面绑定时:用变量值和value属性的值做比较。如果变量的值等于value属性的值,则当前radio选中。否则如果变量的值和value属性的值不相等,则当前radio不选中
+								</li>
+								<li>
+									如果用户在页面上改变了radio的选中状态,则如果选中该radio,则自动将value属性的值反向更新回data中的变量中
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				<td>
+					<fieldset style="width: 250px;">
+						<div id="app_14">
+							<label>
+								<input type="radio" name="test_radio_01" value="1" v-model:checked="sex">男
+							</label>
+							<label>
+								<input type="radio" name="test_radio_01" value="0" v-model:checked="sex">女
+							</label>
+							<h3>您选的是{{sex}}</h3>
+						</div>
+						<script type="text/javascript">
+							new Vue({
+								el: '#app_14',
+								data: {
+									sex: 0
+								}
+							})
+						</script>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+		<br><hr noshade='noshade'><br>
+		<span id="select"></span>
+		<p class="c-center">select元素</p>
+		<table cellpadding='20'>
+			<tr>
+				<td id="td-vue-index">
+					<ul>特点
+						<li>所有的备选的value都写死在每个备选项option上</li>
+						<li>当用户选择其中某一个option时,这个option的value又会成为整个select元素的value</li>
+					</ul>
+					<ul>
+						原理
+						<li>
+							从data中页面绑定时:用data中变量的值和每个option的value做对比。哪个option的value等于data中的变量的值,则当前option选中!
+						</li>
+						<li>
+							当用户切换选择不同的option时,会将当前需安装博那个的option的value保存回data中变量的值中
+						</li>
+					</ul>
+				</td>
+				<td>
+					<fieldset style="width: 250px;">
+						<div id="app_15">
+							<select v-model='city'>
+								<option value="bj">北京</option>
+								<option value="sh">上海</option>
+								<option value="hz">杭州</option>
+							</select>
+							<h3>您选的城市是:{{city}}</h3>
+							<img :src="`img/${city}.jpg`" style="width: 200px;height: 200px">
+						</div>
+						<script type="text/javascript">
+							new Vue({
+								el: "#app_15",
+								data: {
+									city: "bj"//保存选中的city的value
+								}
+							})
+						</script>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+		<br><hr noshade='noshade'><br>
+		<span id="fuxuankuang"></span>
+		<p class="c-center">复选框</p>
+		<table cellpadding='20'>
+			<tr>
+				<td id="td-vue-index">
+					<ul>
+						<li>
+							特点:没有value,单纯切换选中与不选中,所以v-model只要绑定cheked属性即可。<br>
+							切属性值应该为bool类型
+						</li>
+						<li>
+							如何使用:&lt;input type = 'checkebox' v-model:checked='变量'&gt;
+						</li>
+						<li>
+							原理
+							<ul>
+								<li>
+									从data中到界面中绑定时:变量值为true,checkbox就选中,变量值为false,checkbox就不选中
+								</li>
+								<li>
+									当用户切换checkbox的选中状时:会自动将checkbox新的checked状态更新回data中的变量中
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</td>
+				<td>
+					<fieldset style="width: 350px;">
+						<div id="app_16">
+							<input type="text" placeholder="请输入用户名" :disabled='isAgree==false'><br>
+							<input type="password" placeholder="请输入密码" :disabled='isAgree==false'><br>
+							<button :disabled='isAgree==false'>注册</button><br><br>
+							<label>
+								<input type="checkbox" v-model='isAgree'>同意本网站的管理条款
+							</label><br>
+						</div>
+
+						<script>
+							new Vue({
+								el:'#app_16',
+								data:{
+									isAgree:false,//记录是否同意
+								}
+							})
+						</script>
+					</fieldset>
+				</td>
+			</tr>
+		</table>
+<br><hr noshade='noshade'><br>
+<span style="color: #41B883;">简写:其实以上案例只写v-model即可,不用谢具体绑定哪个属性。<br>
+	因为v-model可自动根据所在的元素判断应该绑定哪个属性</span><br>
+<br><hr noshade='noshade'><br>
+<span id="jianshihanshu"></span>
+<p class="c-center">监视函数</p>
+<table cellpadding='20'>
+	<tr>
+		<td id="td-vue-index">
+			<ul>
+				<li>什么是监事函数:只要一个变量变化,就会自动调用的函数</li>
+				<li>何时使用:今后只要一个变量变化,希望立刻执行一项操作时</li>
+				<li>如何使用:
+					<ul>
+						<li>new Vue({<br>
+							el:'#app',<br><!-- 要监控的页面区域的父元素的选择器 -->
+							data:{..},<br><!--页面所需的所有变量-->
+							methods:{...},<br><!--页面所需的所有函数-->
+							watch:{<br><!--保存所有的监视函数-->
+									<!--要监视的哪个data中变量的名字(){..}-->
+
+							}
+						})</li>
+					</ul>
+				</li>
+			</ul>
+		</td>
+		<td>
+			<span>demo见<a href="#v-model">this_code</a></span>
+		</td>
+	</tr>
+</table>
+<br><hr noshade='noshade'><br>
+<span id="bangdingyangshi"></span>
+<p class="c-center">绑定样式</p>
+<table cellpadding='20'>
+	<tr>
+		<td id="td-vue-index">
+			<span>
+				修改一个元素的某一个css属性 
+				<ul>
+					<li>
+						不好的做法:把整个style也看做一是一个普通的字符串类型的属性:<br>
+						&lt;元素:style='变量'&gt;<br>
+						data:{变量:'css 属性1:值1;css 属性2:值2'}
+						问题:非常不便于修改其中某一个css属性
+					</li>
+					<li>
+						好的做法:把整个style看做一个对象,用对象语法绑定style的值<br>
+						&lt;元素:style='变量'&gt;<br>
+						&lt;data:&gt;css属性名1:'属性值';css属性名2:'属性值'&lt;/data:&gt;
+						<br>
+						<span>运行时:对象会被自动翻译为HTML中标准的style属性字符串:<br>
+						style='css属性名1:属性值;css属性名2:属性值2;...'</span>
+					</li>
+				</ul>
+				<br>
+			</span>
+		</td>
+		<td>
+			<span>demo 见源码</span>
+			<!-- <fieldset style="width: 300px;">
+				<div id="app_17">
+					<div v-if='Login_this==false'>
+						<img src="img/p5.png" alt="" style="position:fixed;
+												margin-left: -50px;
+												margin-top: -10px;" 
+												:style='imgStyle'>
+						<input type="button" style="width: 100px;border-radius:10px;" @click='login()' value="隐藏demo">
+						<span>使用方向键↑↓← →进行移动</span>
+					</div>
+					<div v-else>
+						<input type="button" style="width: 100px;border-radius:10px;" @click='logout()' value="显示小飞机demo">
+					</div>
+				</div>
+			<script>
+				var vm = new Vue({
+					el: "#app_17",
+					data: {
+						Login_this: true,
+						imgStyle:{
+							left:window.innerWidth/2+"px",
+							top:window.innerHeight-50+"px"
+				}
+					},
+					methods: {
+						login() {
+							this.Login_this = true
+						},
+						logout() {
+							this.Login_this = false
+						}
+					}
+				})
+				window.onkeydown=function(e){
+			if(e.keyCode==38){//如果按↑
+				vm.imgStyle.top=parseInt(vm.imgStyle.top)-10+"px";
+			}else if(e.keyCode==39){//按→
+				vm.imgStyle.left=parseInt(vm.imgStyle.left)+10+"px";
+			}else if(e.keyCode==40){//按↓
+				vm.imgStyle.top=parseInt(vm.imgStyle.top)+10+"px";
+			}else if(e.keyCode==37){//按←
+				vm.imgStyle.left=parseInt(vm.imgStyle.left)-10+"px";
+			}
+			}
+			</script>
+			</fieldset> -->
+		</td>
+	</tr>
+</table>
+<br><hr noshade='noshade'><br>
+<span id="vue-class"></span>
+<p class="c-center">修改一个元素的class来批量修改元素的样式</p>
+<table cellpadding='20'>
+	<tr>
+		<td id="td-vue-index">
+			<ul>
+				<li>
+					不好的方式:也是讲class属性看作一个普通的字符串来绑定<br>
+					问题:不便于修改其中某一个class
+				</li>
+				<li>
+					好的方式:依然是用对象语法来绑定class
+				</li>
+			</ul>
+			<ul>
+				如何使用
+				<li>
+					&lt;元素:class='变量'&gt;<br>
+					data:{<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;变量:{<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class名1:true 或者 flase<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class名2:true 或者 flase<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class名3:true 或者 flase<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;}
+					&nbsp;&nbsp;}
+				</li>
+				<li>
+					结果:只有值为true的class名,才会被自动翻译进元素最终的class属性字符串中
+				</li>
+				<li>
+					问题:一个元素上可能被多个class修饰,有的class是固定不变的,之后少部分class是来回切换的。<br>
+					解决:其实不带:的普通的class属性和动态绑定的:class属性可以并存!
+					<ul>
+						<li>固定不变的class,放在不带:class中</li>
+						<li>可能变化的class,放在带:的class绑定中</li>
+						<li>结果:两个class会合并为一个class字符串!</li>
+					</ul>
+				</li>
+				<li>
+					也可以简写:用<span class="span-skyblue">匿名对象</span>语法来绑定class<br>
+					&lt;元素:class='<span class="span-skyblue">{class名1,class名2,class名3}</span>'&gt;<br>
+					data:{<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class名1:true 或者 flase<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class名2:true 或者 flase<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class名3:true 或者 flase<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;}
+				</li>
+			</ul>
+		</td>
+		<td>
+			<fieldset style="width:500px;">
+				<style>
+					.success{
+						background-color: green;
+						color:greenyellow;
+						padding: 5px 10px;
+					}
+					.fail{
+						background-color:red;
+						color: white;
+						padding: 5px 10px;
+					}
+				</style>
+				<div id="app_18">
+					手机号:<input type="text" v-model='phone' @blur='vali'>
+					<span :class="{success,fail}">{{msg}}</span>
+				</div>
+				<script>
+					new Vue({
+						el:'#app_18',
+						data:{
+							phone:'',
+							success:false,
+							fail:false,
+							msg:''//控制span的错误提示
+						},
+						methods:{
+							vali(){
+								var reg=/^1[3-9]\d{9}$/;
+								if(reg.test(this.phone.trim())){
+									this.success=true;
+									this.fail=false;
+									this.msg='手机号格式正确'
+								}else{
+									this.success=false;
+									this.fail=true;
+									this.msg='手机号格式不正确'
+								}
+							}
+						},
+						watch:{
+							phone(){
+								this.vali()
+							}
+						}
+					})
+				</script>
+			</fieldset>
+		</td>
+	</tr>
+</table>
+<br><hr noshade='noshade'><br>
+<span id="zidingyizhiling"></span>
+<p class="c-center">自定义指令</p>
+<table cellpadding='20'>
+	<tr>
+		<td id="td-vue-index">
+			<ul>
+				<li>何时使用:如果我们需要的功能,vue官方没有提供,则可以自定义指令</li>
+				<li>
+					<ul>
+						<li>如何自定义指令:<br>
+							Vue.directive('指令名',{<br>
+							<!-- 插入后:当带有这个指令的元素渲染到页面中后自动触发的回调函数 -->
+							&nbsp;&nbsp;&nbsp;&nbsp;inserted(domElem){<br>
+							<!-- domElem形参变量会自动接住当前这个带有指令的DOM元素对象 -->
+							<!-- 对domElem执行vue中少有的DOM操作 -->
+							&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+							})
+						</li>
+						<li>
+							强调:定义指令时一定不要加v-前缀!
+						</li>
+					</ul>
+				</li>
+				<li>
+					如何使用指令:和使用官方的指令完全一样!<br>
+					强调:虽然<span class="span-skyblue">定义</span>指令时<span class="span-skyblue">不加v-</span>前缀,但是<span class="span-skyblue">使用</span>指令时,<span class="span-skyblue">必须加v</span>-前缀
+					&lt;元素 v-指令名&gt;
+				</li>
+				<li>原理:
+					<ul>
+						<li>
+							当new Vue()渲染页面过程中,加载到这个元素时,<br>
+							发现了一个不认识的指令,于是就回Vue大家庭中去寻找
+						</li>
+						<li>找到自定义指令后,会自动调用指令中的inserted函数,<br>
+							并自动将当前带有指令的DOM元素传入inserted函数中
+						</li>
+						<li>在inserted函数中就可以对当前这个DOM元素执行任何初始化的原生DOM操作!</li>
+					</ul>
+				</li>
+			</ul>
+		</td>
+		<td>
+			<fieldset style="width: 400px;">
+				<div id="app_19">
+					<span>输入框已注释,见源码</span>
+					<!-- <input type="text" v-myfoncus> -->
+					<br><button>百度一下</button>
+				</div>
+				<script>
+					Vue.directive('myfoncus',{
+						// 当当前元素插入到页面后
+						inserted(domElem){
+							// 让当前元素自动获得焦点
+							domElem.focus();
+						}
+					})
+					var vm = new Vue({
+						el:'#app_19',
+						data:{
+
+						}
+					})
+				</script>
+			</fieldset>
+		</td>
+	</tr>
+</table>
+<br><hr noshade='noshade'><br>
+<span id="jisuanshuxing"></span>
+<p class="c-center">计算属性</p>
+<table cellpadding='20'>
+	<tr>
+		<td id="td-vue-index">
+			<ul>
+				<li>
+					什么是计算属性:自己不保存属性值,而是依靠其他属性的值临时计算获得结果
+				</li>
+				<li>
+					为什么要有计算属性:因为不是所有页面上需要的东西,后台都会给我们现成的!<br>
+					有些数,,后台没给!但是,页面上却需要
+				</li>
+				<li>
+					何时使用:只要页面上的一个值,后台没有直接给,而是需要根据其他属性计算获得,<br>
+					就用计算属性<br>
+					比如:购物车总价,不会再数据库里保存,因,变化很频繁!<br>
+					但是购物车的总价缺可以根据遍历购物车中每个,品累加出来!
+				</li>
+				<li>
+					如何定义:
+						new Vue:({<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;el:'app',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;data:{...}<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;methods:{...}<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;watch:{...}<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class='span-skyblue'>computed</span>:{...}<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;计算属性本职是一个<span class='span-skyblue'>名称为属性名</span>的<span class='span-skyblue'>函数</span>:<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;属性名(){<br>
+						根据其他属性经过复杂的计算过程,获得结果<br>
+						<span class='span-skyblue'>return 计算结果</span>
+						&nbsp;&nbsp;}<br>
+					})<br>
+				</li>
+				<li>
+					如何使用计算属性:计算属性的用法和data中的普通,量完全一样!<br>
+					<span class="span-skyblue">强调:在使用计算属性是,一定不要加()</span>
+				</li>
+				<li>
+					computed vs methods <br>
+					<ul>
+						<li>用法:computer不需要加(),而methods需要添加</li>
+						<li>methods中的函数的执行结果,不会被缓存。只要重复调用一次,就会重新计算一次-效率低</li>
+						<li>computed中的计算属性的计算结果,会被vue缓存起来。只需要在首次加载时计算一次,然后即使反复</li>
+					</ul>
+				</li>
+				<li>
+					如何选择
+					<ul>
+						<li>如果更侧重于获得一个计算结果的值时,首选computed</li>
+						<li>如果更侧重于执行一项任务的步骤,而不关心结果时,首选methods</li>
+					</ul>
+				</li>
+			</ul>
+		</td>
+		<td>
+			<fieldset>
+				<div id="app_20">
+					<ul>
+						<li v-for='(p,i) of cart' :key='i'>{{p.pid}} | {{p.pname}} | ￥{{p.price.toFixed(2)}} | {{p.count}} | 小计:￥{{p.price*p.count}}</li>
+					</ul>
+					<h3>总价:￥{{total.toFixed(2)}}</h3>
+					<h3>总价:￥{{total.toFixed(2)}}</h3>
+				</div>
+				<script>
+				new Vue({
+					el:'#app_20',
+					data:{
+						cart:[
+							{pid:1,pname:'华为',price:5688,count:2},
+							{pid:2,pname:'小米',price:1999,count:3},
+							{pid:3,pname:'水果',price:9999,count:1},
+						]
+					},
+					methods: {
+						
+					},
+					computed: {
+						total(){
+							console.log(`计算了一次总价`)
+							var sum = 0;
+							for(var p of this.cart){
+								sum+=p.price*p.count;
+							}
+							return sum
+						}
+					}
+				})
+				</script>
+			</fieldset>
+		</td>
+	</tr>
+</table>
+</fieldset>
+<br><hr noshade='noshade'><br>
+<span id="guolvqi"></span>
+<fieldset>
+	<legend>
+		<span><p>过滤器</p></span>
+	</legend>
+	<table cellpadding='20'>
+		<tr>
+			<td id="td-vue-index">
+				<ul>
+				<li>什么是<span class='span-skyblue'>过滤器</span>:对变量的原始值进行加工后再显示出来的一种特殊<span class='span-skyblue'>函数</span></li>
+				<li>为什么:有些值不能直接给人看,必须加工后才能给人看 sex : 1 时间 : ms</li>
+				<li>何时使用:今后只要一个变量的原始值必须加工后才能给人看时,都要定义过滤器</li>
+				<li>如何使用:<br>
+					<span class='span-skyblue'>Vue.filter</span>('过滤器名',function(oldVal){//要求1:必须有一个形参变量,来接住变量的原始值,<br>
+					要求2 : 必须返回加工后的新值<br>
+					<span class='span-skyblue'>return</span> 新值})
+				</li>
+				<li>使用: <br>
+					&lt;元素&gt;{{变量 <span class="span-skyblue">|</span> 过滤器}}&lt;/元素&gt;<br>
+					原理:变量的原始值先传给过滤器的形参oldVal,在过滤器内部加工后,返回新值,显示绑定的位置上给人看
+				</li>
+			</ul>	
+			</td>
+			<td>
+				<fieldset style="width: 300px;">
+					<script>
+						Vue.filter('sexFilter',function(oldVal,language='cn'){
+							if(language=='cn'){
+								return oldVal==1?'男':'女'
+							}else{
+								return oldVal==1?'Male':'Female'
+							}
+						})
+						Vue.filter('sexIcon',function(oldVal){
+							if(oldVal=='1'){
+								return "♂"
+							}else if(oldVal=='0'){
+								return "♀"
+							}
+							else if(oldVal=='男' || oldVal=='Male'){
+								return oldVal+' ♂'
+							}else{
+								return oldVal+' ♀'
+							}
+						})
+					</script>
+					<div id="app_21">
+						<h3>性别:{{sex1 | sexIcon}}</h3>
+						<h3>性别:{{sex1 | sexIcon}}</h3>
+						<h3>性别:{{sex1 | sexFilter | sexIcon}}</h3>
+						<h3>性别:{{sex2 | sexFilter | sexIcon}}</h3>
+						<h3>性别:{{sex1 | sexFilter('cn') | sexIcon}}</h3>
+						<h3>性别:{{sex2 | sexFilter('en') | sexIcon}}</h3>
+					</div>
+					<script>
+						var vm = new Vue({
+							el:'#app_21',
+							data:{
+								sex1:1,
+								sex2:0
+							}
+						})
+					</script>
+				</fieldset>
+			</td>
+		</tr>
+	</table>
+</fieldset>
+<br><hr noshade='noshade'><br>
+<span id="axios"></span>
+<fieldset>
+<legend><p>axios</p></legend>
+<table cellpadding='20'>
+	<tr>
+		<td id="td-vue-index">
+			<ul>
+				<li>什么是axios:专门在各种平台发送ajax请求的函数库,基于promise
+					<ul>
+						<li>各种平台:axios不仅可用于vue中,而且还可以用于网页中,nodejs服务端都可以用</li>
+						<li>发送ajax请求:axios只专注于做好发送ajax请求这一件事</li>
+						<li>基于promise:axios请求回来自动触发的回调函数要放在promise的.then()中,不再使用回调函数的方式</li>
+					</ul>
+				</li>
+				<li>为什么使用:
+					<ul>
+						<li>今后只要发送ajax请求,都只用,句话就够了!再不会写xhr四步或者六步</li>
+						<li>jqurey中虽然有$.ajax()很好用,但是$.ajax这一个函数是混在整个jquery巨大的函数库内的,没有独立出来</li>
+						<li>Vue中几乎不用执行DOM操作,自然也就用不到jquery</li>
+						<li>如果只因为$.ajax()一个函数就把整个jquery全部函数库引入,有点得不偿失,小题大做</li>
+						<li>所以才需要第三方的专门发送ajax请求的独立的函数库</li>
+					</ul>
+				</li>
+				<li>
+					何时使用:今后在任何平台(框架、网页、服务器端nodejs...)发送ajax请求,都可用axios函数库
+				</li>
+				<li>如何使用
+					<ul>
+						<li>
+							引入axios.min.js:&lt;script&gt;
+						</li>
+						<li>
+							发送get请求:<br>
+							<span class="span-skyblue">axios.get(</span>'服务器接口地址',{<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;params:{参数1:值1,....}<br>
+						}<span class="span-skyblue">).then(result=>{</span><br>
+							//result<span class="span-skyblue">.data</span>里获得的就是服务器返回的结果(已经被json.parse()编译成对象了)<br>
+						<span class="span-skyblue">})</span>
+						</li>	
+						<li>
+							发送post请求:<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="span-skyblue">axios.post(</span>'服务器端口地址'.{参数1,值1,.....}<span class="span-skyblue">).then(result=>{</span><br>
+							//result<span class="span-skyblue">.data</span> 里获得的就是服务器端返回的结果(已经被json.parse()编译成对象了)<br>
+						<span class="span-skyblue">})</span>
+						</li>		
+						
+					</ul>
+				</li>
+				<li>
+					提前配置统一的服务器端口域名地址:<br>
+					axios.defaults.baseURL='http://szserver.applinzi,com';<br>
+					结果:<br>
+					axios.get('/index').then(result=>{})
+				</li>
+			</ul>
+		</td>
+		<td>
+			<fieldset style="width: 300px;">
+				<span>见源码,压缩了ajax四步,好东西,见源码</span>
+				<script>
+					axios.defaults.baseURL='http://xzserver.applinzi.com';
+					// axios.defaults.baseURL='http://www.kuaidi100.com';
+
+					axios.get('/index').then(result=>{
+						console.log(result.data);
+					})
+					// axios.get('/query',{params:{'type':'yunda','postid':'4304926503813'}}).then(result=>{
+					// 	console.log(result.data)
+					// })
+					// axios.post('/query',
+					// 	{type:'yunda',postid:'4304926503813'}).then(result=>{
+					// 		console.log(result.data);
+					// 	})
+
+					axios.get('/details',{params:{lid:5}}).then(result=>{
+						console.log(result.data);
+					})
+
+					axios.post('/users/signin',
+						{uname:'dingding',upwd:'123456'}).then(result=>{
+							console.log(result.data);
+					})
+
+				</script>
+			</fieldset>
+		</td>
+	</tr>
+</table>
+</fieldset>
+<br><hr noshade='noshade'><br>
+<span id="zujianshengming"></span>
+<fieldset>
+	<legend><p>组件生命周期</p></legend>
+	<table cellpadding='20'>
+		<tr>
+			<td id="td-vue-index">
+				<ul>
+					<li>
+						什么是组件的生命周期:一个组件或者一个"页面"夹在过程中所经历的每个阶段
+					</li>
+					<li>
+						为什么:因为有些初始化操作,是应该在页面或者组件加载完成后,,自动执行的!不需要人为操作
+					</li>
+					<li>
+						何时使用:今后只要希望在页面或者组件夹在完成后自动执行一些初始化任务时就需要用到组件或页面的生命周期
+					</li>
+					<li>
+						一个"页面"或组件夹在过程中需要经历那些阶段:(仅以new Vue()举例)<span class="span-skyblue">4个阶段</span><br>
+						<ul>
+							<li><span class="span-skyblue">创建(create)</span>阶段(必经阶段)
+								<ul>
+									<li>创建new Vue()</li>
+									<li>加载<span class="span-skyblue">data</span>对象到new Vue()中</li>
+									<li>暂时没有虚拟DOM树,可能无法执行DOM操作</li>
+								</ul>
+							</li>
+							<li><span class="span-skyblue">挂载(mount)</span>阶段(必经阶段)
+								<ul>
+									<li>根据el所值扫描页面,创建<span class="span-skyblue">虚拟DOM树</span>,并首次将data中的变量值渲染到页面显示</li>
+									<li>即有了data,又有了虚拟DOM树,既可以操作data中的变量,又可以对页面执行DOM操作</li>
+								</ul>
+							</li>
+							<li><span class="span-skyblue">更新(update)</span>阶段(只有在data中的变量被修改后才自动触发)</li>
+							<li><span class="span-skyblue">销毁(destroy)</span>阶段(只有手动调用$destroy()函数,销毁当前组件时才自动触发)</li>
+						</ul>
+					</li>
+					<li>生命周期钩子函数
+						<ul>
+							<li>什么是:在每个生命周期阶段自动触发的特定的回调函数(类似于DOM中的时间处理函数)</li>
+							<li>何时:只要希望在特定的生命周期阶段执行一些操作时,都要把操作写在对应的生命周期钩子函数内,才能自动触发</li>
+							<li>包括:<span class="span-skyblue">8个(每个阶段前后都有一个钩子函数)</span><br>
+								&nbsp;&nbsp;<span class="span-skyblue">beforeCreate()</span><br>
+								创建(create)<br>
+								&nbsp;&nbsp;<span class="span-skyblue">created()</span><br>//可发送axios请求,因为此时已经有data了,如果请求回来的数据,可以放在data中,并自动更新到页面上<br>
+														//小风险:万一axios请求回来的很快,而后续mount阶段没有执行完,此时是不能执行DOM操作的
+								&nbsp;&nbsp;<span class="span-skyblue">beforeMount()</span><br>
+								挂载(mount)<br>
+								&nbsp;&nbsp;<span class="span-skyblue">mounted()</span><br>//最稳妥的发送axios请求的时机:因为此时既有data,又有虚拟DOM树了<br>
+								&nbsp;&nbsp;<span class="span-skyblue">beforeUpdate()</span><br>
+								更新(update)<br>
+								&nbsp;&nbsp;<span class="span-skyblue">updated()</span><br>
+								&nbsp;&nbsp;<span class="span-skyblue">beforeDestroy()</span><br>
+								销毁(destroy)<br>
+								&nbsp;&nbsp;<span class="span-skyblue">destoryed()</span><br>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</td>
+			<td>
+				<fieldset>
+					<div id="app_22">
+						<ul>
+							<li v-for='(p,i) of products' :key='i'>
+								{{p.pid}} | {{p.title}} <a href="javascript:;" @click="del(i)">X</a>
+							</li>
+						</ul>
+					</div>
+					<script type="text/javascript">
+						var vm = new Vue({
+							el:"#app_22",
+							data:{
+								products:[],//先定义一个空数组等着接axios请求回来的6个商品对象
+							},
+							methods:{
+								del(i){
+									this.products.splice(i,1);//复习数组函数
+								},
+								destory(){
+									this.$destory()
+								}
+							},
+							beforeUpdate(){
+								console.log(`创建data对象前自动触发...`)
+							},
+							created(){
+								console.log(`创建data对象后自动触发...`)
+							},
+							beforeMount(){
+								console.log(`创建虚拟DOM树前自动触发...`)
+							},
+							mounted(){
+								console.log(`创建虚拟DOM树后自动触发...`)
+								console.log(`发送axios请求`)
+								axios.get(`http://xzserver.applinzi.com/index`).then(result=>{
+									console.log(`收到响应结果,并放入data中的products变量`)
+									this.products=result.data;//修改了data中的products,就会触发update阶段
+								})
+							},
+							beforeUpdate(){
+								console.log(`更新data中的变量前自动触发...`)
+							},
+							updated(){
+								console.log(`更新data中的变量后自动触发...`)
+							},
+							deforeDestroy(){
+								console.log(`在销毁当前组件或页面前自动触发...`)
+							},
+							destroy(){
+								console.log(`在销毁当前组件或页面后自动触发`)
+							}
+						})
+					</script>
+				</fieldset>
+			</td>
+		</tr>
+	</table>
+</fieldset>
+<br><hr noshade='noshade'><br>
+<span id="zujianhuakaifa"></span>
+<fieldset>
+	<legend><p>组件化</p></legend>
+	<ul>
+		<li>
+			什么是组件:用友专属的HTML+CSS+JS+数据的可重用的页面独立功能区域
+		</li>
+		<li>
+			为什么使用:重用,提高开发效率
+		</li>
+		<li>
+			何时使用:今后只要发现页面中有重要的区域,都要封装为组件
+		</li>
+		<li>
+			如何定义组件:<br>
+			Vue.component('组件名',{//其实组件对象就是缩微版的new Vue(),功能完全一样,只不过只监控组件这一小块区域而已<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;//组件成员:new Vue有什么成员,组件就可以有什么成员,除了个别有变化之外<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;//因为组件是可以复制并且反复使用的,所以组件的HTML应该称之为template<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<span class="span-skyblue">template:`&lt;唯一父元素 class='组件类名&gt;</span><br>
+			&nbsp;&nbsp;HTML片段`<br>
+			&lt;/唯一父元素&gt;`<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;data(){//今后每使用一次组件的副本,就自动调用data()函数,每次都可以返回一个新的data对象给当前组件副本,就保证了每个组件副本的data都是专属的,互不干扰的!<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return{//new Object()//相当于new Vue()中的data{}<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+			}<br>
+			其余的成员和new Vue完全一样了
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;methods:{...}<br>
+			
+		
+		})
+		</li>
+		<li>
+			如何使用组件:组件其实就是一个可重用的HTML标签而已。组件名就是标签名<br>
+			比如:Vue.component('my-accordion',{..})<br>
+			在页面上使用时:&lt;my-accordion&gt;&lt;/my-accordion&gt;
+		</li>
+		<li>原理
+			<ul>
+				<li>new Vue()在扫描页面时会发现不认识的标签,就会回Vue 家找有没有对应的自定义组件</li>
+				<li>如果找到自定义标签对应的组件,先复制组件的template中的HTML模板到页面中代替自定义标签所在的位置</li>
+				<li>自动调用一次组件的data()函数,为这个组件副本创建一个专属的data对象</li>
+				<li>为这次组件的副本创建一个专属的Vue类型对象(快递员)监控这一小块组件副本区域</li>
+			</ul>
+		</li>
+		<li>
+			组件化开发:将来所有的页面都是由多个组件组成的。将来作业面第一件事不是上来就写HTML代码,而是划分组建区域,然后,分头定义哥哥组件,最后再组成一个页面
+		</li>
+		<li>
+			为什么这么开发:
+			<ul>
+				<li>
+					便于大项目分工协作:<br>
+					问题:前端的工作量和代码量越来越大,但是操作系统有限制,一个文件只能同时被一个人编辑,无法分工协作！
+				</li>
+				<li>
+					解决:将一个大的页面,划分为多个小的组件,分给不同的人去并行开发,效率比一个人开发要高得多
+				</li>
+				<li>
+					松耦合:人与人之间互不影响。一个人出错,不会牵连大家
+				</li>
+			</ul>
+		</li>
+		<li>
+			何时使用:今后所有的框架,都是组件化开发
+		</li>
+		<li>
+			demo:仅仅以待办事项列表需求为例
+			<ul>
+				<li>
+					拿到页面划分组件:原则:
+					<ul>
+						<li>
+							按功能/区域划分
+						</li>
+						<li>
+							将每个组件在独立的js文件中创建一个组件对象
+						</li>
+						<li>
+							在上级组件中通过子组件标签的方式引入子组件
+						</li>
+						<li>
+							在html中先把所有组件js文件都引入页面(排名暂时不分先后),然后再&lt;div id='app'&gt;中加入父组件的标签
+						</li>
+						<li>
+							new Vue()会再次扫描刚替换上来的组件的HTML代码,如果又发现不认识的标签,则依然会继续回家找对应的子组件,替换父组件中子组件标签的位置
+						</li>
+						<li>
+							直到&lt;div id='app'&gt;中,所有的标签都是HTML标准固定的标签时,整个页面的加载才算完成
+						</li>
+					</ul>
+				</li>
+				<li>
+					问题:按理说子组件应该只在规定的父组件内才有效。但是Vue.component()创建的组件,可以在任意位置使用！
+				</li>
+				<li>
+					组件的分类:3类
+					<ul>
+						<li>
+							根组件:new Vue()负责扫描并监控整个页面
+						</li>
+						<li>
+							全局组件:Vue.component()创建的组件。可以放在任意位置,没有任何限制
+						</li>
+						<li>
+							子组件:规定只能在指定的一个父元素下使用的组件
+							<ul>
+								<li>
+									何时使用子组件:如果一个组件规定只能在一个父元素下才能使用时,都要创建为子组件
+								</li>
+								<li>
+									如何创建子组件:
+									<ul>
+										<li>
+											1.定义一个普通的组件对象:其实就是一个普通的js对象中包含组件的属性成员<br>
+											var 对象名 = {<br>
+											&nbsp;&nbsp;template:`..`,<br>
+											&nbsp;&nbsp;data({return{..}}),<br>
+											&nbsp;&nbsp;methods:{..},<br>
+											.......<br>
+												
+										}
+										</li>
+										<li>
+											在这个子组件的父组件中添加一个components成员:<br>
+											父组件:{<br>
+												template:`...`,<br>
+												data(){ruturn{....}},<br>
+												methods:{...},<br>
+												...,<br>
+												components:{<br>
+													子组件对象名
+												}<br>
+												
+											}
+										</li>
+										<li>结果:
+											<ul>
+												<li>
+													components中的组件,只能在当前父组件template中使用。一旦在当前父组件之外使用,就会报错
+												</li>
+												<li>
+													虽然子组件对象名采用的是驼峰命名,但是components会将驼峰命名自动翻译为分割,比如:components:{todoitem},在template中应用&lt;todo-item&gt;
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<fieldset style="width: 400px;">
+		<div id="app_23">
+			<ul>
+				<li>
+					<my-counter></my-counter>
+				</li>
+				<li>
+					<my-counter></my-counter>
+				</li>
+				<li>
+					<my-counter></my-counter>
+				</li>
+			</ul>
+		</div>
+		<script>
+			// 组件名:因为将来组件名会成为HTML中的标签名,又因为HTML不区分大小写,所以当组件名包含多个单词时,不要用驼峰命名法,应该用 - 来分隔每个单词,而且全小写
+			Vue.component('my-counter',{
+				template:`<div class='my-counter'>
+						<button @click='minus'>-</button>
+						<span>{{n}}</span>
+						<button @click='add'>+</button>
+						</div>`,
+						data(){//相当于以前的data
+							return {
+								n:1
+							}
+						},
+						methods:{
+							minus(){this.n--;this.n==0&&(this.n=1);},
+							add(){this.n++;}
+						}
+					}
+				),
+			new Vue({
+				el:'#app_23',
+				data:{
+
+				}
+			})
+		</script>
+	</fieldset>
+	<br>
+	<fieldset>
+		<legend><p>待办事项列表</p></legend>
+		<p>详细的见todo文件夹中的js与html</p>
+		<input type="text"><button>+</button>
+		<ul>
+			<li>1 - 吃饭 <a href="javascript:;">X</a></li>
+			<li>2 - 睡觉 <a href="javascript:;">X</a></li>
+			<li>3 - 打豆豆 <a href="javascript:;">X</a></li>
+		</ul>
+	</fieldset>
+</fieldset>
+<br><hr><br>
+<span id="zujianchuanzhi"></span>
+<fieldset>
+	<legend><p>组件间传值</p></legend>
+	<ul>
+		<li>
+			问题:组件化开发中,子组件无权使用父组件data中的数据,因为组件的数据都是专属的
+		</li>
+		<li>
+			解决:组件间传值:4种方式:
+			<ul>
+				<li>父传子</li>
+				<li>子传父</li>
+				<li></li>
+				<li></li>
+			</ul>
+		</li>
+	</ul>
+</fieldset>
+<br><hr><br>
+<span id="SPA"></span>
+<fieldset>
+	<legend><p>SPA - Single Page Application - 单页面应用</p></legend>
+	<ul>
+		<li>什么是单页面应用:这个应用程序只有一个完整的HTML页面。其实它所谓的"页面",其实还是页面汇总一个片段/组件而已。所谓的"页面跳转",其实是在一个HTML页面中切换不同的片段内容/组件而已</li>
+		<li>
+			多页面应用 vs 单页面应用
+			<table border="2" style="border-color: skyblue;width: 700px;text-align: center;">
+				<tr>
+					<td></td>
+					<td>多页面应用</td>
+					<td>单页面应用</td>
+				</tr>
+				<tr>
+					<td>请求次数</td>
+					<td>请求次数多,因为每更换一次页面,都要向服务器重新发起请求</td>
+					<td>请求次数少,因为首次请求就将所有页面组件一次性下载到本地,之后及时切换'页面',只不过是更换本地不同的组件展现而已,无需向服务器重新发送请求</td>
+				</tr>
+				<tr>
+					<td>加载效率</td>
+					<td>效率低,因为每更换页面,都要重建整个DOM树</td>
+					<td>效率高,因为每次更换页面都不需要重建DOM树,只更新原DOM树中部分组件节点即可</td>  
+				</tr>
+				<tr>
+					<td>公共资源重复使用</td>
+					<td>即使所有页面都需要的css和js文件,每次更换页面时,都需要重新下载,增加了请求次数,且浪费了流量</td>
+					<td>即使所有页面都需要的css和js文件,仅在首次加载第一个页面时请求一次,之后个更换页面,因为引用公共文件的内容部分没有改变,所以不会重新请求这些多页面公用的css和js,就减少了请求次数,而且节约了网络流量</td>
+				</tr>
+				<tr>
+					<td>页面过度动画</td>
+					<td>因为同一时刻,只能保存一张网页,所以无法实现页面过渡动画</td>
+					<td>因为所有组件已经在客户端内存中,主页面完全有可能同时加载两个组件,定义css动画效果</td>
+				</tr>
+			</table>
+		</li>
+		<li>
+			缺点:首屏加载太慢！
+			<ul>
+				<li>因为:即使用户不一定会看后续页面,第一次也都要把所有页面组件的内容都要下载下来--首次下载内容太多</li>
+				<li>解决:
+					<ul>
+						<li>异步延迟加载:（脚手架默认选择）
+							<ul>
+								<li>打包时，不要把所有组件打包在一个打的文件中，应该每个组件分开打包未单独的文件</li>
+								<li>首屏加载时，只强制加载第一个组件的内容，后续组件由底层程序异步下载</li>
+								<li>优点:不影响首屏加载速度，又能实现单页面应用的效果</li>
+								<li>缺点:因为即使用户不看其他组件的内容，也会下载其他的组件，浪费网络流量</li>
+							</ul>
+						</li>
+						<li>
+							懒加载:(可以通过配置脚手架实现)
+							<ul>
+								<li>打包时，不要吧所有组件打包在一个大的文件中，应该每个组件分开打包未单独的文件</li>
+								<li>首屏加载时，不会下载其他组件</li>
+								<li>只有当用户确实切换到其他某个组件时，才临时下载用户想看的组件</li>
+								<li>优点:省流量</li>
+								<li>缺点:下载速度比加载本地组件稍慢，</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				
+			</ul>
+		</li>
+		<li>
+			何时使用：以后所有的网页都要通过单页面应用的形势使用
+		</li>
+		<li>
+			如何实现单页面应用
+		</li>
+	</ul>
+</fieldset>
+</div>
+</body>
+<span id="code_here"></span>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 跨域错误后通过访问服务器的方式，打开页面 -->
+	<!-- 1 创建静态资源文件夹 -->
+	<!-- 2 把页面放在文件夹中 -->
+	<!-- 3 在app.js静态资源托管 -->
+	<!-- 4 使用服务器打开页面 -->
+<script type="text/javascript">
+	function show(){
+		//1.创建异步对象xhr
+		var xhr = new XMLHttpRequest();
+		//4.接受响应，创建监听
+		xhr.onreadystatechange = function(){
+			// 筛选，在请求状态为4的时候(代表响应接收完毕)
+			// 同事筛选，接收的这个响应是正确的响应(响应状态码是200)
+			if(xhr.readyState==4&&xhr.status==200){
+				// xhr.readyState属性
+				// 用于表示xhr对象的请求状态，一共5个状态
+				// 0:请求尚未初始化
+				// 1:已经打开链接，请求正在发送
+				// 2:接收响应头
+				// 3:接收响应主题
+				// **4:接收响应成功 **<----
+				var r = xhr.responseText;
+				di.innerHTML=result;
+			};
+		};
+		//2.创建请求,打开链接
+		xhr.open("get","http://127.0.0.1:8080/test/ajax",true);
+		// open("请求方法，必须放在字符串当中","请求的url",是否发送异步请求,true - 异步， false - 同步)
+		//3.发送请求
+		// send()参数，如果请求没有请求主体，可以使用null，或者不填，如果有请求主体，参数就为请求主体
+		xhr.send();
+	};
+</script>
+</head>
+<button onclick="show()">提交请求</button>
+<body>
+</body>
+</html>

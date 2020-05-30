@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  性别:
+  <label><input type="radio" value="1" name="sex" v-model:checked="sex">男</label>
+  <label><input type="radio" value="0" name="sex" v-model:checked="sex">女</label>
+  <h3>您选的是:{{sex}}</h3>
+</div>
+<script>
+var vm=new Vue({
+  el:"#app",
+  data:{
+    sex:0
+  }
+})
+</script>
+</body>
+</html>

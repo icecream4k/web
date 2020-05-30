@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/vue.js"></script>
+</head>
+<body>
+  <div id="app"><!--小区-->
+    <!--如果pm25<100,则src为img/1.png
+        否则如果pm25<200,则src为img/2.png
+        否则如果pm25<300,则src为img/3.png
+        否则src为img/4.png-->
+    <h3>src:{{pm25<100?'img/1.png':
+              pm25<200?'img/2.png':
+              pm25<300?'img/3.png':
+                       'img/4.png'}}</h3>
+    <img :src="pm25<100?'img/1.png':
+                pm25<200?'img/2.png':
+                pm25<300?'img/3.png':
+                         'img/4.png'">
+  </div>
+  <script>
+    new Vue({//快递员
+      el:"#app", //快递员负责的小区
+      data:{ //仓库1: 专门保存小区中所有住户所需的变量
+        pm25:Math.random()*400
+      }
+    })
+  </script>
+</body>
+</html>
