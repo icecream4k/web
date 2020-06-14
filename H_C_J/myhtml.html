@@ -1612,7 +1612,8 @@ multipart/form-data 允许提交文件 -->
 	<fieldset>
 		<legend>flex布局</legend>
 		<style>
-			.flex_01 {
+			.flex_01{
+				/* border:10px; */	
 				display: flex;
 				justify-content: flex-end;
 				/* [主轴]靠右对齐 --> flex-end靠右对齐 center居中对齐 space-evenly平分空间 space-between两端对齐*/
@@ -1620,7 +1621,7 @@ multipart/form-data 允许提交文件 -->
 				/* [交叉轴]靠下对齐 --> flex-end靠下对齐 center居中对齐 */
 			}
 
-			.flex_01>div {
+			.flex_01>div{
 				width: 200px;
 				height: 100px;
 				background-color: #afa;
@@ -1635,20 +1636,33 @@ multipart/form-data 允许提交文件 -->
 		</div>
 		<br>
 		<hr><br>
+		<style>
+			.flex_02{
+				width: 200px;
+				height: 500px;
+				display: flex;
+				flex-direction: column;
+			}
+			.flex_02>div{
+				width: 200px;
+				height: 100px;
+				background-color: #afa;
 
+				
+			}
+		</style>
 		<span>列模式</span>
 		<div class='flex_02'>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
+			<div style="flex: 1;"></div>
+			<div style="flex: 2;"></div>
+			<div style="flex: 1;"></div>
 		</div>
 	</fieldset>
 
 
-
-
-
+	<br>
+	<br>
+	<br>
 	<span id="code_here"></span>
 </body>
 

@@ -1,109 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <link rel="icon" href="../picture/logo/doughnut.png">
-    <link rel="stylesheet" type="text/css" href="../css/MyProject.css">
-    <meta charset="UTF-8">
-    <title>MyProject</title>
-    <script src="../js/vue.js"></script>
-    <!-- <script src="../js/assembly/Navi_left.js"></script>
-    <script src="../js/assembly/Navi_center.js"></script>
-    <script src="../js/assembly/Navi_right.js"></script>
-    <script src="../js/project.js"></script>
-    <script src="../js/assembly/Navigation-map.js"></script> -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-</head>
-
-<body id='body'>
-    <!-- 导航页 -->
-    
-    <div id="head_01_div">
-        <!-- <Navigationmap></Navigationmap> -->
-        <!-- <div class="Navigationmap_01">
-        </div> -->
-
-        <!-- 左 -->
-        <div id="head_left_01_div">
-            <!-- <ul id="head_left_ul">
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-                <li>test</li>
-            </ul> -->
-            <div style="background-color: purple;">test</div>
-            <div style="background-color: purple;">test</div>
-            <div style="background-color: purple;">test</div>
-            <div style="background-color: purple;">test</div>
-            <div style="background-color: purple;">test</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>韩某人科技</title>
+    <link rel="icon" href="../images/logo/doughnut.png" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css"
+    />
+  </head>
+  <body>
+    <header class="logo">
+      <nav>
+        <a href="#">首页</a>
+        <a href="#">关于我们</a>
+        <a href="#">成功案例</a>
+        <a href="#">服务流程</a>
+        <a href="#">团队介绍</a>
+        <a href="#">公司动态</a>
+        <i class="fas fa-search"></i>
+      </nav>
+      <div class="burger">
+        <div class="burger-line1"></div>
+        <div class="burger-line2"></div>
+        <div class="burger-line3"></div>
+      </div>
+    </header>
+    <div class="glide">
+        <div class="glide__track" data-glide-el='track'>
+            <div class="glide__slides">
+                <div class="glide__slide">
+                    <div class="slide-caption">
+                        <h1>用创新点缀人生，让科技融入理想</h1>
+                        <h3>科技创新大平台，智慧生活新引擎。艺考科技进步推进经济跨越式发展。用创新点缀人生，让科技融入理想</h3>
+                        <button class="explore-btn">探索更多</button>
+                        <div class="backdrop"></div>
+                        <img src="../images/people-in-couch-1024248.jpg" alt="">
+                    </div>
+                </div>
+                <div class="glide__slide">
+                    <div class="slide-caption">
+                        <h1>科技改变世界</h1>
+                        <h3>立足科学发展，着力自主创新。加速科技进步，为全市经济社会发展提供有力支撑。凝聚科技创意，成就创新梦想</h3>
+                        <button class="explore-btn">探索更多</button>
+                        <div class="backdrop"></div>
+                        <video src="../videos/working-man.mp4" muted autoplay loop></video><!-- muted静音[浏览器要先设置静音] autoplay自动播放 loop循环播放-->
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- 中 -->
-        <div>
-            <input type="text">
-            <button>搜索</button>
+        <div class="glide__arrows" data-glide-el='controls'>
+            <button class="glide__arrow glide__arrow--left" data-glide-dir='<'><</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir='>'>></button>
         </div>
-        <!-- 右 -->
-        <div>
-
+        <div class="glide__bullets" data-glide-el='controls[nav'>
+            <button class="glide_bullet" data-glide-dir='=0'></button>
+            <button class="glide_bullet" data-glide-dir='=1'></button>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- 主体页 -->
-    <div id="body_01_div"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- 底部页 -->
-    <div id="foot_01_div"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script>
-        new Vue({
-            el: '#head_01_div',
-        })
-    </script>
-</body>
-
+    <script src="../js/index.js"></script>
+  </body>
 </html>
