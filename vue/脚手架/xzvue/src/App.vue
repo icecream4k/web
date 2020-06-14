@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link><span>&nbsp;|&nbsp;</span>
-      <router-link to="/about">About</router-link><span>&nbsp;|&nbsp;</span>
-      <router-link to='/404'>404test</router-link>
-    </div>
+    <my-header></my-header>
     <router-view/>
   </div>
 </template>
