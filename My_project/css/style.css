@@ -99,6 +99,9 @@ header .burger{
     text-align: left;
 }
 
+.slide-caption > *{
+    opacity: 0;
+}
 
 .backdrop{
     background: var(--backdrop-color);
