@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 
 //测试案例开始
 import Header from "../components/MintUI/Header.vue";
+import Button from '../components/MintUI/Button.vue';
 //测试案例结束
 Vue.use(VueRouter);
 
@@ -17,6 +18,11 @@ const routes = [
     path: "/header",
     // name: "Home",暂时可以没有
     component: Header,
+  },
+  {
+    path: "/button",
+    // name: "Home",暂时可以没有
+    component: Button,
   },
   {
     path: "/about",

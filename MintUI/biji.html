@@ -79,7 +79,11 @@
         <fieldset>
             <legend>使用Mint UI</legend>
             <ul>CSS组件
-                <li>Header组件<br>Header组件用于实现顶部导航,其语法结构是:<br>&lt;mt-header title='标题信息' fixed&gt;&lt;/mt-header&gt;<br>title属性用于设置标题信息,字符类型<br>fixed属性用于控制是否固定在顶部,布尔类型</li>
+                <li>Header组件<br>
+                    Header组件用于实现顶部导航,其语法结构是:<br>
+                    &lt;mt-header title='标题信息' fixed&gt;&lt;/mt-header&gt;<br>
+                    title属性用于设置标题信息,字符类型<br>fixed属性用于控制是否固定在顶部,布尔类型<br>
+                    &lt;mt-header&gt;子元素可以通过slot='left'或slot='right'控制子元素显示的位置</li>
             </ul>
             <hr>
             <ul>
@@ -102,8 +106,36 @@
             <hr>
             <ul>
                 Reset.css<br>
-                每个浏览器对于HTML元素都有默认样式,但是这些默认样式在不同的浏览器中是不相同的，为了保证所有浏览器对HTML元素默认样式是一致的，建议使用reset.css对HTML元素的默认样式进行重置
-
+                每个浏览器对于HTML元素都有默认样式,但是这些默认样式在不同的浏览器中是不相同的，
+                为了保证所有浏览器对HTML元素默认样式是一致的，建议使用reset.css对HTML元素的默认样式是一致的，
+                建议使用 reset.css对HTML元素的默认样式进行重置
+            </ul>
+            <hr>
+            <ul>
+                Button组件
+                <li>
+                    Button组件用于实现按钮，其语法结构是:<br>
+                    &lt;mt-button type='按钮样式' size='尺寸' icon='图标' disabled&gt;<br>....<br>
+                    &lt;/mt-button&gt;<br>
+                    <ul>按钮样式
+                        <li>default(默认)</li>
+                        <li>primary(主要)</li>
+                        <li>danger(危险)</li>
+                    </ul>
+                    <ul>
+                        <li>small(小的)</li>
+                        <li>normal(标准)</li>
+                        <li>large(大的)</li>
+                    </ul>
+                    <ul>
+                        <li>back(返回)</li>
+                        <li>more(更多)</li>
+                        <li>自定义图标</li>
+                    </ul>
+                    <ul>
+                        disabled属性用于控制按钮是否为禁用的状态，布尔类型
+                    </ul>
+                </li>
             </ul>
         </fieldset>
 </body>
