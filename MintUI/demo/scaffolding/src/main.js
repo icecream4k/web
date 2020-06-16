@@ -13,9 +13,10 @@ Vue.config.productionTip = false
 import MintUI from 'mint-ui';
 //导入样式表文件
 import "mint-ui/lib/style.min.css";
-
 //通过Vue.use()方法使用插件
 Vue.use(MintUI);
+
+
 
 new Vue({
   router,

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>组件库</title>
+    <link rel="icon" href="../logo/code.png">
     <link rel="stylesheet" href="./biji.css">
 </head>
 <body class='body'>
@@ -12,7 +13,7 @@
             <!-- <legend>什么是组件库</legend> -->
             <ul>什么是组件库
                 <li>
-                    组件是企业为提升开发效率而开发，对于相关的样式及交互的封装，其提供了简单的调用方式和接口，让开发者可以便捷实用其提供的功能来完成业务需求。实现了一次封装，多次调用
+                    组件是企业为提升开发效率而开发,对于相关的样式及交互的封装,其提供了简单的调用方式和接口,让开发者可以便捷实用其提供的功能来完成业务需求。实现了一次封装,多次调用
                 </li>
             </ul>
             <ul>组件库的优势
@@ -64,6 +65,46 @@
                     <li>npm install --save mint-ui</li>
                     <li>提示：脚手架安装的依赖信息存储在package.json文件的[dependencies]当中</li>
                 </ul>
+        </fieldset>
+        <br><hr><br>
+        <fieldset>
+            <legend>Mint UI的构成</legend>
+            <ul>
+                <li>CSS组件</li>
+                <li>JS组件</li>
+                <li>表单组件</li>
+            </ul>
+        </fieldset>
+        <br><hr><br>
+        <fieldset>
+            <legend>使用Mint UI</legend>
+            <ul>CSS组件
+                <li>Header组件<br>Header组件用于实现顶部导航,其语法结构是:<br>&lt;mt-header title='标题信息' fixed&gt;&lt;/mt-header&gt;<br>title属性用于设置标题信息,字符类型<br>fixed属性用于控制是否固定在顶部,布尔类型</li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    在src/components目录下创建MintUI目录
+                </li>
+                <li>
+                    创建组件文件，书写相对应的标签--template,script,style
+                </li>
+                <li>
+                    在根组件或父组件文件内，导入创建的组件文件
+                </li>
+                <li>
+                    设置路由信息
+                </li>
+                <li>
+                    创建连接或绑定事件，以访问路由
+                </li>
+            </ul>
+            <hr>
+            <ul>
+                Reset.css<br>
+                每个浏览器对于HTML元素都有默认样式,但是这些默认样式在不同的浏览器中是不相同的，为了保证所有浏览器对HTML元素默认样式是一致的，建议使用reset.css对HTML元素的默认样式进行重置
+
+            </ul>
         </fieldset>
 </body>
 </html>
