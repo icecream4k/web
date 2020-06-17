@@ -100,6 +100,12 @@ overflow: auto}
 	background-color: yellow}
 
 /*类选择器*/
+.bjimg{
+	width: 500px;height: 1000px;background-color: #faa;
+	background-image:url(../img/yaoming.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
 .test-input-01:focus{background-color: yellow}
 .font-italic{font-style: italic}
 /*----------------------------------*/

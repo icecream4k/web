@@ -1,7 +1,7 @@
 function saoma_01(){
 	let c = document.getElementById('denglu_div_01')
 	c.innerHTML = `
-	<iframe src="material\\denglu_01.html" scrolling="no" height="350px"
+	<iframe src="./denglu_01.html" scrolling="no" height="350px"
 	 width="355px"
 	 frameborder="0"
 	 margin-left:-5px
@@ -11,7 +11,7 @@ function saoma_01(){
 function saoma_02(){
 	let c = document.getElementById('denglu_div_01')
 	c.innerHTML = `
-	<iframe src="..\\material\\denglu_02.html" scrolling="no" height="350px"
+	<iframe src="./denglu_02.html" scrolling="no" height="350px"
 	 width="355px"
 	 frameborder="0"
 	 margin-left:-5px
