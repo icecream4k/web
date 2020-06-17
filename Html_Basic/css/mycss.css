@@ -1,0 +1,127 @@
+/*css样式不能用分号做区隔*/
+/**{margin: 0;padding: 0}*/
+span.c-font-36{
+	border:1px solid black;
+}
+legend{
+	color: red;
+	font-weight: bold;
+}
+fieldset,div{
+	border-radius:10px;
+}
+ul a{color: red}
+.c-center{text-align: center}
+div p span{color: red}
+div>span{font-style: italic}
+div>#test-span-02{color: red;font-family:华文彩云;font-weight:bold;}
+#d1 .c2 #d3{color:blue}
+div #d2 .c3{color:purple;background-color: white}
+#d1 #d2 #d3{color:yellow}
+html{font-size: 16px}
+#test-div p>a{font-size:30}
+/*匹配链接未访问时的状态 - :link*/
+#test-div-01>a:link{color: yellow}
+/*匹配链接已访问后的状态 - :visited*/
+#test-div-01>a:visited{color:green}
+/*鼠标悬停的状态 - :hover*/
+#test-div-01>a:hover{font-size:60px}
+/*鼠标激活的状态 - active*/
+#test-div-01>a:active{color:orange;}
+/*b{color:purple;background-color: pink}*/
+/*i{background-color: white;color:yellow;}*/
+/*i{background-color: pink;color:yellow;}*/
+#test-div-02>a:link{color: pink}
+#test-div-02>a:visited{color:orange}
+#test-div-02>a:hover{color:red}
+#test-div-02>a:active{color:green}
+#test-div-04>span{font-size: 0.1rem;
+	background-color: white}
+/*==============================================================*/
+
+/*id选择器*/
+#test-a-01{text-decoration:none;}
+#test-a-01:link{color: #515151}
+#test-a-01:visited{color: #515151}
+#test-a-01:hover{color: #151515;text-decoration:underline}
+#test-a-01:active{color: #151515;text-decoration:underline}
+#test-input-04{
+	height:30px;width: 310px;border-radius:10px;
+	height:30px;width: 310px;border-radius:10px;
+	background-repeat: no-repeat;
+	background-position:300px 50%;
+	background-size: 25px;
+	padding-left: 20px;
+}
+#test-input-03{height:45px;width: 100%;
+	background-color: #27b0f6;padding:0;
+	border-radius:10px;
+	/*margin-left: 3px;*/
+	/*letter-spacing:10px;*/
+	/*text-align: right;*/
+	font-weight:bold;
+}
+#test-input-03:active{background-color: #209ddc}
+#test-input-05{height:45px;width:100%;
+	background-color: #27b0f6;padding:0;
+	border-radius:10px;margin-left: 3px;
+	font-weight:bold;
+}
+#test-input-05:active{background-color: #209ddc}
+#test_img_01:active{width:300px;height:20px;}
+#test_p_css{
+	color:purple;
+	background-color: yellow;
+	font-style: italic;
+}
+/*----------------------------------*/
+#test-div-05{height:200px;
+	background-color: purple;
+	max-width: 1000px;min-width:400px}
+#test-div-03{
+	width: 200px;height: 200px;
+	background-color: purple
+}
+/*----------------------------------*/
+#test-p-01{width: 100px;height: 100px;
+	background-color: yellow}
+#test-p-02{width: 100px;height:100px;
+	background-color: yellow;
+/*对于溢出部分的控制
+overflow: visible===>溢出部分可见
+overflow: hidden===>溢出部分不可见
+overflow: scroll===>溢出部分添加滚动头条-但是不管溢出不溢出,滚动条都在
+overflow: auto===>如果溢出,则有滚动条,不然的话就没有滚动条
+overflow-x 单独设置x轴滚动条
+overflow-y 单独设置y轴滚动条
+*/
+overflow: auto}
+/*----------------------------------*/
+#test-span-01{width: 100px;height: 100px
+	;background-color: yellow}
+/*----------------------------------*/
+#test-input-02{width: 100px;height: 100px;
+	background-color: yellow}
+
+/*类选择器*/
+.bjimg{
+	width: 500px;height: 1000px;background-color: #faa;
+	background-image:url(../img/timg.jpg);
+	background-repeat: repeat;
+	background-attachment: fixed;
+}
+.test-input-01:focus{background-color: yellow}
+.font-italic{font-style: italic}
+/*----------------------------------*/
+.c-bg-warning{background-color: skyblue;}
+.c-bg-color-yellow{background-color: yellow}
+/*----------------------------------*/
+.c-font-36{font-size: 36px;}
+.c-font-24{font-size: 24px;}
+.c-font-24.c-bg-warning{color:purple;}
+/*----------------------------------*/
+.c-test-color-red{color:red;}
+/*----------------------------------*/
+.c-text-danger{color:red;}
+.c-text-size-30{font-size:30}
+.c-text-italic{font-style: italic}

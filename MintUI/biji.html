@@ -1,145 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>组件库笔记</title>
-    <link rel="icon" href="../logo/code.png">
-    <link rel="stylesheet" href="./biji.css">
-</head>
-<body class='body'>
+    <link rel="icon" href="../logo/code.png" />
+    <link rel="stylesheet" href="./biji.css" />
+  </head>
+  <body class="body">
     <fieldset>
-        <legend>组件库基础</legend>
-            <!-- <legend>什么是组件库</legend> -->
-            <ul>什么是组件库
-                <li>
-                    组件是企业为提升开发效率而开发,对于相关的样式及交互的封装,其提供了简单的调用方式和接口,让开发者可以便捷实用其提供的功能来完成业务需求。实现了一次封装,多次调用
-                </li>
-            </ul>
-            <ul>组件库的优势
-                <li>
-                    提升开发效率
-                </li>
-                <li>
-                    便于团队协同开发
-                </li>
-                <li>
-                    简化调试步骤
-                </li>
-                <li>
-                    提升项目的可维护性
-                </li>
-            </ul>
-            <ul>组件库的分类
-                <li>
-                    移动端的组件库
-                    <ul>
-                        <li><a href="http://mint-ui.github.io/#!/zh-cn">MintUI(饿了么团队开发)</a></li>
-                        <li><a href="https://youzan.github.io/vant/#/zh-CN/">VantUI(有赞团队开发)</a></li>
-                        <li><a href="https://didi.github.io/cube-ui/#/zh-CN">cubeUI(滴滴团队开发)</a></li>
-                    </ul>
-                </li>  
-                <li>
-                    桌面端组件库 
-                    <ul>
-                        <li><a href="https://element.eleme.io/#/zh-CN">ElementUI(饿了么团队开发)</a></li>
-                        <li>ATUI(凹凸团队开发)</li>
-                        <li><a href="https://www.iviewui.com/">viewUI(试图更新)</a></li>
-                    </ul>
-                </li>
-                <li>
-                    移动端与桌面端的区别
-                    <ul>
-                        <li><a href='https://uiiiuiii.com/screen/index.htm'>屏幕尺寸不同</a></li>
-                        <li>操作方式不同</li>
-                        <li>事件触发方式不同(ontouchstart,ontouchend)</li>
-                        <li>网络环境不同</li>
-                    </ul>
-                </li>
-            </ul>
-        </fieldset>
-        <br><hr><br>
-        <fieldset>
-            <legend>Mint UI基础</legend>
-                <ul>安装
-                    <li>npm install --save mint-ui</li>
-                    <li>提示：脚手架安装的依赖信息存储在package.json文件的[dependencies]当中</li>
-                </ul>
-        </fieldset>
-        <br><hr><br>
-        <fieldset>
-            <legend>Mint UI的构成</legend>
+      <legend>组件库基础</legend>
+      <!-- <legend>什么是组件库</legend> -->
+      <ul>
+        什么是组件库
+        <li>
+          组件是企业为提升开发效率而开发,对于相关的样式及交互的封装,其提供了简单的调用方式和接口,让开发者可以便捷实用其提供的功能来完成业务需求。实现了一次封装,多次调用
+        </li>
+      </ul>
+      <ul>
+        组件库的优势
+        <li>
+          提升开发效率
+        </li>
+        <li>
+          便于团队协同开发
+        </li>
+        <li>
+          简化调试步骤
+        </li>
+        <li>
+          提升项目的可维护性
+        </li>
+      </ul>
+      <ul>
+        组件库的分类
+        <li>
+          移动端的组件库
+          <ul>
+            <li>
+              <a href="http://mint-ui.github.io/#!/zh-cn"
+                >MintUI(饿了么团队开发)</a
+              >
+            </li>
+            <li>
+              <a href="https://youzan.github.io/vant/#/zh-CN/"
+                >VantUI(有赞团队开发)</a
+              >
+            </li>
+            <li>
+              <a href="https://didi.github.io/cube-ui/#/zh-CN"
+                >cubeUI(滴滴团队开发)</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          桌面端组件库
+          <ul>
+            <li>
+              <a href="https://element.eleme.io/#/zh-CN"
+                >ElementUI(饿了么团队开发)</a
+              >
+            </li>
+            <li>ATUI(凹凸团队开发)</li>
+            <li><a href="https://www.iviewui.com/">viewUI(试图更新)</a></li>
+          </ul>
+        </li>
+        <li>
+          移动端与桌面端的区别
+          <ul>
+            <li>
+              <a href="https://uiiiuiii.com/screen/index.htm">屏幕尺寸不同</a>
+            </li>
+            <li>操作方式不同</li>
+            <li>事件触发方式不同(ontouchstart,ontouchend)</li>
+            <li>网络环境不同</li>
+          </ul>
+        </li>
+      </ul>
+    </fieldset>
+    <br />
+    <hr />
+    <br />
+    <fieldset>
+      <legend>Mint UI基础</legend>
+      <ul>
+        安装
+        <li>npm install --save mint-ui</li>
+        <li>
+          提示：脚手架安装的依赖信息存储在package.json文件的[dependencies]当中
+        </li>
+      </ul>
+    </fieldset>
+    <br />
+    <hr />
+    <br />
+    <fieldset>
+      <legend>Mint UI的构成</legend>
+      <ul>
+        <li>CSS组件</li>
+        <li>JS组件</li>
+        <li>表单组件</li>
+      </ul>
+    </fieldset>
+    <br />
+    <hr />
+    <br />
+    <fieldset>
+      <legend>使用Mint UI</legend>
+      <ul>
+        CSS组件
+        <li>
+          Header组件<br />
+          Header组件用于实现顶部导航,其语法结构是:<br />
+          &lt;mt-header title='标题信息' fixed&gt;&lt;/mt-header&gt;<br />
+          title属性用于设置标题信息,字符类型<br />fixed属性用于控制是否固定在顶部,布尔类型<br />
+          &lt;mt-header&gt;子元素可以通过slot='left'或slot='right'控制子元素显示的位置
+        </li>
+      </ul>
+      <hr />
+      <ul>
+        <li>
+          在src/components目录下创建MintUI目录
+        </li>
+        <li>
+          创建组件文件,书写相对应的标签--template,script,style
+        </li>
+        <li>
+          在根组件或父组件文件内,导入创建的组件文件
+        </li>
+        <li>
+          设置路由信息
+        </li>
+        <li>
+          创建连接或绑定事件,以访问路由
+        </li>
+      </ul>
+      <hr />
+      <ul>
+        Reset.css<br />
+        每个浏览器对于HTML元素都有默认样式,但是这些默认样式在不同的浏览器中是不相同的,
+        为了保证所有浏览器对HTML元素默认样式是一致的,建议使用reset.css对HTML元素的默认样式是一致的,
+        建议使用 reset.css对HTML元素的默认样式进行重置
+      </ul>
+      <hr />
+      <ul>
+        Button组件
+        <li>
+          Button组件用于实现按钮,其语法结构是:<br />
+          &lt;mt-button type='按钮样式' size='尺寸' icon='图标' disabled&gt;<br />....<br />
+          &lt;/mt-button&gt;<br />
+          <ul>
+            按钮样式
+            <li>default(默认)</li>
+            <li>primary(主要)</li>
+            <li>danger(危险)</li>
+          </ul>
+          <ul>
+            尺寸
+            <li>small(小的)</li>
+            <li>normal(标准)</li>
+            <li>large(大的)</li>
+          </ul>
+          <ul>
+            图标
+            <li>back(返回)</li>
+            <li>more(更多)</li>
+            <li>自定义图标</li>
+          </ul>
+          <ul>
+            disabled属性用于控制按钮是否为禁用的状态,布尔类型
+          </ul>
+          <ul>
+            可通过slot='icon'属性将图像作为按钮图标
             <ul>
-                <li>CSS组件</li>
-                <li>JS组件</li>
-                <li>表单组件</li>
+                如果使用第三方图标,比如阿里图标库的图标
+                <li>1,解压到src/assets/styles目录</li>
+                <li>2,在对应的组件中导入css文件</li>
+                <li>import ‘css路径’</li>
+                <li>3,按钮上添加icon='iconfont icon-xxx'</li>
             </ul>
-        </fieldset>
-        <br><hr><br>
-        <fieldset>
-            <legend>使用Mint UI</legend>
-            <ul>CSS组件
-                <li>Header组件<br>
-                    Header组件用于实现顶部导航,其语法结构是:<br>
-                    &lt;mt-header title='标题信息' fixed&gt;&lt;/mt-header&gt;<br>
-                    title属性用于设置标题信息,字符类型<br>fixed属性用于控制是否固定在顶部,布尔类型<br>
-                    &lt;mt-header&gt;子元素可以通过slot='left'或slot='right'控制子元素显示的位置</li>
-            </ul>
-            <hr>
-            <ul>
-                <li>
-                    在src/components目录下创建MintUI目录
-                </li>
-                <li>
-                    创建组件文件，书写相对应的标签--template,script,style
-                </li>
-                <li>
-                    在根组件或父组件文件内，导入创建的组件文件
-                </li>
-                <li>
-                    设置路由信息
-                </li>
-                <li>
-                    创建连接或绑定事件，以访问路由
-                </li>
-            </ul>
-            <hr>
-            <ul>
-                Reset.css<br>
-                每个浏览器对于HTML元素都有默认样式,但是这些默认样式在不同的浏览器中是不相同的，
-                为了保证所有浏览器对HTML元素默认样式是一致的，建议使用reset.css对HTML元素的默认样式是一致的，
-                建议使用 reset.css对HTML元素的默认样式进行重置
-            </ul>
-            <hr>
-            <ul>
-                Button组件
-                <li>
-                    Button组件用于实现按钮，其语法结构是:<br>
-                    &lt;mt-button type='按钮样式' size='尺寸' icon='图标' disabled&gt;<br>....<br>
-                    &lt;/mt-button&gt;<br>
-                    <ul>按钮样式
-                        <li>default(默认)</li>
-                        <li>primary(主要)</li>
-                        <li>danger(危险)</li>
-                    </ul>
-                    <ul>尺寸
-                        <li>small(小的)</li>
-                        <li>normal(标准)</li>
-                        <li>large(大的)</li>
-                    </ul>
-                    <ul>图标
-                        <li>back(返回)</li>
-                        <li>more(更多)</li>
-                        <li>自定义图标</li>
-                    </ul>
-                    <ul>
-                        disabled属性用于控制按钮是否为禁用的状态，布尔类型
-                    </ul>
-                    <ul>
-                        可通过slot='icon'属性将图像作为按钮图标
-                    </ul>
-                </li>
-            </ul>
-        </fieldset>
-</body>
+          </ul>
+        </li>
+      </ul>
+    </fieldset>
+  </body>
 </html>
