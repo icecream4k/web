@@ -2,10 +2,10 @@
 <span id="dingbu"></span>
 <html>
 <meta charset="utf-8">
-
 <head>
 	<title>MyVue</title>
-	<link rel="icon" href="../../logo/vue.png">
+	<!-- <link rel="icon" href="../../logo/code.png"> -->
+	<link rel="icon" href="../img/vue_logo.png">
 	<!-- 引入vue.js文件 -->
 	<script src="../js/vue.js"></script>
 	<script src="../js/vue-router.js"></script>
@@ -24,16 +24,15 @@
 		}
 		)
 	</script>
-	<link rel="stylesheet" type="text/css" href="myvuecss.css">
+	<link rel="stylesheet" type="text/css" href="./myvuecss.css">
 </head>
-
 <body style="width:980px;background-color: #fdfcf8;margin: 0 auto;">
 	<div id="body_div">
 		<div id="fudongchuangkou">
 			<fieldset style="border-radius:10px;background-color: #fdfcf8;">
 				<legend> <span style="color: #41B883"><b>目</span>&nbsp;&nbsp;&nbsp;<span
 						style="color:#35495E ">录</b></span><br></legend>
-				<a href="#dingbu"><img src="../logo/shouye.png" style="width: 35%;"></a><br>
+				<a href="#dingbu"><img src="../../logo/shouye.png" style="width: 35%;"></a><br>
 				<hr noshade='noshade'>
 				<a id="test-a-01" href="#MVVM"><b>MVVM</b></a><br>
 				<hr noshade='noshade'>
@@ -65,7 +64,7 @@
 				<a id="test-a-01" href="#SPA">单页面应用</a>
 
 				<hr noshade='noshade'>
-				<a href="#code_here"><img src="..\logo/dibu.png" style="width: 35%;"></a>
+				<a href="#code_here"><img src="../../logo/dibu.png" style="width: 35%;"></a>
 			</fieldset>
 		</div>
 		<p><b style="font-style: italic">
@@ -257,9 +256,9 @@
 					<td>
 						<div id="app_03">
 							<button @click="do_1"> &lt; </button>
-							<img :src="pm25<100?'../logo/code.png':
-									pm25<200?'../logo/sousuo.png':
-										'../logo/id.png'" style="width: 70%">
+							<img :src="pm25<100?'../../logo/code.png':
+									pm25<200?'../../logo/sousuo.png':
+										'../../logo/id.png'" style="width: 70%">
 							<!-- 此处的 img v-bind : src 可以简写成 : src -->
 							<button @click="do_2"> &gt; </button>
 						</div>
@@ -395,11 +394,11 @@
 			</td>
 			<td style="text-align: center;">
 				<div id="app_05" style="margin: auto;">
-					<img v-if='pm25_02<100' id="test-img-01" src="..\logo\dibu.png">
-					<img v-else-if='pm25_02<200' id="test-img-01" src="..\logo\vue.png">
-					<img v-else-if='pm25_02<300' id="test-img-01" src="..\logo\sousuo.png">
-					<img v-else id="test-img-01" src="..\logo\id.png">&nbsp;&nbsp;&nbsp;&nbsp;
-					<button @click='do_4'><img src="..\logo\shuaxin.png" style="width: 20px;height: 20px"></button>
+					<img v-if='pm25_02<100' id="test-img-01" src="../../logo/dibu.png">
+					<img v-else-if='pm25_02<200' id="test-img-01" src="../../logo/vue.png">
+					<img v-else-if='pm25_02<300' id="test-img-01" src="../../logo/sousuo.png">
+					<img v-else id="test-img-01" src="../../logo/id.png">&nbsp;&nbsp;&nbsp;&nbsp;
+					<button @click='do_4'><img src="../../logo/shuaxin.png" style="width: 20px;height: 20px"></button>
 				</div>
 				<script type="text/javascript">
 					var vm = new Vue({
@@ -861,7 +860,7 @@
 							<option value="hz">杭州</option>
 						</select>
 						<h3>您选的城市是:{{city}}</h3>
-						<img :src="`img/${city}.jpg`" style="width: 200px;height: 200px">
+						<img :src="`../img/${city}.jpg`" style="width: 200px;height: 200px">
 					</div>
 					<script type="text/javascript">
 						new Vue({
@@ -1457,12 +1456,12 @@
 					<fieldset style="width: 300px;">
 						<span>见源码,压缩了ajax四步,好东西,见源码</span>
 						<script>
-							axios.defaults.baseURL = 'http://xzserver.applinzi.com';
+							// axios.defaults.baseURL = 'http://xzserver.applinzi.com';
 							// axios.defaults.baseURL='http://www.kuaidi100.com';
 
-							axios.get('/index').then(result => {
-								console.log(result.data);
-							})
+							// axios.get('/index').then(result => {
+							// 	console.log(result.data);
+							// })
 							// axios.get('/query',{params:{'type':'yunda','postid':'4304926503813'}}).then(result=>{
 							// 	console.log(result.data)
 							// })
@@ -1471,14 +1470,14 @@
 							// 		console.log(result.data);
 							// 	})
 
-							axios.get('/details', { params: { lid: 5 } }).then(result => {
-								console.log(result.data);
-							})
+							// axios.get('/details', { params: { lid: 5 } }).then(result => {
+							// 	console.log(result.data);
+							// })
 
-							axios.post('/users/signin',
-								{ uname: 'dingding', upwd: '123456' }).then(result => {
-									console.log(result.data);
-								})
+							// axios.post('/users/signin',
+							// 	{ uname: 'dingding', upwd: '123456' }).then(result => {
+							// 		console.log(result.data);
+							// 	})
 
 						</script>
 					</fieldset>
@@ -1563,49 +1562,49 @@
 							</ul>
 						</div>
 						<script type="text/javascript">
-							var vm = new Vue({
-								el: "#app_22",
-								data: {
-									products: [],//先定义一个空数组等着接axios请求回来的6个商品对象
-								},
-								methods: {
-									del(i) {
-										this.products.splice(i, 1);//复习数组函数
-									},
-									destory() {
-										this.$destory()
-									}
-								},
-								beforeUpdate() {
-									console.log(`创建data对象前自动触发...`)
-								},
-								created() {
-									console.log(`创建data对象后自动触发...`)
-								},
-								beforeMount() {
-									console.log(`创建虚拟DOM树前自动触发...`)
-								},
-								mounted() {
-									console.log(`创建虚拟DOM树后自动触发...`)
-									console.log(`发送axios请求`)
-									axios.get(`http://xzserver.applinzi.com/index`).then(result => {
-										console.log(`收到响应结果,并放入data中的products变量`)
-										this.products = result.data;//修改了data中的products,就会触发update阶段
-									})
-								},
-								beforeUpdate() {
-									console.log(`更新data中的变量前自动触发...`)
-								},
-								updated() {
-									console.log(`更新data中的变量后自动触发...`)
-								},
-								deforeDestroy() {
-									console.log(`在销毁当前组件或页面前自动触发...`)
-								},
-								destroy() {
-									console.log(`在销毁当前组件或页面后自动触发`)
-								}
-							})
+							// var vm = new Vue({
+							// 	el: "#app_22",
+							// 	data: {
+							// 		products: [],//先定义一个空数组等着接axios请求回来的6个商品对象
+							// 	},
+							// 	methods: {
+							// 		del(i) {
+							// 			this.products.splice(i, 1);//复习数组函数
+							// 		},
+							// 		destory() {
+							// 			this.$destory()
+							// 		}
+							// 	},
+							// 	beforeUpdate() {
+							// 		console.log(`创建data对象前自动触发...`)
+							// 	},
+							// 	created() {
+							// 		console.log(`创建data对象后自动触发...`)
+							// 	},
+							// 	beforeMount() {
+							// 		console.log(`创建虚拟DOM树前自动触发...`)
+							// 	},
+							// 	mounted() {
+							// 		console.log(`创建虚拟DOM树后自动触发...`)
+							// 		console.log(`发送axios请求`)
+							// 		axios.get(`http://xzserver.applinzi.com/index`).then(result => {
+							// 			console.log(`收到响应结果,并放入data中的products变量`)
+							// 			this.products = result.data;//修改了data中的products,就会触发update阶段
+							// 		})
+							// 	},
+							// 	beforeUpdate() {
+							// 		console.log(`更新data中的变量前自动触发...`)
+							// 	},
+							// 	updated() {
+							// 		console.log(`更新data中的变量后自动触发...`)
+							// 	},
+							// 	deforeDestroy() {
+							// 		console.log(`在销毁当前组件或页面前自动触发...`)
+							// 	},
+							// 	destroy() {
+							// 		console.log(`在销毁当前组件或页面后自动触发`)
+							// 	}
+							// })
 						</script>
 					</fieldset>
 				</td>
