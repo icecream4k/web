@@ -1,163 +1,186 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>dom</title>
+    <link rel="icon" href=".\logo\code.png" />
+    <link rel="stylesheet" href=".\mycss.css" />
+    <!-- <link href=""> -->
+    <script type="text/javascript">
+      function show() {
+        //单击按钮，获取input的值，并且alert出来
+        // 1、获取元素对象，js提供了一个全局文档对象 - document.getElementById();
+        // 2、通过对象，点出属性，操作这个对象
+        var test = document.getElementById("uname");
+        console.log(test.value);
+        alert(test.value);
+      }
+      function getTest() {
+        var first = '<iframe src="./miusic_';
+        var middle = 'demo.html" scrolling="no" frameborde';
+        var end = 'r="0"></iframe>';
+        var cha = 1;
+        if (cha % 2 == 0) {
+          var d = document.getElementById("test_id");
+          var cha_number_js = document.getElementById("cha_number");
+          var b = document.getElementById("button_id");
+          b.innerHTML = "你已经点了我" + cha + "次了";
+          cha_number_js.innerHTML = first + middle + end;
+          d.innerHTML = "诶,我变回来了~";
+          console.log(d.innerHTML);
+          cha++;
+          console.log("变更次数:", cha - 1);
+        } else {
+          var d = document.getElementById("test_id");
+          var cha_number_js = document.getElementById("cha_number");
+          var b = document.getElementById("button_id");
+          b.innerHTML = "你已经点了我" + cha + "次了";
+          cha_number_js.innerHTML = cha;
+          d.innerHTML = "诶,我又变过去了~";
+          console.log(d.innerHTML);
+          cha++;
+          console.log("变更次数:", cha - 1);
+        }
+      }
 
-<head>
-	<title>dom</title>
-	<link rel="icon" href=".\logo\code.png">
-	<link rel="stylesheet" href=".\mycss.css">
-	<!-- <link href=""> -->
-	<script type="text/javascript">
-		function show() {
-			//单击按钮，获取input的值，并且alert出来
-			// 1、获取元素对象，js提供了一个全局文档对象 - document.getElementById();
-			// 2、通过对象，点出属性，操作这个对象
-			var test = document.getElementById("uname");
-			console.log(test.value);
-			alert(test.value);
-		};
-		function getTest() {
-			var first = '<iframe src="./miusic_';
-			var middle = 'demo.html" scrolling="no" frameborde';
-			var end = 'r="0"></iframe>';
-			var cha = 1;
-			if (cha % 2 == 0) {
-				var d = document.getElementById("test_id");
-				var cha_number_js = document.getElementById("cha_number");
-				var b = document.getElementById("button_id");
-				b.innerHTML = "你已经点了我" + cha + "次了";
-				cha_number_js.innerHTML = first + middle + end;
-				d.innerHTML = "诶,我变回来了~";
-				console.log(d.innerHTML);
-				cha++;
-				console.log("变更次数:", cha - 1);
-			} else {
-				var d = document.getElementById("test_id");
-				var cha_number_js = document.getElementById("cha_number");
-				var b = document.getElementById("button_id");
-				b.innerHTML = "你已经点了我" + cha + "次了";
-				cha_number_js.innerHTML = cha;
-				d.innerHTML = "诶,我又变过去了~";
-				console.log(d.innerHTML)
-				cha++;
-				console.log("变更次数:", cha - 1);
-			}
-		};
-
-		function show_table() {
-			var stus = [
-				{ uid: 1001, uname: "张三1", age: 16 },
-				{ uid: 1002, uname: "张三2", age: 15 },
-				{ uid: 1003, uname: "张三3", age: 17 },
-				{ uid: 1004, uname: "张三4", age: 21 },
-			];
-			var htmlstr = '';
-			var d = document.getElementById("show_table_div_id");
-			for (var i = 0; i < stus.length; i++) {
-				htmlstr += `
-			<p>${d.innerHTML = stus[i]["uid"]}</p>
+      function show_table() {
+        var stus = [
+          { uid: 1001, uname: "张三1", age: 16 },
+          { uid: 1002, uname: "张三2", age: 15 },
+          { uid: 1003, uname: "张三3", age: 17 },
+          { uid: 1004, uname: "张三4", age: 21 },
+        ];
+        var htmlstr = "";
+        var d = document.getElementById("show_table_div_id");
+        for (var i = 0; i < stus.length; i++) {
+          htmlstr += `
+			<p>${(d.innerHTML = stus[i]["uid"])}</p>
 			`;
-			};
-		};
-		function in_uname() {
-			uname_span.innerHTML = "用户名长度6~12位";
-		};
-		function check_uname() {
-			if (focus_input_id.value.length >= 6 && focus_input_id.value.length <= 12) {
-				uname_span.innerHTML = `<span style='color:green'><strong>√</strong></span>`
-			} else {
-				uname_span.innerHTML = `<span style='color:red'>用户名得符合6~12位</span>`
-			};
-		};
-		function in_upwd_01() {
-			upwd_01_span.innerHTML = "用户名长度8~16位";
-		};
-		function check_upwd_01() {
-			if (upwd_input_id_01.value.length >= 8 && upwd_input_id_01.value.length <= 16) {
-				upwd_01_span.innerHTML = `<span style='color:green'><strong>√</strong></span>`
-			} else {
-				upwd_01_span.innerHTML = `<span style='color:red'>密码得符合8~16位</span>`
-			};
-		};
-		function in_upwd_02() {
-			upwd_02_span.innerHTML = "保证与密码输入一致";
-		};
-		function check_upwd_02() {
-			if (upwd_input_id_02.value == '') {
-				upwd_02_span.innerHTML = "<span style='color:red'>请确认密码</span>"
-			} else if (upwd_input_id_02.value == upwd_input_id_01.value) {
-				upwd_02_span.innerHTML = `<span style="color:green"><strong>√</strong></span>`
-			} else {
-				upwd_02_span.innerHTML = `<span style="color:red">与密码输入不一致</span>`
-			};
-		};
-	</script>
-</head>
+        }
+      }
+      function in_uname() {
+        uname_span.innerHTML = "用户名长度6~12位";
+      }
+      function check_uname() {
+        if (
+          focus_input_id.value.length >= 6 &&
+          focus_input_id.value.length <= 12
+        ) {
+          uname_span.innerHTML = `<span style='color:green'><strong>√</strong></span>`;
+        } else {
+          uname_span.innerHTML = `<span style='color:red'>用户名得符合6~12位</span>`;
+        }
+      }
+      function in_upwd_01() {
+        upwd_01_span.innerHTML = "用户名长度8~16位";
+      }
+      function check_upwd_01() {
+        if (
+          upwd_input_id_01.value.length >= 8 &&
+          upwd_input_id_01.value.length <= 16
+        ) {
+          upwd_01_span.innerHTML = `<span style='color:green'><strong>√</strong></span>`;
+        } else {
+          upwd_01_span.innerHTML = `<span style='color:red'>密码得符合8~16位</span>`;
+        }
+      }
+      function in_upwd_02() {
+        upwd_02_span.innerHTML = "保证与密码输入一致";
+      }
+      function check_upwd_02() {
+        if (upwd_input_id_02.value == "") {
+          upwd_02_span.innerHTML = "<span style='color:red'>请确认密码</span>";
+        } else if (upwd_input_id_02.value == upwd_input_id_01.value) {
+          upwd_02_span.innerHTML = `<span style="color:green"><strong>√</strong></span>`;
+        } else {
+          upwd_02_span.innerHTML = `<span style="color:red">与密码输入不一致</span>`;
+        }
+      }
+    </script>
+  </head>
 
-<body>
-	<!-- <iframe src="./myhtml.html"></iframe> -->
-	<fieldset>
-		<legend>
-			<h3>单机按钮获取input的值</h3>
-		</legend>
-		<h3>获取input的值</h3>
-		<input type="text" id="uname" value=""><br><br>
-		<button onclick="show()">获取</button>
-	</fieldset><br><br>
-	<fieldset>
-		<legend>
-			<h3>JS动态生成HTML页面</h3>
-		</legend>
-		<div id="test_id">可不是么，这就是一个div呢</div>
-		<span id="span_id">更变次数:</span>
-		<span id="cha_number">0</span>
-		<br><br>
-		<button onclick="getTest()" id="button_id">更变</button>
-	</fieldset><br><br>
-	<fieldset>
-		<legend>
-			<h3>动态生成表格</h3>
-		</legend>
-		<div id="show_table_div_id"></div>
-		<button onclick="show_table()">显示</button>
-	</fieldset>
-	<fieldset>
-		<legend>
-			<h3>焦点输入框</h3>
-		</legend>
-		<!-- onfocus 是输入焦点的情况 -->
-		<!-- onblur 是丢失焦点的情况 -->
-		<table>
-			<tr>
-				<td>
-					<span>用户名:</span>
-				</td>
-				<td>
-					<input type="text" name="" onfocus="in_uname()" onblur="check_uname()" id="focus_input_id">
-					<span id="uname_span"></span>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<span>密码:</span>
-				</td>
-				<td>
-					<input type="password" name="" id="upwd_input_id_01" onfocus="in_upwd_01()"
-						onblur="check_upwd_01()">
-					<span id="upwd_01_span"></span>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<span>密码验证:</span>
-				</td>
-				<td>
-					<input type="password" name="" id="upwd_input_id_02" onfocus="in_upwd_02()"
-						onblur="check_upwd_02()">
-					<span id="upwd_02_span"></span>
-				</td>
-			</tr>
-		</table>
-
-	</fieldset>
-	<p></p>
-</body>
+  <body>
+    <!-- <iframe src="./myhtml.html"></iframe> -->
+    <fieldset>
+      <legend>
+        <h3>单机按钮获取input的值</h3>
+      </legend>
+      <h3>获取input的值</h3>
+      <input type="text" id="uname" value="" /><br /><br />
+      <button onclick="show()">获取</button>
+    </fieldset>
+    <br /><br />
+    <fieldset>
+      <legend>
+        <h3>JS动态生成HTML页面</h3>
+      </legend>
+      <div id="test_id">可不是么，这就是一个div呢</div>
+      <span id="span_id">更变次数:</span>
+      <span id="cha_number">0</span>
+      <br /><br />
+      <button onclick="getTest()" id="button_id">更变</button>
+    </fieldset>
+    <br /><br />
+    <fieldset>
+      <legend>
+        <h3>动态生成表格</h3>
+      </legend>
+      <div id="show_table_div_id"></div>
+      <button onclick="show_table()">显示</button>
+    </fieldset>
+    <fieldset>
+      <legend>
+        <h3>焦点输入框</h3>
+      </legend>
+      <!-- onfocus 是输入焦点的情况 -->
+      <!-- onblur 是丢失焦点的情况 -->
+      <table>
+        <tr>
+          <td>
+            <span>用户名:</span>
+          </td>
+          <td>
+            <input
+              type="text"
+              name=""
+              onfocus="in_uname()"
+              onblur="check_uname()"
+              id="focus_input_id"
+            />
+            <span id="uname_span"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>密码:</span>
+          </td>
+          <td>
+            <input
+              type="password"
+              name=""
+              id="upwd_input_id_01"
+              onfocus="in_upwd_01()"
+              onblur="check_upwd_01()"
+            />
+            <span id="upwd_01_span"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>密码验证:</span>
+          </td>
+          <td>
+            <input
+              type="password"
+              name=""
+              id="upwd_input_id_02"
+              onfocus="in_upwd_02()"
+              onblur="check_upwd_02()"
+            />
+            <span id="upwd_02_span"></span>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+    <p></p>
+  </body>
+</html>

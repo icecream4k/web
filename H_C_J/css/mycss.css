@@ -102,8 +102,8 @@ overflow: auto}
 /*类选择器*/
 .bjimg{
 	width: 500px;height: 1000px;background-color: #faa;
-	background-image:url(../img/yaoming.jpg);
-	background-repeat: no-repeat;
+	background-image:url(../img/timg.jpg);
+	background-repeat: repeat;
 	background-attachment: fixed;
 }
 .test-input-01:focus{background-color: yellow}
