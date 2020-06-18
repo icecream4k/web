@@ -201,7 +201,7 @@
 		</tr>
 	</table>
 
-	<hr color="black">
+	<hr>
 	<span id="kechengbia"></span>
 	<table border="1" width="600px" height="450px" cellpadding="3" cellspacing="3" bordercolor="#665a5ff">
 		<caption>课程表</caption>
@@ -278,7 +278,7 @@
 		</tbody>
 	</table>
 </fieldset><br>
-	<hr color="black"><br>
+	<hr><br>
 <fieldset>
 	<legend>文本划分处理</legend>
 
@@ -335,7 +335,7 @@
 	</dl>
 </fieldset>
 	<br>
-	<hr color="black">
+	<hr>
 	<br>
 	<!-- 结构标记 -->
 	<!-- 和div一模一样,但是有语义,被搜索时更容易被找到 -->
@@ -347,7 +347,7 @@
 	<!-- <article></article>定义与文字相关的内容,比如回帖,评论等等 -->
 	<span style="color: red;"><b>结构标记见注释</b></span>
 	<br><br>
-	<hr color="black"><br>
+	<hr><br>
 	<!-- ***********表单*********** -->
 	<!-- 提供了可视化输入控件 -->
 	<!-- 自动收集用户输入的信息,并提交请求给服务器 -->
@@ -375,8 +375,6 @@ multipart/form-data 允许提交文件 -->
 	<input type="text" name="" value="test">
 	<input type="submit" name="">
 </form> -->
-	<br>
-	<hr>
 	<span id="biaodankongjian"></span>
 	<span><b>表单控件</b></span>
 	<br>
@@ -393,7 +391,7 @@ multipart/form-data 允许提交文件 -->
 	<!-- <input type="submit" onclick="show()" name=""> -->
 
 	<span><b>按钮联动JS</b></span>
-	<br>
+	<br><br>
 	<script type="text/javascript">
 		function show() {
 			alert("我真tm屌")
@@ -401,8 +399,9 @@ multipart/form-data 允许提交文件 -->
 	</script>
 	<!-- <input  type="" name=""> -->
 	<button onclick="show()">这是一个引发alert的按钮</button>
-	<br>
+	<br><br>
 	<hr>
+	<br>
 	<span><b>单选按钮</b></span>
 	<form method="get">
 		<input type="radio" name="sex">男
@@ -425,8 +424,8 @@ multipart/form-data 允许提交文件 -->
 		<input type="hidden" name="proname" value="test_pro_name">
 		<input type="submit" name="">
 	</form>
-	<br>
-	<hr>
+	<br><br>
+	<hr><br>
 	<span><b>发送文件</b></span><br>
 	<form action="" method="post" enctype="multipart/form-data">
 		<input type="file" name="ufile" multiple="" width="150px" height="150px">
@@ -453,20 +452,20 @@ multipart/form-data 允许提交文件 -->
 	<!-- selected 无值属性,默认选中 -->
 	<div>
 		<form>
-			<select name="city" size="3" multiple="">
+			<select name="city" size="4" multiple="">
 				<option value="bj" selected="">北京</option>
 				<option value="sh">上海</option>
 				<option value="nj">南京</option>
 				<option value="hz">杭州</option>
 				<option value='gz'>广州</option>
 				<option value="jms">佳木斯</option>
-			</select><br>
+			</select><br><br>
 			<input type="submit" name="">
 		</form>
 	</div>
 </fieldset>
 	<br>
-	<hr color="black">
+	<hr>
 	<br>
 <fieldset>
 	<legend>注册数据</legend>
@@ -553,7 +552,7 @@ multipart/form-data 允许提交文件 -->
 	</form>
 </fieldset>
 	<br>
-	<hr color="black">
+	<hr>
 	<br>
 <fieldset>
 	<legend>控件分组</legend>
@@ -614,7 +613,7 @@ multipart/form-data 允许提交文件 -->
 	</form>
 </fieldset>
 	<br>
-	<hr color="black">
+	<hr>
 	<br>
 <fieldset>
 	<legend>浮动框架</legend>
@@ -629,7 +628,7 @@ multipart/form-data 允许提交文件 -->
 	<!-- widht="" 设置宽-->
 </fieldset>
 	<br>
-	<hr color="black">
+	<hr>
 	<br>
 	<form>
 		<fieldset>
@@ -695,7 +694,7 @@ multipart/form-data 允许提交文件 -->
 		</fieldset>
 	</form>
 	<br>
-	<hr color="black">
+	<hr>
 	<br>
 	<span id="jingdong"></span>
 	<fieldset>
@@ -766,32 +765,33 @@ multipart/form-data 允许提交文件 -->
 	</form>
 </fieldset>
 	<br>
-	<hr color="black"><br>
 	<span id="css"></span>
 	<h1 class="c-center">CSS</h1>
-	<br>
-	<hr>
-	<br>
-	<h2 class="c-center">行内样式</h2>
+<fieldset>
+	<legend>行内样式</legend>
 	<!-- 行内样式在任意元素的style里面定义样式声明 -->
-	<span style="color:red;background-color:
+	<span style="color:purple;background-color:
  yellow;font-size:26px">这是一句被行内样式修饰的span文本</span>
 	<!-- color:red 文本颜色 -->
 	<!-- background-color:yellow 背景颜色 -->
 	<!-- font-size:15px  文本字号 -->
+</fieldset>
 	<br>
 	<hr><br>
-	<h2 class="c-center">内部样式</h2>
+<fieldset>
+	<legend>内部样式</legend>
 	<b>汝乃天骄,何不上九霄</b>
+</fieldset>
 	<br>
 	<hr><br>
-	<h2 class="c-center">外部样式</h2>
+<fieldset>
+	<legend>外部样式</legend>
+
 	<p>这是一个由外部css文件更变的p标签/CSS已被注释</p>
 	<!-- 在外部单独创建一个css文件 -->
 	<!-- 在html中的head中,使用link引入css -->
 	<!-- <link rel="stylesheet" href="***/**.css"> -->
 	<!-- 这样就可以实现多个页面代码重用了 -->
-
 	<h5 style="background-color: pink;color:purple">这是一个内联样式_01</h5>
 	<h5 style="background-color: purple;color:red">这是一个内联样式_02</h5>
 	<h6>这是一个外部样式<span style="background-color: blue;color: white">|这是一个被包含的span,自己可以被包含了h6的标签中,用style更改|</span></h6>
@@ -801,7 +801,8 @@ multipart/form-data 允许提交文件 -->
 		<span>
 			<p>test_2</p>
 		</span>
-	</div>
+	</div>  
+</fieldset>
 	<!-- 必须是子元素继承父元素[祖先]的样式 -->
 	<!-- a标签字体颜色是不继承的 -->
 	<!-- 样式优先级 -->
@@ -815,25 +816,26 @@ multipart/form-data 允许提交文件 -->
 	<!-- 可以根据就近原则css位置,或者在css元素后面增加important -->
 	<br>
 	<hr><br>
-	<h3 style="color: white">优先级</h3>
-	<i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</i>
-	<br>
+<fieldset>
+	<legend>优先级</legend>
+	<i>此处见代码注释</i>
+</fieldset>
+		<br>
 	<hr><br>
 	<span id="xuanzeqi"></span>
 	<p class="c-center"><span style="background-color: red;color: white">基础选择器[重点]</span></p>
 	<hr>
 	<!-- 项目中卫衣使用通用选择器方式 -->
 	<!-- *{margin:0;padding:0} 所有元素的内外边距清空,css reset;---样式重置 -->
-	<p id='My'>id选择器</p>
+<fieldset>
+	<legend>id选择器</legend>
 	<p id="test_p_css">123</p>
+</fieldset>
 	<br>
 	<hr><br>
-	<p class="c-center">类选择器与多类选择器;<span style="color:blue">这一段知识点基本都在注释里</span></p>
+<fieldset>
+	<legend>类选择器与多类选择器;</legend>
+
 	<!-- 把一类样式,封装成一个小模块,起一个类名,哪个元素想使用,都可以使用,直接用class调用类名
 类名的规范:只能包含-和_,不能以数字开头,做到见名知意
 语法:
@@ -849,14 +851,22 @@ multipart/form-data 允许提交文件 -->
 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</span><br>
-	<p class="c-center">第二种分类选择器</p><br>
+	</span>
+</fieldset>
+	<br>
+	<hr><br>
+<fieldset>
+	<legend>第二种分类选择器</legend>
 	<!-- .类选择器.类选择器{样式声明} -->
 	<span class="c-bg-warning c-font-24">Lorem ipsum dolor sit amet, consectetur adipisicing elit</span><br>
 	<!-- 群组选择器 -->
 	<!-- 将多个选择器,放在一起,用逗号分隔,定义公共样式 -->
 	<!-- 语法 选择器1,选择器2,选择器3,选择器4,选择器5,..{样式声明} -->
-	<p class="c-center">后代选择器</p><br>
+</fieldset>
+<br><hr><br>
+<fieldset>
+	<legend>后代选择器</legend>
+
 	<fieldset>
 		<legend><b><b>被后代选择器选中的a标签</b></b></legend>
 		<ul>
@@ -882,6 +892,10 @@ multipart/form-data 允许提交文件 -->
 			</p>
 		</div>
 	</fieldset>
+</fieldset>
+<fieldset>
+	<legend>子代选择器</legend>
+</fieldset>
 	<p class="c-center">子代选择器</p>
 	<!-- 根据元素的父子关系,匹配元素
 子代:div>span{font-style: italic} 大于号指向的是一种包含关系 -->
