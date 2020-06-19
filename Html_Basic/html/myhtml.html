@@ -11,20 +11,19 @@
 	<script src="../js/jquery.js"></script>
 	<script src="../js/myjs.js"></script>
 </head>
-
 <body style="width:980px;background-color: #fdfcf8;margin: 0 auto;">
 	<!-- 网页的主体,bgcolor = "" 指定网页背景色 text="" 指定网页字体颜色 -->
 	<!-- <div style="width:1000px;"> -->
-	<p><b style="font-style: italic">
-			<h1 class="c-center"><span style="color: #4285f7">My</span><span id="dingbu" style="color:#e94237">Te</span><span
-					style="color:#fabc05">st</span><span style="color:#4285f7">Ht</span><span style="color:#34a855">m</span><span style="color: #e94237;">l</span>
+	<p>
+		<b style="font-style: italic">
+			<h1 class="c-center"><span style="color: #4285f7">My</span><span id="dingbu" style="color:#e94237">Te</span><span style="color:#fabc05">st</span><span style="color:#4285f7">Ht</span><span style="color:#34a855">m</span><span style="color: #e94237;">l</span>
 			</h1>
-		</b></p>
+		</b>
+	</p>
 	<div style="border:4px !important;border-color: red !important;width: 140px;height: 470px;text-align: center;background-color:rgba(253,252,248,1);position: fixed;top: 30%;left: 90%;">
 		<fieldset style="border-radius:10px;">
 			<legend> <span style="color: skyblue"><b>目&nbsp;&nbsp;&nbsp;录</b></span><br></legend>
-			<a href="#dingbu"><img src="../../logo/shouye.png" style="width: 35%;"></a><br>
-			<hr>
+			<a href="#dingbu"><img src="../../logo/shouye.png" style="width: 35%;"></a><br><hr>
 			<a id="test-a-01" href="#jianli">简历</a><br>
 			<a id="test-a-01" href="#kuahang">跨行跨列</a><br>
 			<a id="test-a-01" href="#kechengbiao">课程表</a><br>
@@ -42,32 +41,27 @@
 			<a href="#code_here"><img src="../../logo/dibu.png" style="width: 35%;"></a>
 		</fieldset>
 	</div>
-
-
-	
-
-	<fieldset>
-		<legend>基础的几个标签</legend>
-			<br><!-- 换行 -->
-			<!-- size = 粗细 width = 长度 -->
-			<b align="content">b标签</b>
-			<p align="content">p标签</p>
-			<!-- 
-			1、属性不管单双标签,都必须放在开始的标签中
-			2、多个属性之间,使用空格分割
-			3、标准属性(通用属性),所有元素都有,都生效
+<fieldset>
+	<legend>基础的几个标签</legend>
+		<br>
+		<!-- 换行 -->
+		<!-- size = 粗细 width = 长度 -->
+		<b align="content">b标签</b>
+		<p align="content">p标签</p>
+	<!-- 
+		1、属性不管单双标签,都必须放在开始的标签中
+		2、多个属性之间,使用空格分割
+		3、标准属性(通用属性),所有元素都有,都生效
 			id:当前页面中元素的唯一标识
 			title:鼠标悬停在元素上时,显示的文本
 			style:css中,定义行内样式
 			class:css中,应用类型选择器
-			4、专属属性,只对某个,某些元素生效 
-			-->
-			<div align="content">div标签</div>
-		<br>
-		<hr color="black" width="100%"><br><!-- 水平线,再页面中画一期条线 -->
-
+		4、专属属性,只对某个,某些元素生效 
+	-->
+		<div align="content">div标签</div>
+	<br>
+	<hr color="black" width="100%"><br><!-- 水平线,再页面中画一期条线 -->
 	<span id="jianli"></span>
-	
 	<h2>ICEcream2k的个人简历 - h2标签</h2>
 	<h4>基本信息 - h4标签</h4>
 	<p>姓名:XX - p标签</p>
@@ -114,23 +108,21 @@
 			src="../music/Thomas Greenberg - The Right Path.mp3" align="content">
 		</audio><a href="../music/Thomas Greenberg - The Right Path.mp3.zip">下载歌曲</a>
 	</div>
-	
 </fieldset><br>
-	<hr color="black" width="100%"><br>
+<hr color="black" width="100%"><br>
 <!-- 
-<div id="content" style="height:150px;line-height:150px;text-align:center; color: #fff;background-color:#ccc;font-size:80px;">123</div>
-<script>
-    let num = 1;
-    let content = document.getElementById('content');
-    function count() {
-        content.innerHTML = num++;
-    };
-    content.onmousemove = count;
-</script>
+	<div id="content" style="height:150px;line-height:150px;text-align:center; color: #fff;background-color:#ccc;font-size:80px;">123</div>
+	<script>
+		let num = 1;
+		let content = document.getElementById('content');
+		function count() {
+			content.innerHTML = num++;
+		};
+		content.onmousemove = count;
+	</script>
 -->
 <fieldset>
 	<legend>表格处理</legend>
-
 	<span id="kuahang"></span>
 	<table width="200px" height='200px' border="2">
 		<caption>跨列与跨行</caption>
@@ -200,7 +192,6 @@
 			</td>
 		</tr>
 	</table>
-
 	<hr>
 	<span id="kechengbia"></span>
 	<table border="1" width="600px" height="450px" cellpadding="3" cellspacing="3" bordercolor="#665a5ff">
@@ -281,7 +272,6 @@
 	<hr><br>
 <fieldset>
 	<legend>文本划分处理</legend>
-
 	<span id="ulyuli"></span>
 	<ol start="6">
 		<!-- ol标签中的li标签,会自动添加整数数据,自增 -->
@@ -299,7 +289,6 @@
 		<li>西红柿炒鸡蛋</li>
 		<li>西红柿炒鸡蛋</li>
 	</ul>
-
 	<!-- 所有的嵌套内容都要放在li中 -->
 	<!-- li中可以嵌套其他元素(a,img,p,h....),还可以嵌套其他列表,是语意要求 -->
 	<hr>

@@ -10,9 +10,9 @@ legend{
 fieldset,div{
 	border-radius:10px;
 }
-ul a{color: red}
+ul a{color: yellowgreen}
 .c-center{text-align: center}
-div p span{color: red}
+div p span{color: khaki}
 div>span{font-style: italic}
 div>#test-span-02{color: red;font-family:华文彩云;font-weight:bold;}
 #d1 .c2 #d3{color:blue}
