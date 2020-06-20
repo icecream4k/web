@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>组件库笔记</title>
     <link rel="icon" href="../logo/code.png" />
-    <link rel="stylesheet" href="./biji.css" />
+    <link rel="stylesheet" href="./note.css" />
   </head>
   <body class="body">
     <fieldset>
@@ -179,9 +179,36 @@
                 <li>2,在对应的组件中导入css文件</li>
                 <li>import ‘css路径’</li>
                 <li>3,按钮上添加icon='iconfont icon-xxx'</li>
+                <li>使用自定义字体图标时需要注意选择器的优先级</li>
             </ul>
           </ul>
         </li>
+      </ul>
+      <br><hr><br>
+      <ul>
+        表单组件
+        <ul>Field组件
+          <li>
+            field组件用于实现表单控件,其语法结构是:
+          </li>
+          <li>
+            &lt;mt-field type = '输入框的类型' lable='标签' <br>
+            placeholder = '占位内容' state='检测状态' v-model = '变量名称' :attr = '原生属性' <br>
+            readonly <br>disabled <br>disableClear<br>&gt;<br>
+            &lt;/mt-field&gt;
+          </li>
+          <li>
+            输入框的类型有:<br>
+            text,单行文本框<br>
+            passsword,密码框<br>
+            textarea,多行文本框/域<br>
+            number,数字<br>
+            tel,电话<br>
+            url,URL地址<br>
+            date,日期<br>
+            datetime-local,日期和时间<br>
+          </li>
+        </ul>
       </ul>
     </fieldset>
   </body>

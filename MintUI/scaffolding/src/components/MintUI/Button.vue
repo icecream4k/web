@@ -19,15 +19,11 @@
       </mt-button>
     </p>
     <p>
-      <mt-button type="primary" size="normal" icon='iconfont icon-delete' class='zdyicon'>
-        自定义图标
-      </mt-button>
+      <mt-button type="primary" size="normal" class="iconfont icon-delete">自定义图标</mt-button>
     </p>
   </div>
 </template>
 <script>
-import '../../assets/font_rdkgeqhf1k/iconfont.css'
-export default {
-    
-}
+import "../../assets/font_rdkgeqhf1k/iconfont.css";
+export default {};
 </script>

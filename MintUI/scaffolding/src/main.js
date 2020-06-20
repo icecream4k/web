@@ -16,8 +16,6 @@ import "mint-ui/lib/style.min.css";
 //通过Vue.use()方法使用插件
 Vue.use(MintUI);
 
-
-
 new Vue({
   router,
   store,
