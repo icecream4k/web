@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import myHeader from './components/myHeader.vue'
+
 Vue.component('my-header',myHeader)
 //结果：在当前项目中任何位置都可以使用<my-header></my-header>
 Vue.config.productionTip = false

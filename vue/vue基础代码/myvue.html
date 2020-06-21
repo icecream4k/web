@@ -10,6 +10,7 @@
 	<script src="../js/vue.js"></script>
 	<script src="../js/vue-router.js"></script>
 	<script src="./myvuejs.js"></script>
+	<script src="../../vue/js/axios.min.js"></script>
 	<script>
 		Vue.component('hl-hr', {
 			template: `
@@ -1461,18 +1462,18 @@
 						<span>见源码,压缩了ajax四步,好东西,见源码</span>
 						<script>
 							// axios.defaults.baseURL = 'http://xzserver.applinzi.com';
-							// axios.defaults.baseURL='http://www.kuaidi100.com';
+							axios.defaults.baseURL='http://www.kuaidi100.com';
 
 							// axios.get('/index').then(result => {
 							// 	console.log(result.data);
 							// })
-							// axios.get('/query',{params:{'type':'yunda','postid':'4304926503813'}}).then(result=>{
-							// 	console.log(result.data)
-							// })
-							// axios.post('/query',
-							// 	{type:'yunda',postid:'4304926503813'}).then(result=>{
-							// 		console.log(result.data);
-							// 	})
+							axios.get('/query',{params:{'type':'yunda','postid':'4304926503813'}}).then(result=>{
+								console.log(result.data)
+							})
+							axios.post('/query',
+								{type:'yunda',postid:'4304926503813'}).then(result=>{
+									console.log(result.data);
+								})
 
 							// axios.get('/details', { params: { lid: 5 } }).then(result => {
 							// 	console.log(result.data);

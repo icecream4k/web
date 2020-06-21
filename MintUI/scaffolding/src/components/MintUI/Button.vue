@@ -26,4 +26,5 @@
 <script>
 import "../../assets/font_rdkgeqhf1k/iconfont.css";
 export default {};
+
 </script>
