@@ -20,7 +20,7 @@
 			</h1>
 		</b>
 	</p>
-	<div style="border:4px !important;border-color: red !important;width: 140px;height: 470px;text-align: center;background-color:rgba(253,252,248,1);position: fixed;top: 30%;left: 90%;">
+	<!-- <div style="border:4px !important;border-color: red !important;width: 140px;height: 470px;text-align: center;background-color:rgba(253,252,248,1);position: fixed;top: 30%;left: 90%;">
 		<fieldset style="border-radius:10px;">
 			<legend> <span style="color: skyblue"><b>目&nbsp;&nbsp;&nbsp;录</b></span><br></legend>
 			<a href="#dingbu"><img src="../../logo/shouye.png" style="width: 35%;"></a><br><hr>
@@ -40,7 +40,7 @@
 			<a id="test-a-01" href="#wenbengeshihua">文本格式化</a><br><br>
 			<a href="#code_here"><img src="../../logo/dibu.png" style="width: 35%;"></a>
 		</fieldset>
-	</div>
+	</div> -->
 <fieldset>
 	<legend>基础的几个标签</legend>
 		<br>
@@ -775,7 +775,6 @@ multipart/form-data 允许提交文件 -->
 	<hr><br>
 <fieldset>
 	<legend>外部样式</legend>
-
 	<p>这是一个由外部css文件更变的p标签/CSS已被注释</p>
 	<!-- 在外部单独创建一个css文件 -->
 	<!-- 在html中的head中,使用link引入css -->
@@ -882,10 +881,9 @@ multipart/form-data 允许提交文件 -->
 		</div>
 	</fieldset>
 </fieldset>
+<br><hr><br>
 <fieldset>
 	<legend>子代选择器</legend>
-</fieldset>
-	<p class="c-center">子代选择器</p>
 	<!-- 根据元素的父子关系,匹配元素
 子代:div>span{font-style: italic} 大于号指向的是一种包含关系 -->
 	<fieldset>
@@ -896,7 +894,8 @@ multipart/form-data 允许提交文件 -->
 			<span>2222,3333,4444背景颜色为黄色</span><br>
 			<span>1111,3333,4444字号大小为30px</span><br>
 			<span>3333,5555为斜体</span><br>
-		</fieldset>
+        </fieldset>
+    </fieldset>
 		<div id="text-div">
 			<a href="" class="c-test-color-red c-text-size-30">1111</a>
 			<div>
@@ -912,8 +911,12 @@ multipart/form-data 允许提交文件 -->
 				</span>
 			</p>
 		</div>
-	</fieldset>
-	<p class='c-center'>伪类选择器</p>
+    </fieldset>
+    <br><hr><br>
+
+<fieldset>
+    <legend>伪类选择器</legend>
+
 	<fieldset>
 		<legend><b>demo</b></legend>
 		<div id="test-div-01">
@@ -972,12 +975,16 @@ multipart/form-data 允许提交文件 -->
 			<li>群组选择器的权值,单独计算,不能相加</li>
 			<li>如果样式和加了!important的,直接获得最高优先级,但是内联样式不能添加!important</li>
 			<li>选择器权值的计算,不会超过本身权值的最大数量级</li>
-		</ul>
-	</fieldset>
+        </ul>
+    </fieldset>
+    </fieldset>
+    
 	<br>
-	<hr style="color:black"><br>
+    <hr style="color:black"><br>
+    <fieldset>
+        <legend>尺寸</legend>
+    
 	<span id="chicun"></span>
-	<p class="c-center">尺寸</p>
 	<fieldset>
 		<legend><b>改变元素在页面上的宽度和高度</b></legend>
 		<div id="test-div-03"></div>
@@ -1056,9 +1063,11 @@ multipart/form-data 允许提交文件 -->
 						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
 				</div>
-			</fieldset>
+            </fieldset>
+        </fieldset>
 		</fieldset>
-	</fieldset>
+    </fieldset>
+    <br><hr><br>
 	<span id="yichu"></span>
 	<fieldset>
 		<legend><b>溢出情况</b></legend>
@@ -1083,13 +1092,16 @@ multipart/form-data 允许提交文件 -->
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h4>
 		</div>
-	</fieldset>
+    </fieldset>
+    <br><hr><br>
 	<fieldset>
 		<legend><b>图片联排显示demo</b></legend>
 		<div style="width: 1000px;border-color: red">
 			<img src="../img/diannao.jpg"><img src="../img/diannao.jpg">
 		</div>
-	</fieldset>
+    </fieldset>
+    <br><hr><br>
+    
 	<fieldset>
 		<legend><b>外边距</b></legend>
 		<ul>
@@ -1141,7 +1153,9 @@ multipart/form-data 允许提交文件 -->
 				<li>只有左右外边距生效,上下外边距无效-行内元素</li>
 				<li>4个方向外边距都生效,改变上下外边距,会连同同一行其他行内元素和行内块元素一起移动</li>
 			</ul>
-		</fieldset>
+        </fieldset>
+    <br><hr><br>
+        
 		<fieldset>
 			<legend><b>外边距溢出demo</b></legend>
 			<span>两个div id为d1和d2<br>尺寸200px*200px,分别设置不同背景颜色<br>在d2中添加一个子元素div
@@ -1162,7 +1176,9 @@ multipart/form-data 允许提交文件 -->
 				<li>在第一个元素的位置处,添加一个空的&lt;table&gt;&lt;/tabel&gt;这样浏览器就认为上边沿分开了</li>
 			</ul>
 		</fieldset>
-	</fieldset>
+    </fieldset>
+    <br><hr><br>
+    
 	<span id="neibianju"></span>
 	<fieldset>
 		<legend><b>内边距</b></legend>
@@ -1362,7 +1378,7 @@ multipart/form-data 允许提交文件 -->
 			<li>重复渐变,把线性渐变,径向渐变,反复执行几次</li>
 		</ul>
 		<ul>
-			<li>低版本浏览器不支持渐变，我们需要添加</li>
+			<li>低版本浏览器不支持渐变,我们需要添加</li>
 		</ul>
 		<fieldset>
 			<legend>线性渐变demo</legend>
@@ -1379,7 +1395,7 @@ multipart/form-data 允许提交文件 -->
 					色标 颜色 + 位置 <br>
 					位置:1, % 0% ~ 100%
 					2, px
-					3, 如果不写位置，所有颜色平均分配
+					3, 如果不写位置,所有颜色平均分配
 				</li>
 			</ul>
 			<div style="width: 200px;height: 200px;
@@ -1394,8 +1410,8 @@ multipart/form-data 允许提交文件 -->
 		<fieldset>
 			<legend>径向渐变</legend>
 			<ul>
-				<li>background-image:radial-gradient(半径 at 圆形，色标1，色标2...)</li>
-				<li>半径:以px为单位的数字，注意:只有色标是%的时候，半径才生效</li>
+				<li>background-image:radial-gradient(半径 at 圆形,色标1,色标2...)</li>
+				<li>半径:以px为单位的数字,注意:只有色标是%的时候,半径才生效</li>
 				<li>圆心:关键字 x:left/center/right y:top/center/bottom <br>
 					x y ,px 为单位的</li>
 			</ul>
@@ -1420,12 +1436,12 @@ multipart/form-data 允许提交文件 -->
 		</fieldset>
 		<fieldset>
 			<legend>兼容性</legend>
-			<span>需要在浏览器前面添加前缀，内核名称<br>
+			<span>需要在浏览器前面添加前缀,内核名称<br>
 				-moz - 火狐 <br>
 				-webkit - chrome/safari <br>
 				-o - opera <br>
 				-ms - ie <br>
-				**方向一定要写起点，不能加to</span>
+				**方向一定要写起点,不能加to</span>
 			<div style="width: 200px;height: 200px;
 		background-image:-webkit-linear-gradient(top,#ff0,#0ff);
 		background-image:-moz-linear-gradient(top,#ff0,#0ff);
@@ -1440,7 +1456,7 @@ multipart/form-data 允许提交文件 -->
 	<fieldset>
 		<legend><b><span style="color: red">文本格式化</span></b></legend>
 		<ul>font-size
-			<li>font-size 指定字号大小，取值 - px/pt/rem/em</li>
+			<li>font-size 指定字号大小,取值 - px/pt/rem/em</li>
 		</ul>
 		<ul>字体系列
 			<li>需要客户端用相对的字体库</li>
@@ -1448,11 +1464,11 @@ multipart/form-data 允许提交文件 -->
 			<li>字体使用版权-注意</li>
 		</ul>
 		<ul>字体的粗细
-			<li>取值:1 normal 普通，不加粗</li>
+			<li>取值:1 normal 普通,不加粗</li>
 			<li>2 bold 加粗</li>
 			<li>3 bolder 比粗更粗</li>
 			<li>4 ligter 细</li>
-			<li>5 不带单位的数字，必须是100的整数倍，最大1000 <br>
+			<li>5 不带单位的数字,必须是100的整数倍,最大1000 <br>
 				300-lighter 400-normal 600-bold 700-bolder</li>
 		</ul>
 		<ul>文字样式
@@ -1501,10 +1517,10 @@ multipart/form-data 允许提交文件 -->
 		<hr><br>
 		<ul>文本的垂直对齐方式
 			<li>行高---定义一行文本的高度</li>
-			<li>行高的特点，如果行高大于文本字号，那么文本会默认在行高的范围内，垂直居中 <br>
+			<li>行高的特点,如果行高大于文本字号,那么文本会默认在行高的范围内,垂直居中 <br>
 				line-height: XXpx </li>
-			<li>通常会把行高设置成容器高度，让文本在容器垂居中显示</li>
-			<li>但是，多行文本不建议使用</li>
+			<li>通常会把行高设置成容器高度,让文本在容器垂居中显示</li>
+			<li>但是,多行文本不建议使用</li>
 		</ul>
 		<ul>行高的取值
 			<li>以px为单位的数字</li>
@@ -1516,13 +1532,13 @@ multipart/form-data 允许提交文件 -->
 		<div style="width: 200px;height: 200px;
 	    border:2px solid #f00;background-color: black;
 	    color: yellow;">
-			<!-- 这里的margin : 0 auto是让块级元素自己(本身)，水平居中对齐 -->
+			<!-- 这里的margin : 0 auto是让块级元素自己(本身),水平居中对齐 -->
 			<p style="text-align: center;line-height: 30px;text-decoration: underline;">Lorem ipsum dolor sit amet,
 				consectetur adipisicing elit, sed do eiusmod</p>
 			<!-- text-align:center; -->
-			<!-- 让元素内部的，文本/行内元素/行内块，水平居中对齐 -->
+			<!-- 让元素内部的,文本/行内元素/行内块,水平居中对齐 -->
 			<!-- margin:0 auto; -->
-			<!-- 让块级元素自己(本身)，水平居中对齐 -->
+			<!-- 让块级元素自己(本身),水平居中对齐 -->
 		</div>
 	</fieldset>
 	<br>
@@ -1576,8 +1592,8 @@ multipart/form-data 允许提交文件 -->
 				/* align-items: center;垂直方向对齐 */
 				/* justify-items: center;水平方向对齐 --> conter居中对齐 end向下对齐 space-between*/
 
-				/* align-content:center;如果arid小于外层空间，则可以用 */
-				/* justify-content: center;如果arid小于外层空间，则可以用 -->center居中对齐 end向右对齐 */
+				/* align-content:center;如果arid小于外层空间,则可以用 */
+				/* justify-content: center;如果arid小于外层空间,则可以用 -->center居中对齐 end向右对齐 */
 			}
 
 			.layount>header {

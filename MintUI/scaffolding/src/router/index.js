@@ -4,8 +4,9 @@ import Home from "../views/Home.vue";
 
 //测试案例开始
 import Header from "../components/MintUI/Header.vue";
-import Button from '../components/MintUI/Button.vue';
-import Field from '../components/MintUI/Field.vue';
+import Button from "../components/MintUI/Button.vue";
+import Field from "../components/MintUI/Field.vue";
+import Toast from "../components/MintUI/Toast.vue"
 //测试案例结束
 Vue.use(VueRouter);
 
@@ -21,13 +22,17 @@ const routes = [
     component: Header,
   },
   {
-    path:"/field",
-    component:Field,
+    path: "/field",
+    component: Field,
   },
   {
     path: "/button",
     // name: "Home",暂时可以没有
     component: Button,
+  },
+  {
+      path:'/toast',
+      component:Toast,
   },
   {
     path: "/about",
