@@ -39,6 +39,5 @@ export default {
 }
 .mint-toast-text {
     font-size: 20px;
-    color: red;
 }
 </style>

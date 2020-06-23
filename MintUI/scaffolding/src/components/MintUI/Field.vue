@@ -41,7 +41,7 @@ export default {
     methods: {
         register() {
             if(this.password != this.conpassword){
-                this.$toast('密码不正确')
+                this.$toast('两次密码输入不相等')
             }
         }
     }

@@ -6,7 +6,8 @@ import Home from "../views/Home.vue";
 import Header from "../components/MintUI/Header.vue";
 import Button from "../components/MintUI/Button.vue";
 import Field from "../components/MintUI/Field.vue";
-import Toast from "../components/MintUI/Toast.vue"
+import Toast from "../components/MintUI/Toast.vue";
+import Register from "../views/Register";
 //测试案例结束
 Vue.use(VueRouter);
 
@@ -25,6 +26,11 @@ const routes = [
     path: "/field",
     component: Field,
   },
+  {
+    path:'/register',
+    component:Register,
+  }
+  ,
   {
     path: "/button",
     // name: "Home",暂时可以没有
