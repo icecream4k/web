@@ -1,6 +1,6 @@
 <template>
     <div>
-        <mt-header title="有问题，找阿龙" fixed>
+        <mt-header title="test progream" fixed>
             <router-link to='/' slot="left">
                 <mt-button icon='back'></mt-button>
             </router-link>

@@ -228,6 +228,11 @@
                 <li>
                     disableClear - 让输入框后面的叉消失
                 </li>
+                <li>
+                    如果为表单控件添加失去焦点、获取焦点的事件,其语法结构是<br>
+                    &lt;mt-field @blur.native.capture="事件名称"&gt;&lt;/mt-field&gt;<br>
+                    &lt;mt-field @focus.native.capture="事件名称"&gt;&lt;/mt-field&gt;
+                </li>
             </ul>
         </ul>
         <br />
@@ -256,6 +261,10 @@
             </ul>
         </ul>
     </fieldset>
+
+
+
+
 </body>
 
 </html>
