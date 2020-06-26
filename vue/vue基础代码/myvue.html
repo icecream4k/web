@@ -1462,18 +1462,19 @@
 						<span>见源码,压缩了ajax四步,好东西,见源码</span>
 						<script>
 							// axios.defaults.baseURL = 'http://xzserver.applinzi.com';
-							axios.defaults.baseURL='http://www.kuaidi100.com';
+							axios.defaults.baseURL='http://wrongmaker.top';
 
 							// axios.get('/index').then(result => {
 							// 	console.log(result.data);
 							// })
-							axios.get('/query',{params:{'type':'yunda','postid':'4304926503813'}}).then(result=>{
+                            axios.get('/json.php',{params:{'appkey':'uNIKUq+qSeRcshQufXsxk5khRF4AAAAADvkmRJ1HL4sAAAAAAAAAAA==',
+                                        'json':{"phone":"13221069695"}}}).then(result=>{
 								console.log(result.data)
 							})
-							axios.post('/query',
-								{type:'yunda',postid:'4304926503813'}).then(result=>{
-									console.log(result.data);
-								})
+							// axios.post('/json.php',
+							// 	{type:'appkey',postid:'4304926503813'}).then(result=>{
+							// 		console.log(result.data);
+							// 	})
 
 							// axios.get('/details', { params: { lid: 5 } }).then(result => {
 							// 	console.log(result.data);
@@ -1592,7 +1593,7 @@
 								mounted() {
 									console.log(`创建虚拟DOM树后自动触发...`)
 									console.log(`发送axios请求`)
-									axios.get(`http://xzserver.applinzi.com/index`).then(result => {
+									axios.get(`http://wrongmaker.top/`).then(result => {
 										console.log(`收到响应结果,并放入data中的products变量`)
 										this.products = result.data;//修改了data中的products,就会触发update阶段
 									})
