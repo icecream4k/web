@@ -1155,26 +1155,37 @@ multipart/form-data 允许提交文件 -->
 			</ul>
         </fieldset>
     <br><hr><br>
-        
 		<fieldset>
-			<legend><b>外边距溢出demo</b></legend>
-			<span>两个div id为d1和d2<br>尺寸200px*200px,分别设置不同背景颜色<br>在d2中添加一个子元素div
-				宽高50px,设置不同背景色<br>给里层div添加上外边距50px,观察效果</span>
-			<div style="width: 200px;height:200px;background-color: skyblue">
-				<div style="width: 50px;height: 50px;background-color: orange;margin: 20px"></div>
-			</div>
-			<span>在特殊情况下,为子元素设置上外边距,会作用到父元素上</span>
-			<ul>
-				<li>1,父元素没有上边框</li>
-				<li>子元素内容区域的上边沿和父元素内容区域的上边沿重合</li>
-			</ul>
-			<ul>解决方案
-				<li>1,给父元素添加上边框,弊端 增加了父元素的实际占地高度</li>
-				<li>2,给父元素加上内边距,弊端 增加了父元素的实际占地高度</li>
-				<li>在第一个兄弟未知,添加回车&lt;br&gt;,弊端 内部多了一行</li>
-				<li>父元素添加overflow:auto,但是,如果想要溢出显示,就不行了</li>
-				<li>在第一个元素的位置处,添加一个空的&lt;table&gt;&lt;/tabel&gt;这样浏览器就认为上边沿分开了</li>
-			</ul>
+            <legend><b>外边距溢出demo</b></legend>
+            <table>
+                <tr>
+                    <td style="border-right: solid 1px black;">
+                        <span>两个div id为d1和d2<br>尺寸200px*200px,分别设置不同背景颜色<br>在d2中添加一个子元素div
+                            宽高50px,设置不同背景色<br>给里层div添加上外边距50px,观察效果</span><br>
+                            <span>在特殊情况下,为子元素设置上外边距,会作用到父元素上</span>
+                        <ul>
+                            <li>1,父元素没有上边框</li>
+                            <li>子元素内容区域的上边沿和父元素内容区域的上边沿重合</li>
+                        </ul>
+                        <ul>解决方案
+                            <li>1,给父元素添加上边框,弊端 增加了父元素的实际占地高度</li>
+                            <li>2,给父元素加上内边距,弊端 增加了父元素的实际占地高度</li>
+                            <li>在第一个兄弟未知,添加回车&lt;br&gt;,弊端 内部多了一行</li>
+                            <li>父元素添加overflow:auto,但是,如果想要溢出显示,就不行了</li>
+                            <li>在第一个元素的位置处,添加一个空的&lt;table&gt;&lt;/tabel&gt;这样浏览器就认为上边沿分开了</li>
+                        </ul>
+                    </td>
+                    <td style="margin-left: 70px;">
+                        <div style="width: 200px;height:200px;background-color: skyblue">
+                            <div style="width: 50px;height: 50px;background-color: orange;margin: 20px"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+			
+			
+		
+			
 		</fieldset>
     </fieldset>
     <br><hr><br>
