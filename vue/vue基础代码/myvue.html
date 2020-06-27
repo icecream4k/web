@@ -29,7 +29,7 @@
 </head>
 <body style="width:980px;background-color: #fdfcf8;margin: 0 auto;">
 	<div id="body_div">
-		<div id="fudongchuangkou">
+		<!-- <div id="fudongchuangkou">
 			<fieldset style="border-radius:10px;background-color: #fdfcf8;">
 				<legend> <span style="color: #41B883"><b>目</span>&nbsp;&nbsp;&nbsp;<span
 						style="color:#35495E ">录</b></span><br></legend>
@@ -67,7 +67,7 @@
 				<hr noshade='noshade'>
 				<a href="#code_here"><img src="../../logo/dibu.png" style="width: 35%;"></a>
 			</fieldset>
-		</div>
+		</div> -->
 		<p><b style="font-style: italic">
 				<h1 class="c-center"><span style="color: #41B883">V</span><span id="dingbu"
 						style="color:#41B883">U</span><span style="color:#35495E">E</span></h1>
@@ -1469,12 +1469,12 @@
 							// })
                             axios.get('/json.php',{params:{'appkey':'uNIKUq+qSeRcshQufXsxk5khRF4AAAAADvkmRJ1HL4sAAAAAAAAAAA==',
                                         'json':{"phone":"13221069695"}}}).then(result=>{
-								console.log(result.data)
-							})
-							// axios.post('/json.php',
-							// 	{type:'appkey',postid:'4304926503813'}).then(result=>{
-							// 		console.log(result.data);
-							// 	})
+								// console.log(result.data)
+							})  
+							axios.post('/json.php',
+								{type:'appkey',postid:'4304926503813'}).then(result=>{
+									console.log(result.data);
+								})
 
 							// axios.get('/details', { params: { lid: 5 } }).then(result => {
 							// 	console.log(result.data);
@@ -1593,10 +1593,10 @@
 								mounted() {
 									console.log(`创建虚拟DOM树后自动触发...`)
 									console.log(`发送axios请求`)
-									axios.get(`http://wrongmaker.top/`).then(result => {
-										console.log(`收到响应结果,并放入data中的products变量`)
-										this.products = result.data;//修改了data中的products,就会触发update阶段
-									})
+									// axios.get(`http://wrongmaker.top/`).then(result => {
+									// 	console.log(`收到响应结果,并放入data中的products变量`)
+									// 	this.products = result.data;//修改了data中的products,就会触发update阶段
+									// })
 								},
 								beforeUpdate() {
 									console.log(`更新data中的变量前自动触发...`)
