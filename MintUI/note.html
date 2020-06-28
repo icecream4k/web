@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>组件库笔记</title>
+    <title>MintUI</title>
     <link rel="icon" href="../logo/code.png" />
     <link rel="stylesheet" href="./note.css" />
 </head>
 
 <body class="body">
+<b style="font-style: italic;"><h1 style="text-align:center;color: #26a2ff;">Mint<span style="color: #1365a2;">UI</span></h1></b>
     <fieldset>
         <legend>组件库基础</legend>
         <!-- <legend>什么是组件库</legend> -->
@@ -232,6 +233,37 @@
                     如果为表单控件添加失去焦点、获取焦点的事件,其语法结构是<br>
                     &lt;mt-field @blur.native.capture="事件名称"&gt;&lt;/mt-field&gt;<br>
                     &lt;mt-field @focus.native.capture="事件名称"&gt;&lt;/mt-field&gt;
+                </li>
+            </ul>
+            -------------------<br>
+            <ul>
+                <li>
+                    复选框组件<br>
+                    &lt;mt-checklist title="标题"<br>
+                    align="对齐方式(left|right)"<br>
+                    :options="选项列表"<br>
+                    v-modle="变量"<br>
+                    &gt;&lt;/mt-checklist&gt;<br>
+                    <span class='zd'>:options属性必须存在</span>,options属性为array类型,既可以直接存储字符串,也可以存储对象<br>
+                    <span class='zd'>v-model也必须存在</span>,且数据类型必须为array类型<br>
+                    如果为字符串的话，则为最后的选定值泽为选定的文本,如果是对象的话，最后的值是value中的数据
+                </li>
+                <li>
+                    单选框<br>
+                    &lt;mt-radio title="标题"<br>
+                                align="对齐方式(left|right)"<br>
+                                :options="选项列表"<br>
+                                v-model="变量名称"<br>
+                                &gt;<br>
+                    &lt;/mt-radio&gt;<br>
+                    <span class='zd'>:options属性必须存在</span>,options属性为array类型,既可以直接存储字符串,也可以存储对象<br>
+                    <span class='zd'>v-model也必须存在</span>,且数据类型必须为String类型
+                </li>
+                <li>
+                    开关组件<br>
+                    &lt;mt-switch v-model="变量名称"<br>
+                                disabled&gt;<br>
+                    &lt;/mt-switch&gt;
                 </li>
             </ul>
         </ul>

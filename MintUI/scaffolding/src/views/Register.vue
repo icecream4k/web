@@ -1,17 +1,10 @@
 <template>
     <div>
         <!-- 头部区域开始 -->
-        <mt-header class='register_header' title="有问题,找阿龙" fixed>
-            <router-link to="/" slot="left">
-                <mt-button icon="back"></mt-button>
-            </router-link>
-            <router-link to="/button" slot="right">
-                <mt-button icon="more"></mt-button>
-            </router-link>
-        </mt-header>
+        
         <!-- 头部区域结束 -->
         <div class="main_01">
-            <img src="../assets/logo.png" alt />
+            <img src="../../../../logo/code.png" alt />
         </div>
         <!-- 注册区域开始 -->
         <div class="main_02">
@@ -46,12 +39,20 @@
             <mt-button class="main_button" type="primary" size="large" @click="register">免费注册</mt-button>
         </div>
         <!-- 注册区域结束 -->
+        <mt-header class='register_header' title="Test header" fixed>
+            <router-link to="/" slot="left">
+                <mt-button icon="back"></mt-button>
+            </router-link>
+            <router-link to="/button" slot="right">
+                <mt-button icon="more"></mt-button>
+            </router-link>
+        </mt-header>
     </div>
 </template>
 <style scoped>
-.main_button {
+/* .main_button {
     margin-top: 40px;
-}
+} */
 .main_01{
     margin-top: 40px;
 }

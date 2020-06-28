@@ -9,11 +9,14 @@
             <router-link to="/">Home</router-link>|
             <router-link to="/header">header</router-link>|
             <router-link to="/button">button</router-link> |
-            <router-link to='/register'>register</router-link>
+            <router-link to='/register'>register</router-link> |
+            <router-link to="/field">field</router-link> 
             <br />
             <br />
-            <router-link to="/field">field</router-link> |
-            <router-link to="/toast">toast</router-link>
+            <router-link to="/toast">toast</router-link> |
+            <router-link to="/checklist">checklist</router-link> |
+            <router-link to="/radio">radio</router-link> |
+            <router-link to="/switch">switch</router-link>
 
         </div>
         <router-view />

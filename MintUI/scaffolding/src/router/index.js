@@ -8,6 +8,9 @@ import Button from "../components/MintUI/Button.vue";
 import Field from "../components/MintUI/Field.vue";
 import Toast from "../components/MintUI/Toast.vue";
 import Register from "../views/Register";
+import Checklist from "../components/MintUI/Checklist.vue";
+import Radio from "../components/MintUI/Radio.vue";
+import Switch from "../components/MintUI/Switch.vue";
 //测试案例结束
 Vue.use(VueRouter);
 
@@ -27,18 +30,25 @@ const routes = [
     component: Field,
   },
   {
-    path:'/register',
-    component:Register,
-  }
-  ,
+    path: "/checklist",
+    component: Checklist,
+  },
+  {
+    path: "/register",
+    component: Register,
+  },
+  {
+    path: "/radio",
+    component: Radio,
+  },
   {
     path: "/button",
     // name: "Home",暂时可以没有
     component: Button,
   },
   {
-      path:'/toast',
-      component:Toast,
+    path: "/toast",
+    component: Toast,
   },
   {
     path: "/about",
@@ -48,6 +58,10 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+  {
+    path: "/switch",
+    component: Switch,
   },
 ];
 

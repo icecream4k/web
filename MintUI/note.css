@@ -10,3 +10,10 @@ fieldset{
     background-color: #fdfcf8;
     margin: 0 auto 
 }
+.zd{
+    color: red;
+}
+legend{
+    color: #26a2ff;
+    font-weight: bold;
+}
