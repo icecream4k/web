@@ -10,7 +10,9 @@
 </head>
 
 <body class="body">
-<b style="font-style: italic;"><h1 style="text-align:center;color: #26a2ff;">Mint<span style="color: #1365a2;">UI</span></h1></b>
+    <b style="font-style: italic;">
+        <h1 style="text-align:center;color: #26a2ff;">Mint<span style="color: #1365a2;">UI</span></h1>
+    </b>
     <fieldset>
         <legend>组件库基础</legend>
         <!-- <legend>什么是组件库</legend> -->
@@ -111,6 +113,17 @@
                 &lt;mt-header title='标题信息' fixed&gt;&lt;/mt-header&gt;<br />
                 title属性用于设置标题信息,字符类型<br />fixed属性用于控制是否固定在顶部,布尔类型<br />
                 &lt;mt-header&gt;子元素可以通过slot='left'或slot='right'控制子元素显示的位置
+            </li>
+            <li>
+                顶部选项卡<br>
+                &lt;mt-navbar fixed v-model="变量名称"&gt;<br>
+                    &lt;mt-tab-item id="当前选项卡ID"&gt;<br>
+
+                    &lt;/mt-tab-item&gt;<br>
+                &lt;/mt-navbar&gt;<br>
+                说明：fixed属性用于控制顶部选项卡是否固定在页面顶部，boolean类型；<br>
+                v-model 指令绑定的变量类型为字符类型，其应该为当前被激活的选项卡的id<br>
+                可以子啊&lt;mt-tab-item&gt;中嵌套图像，并且为图像设置slot='icon'属性，此时图像将作为选项卡的图标
             </li>
         </ul>
         <hr />
@@ -251,10 +264,10 @@
                 <li>
                     单选框<br>
                     &lt;mt-radio title="标题"<br>
-                                align="对齐方式(left|right)"<br>
-                                :options="选项列表"<br>
-                                v-model="变量名称"<br>
-                                &gt;<br>
+                    align="对齐方式(left|right)"<br>
+                    :options="选项列表"<br>
+                    v-model="变量名称"<br>
+                    &gt;<br>
                     &lt;/mt-radio&gt;<br>
                     <span class='zd'>:options属性必须存在</span>,options属性为array类型,既可以直接存储字符串,也可以存储对象<br>
                     <span class='zd'>v-model也必须存在</span>,且数据类型必须为String类型
@@ -262,8 +275,9 @@
                 <li>
                     开关组件<br>
                     &lt;mt-switch v-model="变量名称"<br>
-                                disabled&gt;<br>
-                    &lt;/mt-switch&gt;
+                    disabled&gt;<br>
+                    &lt;/mt-switch&gt;<br>
+                    说明：v-model指令绑定的变量类型为boolean类型
                 </li>
             </ul>
         </ul>
@@ -291,6 +305,22 @@
                     </li>
                 </ul>
             </ul>
+        </ul>
+        <ul>
+            面板组件
+            <li>
+                <mt-tab-container>
+                    <mt-tab-container-item>
+                        
+                    </mt-tab-container-item>
+                </mt-tab-container>
+            </li>
+            <li>
+
+            </li>
+            <li>
+
+            </li>
         </ul>
     </fieldset>
 

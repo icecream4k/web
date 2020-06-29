@@ -11,6 +11,10 @@ import Register from "../views/Register";
 import Checklist from "../components/MintUI/Checklist.vue";
 import Radio from "../components/MintUI/Radio.vue";
 import Switch from "../components/MintUI/Switch.vue";
+import Navbar from "../components/MintUI/Navbar.vue"
+import Tabcontainer from "../components/MintUI/Tabcontainer.vue"
+
+
 //测试案例结束
 Vue.use(VueRouter);
 
@@ -62,6 +66,14 @@ const routes = [
   {
     path: "/switch",
     component: Switch,
+  },
+  {
+      path:"/navbar",
+      component:Navbar,
+  },
+  {
+      path:"/tabcontainer",
+      component:Tabcontainer,
   },
 ];
 

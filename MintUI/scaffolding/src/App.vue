@@ -7,16 +7,19 @@
             <br />
             <br />
             <router-link to="/">Home</router-link>|
-            <router-link to="/header">header</router-link>|
-            <router-link to="/button">button</router-link> |
-            <router-link to='/register'>register</router-link> |
-            <router-link to="/field">field</router-link> 
+            <router-link to="/header">头部</router-link>|
+            <router-link to="/button">按钮</router-link> |
+            <router-link to='/register'>注册信息</router-link> |
+            <router-link to="/field">注册</router-link> |
+            <router-link to="/toast">提示框</router-link>
             <br />
             <br />
-            <router-link to="/toast">toast</router-link> |
-            <router-link to="/checklist">checklist</router-link> |
-            <router-link to="/radio">radio</router-link> |
-            <router-link to="/switch">switch</router-link>
+            
+            <router-link to="/checklist">多选按钮</router-link> |
+            <router-link to="/radio">单选按钮</router-link> |
+            <router-link to="/switch">开关按钮</router-link> |
+            <router-link to="/navbar">导航栏</router-link> |
+            <router-link to="/tabcontainer">tabcontainer</router-link>
 
         </div>
         <router-view />
