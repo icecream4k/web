@@ -1,7 +1,6 @@
 <template>
     <div>
-        <!-- 头部区域开始 -->
-        
+
         <!-- 头部区域结束 -->
         <div class="main_01">
             <img src="../../../../logo/code.png" alt />

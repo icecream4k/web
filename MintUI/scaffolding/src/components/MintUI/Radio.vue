@@ -1,5 +1,14 @@
 <template>
     <div>
+        <mt-header title="radio demo" fixed>
+            <router-link to='/' slot="left">
+                <mt-button icon='back'></mt-button>
+            </router-link>
+            <router-link to='/button' slot="right">
+                <mt-button icon='more'></mt-button>
+            </router-link>
+        </mt-header>
+        <div class='checklist_div'></div>
         <p>{{sex}}</p>
         <mt-radio title='性别'
                     :options="options"
@@ -27,3 +36,8 @@ export default {
     }
 }
 </script>
+<style scoped>
+    .checklist_div{
+    height: 80px;
+}
+</style>

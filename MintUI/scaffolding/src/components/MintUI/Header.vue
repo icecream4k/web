@@ -1,6 +1,6 @@
 <template>
     <div>
-        <mt-header title="test progream" fixed>
+        <mt-header title="Header demo" fixed>
             <router-link to='/' slot="left">
                 <mt-button icon='back'></mt-button>
             </router-link>
@@ -8,5 +8,13 @@
                 <mt-button icon='more'></mt-button>
             </router-link>
         </mt-header>
+        <div class='header_div'>
+            <span>this mode in top↑↑↑↑</span>
+        </div>
     </div>
 </template>
+<style>
+    .header_div{
+        margin-top:200px;
+    }
+</style>

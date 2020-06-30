@@ -1,6 +1,14 @@
 
 <template>
     <div>
+        <mt-header title="button demo" fixed>
+            <router-link to='/' slot="left">
+                <mt-button icon='back'></mt-button>
+            </router-link>
+            <router-link to='/button' slot="right">
+                <mt-button icon='more'></mt-button>
+            </router-link>
+        </mt-header>
         <p>
             <mt-button type="default" size="small">默认</mt-button>
         </p>

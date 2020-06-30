@@ -1,5 +1,13 @@
 <template>
     <div>
+        <mt-header title="toast demo" fixed>
+            <router-link to='/' slot="left">
+                <mt-button icon='back'></mt-button>
+            </router-link>
+            <router-link to='/button' slot="right">
+                <mt-button icon='more'></mt-button>
+            </router-link>
+        </mt-header>
         <br />
         <br />
         <mt-button @click="simple">简捷方式提示框</mt-button>

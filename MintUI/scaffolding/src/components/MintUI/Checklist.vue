@@ -1,5 +1,14 @@
 <template>
     <div>
+        <mt-header title="checklist demo" fixed>
+            <router-link to='/' slot="left">
+                <mt-button icon='back'></mt-button>
+            </router-link>
+            <router-link to='/button' slot="right">
+                <mt-button icon='more'></mt-button>
+            </router-link>
+        </mt-header>
+        <div class='checklist_div'></div>
         <!-- :options属性必须存在 -->
         <p>{{loves}}</p>
         <mt-checklist title="爱好" 
@@ -52,5 +61,8 @@ export default {
 .mint-checkbox-core {
     background-color: #42b983 !important;
     border-color: #35495e !important;
+}
+.checklist_div{
+    height: 80px;
 }
 </style>

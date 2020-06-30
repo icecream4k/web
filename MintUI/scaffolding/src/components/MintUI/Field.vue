@@ -1,5 +1,13 @@
 <template>
     <div>
+        <mt-header title="field demo" fixed>
+            <router-link to='/' slot="left">
+                <mt-button icon='back'></mt-button>
+            </router-link>
+            <router-link to='/button' slot="right">
+                <mt-button icon='more'></mt-button>
+            </router-link>
+        </mt-header>
         <mt-field
             type="text"
             label="用户名"
