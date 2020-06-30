@@ -28,7 +28,7 @@
     color: #42b983;
 }
 
-#nav>table{
+/* #nav>table{
        
-}
+} */
 </style>
