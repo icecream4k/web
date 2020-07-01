@@ -64,7 +64,11 @@
                         <router-link to="/tabcontainer">子页面</router-link>
                     </button>
                 </td>
-                <td></td>
+                <td>
+                    <button>
+                        <router-link to="/table">表格</router-link>
+                    </button>
+                </td>
             </tr>
             <tr>
                 <td></td>

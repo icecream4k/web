@@ -1,31 +1,30 @@
-/* ------------------id选择器------------------ */
-
-
-
-
-
-
-
-
-/* ------------------class选择器------------------ */
-.c_body :nth-child(1){ 
+.test_div_01{
     width: 100%;
-    height: 200px;
-    background-color: skyblue !important;
+    height: 120px;
+    background-color:red;
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    "aside main main"
+    "footer footer footer";
+    gap: 20px;
+    /* grid-template-columns:1fr 1fr 1fr; */
 }
-
-.c_body :nth-child(2),.body :nth-child(3){
-    width: 1000px;
-    /* height: 200px; */
-    margin: 0 auto;
-    /* background-color: purple !important; */
+header{
+    grid-area: header;
+    background-color: skyblue;
 }
+aside{
+    grid-area: aside;
+    background-color: skyblue;
+}
+main{
+    grid-area: main;
+    background-color: skyblue;
 
+}
+footer{
+    grid-area: footer;
+    background-color: skyblue;
 
-
-/* ------------------其他选择器------------------ */
-/* div{
-    width: 200px;
-    height: 200px;
-    /* background-color: red; */
-} */
+}

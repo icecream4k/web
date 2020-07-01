@@ -1,0 +1,10 @@
+<template>
+    <div>
+        <table>
+            <tr>
+                <td>123</td>
+                <td>123</td>
+            </tr>
+        </table>
+    </div>
+</template>

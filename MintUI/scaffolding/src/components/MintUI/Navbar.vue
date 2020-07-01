@@ -10,21 +10,10 @@
         </mt-header>
         <div class='navbar_div01'></div>
         <p>当前选中>>>{{active}}</p>
-        <mt-navbar v-model='active'>
-            <mt-tab-item id="html">
-                <img src="../../../../../logo/html.png" alt=""  slot='icon'>
-            </mt-tab-item>
-            <mt-tab-item id="css"> 
-                <img src="../../../../../logo/css.png" alt="" slot="icon">
-            </mt-tab-item>
-            <mt-tab-item id="js">
-                <img src="../../../../../logo/javascript.png" alt="" slot="icon">
-            </mt-tab-item>
-        </mt-navbar>
     </div>
 </template>
 <script>
-export default {
+export default { 
     data(){
         return{
             active:'html'

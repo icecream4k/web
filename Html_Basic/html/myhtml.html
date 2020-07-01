@@ -1555,7 +1555,6 @@ multipart/form-data 允许提交文件 -->
 	<br>
 	<hr><br>
 	<fieldset>
-
 		<legend>grid布局</legend>
 		<br>
 		<hr><br>
@@ -1574,7 +1573,6 @@ multipart/form-data 允许提交文件 -->
 				gap: 20px
 					/* 可统一设置 */
 			}
-
 			.grid>div {
 				background-color: #aaf;
 			}
@@ -1594,12 +1592,15 @@ multipart/form-data 允许提交文件 -->
 				height: 200px;
 				background-color: #faa;
 				display: grid;
-				grid-template-areas:
+                grid-template-areas:
+                /* 设定成这样的区域 */
 					'header header header'
 					'sidebar content content'
-					'footer footer footer';
-				column-gap: 20px;
-				row-gap: 20px;
+                    'footer footer footer';
+                gap: 20px;
+				/* column-gap: 20px; */
+                /* row-gap: 20px; */
+                /*模块之间的间距*/
 				/* align-items: center;垂直方向对齐 */
 				/* justify-items: center;水平方向对齐 --> conter居中对齐 end向下对齐 space-between*/
 

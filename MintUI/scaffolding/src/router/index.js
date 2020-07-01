@@ -13,7 +13,7 @@ import Radio from "../components/MintUI/Radio.vue";
 import Switch from "../components/MintUI/Switch.vue";
 import Navbar from "../components/MintUI/Navbar.vue"
 import Tabcontainer from "../components/MintUI/Tabcontainer.vue"
-
+import table from "../components/MintUI/table.vue"
 
 //测试案例结束
 Vue.use(VueRouter);
@@ -75,6 +75,10 @@ const routes = [
       path:"/tabcontainer",
       component:Tabcontainer,
   },
+  {
+      path:'/table',
+      component:table,
+  }
 ];
 
 const router = new VueRouter({
