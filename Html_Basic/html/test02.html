@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+        .app {
+            width: 200px;
+            /* overflow:hidden; */
+        }
+
+        .jj {
+            width: 200px;
+            height: 400px;
+        }
+    </style>
+    <script>
+        // 基数 1200
+        // 页面宽度 946
+        console.log(document.body.offsetHeight);
+        window.onscroll = () => {
+            console.log(document.documentElement.scrollTop,$(window).height());
+        }
+        // $(function () {
+        //     console.log('已经进入函数')
+        //     $(".app").scroll(function () {
+        //         var aa = $(this).scrollTop()
+        //         console.log('滚动条位置:',aa)
+        //     })
+        // })
+    </script>
+</head>
+
+<body>
+    <div class='app'>
+        <div class='jj'>头部</div>
+        <div class='jj'>中间</div>
+        <div class='jj'>尾部</div>
+    </div>
+</body>
+
+</html>
