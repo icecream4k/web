@@ -79,7 +79,6 @@
         </table>
     </div>
 </template>
-
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
@@ -91,10 +90,9 @@ export default {
     }
 };
 </script>
-
 <style>
     .home>table{
-        width: 100%;
+        width: 80%;
     }
     .home>table>tr>td>button{
         width: 100%;
