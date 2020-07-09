@@ -14,7 +14,7 @@ import Switch from "../components/MintUI/Switch.vue";
 import Navbar from "../components/MintUI/Navbar.vue"
 import Tabcontainer from "../components/MintUI/Tabcontainer.vue"
 import table from "../components/MintUI/table.vue"
-
+import test from "../components/MintUI/{{sss}}.vue"
 //测试案例结束
 Vue.use(VueRouter);
 
@@ -78,6 +78,10 @@ const routes = [
   {
       path:'/table',
       component:table,
+  },
+  {
+      path:'/{{sss}}',
+     component:test
   }
 ];
 
@@ -88,3 +92,6 @@ const router = new VueRouter({
 });
 
 export default router;
+<script>
+    
+</script>

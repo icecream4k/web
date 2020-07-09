@@ -69,6 +69,11 @@
                         <router-link to="/table">表格</router-link>
                     </button>
                 </td>
+                <td>
+                    <button>
+                        <router-link to="/{{sss}}">test</router-link>
+                    </button>
+                </td>
             </tr>
             <tr>
                 <td></td>
@@ -79,6 +84,7 @@
         </table>
     </div>
 </template>
+
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
