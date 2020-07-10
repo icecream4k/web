@@ -1,0 +1,245 @@
+哪些布局，姗格：
+1.静态布局：最传统、原始的Web布局设计。网页最外层容器(outer)有固定的大小,所有的内容以该容器为标准,超出宽高的部分用滚动条(overflow:scroll)来实现滚动查阅。
+2.流式布局：而流式布局的特点是随着屏幕的改变，页面的布局没有发生大的变化，可以进行适配调整，这个正好与自适应布局相补。
+3.弹性布局：flex-flow
+flex-direction和flex-wrap的简写,在两者选其一。
+flex-direction: row（初始值） | row-reverse | column | column-reverse
+flex-direction定义了弹性项目在弹性容器中的放置方向，默认是row，即行内方向（一般而言是由左往右，但注意这个和书写模式有关）。
+row:主轴为水平方向，项目沿主轴从左至右排列
+column：主轴为竖直方向，项目沿主轴从上至下排列
+row-reverse：主轴水平，项目从右至左排列，与row反向
+column-reverse：主轴竖直，项目从下至上排列，与column反向
+
+
+行内和行外元素：
+1.块级元素占据一整行，内联元素的宽度是其元素内容的宽度，多个内联元素排列会放在同一行里除非放不下，才会挤到新的一行
+2.块级元素可以设置宽度width和高度height，而内联元素设置widht和height是无效的
+3.块级元素可以包含块级元素和内联元素，而内联元素只能包含文本
+4.块级元素可以设置margin和padding属性，行内元素只有margin-left、margin-right、padding-left、padding-right起作用
+
+
+Vue：
+Vue-router的两种模式
+Hash模式：使用URL的hash来模拟一个完整的URL,于是当URL改变的时候,页面不会重新加载,也就是单页应用了,当#后面的hash发生变化,不会导致浏览器向服务器发出请求,浏览器不发出请求就不会刷新页面,并且会触发hasChange这个事件,通过监听hash值的变化来实现更新页面部分内容的操作
+history模式：主要使用HTML5的pushState()和replaceState()这两个api来实现的,pushState()可以改变url地址且不会发送请求,replaceState()可以读取历史记录栈,还可以对浏览器记录进行修改
+区别：
+1.前面的hashchange，你只能改变#后面的url片段。而pushState设置的新URL可以是与当前URL同源的任意URL。
+2.history模式则会将URL修改得就和正常请求后端的URL一样,如后端没有配置对应/user/id的路由处理，则会返回404错误
+
+
+https://www.jianshu.com/p/758bde4d9c2e
+
+
+vuex
+用于组件之间的通信。
+
+生命周期
+      + beforeCreate：实例刚在内存中被创建出来，此时，还没有初始化好 data 和 methods 属性
+      + created：实例已经在内存中创建OK，此时 data 和 methods 已经创建OK，此时还没有开始 编译模板
+      + beforeMount：此时已经完成了模板的编译，但是还没有挂载到页面中
+      + mounted：此时，已经将编译好的模板，挂载到了页面指定的容器中显示
+ - 运行期间的生命周期函数：
+     + beforeUpdate：状态更新之前执行此函数， 此时 data 中的状态值是最新的，但是界面上显示的 数据还是旧的，因为此时还没有开始重新渲染DOM节点
+     + updated：实例更新完毕之后调用此函数，此时 data 中的状态值 和 界面上显示的数据，都已经完成了更新，界面已经被重新渲染好了！
+ - 销毁期间的生命周期函数：
+     + beforeDestroy：实例销毁之前调用。在这一步，实例仍然完全可用。
+     + destroyed：Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。 
+
+
+Es6有哪些语法
+详见：https://www.jianshu.com/p/c827598cd8b7
+
+
+箭头函数能不能作为构造函数，有没有隐型指向
+1.普通函数的this：指向它的调用者，如果没有调用者则默认指向window.
+2.箭头函数的this: 指向箭头函数定义时所处的对象，而不是箭头函数使用时所在的对象，默认使用父级的this.
+
+类的继承
+
+
+拦截
+请求拦截：instance.interceptors.request.use()
+响应拦截：instance.interceptors.response.use()
+
+
+
+
+
+router导航守卫
+
+Es6 promise
+
+Vuex中怎么触发mutations中的方法
+
+Vuex中存放的数据是存在缓存中的吗
+
+闭包
+https://blog.csdn.net/weixin_43586120/article/details/89456183
+function outerFn(){
+  var i = 0; 
+  function innerFn(){
+      i++;
+      console.log(i);
+  }
+  return innerFn;
+}
+var inner = outerFn();  //每次外部函数执行的时候,都会开辟一块内存空间,外部函数的地址不同，都会重新创建一个新的地址
+inner();
+inner();
+inner();
+var inner2 = outerFn();
+inner2();
+inner2();
+inner2();   //1 2 3 1 2 3
+
+
+
+原型链
+
+
+
+继承
+https://www.jianshu.com/p/3d09c6fe330e
+
+
+Es6数组的方法
+https://www.cnblogs.com/sqh17/p/8529401.html
+1.arr.push() 从后面添加元素，返回值为添加完后的数组的长度
+2.arr.pop() 从后面删除元素，只能是一个，返回值是删除的元素
+3.arr.shift() 从前面删除元素，只能删除一个 返回值是删除的元素
+4 arr.unshift() 从前面添加元素, 返回值是添加完后的数组的长度
+5 arr.splice(i,n) 删除从i(索引值)开始之后的那个元素。返回值是删除的元素
+6 arr.concat() 连接两个数组 返回值为连接后的新数组
+7 str.split() 将字符串转化为数组
+8 arr.sort() 将数组进行排序,返回值是排好的数组，默认是按照最左边的数字进行排序，不是按照数字大小排序的
+9 arr.reverse() 将数组反转,返回值是反转后的数组
+10 arr.slice(start,end) 切去索引值start到索引值end的数组，不包含end索引的值，返回值是切出来的数组
+
+
+
+数组去重
+arry.from(new Set(Lst))
+
+https://blog.csdn.net/weixin_42412046/article/details/81459294
+
+
+
+v-model
+<input type="text" :value="message" @input="message = $event.target.value"
+
+
+新技术
+vue3.0
+
+
+监听
+computed属性的结果会被缓存，除非依赖的响应式属性变化才会重新计算。主要当作属性来使用；
+methods方法表示一个具体的操作，主要书写业务逻辑；
+watch一个对象，键是需要观察的表达式，值是对应回调函数。主要用来监听某些特定数据的变化，从而进行某些具体的业务逻辑操作；可以看作是computed和methods的结合体；
+
+
+Slot的作用域
+V-slot="Sortprops"
+<childern :a = Sortprops.value />
+
+
+display有哪些属性
+none	此元素不会被显示。
+block	此元素将显示为块级元素，此元素前后会带有换行符。
+inline	默认。此元素会被显示为内联元素，元素前后没有换行符。
+inline-block	行内块元素。（CSS2.1 新增的值）
+
+
+
+
+
+行内元素，块级元素，行内块元素：
+https://www.cnblogs.com/ljwk/p/7090320.html
+
+
+
+
+
+过滤器：
+<!-- 在双花括号中 -->
+{{ message|capitalize }}
+<!-- 在 `v-bind` 中 -->
+<div v-bind:id="rawId|formatId"></div>
+
+你可以在一个组件的选项中定义本地的过滤器：
+
+filters: {
+  capitalize: function (value) {
+    if (!value) return ''
+    value = value.toString()
+    return value.charAt(0).toUpperCase() + value.slice(1)
+  }
+}
+或者在创建 Vue 实例之前全局定义过滤器：
+
+Vue.filter('capitalize', function (value) {
+  if (!value) return ''
+  value = value.toString()
+  return value.charAt(0).toUpperCase() + value.slice(1)
+})
+
+new Vue({
+  // ...
+})
+
+
+首先我仔细阅读了贵公司对于前端开发的岗位要求，其中工作流程和我在上家公司的流程是比较吻合的，并且所要求的技术栈和我自身掌握的技术栈也基本一致，所以说我觉得我非常适合并且可以胜任贵公司的前端开发的这个岗位
+其次呢，我对贵公司主要拓展的“外贸互联网”、“物流互联网”这两个领域，尤其是对交通，物流比较感兴趣，并且也希望自己以后开发的大数据信息平台能够很好的去服务这些领域
+最后呢，通过贵公司的核心项目以及合作伙伴来看，我觉得贵公司的平台和发展前景都挺好，而且贵公司对员工也很好，培训啦，团建啦，节日活动啦等等，甚至可能有导师帮带，我觉得在这样一个良好的环境里工作，不仅工作效率会很高，并且自己的技术能力和项目实践能力都会得到很大提升，自身强的话也会去反哺公司，我觉得这是一个良性循环的过程，所以希望能加入贵公司，为贵公司出一分力。
+
+
+Promise和settimeout顺序：
+例子：
+        console.log(100)
+        setTimeout(function () {
+            console.log(1)
+        }, 0);
+        new Promise(function (a, b) {
+            console.log(2);
+            for (var i = 0; i < 10; i++) {
+                i == 9 && a();
+            }
+            console.log(3);
+        }).then(function () {
+            console.log(4)
+        });
+        console.log(5)
+
+执行结果：100 2 3 5 4 1
+
+
+Dorcor打镜像包 git地址，搭建环境的指令
+
+Css选择器
+元素（选择器分组：h2, p {color:gray;}），类，id，属性，后代（全部，用空格） 子元素（用>） 伪类选择器
+
+
+
+Cookie 大小为4kb，主要用于储存用户信息，一般由服务器生成，可设置失效时间，如果在浏览器端生成cookie，默认是关闭后失效，每次都会携带HTTP头中，如果使用cookie保存过多数据会带来性能问题。
+localStorage 大小5m，除非被永久清除，否则永久保存，仅在客户端保存，不参与服务器的通信。
+sessionStorage 仅在当前会话会有效，关闭页面或浏览器后被清除，仅在客户端保存，不参与服务器的通信。
+
+
+水平居中：
+文字： text-align: center;
+	line-height: height
+
+Div: display:flex;
+	justify-content: center;
+	align-items: center;
+
+	margin: 0 auto;
+	display: aboulete
+	left:50%;
+	right: 50%
+	transfom-translate(-50%, -50%)
+
+HTTPS是以安全为目标的HTTP通道，简单讲是HTTP的安全版。HTTP下加入SSL层，是网站数据传输的安全基础。使用HTTPS协议，可以加密网站会员登录的账号密码，进而保护用户隐私。
+
+
+

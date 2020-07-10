@@ -48,8 +48,7 @@ export default {
     },
     methods: {
         register() {
-            if(this.password != th
-            is.conpassword){
+            if(this.password != this.conpassword){
                 this.$toast('error')
             }
         }

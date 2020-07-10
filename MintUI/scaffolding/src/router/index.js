@@ -11,10 +11,9 @@ import Register from "../views/Register";
 import Checklist from "../components/MintUI/Checklist.vue";
 import Radio from "../components/MintUI/Radio.vue";
 import Switch from "../components/MintUI/Switch.vue";
-import Navbar from "../components/MintUI/Navbar.vue"
-import Tabcontainer from "../components/MintUI/Tabcontainer.vue"
-import table from "../components/MintUI/table.vue"
-import test from "../components/MintUI/{{sss}}.vue"
+import Navbar from "../components/MintUI/Navbar.vue";
+import Tabcontainer from "../components/MintUI/Tabcontainer.vue";
+import Tabbar from "../components/MintUI/Tabbar.vue"
 //测试案例结束
 Vue.use(VueRouter);
 
@@ -76,12 +75,8 @@ const routes = [
       component:Tabcontainer,
   },
   {
-      path:'/table',
-      component:table,
-  },
-  {
-      path:'/{{sss}}',
-     component:test
+      path:'/tabbar',
+      component:Tabbar,
   }
 ];
 
@@ -90,8 +85,4 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
-
 export default router;
-<script>
-    
-</script>

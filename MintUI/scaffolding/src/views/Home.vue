@@ -69,14 +69,13 @@
                         <router-link to="/table">表格</router-link>
                     </button>
                 </td>
-                <td>
-                    <button>
-                        <router-link to="/{{sss}}">test</router-link>
-                    </button>
-                </td>
             </tr>
             <tr>
-                <td></td>
+                <td>
+                    <button>
+                        <router-link to="/tabbar">tabbar</router-link>
+                    </button>
+                </td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -97,8 +96,9 @@ export default {
 };
 </script>
 <style>
-    .home>table{
+    table{
         width: 80%;
+        margin: 0 auto;
     }
     .home>table>tr>td>button{
         width: 100%;
