@@ -14,6 +14,7 @@ import Switch from "../components/MintUI/Switch.vue";
 import Navbar from "../components/MintUI/Navbar.vue";
 import Tabcontainer from "../components/MintUI/Tabcontainer.vue";
 import Tabbar from "../components/MintUI/Tabbar.vue"
+import test from "../components/MintUI/test.vue"
 //测试案例结束
 Vue.use(VueRouter);
 
@@ -77,6 +78,10 @@ const routes = [
   {
       path:'/tabbar',
       component:Tabbar,
+  },
+  {
+      path:'/test',
+      component:test
   }
 ];
 

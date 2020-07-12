@@ -61,7 +61,7 @@
                 </td>
                 <td>
                     <button>
-                        <router-link to="/tabcontainer">子页面</router-link>
+                        <router-link to="/tabcontainer">标签容器</router-link>
                     </button>
                 </td>
                 <td>
@@ -73,12 +73,21 @@
             <tr>
                 <td>
                     <button>
-                        <router-link to="/tabbar">tabbar</router-link>
+                        <router-link to="/tabbar">底部导航栏</router-link>
                     </button>
                 </td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>
+                    <button @click="onClick">
+                        axios
+                    </button>
+                    {{sb}}
+                </td>
+                <td>
+
+                </td>
+                <td>
+
+                </td>
             </tr>
         </table>
     </div>
@@ -87,11 +96,36 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
+import axios from 'axios'
 
 export default {
     name: "Home",
     components: {
         HelloWorld
+    },
+    data(){
+        return {
+            sb:''
+        }
+    },
+    methods:{
+        onClick(){
+            axios.defaults.baseURL = 'http://127.0.0.1:8000';
+
+        // axios.get('/index').then(result => {
+        // 	console.log(result.data);
+        // })
+        axios.get('/', {
+            // params: {
+            //     'appkey': 'uNIKUq+qSeRcshQufXsxk5khRF4AAAAADvkmRJ1HL4sAAAAAAAAAAA==',
+            //     'json': { "phone": "13221069695" }
+            // }
+        }).then(result => {
+            // console.log(result.data)
+            console.log(result)
+            this.sb=result.data        
+            }) 
+        }
     }
 };
 </script>

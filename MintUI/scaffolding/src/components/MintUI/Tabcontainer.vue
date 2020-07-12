@@ -23,7 +23,7 @@
             </router-link>
         </mt-header>
         <div class='abcontainer_div01'></div>
-        <mt-tab-container v-model="active">
+        <mt-tab-container v-model="active" swipeable>
             <mt-tab-container-item id="html">
                 AAA
             </mt-tab-container-item>

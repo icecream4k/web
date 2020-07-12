@@ -4,9 +4,9 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import qs from 'qs'
-axios.defaults.baseURL = 'http://127.0.0.1'
+// axios.defaults.baseURL = 'http://127.0.0.1'
 Vue.prototype.axios = axios;
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 
 //导入mintui
