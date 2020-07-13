@@ -13,8 +13,9 @@ import Radio from "../components/MintUI/Radio.vue";
 import Switch from "../components/MintUI/Switch.vue";
 import Navbar from "../components/MintUI/Navbar.vue";
 import Tabcontainer from "../components/MintUI/Tabcontainer.vue";
-import Tabbar from "../components/MintUI/Tabbar.vue"
-import test from "../components/MintUI/test.vue"
+import Tabbar from "../components/MintUI/Tabbar.vue";
+import test from "../components/MintUI/test.vue";
+import more from '../components/MintUI/more.vue'
 //测试案例结束
 Vue.use(VueRouter);
 
@@ -82,6 +83,10 @@ const routes = [
   {
       path:'/test',
       component:test
+  },
+  {
+      path:'/more',
+      component:more
   }
 ];
 

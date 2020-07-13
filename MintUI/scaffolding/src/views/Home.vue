@@ -77,10 +77,11 @@
                     </button>
                 </td>
                 <td>
-                    <button @click="onClick">
-                        axios
+                    <!-- <button @click="onClick"> -->
+                    <button>
+                        <router-link to='/test'>axios的使用</router-link>
                     </button>
-                    {{sb}}
+                    <!-- {{sb}} -->
                 </td>
                 <td>
 
@@ -96,37 +97,37 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
-import axios from 'axios'
+// import axios from 'axios'
 
 export default {
     name: "Home",
     components: {
         HelloWorld
     },
-    data(){
-        return {
-            sb:''
-        }
-    },
-    methods:{
-        onClick(){
-            axios.defaults.baseURL = 'http://127.0.0.1:8000';
+    // data(){
+    //     return {
+    //         sb:''
+    //     }
+    // },
+    // methods:{
+        // onClick(){
+        //     axios.defaults.baseURL = 'http://127.0.0.1:8000';
 
-        // axios.get('/index').then(result => {
-        // 	console.log(result.data);
-        // })
-        axios.get('/', {
-            // params: {
-            //     'appkey': 'uNIKUq+qSeRcshQufXsxk5khRF4AAAAADvkmRJ1HL4sAAAAAAAAAAA==',
-            //     'json': { "phone": "13221069695" }
-            // }
-        }).then(result => {
-            // console.log(result.data)
-            console.log(result)
-            this.sb=result.data        
-            }) 
-        }
-    }
+        // // axios.get('/index').then(result => {
+        // // 	console.log(result.data);
+        // // })
+        // axios.get('/', {
+        //     // params: {
+        //     //     'appkey': 'uNIKUq+qSeRcshQufXsxk5khRF4AAAAADvkmRJ1HL4sAAAAAAAAAAA==',
+        //     //     'json': { "phone": "13221069695" }
+        //     // }
+        // }).then(result => {
+        //     // console.log(result.data)
+        //     console.log(result)
+        //     this.sb=result.data 
+        //     }) 
+        // }
+    // }
 };
 </script>
 <style>
