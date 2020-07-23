@@ -15,7 +15,6 @@
         <!-- 顶部导航导航结束 -->
         <!-- 中部分页栏开始 -->
         <div class="main_div">
-            
             <mt-header title="tabcontainer demo" fixed>
                 <router-link to="/" slot="left">
                     <mt-button icon="back"></mt-button>
@@ -33,7 +32,7 @@
         </div>
         <!-- 中部分页栏结束 -->
         <!-- 底部选项卡 -->
-        <mt-tabbar v-model="selectedTab" fixed>
+        <!-- <mt-tabbar v-model="selectedTab" fixed>
             <mt-tab-item id="home">
                 <img src="../../assets/shouye.png" alt slot="icon" v-if="selectedTab == 'home'"  @click=logout() />
                 <img src="../../assets/disabled/shouye_disabled.png" alt slot="icon" v-else/>
@@ -49,10 +48,12 @@
                 <img src="../../assets/disabled/wode_disabled.png" alt slot="icon" v-else />
                 我的
             </mt-tab-item>
-        </mt-tabbar>
+        </mt-tabbar> -->
     </div>
 </template>
+
 <script>
+import Tabbar from "./Tabbar.vue";
 export default {
     data(){
         return {
@@ -60,7 +61,7 @@ export default {
             selectedTab: "home",
             main_test: "",
             a: "",
-            isLogin: false
+            isLogin: false,
         };
         
     },

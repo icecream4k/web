@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="main">
+        <!-- <div class="main">
             <p v-for="(v,k) in 100" :key="k">{{v}}</p>
-        </div>
+        </div> -->
 
         <mt-tabbar v-model="selectedTab" fixed>
             <mt-tab-item id="home">
