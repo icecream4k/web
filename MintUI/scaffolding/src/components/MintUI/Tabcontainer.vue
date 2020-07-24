@@ -31,8 +31,36 @@
             </mt-tab-container>
         </div>
         <!-- 中部分页栏结束 -->
+
+
+        <!-- 单一文章信息开始 -->
+        <div>
+            <!-- 文章标题开始 -->
+            <div class="articleItem-header">
+                税后20万程序员的生活
+            </div>
+            <!-- 文章标题结束 -->
+            <!-- 文章图文信息开始 -->
+            <div class="articleItem-wrapper">
+                <!-- 文章图像开始 -->
+                <div class="articleImg">
+                    <img src="../../assets/wenzhang.jpeg" alt="">
+                </div>
+                <!-- 文章图像结束 -->
+                <!-- 文章的简介开始 -->
+                <div class="articleDes">
+                    程序员（英文Programmer）是从事程序开发、程序维护的专业人员。一般将程序员分为程序设计人员和程序编码人员，但两者的界限并不非常清楚。软件从业人员分为初级程序员、中级程序员、高级程序员（现为软件设计师）、系统分析员，系统架构师，测试工程师六大类。
+                </div>
+                <!-- 文章的简介结束 -->
+
+            </div>
+            <!-- 文章图文信息结束 -->
+        </div>
+        <!-- 单一文章信息结束 -->
+
+
         <!-- 底部选项卡 -->
-        <!-- <mt-tabbar v-model="selectedTab" fixed>
+        <mt-tabbar v-model="selectedTab" fixed>
             <mt-tab-item id="home">
                 <img src="../../assets/shouye.png" alt slot="icon" v-if="selectedTab == 'home'"  @click=logout() />
                 <img src="../../assets/disabled/shouye_disabled.png" alt slot="icon" v-else/>
@@ -48,7 +76,7 @@
                 <img src="../../assets/disabled/wode_disabled.png" alt slot="icon" v-else />
                 我的
             </mt-tab-item>
-        </mt-tabbar> -->
+        </mt-tabbar>
     </div>
 </template>
 
@@ -76,6 +104,24 @@ export default {
 };
 </script>
 <style>
+.articleItem-wrapper{
+    display: flex;
+    align-items: center;
+    padding-top: 11px;
+    width: 100%;
+}
+.articleItem-header{
+    display: flex;
+    font-weight: 600;
+    font-size: 17px;
+    color: #1a1a1a;
+    line-height: 22px;
+}
+.articleImg img{
+    width: 112px;
+    height: 74px;
+    border-radius: 9px;
+}
 .abcontainer_div01 {
     height: 80px;
 }
