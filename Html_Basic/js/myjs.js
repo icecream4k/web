@@ -18,9 +18,6 @@ function saoma_02() {
 	 align='center'></iframe>
 	`;
 }
-//     let num = 1;
-//     let content = document.getElementById('content');
-//     function count() {
-//         content.innerHTML = num++;
-//     };
-//     content.onmousemove = count;
+// --------------------------
+console.log('hello world');
+

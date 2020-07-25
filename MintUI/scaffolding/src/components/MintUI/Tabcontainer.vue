@@ -34,7 +34,7 @@
 
 
         <!-- 单一文章信息开始 -->
-        <div>
+        <div class="articleItem">
             <!-- 文章标题开始 -->
             <div class="articleItem-header">
                 税后20万程序员的生活
@@ -57,8 +57,6 @@
             <!-- 文章图文信息结束 -->
         </div>
         <!-- 单一文章信息结束 -->
-
-
         <!-- 底部选项卡 -->
         <mt-tabbar v-model="selectedTab" fixed>
             <mt-tab-item id="home">
@@ -121,6 +119,13 @@ export default {
     width: 112px;
     height: 74px;
     border-radius: 9px;
+}
+.articleDes{
+    height: 65px;
+}
+.articleItem{
+    padding:10px;
+    border-bottom:1px solid #999;
 }
 .abcontainer_div01 {
     height: 80px;

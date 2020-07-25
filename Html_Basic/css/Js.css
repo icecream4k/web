@@ -1,0 +1,36 @@
+/* 类选择器 */
+.Note_Title_c_1{
+    margin: 25px auto 0 auto;
+}
+.Note_Title_h1_c_1{
+    font-style: italic;
+    font-size: 40px;
+    
+}
+.t_center{
+    text-align: center
+}
+.d_f_1{
+    margin-top: 20px;
+}
+.Note_Title_c_2{
+    margin-top: 20px;
+}
+
+
+/* id选择器 */
+
+
+
+
+
+/* 标签选择器 */
+body{
+    width:980px;
+    background-color: #fdfcf8;
+    margin: 0 auto;
+}
+fieldset{
+    border-radius: 10px;
+}
+/* 其他选择器 */

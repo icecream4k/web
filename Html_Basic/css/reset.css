@@ -11,7 +11,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-  margin: 0;
+    margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
@@ -170,7 +170,7 @@ form {
  */
 
 fieldset {
-    border: 1px solid #c0c0c0;
+    border: 1px solid black;
     margin: 0 2px;
     padding: 0.35em 0.625em 0.75em;
 }
@@ -345,11 +345,11 @@ img {
     vertical-align: middle;
 }
 
-fieldset {
+/* fieldset {
     border: 0;
     margin: 0;
     padding: 0;
-}
+} */
 
 textarea {
     resize: vertical;
