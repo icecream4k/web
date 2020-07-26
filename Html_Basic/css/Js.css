@@ -1,36 +1,87 @@
 /* 类选择器 */
-.Note_Title_c_1{
-    margin: 25px auto 0 auto;
+.Note_Title_c_1 {
+  margin: 25px auto 0 auto;
 }
-.Note_Title_h1_c_1{
-    font-style: italic;
-    font-size: 40px;
-    
+
+.Note_Title_h1_c_1 {
+  font-style: italic;
+  font-size: 40px;
+  color: skyblue;
 }
-.t_center{
-    text-align: center
+
+.t_center {
+  text-align: center;
 }
-.d_f_1{
-    margin-top: 20px;
+
+.Note_Title_c_2 {
+  margin-top: 20px;
 }
-.Note_Title_c_2{
-    margin-top: 20px;
+
+.gird_layout {
+  display: grid; /* 开启grid布局 */
+  grid-template-columns: 1fr 6fr; /* 设置布局占比 */
+  gap: 20px; /* 设置间距 */
+}
+
+.gird_columns_1 {
+  background-color: #f6f4f0;
+  border: 2px;
+  border-color: tomato;
+}
+
+
+.Title_text {
+  width: 100%;
+  height: 140px;
+  background-image: url("../img/title.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.Title_text_d1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 980px;
+  height: 110px;
+  margin: 0 auto;
+}
+
+.Title_h1{
+    margin-top: 30px;
 }
 
 
 /* id选择器 */
-
-
-
-
+#main {
+  width: 980px;
+  margin: 0 auto;
+}
 
 /* 标签选择器 */
-body{
-    width:980px;
-    background-color: #fdfcf8;
-    margin: 0 auto;
+body {
+  background-color: #fdfcf8;
 }
-fieldset{
-    border-radius: 10px;
+fieldset {
+  border-radius: 10px;
+}
+span{
+    font-size: 14px;
+    line-height:14pt;
 }
 /* 其他选择器 */
+.Title_text_d1 div:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  /* background-color: #aaf; */
+  margin-top: 30px;
+}
+
+.Title_text_d1 div:nth-child(2) {
+  width: 100%;
+  height: 80px;
+  margin-top: 30px;
+  /* background-color: #faa; */
+}
+.gird_columns_1>div>span{
+    text-align: center;
+}
