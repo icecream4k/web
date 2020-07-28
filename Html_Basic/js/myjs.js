@@ -33,8 +33,11 @@ var birthday = '1990-2-1';
 var salary = 8000;
 var deptId = 20;
 console.log('line 29-35>>> ','eid:',eid,'ename:',ename,'sex:',sex,'birthday:',birthday,'salary:',salary,'deptId:',deptId)
-
-
+// --------------------------
+var d;
+d = 1;
+console.log(d)
+// --------------------------
 
 
 
