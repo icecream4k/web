@@ -16,7 +16,6 @@
     <div class="Title_text">
         <div class="Title_text_d1">
             <div class="Title_input">
-                <!-- <input type="text"> -->
             </div>
             <div>
                 <div class="Title_h1">
@@ -104,48 +103,30 @@
                     </div>
                     <hr>
                     <div class="gc2">
-                        <a href="">基础语法</a>
+                        <a href="#d_f_1">打印示例</a>
                     </div>
                     <hr>
                     <div class="gc3">
-                        <a href="">test</a>
+                        <a href="#d_f_2">声明变量</a>
                     </div>
                     <hr>
                     <div class="gc2">
-                        <a href="">test</a>
+                        <a href="#d_f_3">变量赋值</a>
                     </div>
                     <hr>
                     <div class="gc3">
-                        <a href="">test</a>
+                        <a href="#d_f_4">数据类型</a>
                     </div>
                     <hr>
                     <div class="gc2">
-                        <a href="">test</a>
+                        <a href="#d_f_5">转换</a>
                     </div>
                     <hr>
-                    <div class="gc3">
-                        <a href="">test</a>
-                    </div>
-                    <hr>
-                    <div class="gc2">
-                        <a href="">test</a>
-                    </div>
-                    <hr>
-                    <div class="gc3">
-                        <a href="">test</a>
-                    </div>
-                    <hr>
-                    <div class="gc2">
-                        <a href="">test</a>
-                    </div>
-                    <hr>
-                    <div class="gc3">
-                        <a href="">test</a>
-                    </div>
-                    <hr>
+
                 </div>
                 <!-- 内容主体 -->
                 <div class="gird_columns_2">
+                    <span id="d_f_1"></span>
                     <div class="d_f_1">
                         <fieldset>
                             <legend>打印hello world示例 <span id="ll">[line : 22]</span></legend>
@@ -156,7 +137,7 @@
                     <br>
                     <hr>
                     <br>
-
+                    <span id="d_f_2"></span>
                     <div class="d_f_2">
                         <fieldset>
                             <legend>声明变量 <span id="ll">[line : 25 - 27]</span></legend>
@@ -175,21 +156,116 @@
                             <span>结果:<span> 3 ename: tom sex: 1 birthday: 1990-2-1 salary: 8000 deptId: 20</span></span>
                         </fieldset>
                     </div>
-                    
-                    <br><hr ><br>
 
+                    <br>
+                    <hr><br>
+                    <span id="d_f_3"></span>
                     <div class="d_f_3">
                         <fieldset>
                             <legend>变量赋值 <span id="ll">[line:37 - 39]</span></legend>
                             <span id="q">var</span><span>&nbsp;d;</span>
                             <br>
-                            <span>变量只是生命，但未赋值，则保存的值为undefined</span>
+                            <span>变量只是生命,但未赋值,则保存的值为undefined</span>
                             <br>
-                            <span>变量可以被多次赋值，且赋不同类型的值，这个特点也是弱类型语言的特点</span>
+                            <span>变量可以被多次赋值,且赋不同类型的值,这个特点也是弱类型语言的特点</span>
                         </fieldset>
                     </div>
-                </div>
+
+                    <br>
+                    <hr><br>
+                    <span id="d_f_4"></span>
+                    <div class="d_f_4">
+                        <fieldset>
+                            <legend>数据类型 <span id="ll">[line:41 - 45]</span></legend>
+                            <span>
+                                检测数据类型<br>
+                                查看任意数据的数据类型<br>
+                                <span id="q">var</span> f1 = 3.14;<br>
+                                consolo.log(typeof f1);<br>
+                            </span>
+                            <hr>
+                            <span>
+                                Unicode编码<br>
+                                查看任意一个字符的Unicode码<br>
+                                <span id="q">var</span> a = '韩';<br>
+                                console.log('a',charCodeAt());<br>
+                            </span>
+                            <br>
+                            <span>
+                                基本数据类型<br>
+                                <span id="q">var</span> x; // undefined<br>
+                                <span id="q">var</span> userName = 'han'; string 字符串<br>
+                                <span id="q">var</span> age = 18; number 数字类型<br>
+                                <span id="q">var</span> y = True or False; boolean 布尔类型<br>
+                                <span id="q">var</span> cars=["Saab","Volvo","BMW"]; array 数组<br>
+                                <span id="q">var</span> b = null; object(对象)，常和引用类型的数据一起使用
+                            </span>
+                        </fieldset>
+
+                    </div>
+                    <br>
+                    <hr><br>
+                    <span id="d_f_5"></span>
+                    <div class="d_f_5">
+                        <fieldset>
+                            <legend>转换 <span id="ll"></span></legend>
+                            <span>
+                                隐式转换<br>
+                                在运算过程中，自动发生的数据类型转换<br>
+                                数值型+字符串型 数值型转为字符串型<br>
+                                <span id="q">var</span> a1 = 2+'3';<br>
+                                console.log(a1,typeof a1); ==> 23 string
+                                <hr>
+                                数值型+布尔类型 布尔类型转化为数值型[true 1;false 0]<br>
+                                <span id="q">var</span> a2 = 2 + false;<br>
+                                console.log(a2,typeof a2); ==> 3 number
+                                <hr>
+                                字符串型+布尔型 布尔型转为字符串型<br>
+                                <span id="q">var</span> a3 = '2' + true;<br>
+                                console.log(a3,typeof a3); ==> '2true' string
+                                <hr>
+                                demo <br>
+                                <span id="q">var</span> a = 1,<br>
+                                b = true,<br>
+                                c = "han";<br>
+                                result1 = a + b + c;<br>
+                                result2 = b + c + a;<br>
+                                result3 = c + a + b;<br>
+                                console.log('a + b + c的结果是',result1,'类型是:',typeof result1); ==> '2han<br>
+                                console.log('b + c + a的结果是',result2,'类型是:',typeof result2); ==> 'truehan1'<br>
+                                console.log('c + a + b的结果是',result3,'类型是:',typeof result3); ==> 'han1true'<br>
+                            </span>
+
+
+
+                        </fieldset>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div> <!-- 内容主体 -->
+
             </div>
+
+
+
+
+
+
 
             <!-- 笔记尾部 -->
 
