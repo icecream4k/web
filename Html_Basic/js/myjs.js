@@ -91,7 +91,40 @@ console.log(
   uname === "root" || uname === "user@jd.com" || uname === "13000000000"
 );
 // --------------------------
-// 声明变量保存人的年龄，如果满18岁，打印成年人
+// 声明变量保存人的年龄,如果满18岁,打印成年人
 var age = 24;
-age > 18 && console.log('成年人');
+age > 18 && console.log("成年人");
 // --------------------------
+var a = 1;
+// 在原来的基础上加1
+// a++;
+// a = a+1; // 等同于上面的写法
+// 先获取到a的值执行加1,把结果再赋给a
+a += 2; // 计算赋值,先执行计算,再执行赋值
+console.log(a);
+// --------------------------
+// 声明变量保存商品的单价，让该商品打9折，最后打印当前价格
+var price = 100;
+price *= 0.9;
+console.log(price);
+// --------------------------
+// 如果一个人满18岁，打印成年人，否则打印从未成年人
+var age = 17;
+var s = age >= 18 ? "成年人" : "未成年人";
+console.log(s);
+// --------------------------
+// 声明变量保存一个人的性别值 1/0 ，如果值是1打印男，否则打印女
+var sex = 1;
+var sex = 1 ? "男" : "女";
+console.log(sex);
+// --------------------------
+// alertx
+// alert('web')
+// 弹出提示(输入)框
+// var str = prompt('input your number:');
+// console.log(str);
+// --------------------------
+// 弹出两次提示框，要求用户输入谁，最后计算两个数字相加的和，并将结果以警示框形式弹出
+// var number1 = parseInt(prompt('input your first number:'))
+// var number2 = parseInt(prompt('input your second number:'))
+// alert(number1+number2)
