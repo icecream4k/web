@@ -64,6 +64,29 @@ var a = 1,
 result1 = a + b + c;
 result2 = b + c + a;
 result3 = c + a + b;
-console.log('a + b + c的结果是',result1,'类型是:',typeof result1);
-console.log('b + c + a的结果是',result2,'类型是:',typeof result2);
-console.log('c + a + b的结果是',result3,'类型是:',typeof result3);
+console.log(
+  "line 61-66>>>",
+  "a + b + c的结果是",
+  result1,
+  "类型是:",
+  typeof result1
+);
+console.log(
+  "line 61-66>>>",
+  "b + c + a的结果是",
+  result2,
+  "类型是:",
+  typeof result2
+);
+console.log(
+  "line 61-66>>>",
+  "c + a + b的结果是",
+  result3,
+  "类型是:",
+  typeof result3
+);
+// --------------------------
+// 假设已经从数据库中获取到了商品的标题和价格，把这些数据打印成一行
+var title = "macbook pro";
+var price = 15999;
+console.log("line 72-73>>>", "商品名:", title, "价格:", price);

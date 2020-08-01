@@ -67,30 +67,23 @@
                 </div>
             </div>
             <div class="Note_Title_c_2" id="Note_Title_i_2">
-                <ul>
-                    <span style="font-size: 16px;color:tomato;font-weight: bolder;">
-                        JavaScript简介:
-                    </span>
-                    <li>
-                        <br>
-                    </li>
-                    <li>
-                        <span style="color: tomato;">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JavaScript(简称“JS”)
-                        </span>
-                        <span>
-                            是一种具有函数优先的轻量级,解释型或即时编译型的高级编程语言。
-                        </span>
-                        <span>
-                            虽然它是作为开发Web页面的脚本语言而出名的,但是它也被用到了很多非浏览器环境中,
-                        </span>
-                        <span>
-                            JavaScript
-                            基于原型编程、多范式的动态脚本语言,并且支持面向对象、命令式和声明式（如函数式编程）风格。
-                        </span>
 
-                    </li>
-                </ul>
+                <span style="font-size: 16px;color:tomato;font-weight: bolder;">
+                    JavaScript简介:
+                </span>
+
+                <br>
+
+
+                <span style="color: tomato;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JavaScript(简称“JS”)
+                </span>
+                <span>
+                    是一种具有函数优先的轻量级,解释型或即时编译型的高级编程语言。
+                    虽然它是作为开发Web页面的脚本语言而出名的,但是它也被用到了很多非浏览器环境中,
+                    JavaScript
+                    基于原型编程、多范式的动态脚本语言,并且支持面向对象、命令式和声明式（如函数式编程）风格。
+                </span>
             </div>
             <br>
             <hr><br>
@@ -122,6 +115,10 @@
                         <a href="#d_f_5">转换</a>
                     </div>
                     <hr>
+                    <div class="gc3">
+                        <a href="#d_f_6">运算符</a>
+                    </div>
+                    <hr>
 
                 </div>
                 <!-- 内容主体 -->
@@ -129,7 +126,7 @@
                     <span id="d_f_1"></span>
                     <div class="d_f_1">
                         <fieldset>
-                            <legend>打印hello world示例 <span id="ll">[line : 22]</span></legend>
+                            <legend>打印hello world示例</legend>
                             <span>console.log('hello world')</span><br>
                         </fieldset>
                     </div>
@@ -140,17 +137,17 @@
                     <span id="d_f_2"></span>
                     <div class="d_f_2">
                         <fieldset>
-                            <legend>声明变量 <span id="ll">[line : 25 - 27]</span></legend>
+                            <legend>声明变量</legend>
                             <span id="q">var</span><span>&nbsp;x=1;</span><br>
                             <span>相当于声明了一个变量</span>
                             <span>console.log(x) - 即可在终端中打印x的值</span><br><br>
                             <span>
-                                var eid = 3;<br>
-                                var ename = 'tom';<br>
-                                var sex = 1;<br>
-                                var birthday = '1990-2-1';<br>
-                                var salary = 8000;<br>
-                                var deptId = 20;<br>
+                                <span id="q">var</span> eid = 3;<br>
+                                <span id="q">var</span> ename = 'tom';<br>
+                                <span id="q">var</span> sex = 1;<br>
+                                <span id="q">var</span> birthday = '1990-2-1';<br>
+                                <span id="q">var</span> salary = 8000;<br>
+                                <span id="q">var</span> deptId = 20;<br>
                                 console.log(eid:',eid,'ename:',ename,'sex:',sex,'birthday:',birthday,'salary:',salary,'deptId:',deptId)
                             </span><br>
                             <span>结果:<span> 3 ename: tom sex: 1 birthday: 1990-2-1 salary: 8000 deptId: 20</span></span>
@@ -162,7 +159,7 @@
                     <span id="d_f_3"></span>
                     <div class="d_f_3">
                         <fieldset>
-                            <legend>变量赋值 <span id="ll">[line:37 - 39]</span></legend>
+                            <legend>变量赋值</legend>
                             <span id="q">var</span><span>&nbsp;d;</span>
                             <br>
                             <span>变量只是生命,但未赋值,则保存的值为undefined</span>
@@ -176,7 +173,7 @@
                     <span id="d_f_4"></span>
                     <div class="d_f_4">
                         <fieldset>
-                            <legend>数据类型 <span id="ll">[line:41 - 45]</span></legend>
+                            <legend>数据类型</legend>
                             <span>
                                 检测数据类型<br>
                                 查看任意数据的数据类型<br>
@@ -208,10 +205,11 @@
                     <span id="d_f_5"></span>
                     <div class="d_f_5">
                         <fieldset>
-                            <legend>转换 <span id="ll"></span></legend>
+                            <legend>转换</legend>
                             <span>
                                 隐式转换<br>
                                 在运算过程中，自动发生的数据类型转换<br>
+                                <span id="q">总结</span>：隐式转换中，如果加号中出现字符串，则数据转为字符串型；其它情况都是自动调用Number函数转为数值型<br>
                                 数值型+字符串型 数值型转为字符串型<br>
                                 <span id="q">var</span> a1 = 2+'3';<br>
                                 console.log(a1,typeof a1); ==> 23 string
@@ -234,13 +232,76 @@
                                 console.log('a + b + c的结果是',result1,'类型是:',typeof result1); ==> '2han<br>
                                 console.log('b + c + a的结果是',result2,'类型是:',typeof result2); ==> 'truehan1'<br>
                                 console.log('c + a + b的结果是',result3,'类型是:',typeof result3); ==> 'han1true'<br>
+                                <hr>
+                                // 假设已经从数据库中获取到了商品的标题和价格，把这些数据打印成一行<br>
+                                <span id="q">var</span> title = 'macbook pro';<br>
+                                <span id="q">var</span> price = 15999;<br>
+                                console.log('line 72-73>>>','商品名:',title,'价格:',price); ==> 商品名: macbook pro 价格:
+                                15999<br>
+                                <hr>
+
+                                <ul>强制转换
+                                    <li>
+                                        强制转字符串<br>
+                                        <span id="q">var</span> num = 5;<br>
+                                        <span id="q">var</span> new_num = num.toString();<br>
+                                        console.log(num,typeof num); ==> 5 string
+                                    </li>
+                                    <li>
+                                        强制转为整型<br>
+                                        parseInt()常用于小数或者字符串转为整型，其他都是返回NaN<br>
+                                        如果要转换的字符串中以数字开头，，则返回开头整数部分<br>
+                                        如果要转换的字符串中非数字开头，则返回NaN<br>
+                                        <span id="q">var</span> num = '1';<br>
+                                        console.log(parseInt(num),typeof parseInt(num)); ==> 1 string
+                                    </li>
+                                    <li>
+                                        强制转为浮点型<br>
+                                        parseFloat()它的用法和parseInt几乎一致,只是常用语将字符串转为浮点型<br>
+                                        <span id="q">var</span> num = '3.14';
+                                        console.log(parseFloat(num),typeof parseFloat(num)); ==> 3.14 number
+                                    </li>
+                                </ul>
                             </span>
+                        </fieldset>
+                    </div>
+                    <br>
+                    <hr><br>
+                    <span id="d_f_6"></span>
+                    <div class="d_f_6">
+                        <fieldset>
+                            <legend>运算符</legend>
+                            <span>
+                                表达式：由数据或数据连接的运算符所组成的形式<br>
+                                分为算术运算符，比较运算符，逻辑运算符，位运算符，赋值运算符，三目运算符
+                            </span>
+                            <ul>
+                                <li>
+                                    <span>
+                                        算术运算符<br>
+                                        +&nbsp;&nbsp;-&nbsp;&nbsp;*&nbsp;&nbsp;/&nbsp;&nbsp;%&nbsp;&nbsp;++&nbsp;&nbsp;--<br>
+                                        %&nbsp;取余<br>
+                                        ++&nbsp;自增<br>
+                                        --&nbsp;自减<br>
+                                    </span>
+                                </li>
+                            </ul>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
                         </fieldset>
                     </div>
-
 
 
 
