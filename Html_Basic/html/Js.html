@@ -86,7 +86,7 @@
                 </span>
             </div>
             <br>
-            <hr><br>
+            <br>
             <!-- 笔记主体 -->
             <div class="gird_layout">
                 <!-- 导航栏 -->
@@ -132,7 +132,6 @@
                     </div>
 
                     <br>
-                    <hr>
                     <br>
                     <span id="d_f_2"></span>
                     <div class="d_f_2">
@@ -155,7 +154,7 @@
                     </div>
 
                     <br>
-                    <hr><br>
+                    <br>
                     <span id="d_f_3"></span>
                     <div class="d_f_3">
                         <fieldset>
@@ -169,7 +168,7 @@
                     </div>
 
                     <br>
-                    <hr><br>
+                    <br>
                     <span id="d_f_4"></span>
                     <div class="d_f_4">
                         <fieldset>
@@ -195,21 +194,21 @@
                                 <span id="q">var</span> age = 18; number 数字类型<br>
                                 <span id="q">var</span> y = True or False; boolean 布尔类型<br>
                                 <span id="q">var</span> cars=["Saab","Volvo","BMW"]; array 数组<br>
-                                <span id="q">var</span> b = null; object(对象)，常和引用类型的数据一起使用
+                                <span id="q">var</span> b = null; object(对象),常和引用类型的数据一起使用
                             </span>
                         </fieldset>
 
                     </div>
                     <br>
-                    <hr><br>
+                    <br>
                     <span id="d_f_5"></span>
                     <div class="d_f_5">
                         <fieldset>
                             <legend>转换</legend>
                             <span>
                                 隐式转换<br>
-                                在运算过程中，自动发生的数据类型转换<br>
-                                <span id="q">总结</span>：隐式转换中，如果加号中出现字符串，则数据转为字符串型；其它情况都是自动调用Number函数转为数值型<br>
+                                在运算过程中,自动发生的数据类型转换<br>
+                                <span id="q">总结</span>：隐式转换中,如果加号中出现字符串,则数据转为字符串型；其它情况都是自动调用Number函数转为数值型<br>
                                 数值型+字符串型 数值型转为字符串型<br>
                                 <span id="q">var</span> a1 = 2+'3';<br>
                                 console.log(a1,typeof a1); ==> 23 string
@@ -233,7 +232,7 @@
                                 console.log('b + c + a的结果是',result2,'类型是:',typeof result2); ==> 'truehan1'<br>
                                 console.log('c + a + b的结果是',result3,'类型是:',typeof result3); ==> 'han1true'<br>
                                 <hr>
-                                // 假设已经从数据库中获取到了商品的标题和价格，把这些数据打印成一行<br>
+                                // 假设已经从数据库中获取到了商品的标题和价格,把这些数据打印成一行<br>
                                 <span id="q">var</span> title = 'macbook pro';<br>
                                 <span id="q">var</span> price = 15999;<br>
                                 console.log('line 72-73>>>','商品名:',title,'价格:',price); ==> 商品名: macbook pro 价格:
@@ -249,9 +248,9 @@
                                     </li>
                                     <li>
                                         强制转为整型<br>
-                                        parseInt()常用于小数或者字符串转为整型，其他都是返回NaN<br>
-                                        如果要转换的字符串中以数字开头，，则返回开头整数部分<br>
-                                        如果要转换的字符串中非数字开头，则返回NaN<br>
+                                        parseInt()常用于小数或者字符串转为整型,其他都是返回NaN<br>
+                                        如果要转换的字符串中以数字开头,,则返回开头整数部分<br>
+                                        如果要转换的字符串中非数字开头,则返回NaN<br>
                                         <span id="q">var</span> num = '1';<br>
                                         console.log(parseInt(num),typeof parseInt(num)); ==> 1 string
                                     </li>
@@ -266,15 +265,16 @@
                         </fieldset>
                     </div>
                     <br>
-                    <hr><br>
+                    <br>
                     <span id="d_f_6"></span>
                     <div class="d_f_6">
                         <fieldset>
                             <legend>运算符</legend>
                             <span>
                                 表达式：由数据或数据连接的运算符所组成的形式<br>
-                                分为算术运算符，比较运算符，逻辑运算符，位运算符，赋值运算符，三目运算符
+                                分为算术运算符,比较运算符,逻辑运算符,位运算符,赋值运算符,三目运算符
                             </span>
+                            <hr>
                             <ul>
                                 <li>
                                     <span>
@@ -283,6 +283,48 @@
                                         %&nbsp;取余<br>
                                         ++&nbsp;自增<br>
                                         --&nbsp;自减<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<span id="q">var</span> d = 1;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(d++); ==> 1<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(d); ==> 2<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;先打印一次结果,再执行自增<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<span id="q">var</span> d = 1;<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(++d); ==> 2<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(d); ==> 2<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;先执行自增,再执行打印结果<br>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        比较运算符<br>
+                                        &lt;&nbsp;&gt;&nbsp;&lt;=&nbsp;&gt;=&nbsp;==(等于)&nbsp;!=&nbsp;===(全等于)&nbsp;!==(不全等于)<br>
+                                        ==比较值,会发生隐式转换,所以如果比较值和类型,推荐使用===,不等于和不全等类似<br>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        逻辑运算符<br>
+                                        &&&nbsp;并且&nbsp;类似于Python中的and<br>
+                                        ||&nbsp;或者&nbsp;类似于Python中的or<br>
+                                        !&nbsp;非(逻辑非),取反<br>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        位运算符(了解)<br>
+                                        
+                                    </span>
+                                </li>
+                            </ul>
+                            <hr>
+                            <ul>短路逻辑
+                                <li>
+                                    <span>
+                                        并且(&&),如果第一条条件为false，不再执行第二个条件<br>
+                                        或者(||),如果第一个条件为true，不再执行第二个条件<br>
+                                        查看一下程序是否报错:<br>
+                                        <span id="q">var</span>&nbsp;num&nbsp;=&nbsp;3;<br>
+                                        num&nbsp;&gt;&nbsp;5&nbsp;&&&nbsp;console.log(a);<br>
+                                        num&nbsp;&lt;&nbsp;1&nbsp;&&&nbsp;console.log(a); ==>报错<br>
                                     </span>
                                 </li>
                             </ul>
