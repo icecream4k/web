@@ -128,3 +128,13 @@ console.log(sex);
 // var number1 = parseInt(prompt('input your first number:'))
 // var number2 = parseInt(prompt('input your second number:'))
 // alert(number1+number2)
+// --------------------------
+var money = 90;
+if(money>30){
+    console.log('满三十减而是之后的金额为:',money-20);
+}
+
+
+
+
+
