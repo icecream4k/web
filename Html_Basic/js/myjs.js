@@ -133,8 +133,15 @@ var money = 90;
 if(money>30){
     console.log('满三十减而是之后的金额为:',money-20);
 }
-
-
+// --------------------------
+// 声明变量来保存个人签名，如果签名内容为空，则设置默认内容为'这家伙很懒，什么也没留下',最后打印签名内容
+var autograph01 = '';
+var autograph02 = '今天天气真好';
+if(autograph01!=false){
+    console.log(autograph01);
+}else{
+    console.log('这家伙很懒，什么都没留下');
+};
 
 
 
