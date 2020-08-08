@@ -119,6 +119,14 @@
                         <a href="#d_f_6">运算符</a>
                     </div>
                     <hr>
+                    <div class="gc2">
+                        <a href="#d_f_7">弹出警示框</a>
+                    </div>
+                    <hr>
+                    <div class="gc3">
+                        <a href="#d_f_8">流程控制</a>
+                    </div>
+                    <hr>
 
                 </div>
                 <!-- 内容主体 -->
@@ -161,7 +169,7 @@
                             <legend>变量赋值</legend>
                             <span id="q">var</span><span>&nbsp;d;</span>
                             <br>
-                            <span>变量只是生命,但未赋值,则保存的值为undefined</span>
+                            <span>变量只是声明,但未赋值,则保存的值为undefined</span>
                             <br>
                             <span>变量可以被多次赋值,且赋不同类型的值,这个特点也是弱类型语言的特点</span>
                         </fieldset>
@@ -323,9 +331,10 @@
                                 <li>
                                     <span>
                                         三目运算符<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;一目，由一个运算符链接的一个操作数据或表达式&nbsp;&nbsp;++&nbsp;&nbsp;--&nbsp;&nbsp;!<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;二目，由一个运算符链接的两个个操作数据或表达式 + - *<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;三目，由两个运算符链接的三个个操作数据或表达式 条件表达式 ? 表达式1 : 表达式2 如果条件表达式为true，执行表达式1；如果条件表达式未false，执行表达式2<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;一目,由一个运算符链接的一个操作数据或表达式&nbsp;&nbsp;++&nbsp;&nbsp;--&nbsp;&nbsp;!<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;二目,由一个运算符链接的两个个操作数据或表达式 + - *<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;三目,由两个运算符链接的三个个操作数据或表达式 条件表达式 ? 表达式1 : 表达式2
+                                        如果条件表达式为true,执行表达式1；如果条件表达式未false,执行表达式2<br>
                                     </span>
                                 </li>
                             </ul>
@@ -350,22 +359,22 @@
                         <fieldset>
                             <legend>弹出警示框</legend>
                             <span>
-                            此段已在JS中注释，搜索alertx<br>
-                            alert() 弹出警示框<br>
-                            prompt() 弹出提示(输入)框,需要使用变量保存用户输入的数据，类型是字符串型，如果用户点击取消返回null<br>
+                                此段已在JS中注释,搜索alertx<br>
+                                alert() 弹出警示框<br>
+                                prompt() 弹出提示(输入)框,需要使用变量保存用户输入的数据,类型是字符串型,如果用户点击取消返回null<br>
                             </span>
                         </fieldset>
                     </div>
                     <br><br>
-                    <span id="d_f_7"></span>
-                    <div class="d_f_7">
+                    <span id="d_f_8"></span>
+                    <div class="d_f_8">
                         <fieldset>
                             <legend>流程控制</legend>
                             <ul>
                                 <li>
                                     <span>
                                         if语句<br>
-                                         满 30 减 20<br>
+                                        满 30 减 20<br>
                                         语法结构<br>
                                         if(条件){<br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;语句1<br>
@@ -374,14 +383,20 @@
                                         <span id="q">var</span>&nbsp;total&nbsp;=&nbsp;32;<br>
                                         if(total>=30){total-=20};<br>
                                         console.log(total)<br>
-                                        练习:声明变量保存年龄，如果满18打印成年人<br>
+                                        练习:声明变量保存年龄,如果满18打印成年人<br>
                                         <span id="q">var</span>&nbsp;age&nbsp;=&nbsp;21;<br>
                                         if(age>=18){console.log('成年人')}<br>
-                                        条件表达是中，一下几个数据会隐式转为false:<br>
-                                        [0 NaN "" undefined null] 这五个值作为条件出现，为false，其他都为true<br>
+                                        条件表达是中,一下几个数据会隐式转为false:<br>
+                                        [0 NaN "" undefined null] 这五个值作为条件出现,为false,其他都为true<br>
                                     </span>
                                 </li>
-                                <li></li>
+                                <li>
+                                    <span>
+                                        if-else嵌套<br>
+                                        用于多项分支语句<br>
+                                        if(条件表达式1){语句1}else if(条件表达式n){语句n}else{语句n+1 // 如果以上所有的条件表达式都是false,才会走这句话}<br>
+                                    </span>
+                                </li>
                             </ul>
 
 
@@ -415,7 +430,58 @@
 
         </div>
     </div>
-    <div></div>
+    <div style="height: 10px;"></div>
+    <div class="footer">
+        <div class="footer_dup">
+            <div class="footer_dup_d1 footer_dup_div">
+                <ul>
+                    <li><a href="#">关于我</a></li>
+                    <li><a href="#">联系我</a></li>
+                    <li><a href="#">用户协议</a></li>
+                </ul>
+            </div>
+            <div class="footer_dup_d2 footer_dup_div">
+                <ul>
+                    <li><a href="#">测试参数</a></li>
+                    <li><a href="#">测试参数</a></li>
+                    <li><a href="#">侵权申诉</a></li>
+                </ul>
+            </div>
+            <div class="footer_dup_d3 footer_dup_div">
+                <div>
+                    <img src="../../logo/QQ.png" alt="" style="width: 65px;">
+                </div>
+                <div>
+                    <img src="../../logo/weixin.png" alt="" style="width: 65px;">
+                </div>
+                <div>
+                    <img src="../../logo/email.png" alt="" style="width: 65px;">
+                </div>
+            </div>
+        </div>
+        <div class="footer_ddown">
+            <div>
+                <span>
+                    by Han:最开始觉得想做一个自己查询更快的知识字典,但是发现身边也有一些人需要类似的知识资料整理,那么作为把尤雨溪(vue.js之父)作为开源领袖的粉丝之一,自然的就是想帮助更多的人;<br>愿你 ——
+                    永远年轻,永远热泪盈眶^·^</span>
+            </div>
+            <div>
+                <span>
+                    违法不良信息举报邮箱：969666859@qq.com | 违法不良信息举报电话：4000233233转3<br>
+                </span>
+                <span>
+                    <img src="../../logo/police.png" alt="" style="width: 18px;">
+                    <a href="http://www.hangzhoujubao.com/">杭州市违法和不良信息举报中心</a> | <a
+                        href="http://jbts.mct.gov.cn/">12318全国文化市场举报网站</a> | <a
+                        href="mailto:userreport@bilibili.com">儿童色情信息举报专区</a> | <a
+                        href="http://www.shdf.gov.cn/shdf/channels/740.html">扫黄打非举报</a><br>网上有害信息举报专区:<a
+                        href="https://www.12377.cn/">中国互联网违法和不良信息举报中心</a><br>
+                        亲爱的市民朋友,浙江反诈中心专线电话“0571-81234567”系专门针对避免您财产被骗受损而设,如果你受骗了,先第一时间拨打专线,把汇款银行网点、对方卡号、开户人姓名这几项信息告诉反欺诈中心。<br>
+                        公司名称:韩某人自己的知识笔记 | 公司地址:浙江省杭州市 | 电话:132xxxx9695<br>
+                </span>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -29,7 +29,7 @@ export default {
             this.$toast({
                 message: "提示信息",
                 position: "top",
-                duration: "900",
+                duration: "9999999",
                 iconClass: "iconfont icon-tishi aa"
             });
         }
