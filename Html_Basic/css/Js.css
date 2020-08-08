@@ -107,8 +107,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-.footer_dup_div{
-    padding: 10px 30px 30px 30px;
+.footer_dup_div {
+  padding: 10px 30px 30px 30px;
 }
 /* id选择器 */
 #main {
@@ -184,10 +184,16 @@ legend {
 .Popular_navigation div div {
   width: 95%;
   height: 100%;
-  background-color: #ff907d;
+  background-color: #f7a293;
   margin: 0 auto;
   border-left: 1px;
   border-right: 1px;
+  text-align: center;
+}
+.Popular_navigation div div span {
+  color: white;
+  font-weight: normal;
+  font-size: 14px;
 }
 .gc1 span {
   color: darkgray;
@@ -200,21 +206,21 @@ legend {
   color: #4d4d4d;
   letter-spacing: 5px;
 }
-.footer>div>div>div{
-    margin: 0 auto;
-    padding-top: 30px;
+.footer > div > div > div {
+  margin: 0 auto;
+  padding-top: 30px;
 }
-.footer_ddown>div{
-    /* padding: 40px 40px 40px 280px; */
-    padding: 0 80px;
+.footer_ddown > div {
+  /* padding: 40px 40px 40px 280px; */
+  padding: 0 80px;
 }
-.footer_ddown>div>span{
-    color: #7e7f7f;
+.footer_ddown > div > span {
+  color: #7e7f7f;
 }
-.footer_ddown>div>span>a{
-    color: #7e7f7f;
+.footer_ddown > div > span > a {
+  color: #7e7f7f;
 }
 
-.footer_ddown>div>span:nth-child(2){
-    color: #7e7f7f;
+.footer_ddown > div > span:nth-child(2) {
+  color: #7e7f7f;
 }
