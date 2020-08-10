@@ -262,6 +262,17 @@ switch (Status_code) {
 // 循环打印0-9
 var number = 0;
 while (number <= 9) {
-  console.log(number);
+  console.log('0-9:',number);
   number += 1;
 }
+// --------------------------
+// 打印10-20之间所有的整数
+var number = 10;
+while(number<=20){
+    console.log('10-20:',number);
+    number+=1;
+}
+// --------------------------
+
+
+

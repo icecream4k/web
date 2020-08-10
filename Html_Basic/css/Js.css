@@ -54,7 +54,7 @@
 
 .Popular_navigation {
   width: 1200px;
-  height: 100%;
+  height: 35px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -111,8 +111,8 @@
   padding: 10px 30px 30px 30px;
 }
 
-.pointer{
-    cursor:pointer
+.pointer {
+  cursor: pointer;
 }
 /* id选择器 */
 #main {
@@ -180,19 +180,18 @@ legend {
 
 .Popular_navigation div {
   width: 100%;
-  height: 100%;
+  height: 35px;
 }
 
 .Popular_navigation div div {
   width: 95%;
-  height: 100%;
+  height: 35px;
   background-color: #f7a293;
   margin: 0 auto;
-  border-left: 1px;
-  border-right: 1px;
   text-align: center;
+  line-height: 35px;
 }
-.Popular_navigation div div span {
+.Popular_navigation div div a {
   color: white;
   font-weight: normal;
   font-size: 14px;
