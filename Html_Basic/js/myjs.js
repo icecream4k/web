@@ -206,6 +206,62 @@ if ((year % 4 === 0 && year % 100 !== 0) || year % 400 == 0) {
 //   console.log("不及格");
 // };
 // --------------------------
-switch(){
-    
+// 根据星期的代码值(0-6)打印不同的代码
+var day = 5;
+switch (day) {
+  case 0:
+    console.log("拔丝地瓜");
+    break;
+  case 1:
+    console.log("肉末茄子");
+    break;
+  case 2:
+    console.log("蒜泥白肉");
+    break;
+  case 3:
+    console.log("西红柿炒鸡蛋");
+    break;
+  case 4:
+    console.log("辣椒炒肉");
+    break;
+  case 5:
+    console.log("韭菜炒香干");
+    break;
+  case 6:
+    console.log("萝卜丝炒肉");
+    break;
+  case 7:
+    console.log("炖鱼头");
+    break;
+  default:
+    console.log("喝粥");
+}
+// --------------------------
+// 根据订单的状态码打印对应的汉子状态；1-等待付款 2-等待发货 3-运输中 4-已签收 5-已取消 其他-无法跟踪
+var Status_code = 3;
+switch (Status_code) {
+  case 1:
+    console.log("等待付款");
+    break;
+  case 2:
+    console.log("等待发货");
+    break;
+  case 3:
+    console.log("运输中");
+    break;
+  case 4:
+    console.log("已签收");
+    break;
+  case 5:
+    console.log("已取消");
+    break;
+  default:
+    console.log("无法跟踪");
+}
+// --------------------------
+// 循环打印0-9
+var number = 0;
+while (number <= 9) {
+  console.log(number);
+  number += 1;
 }
