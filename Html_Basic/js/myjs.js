@@ -19,6 +19,7 @@
 // 	 align='center'></iframe>
 // 	`;
 // }
+
 // --------------------------
 console.log("hello world");
 // --------------------------
@@ -180,15 +181,15 @@ if ((year % 4 === 0 && year % 100 !== 0) || year % 400 == 0) {
 // if(total >= 600){
 //     total*=0.9;
 //     if(money>=total){
-//         console.log('可以支付，支付金额为:',total,'剩余金额为:',money-total)
+//         console.log('可以支付,支付金额为:',total,'剩余金额为:',money-total)
 //     }else{
-//         console.log('金额不足，还差',total-money,'元')
+//         console.log('金额不足,还差',total-money,'元')
 //     };
 // }else{
 //     if(money>=total){
-//         console.log('可以支付，支付金额为:',total,'剩余金额为:',money-total)
+//         console.log('可以支付,支付金额为:',total,'剩余金额为:',money-total)
 //     }else{
-//         console.log('金额不足，还差',total-money,'元')
+//         console.log('金额不足,还差',total-money,'元')
 //     };
 // };
 // --------------------------
@@ -262,17 +263,204 @@ switch (Status_code) {
 // 循环打印0-9
 var number = 0;
 while (number <= 9) {
-  console.log('0-9:',number);
+  console.log("0-9:", number);
   number += 1;
 }
 // --------------------------
 // 打印10-20之间所有的整数
 var number = 10;
-while(number<=20){
-    console.log('10-20:',number);
-    number+=1;
+while (number <= 20) {
+  console.log("10-20:", number);
+  number += 1;
 }
 // --------------------------
+// 使用循环打印80 75 70 65 60
+var number = 80;
+while (number > 60) {
+  console.log("80-60", number);
+  number -= 5;
+}
+// --------------------------
+// 计算1-100之间所有的整数的和
+var frequency = 1; // 次数
+var value = 0; // 值
+while (frequency <= 100) {
+  value += frequency;
+  frequency += 1;
+}
+console.log("1-100的和是", value);
+// --------------------------
+// 计算出100-200之间所有奇数的和
+var i = 100;
+var sum = 0;
+while (i <= 200) {
+  if (i % 2 === 1) {
+    sum += i;
+  }
+  i++;
+}
+console.log("100-200奇数的和:", sum);
+// --------------------------
+// 使用break循环产生1-10之间所有整数,并计算他们的乘积
+var number = 1;
+var sum = 1;
+while (number < 10) {
+  number++;
+  sum *= number;
+}
+console.log("1-10的乘积是:", sum);
+// --------------------------
+var i = 0;
+do {
+  //循环体
+  console.log("i:", i);
+  i++;
+} while (i < 10); //循环条件
+// --------------------------
+// 打印30-50之间所有整数
+var i = 30;
+do {
+  console.log("30-50", i);
+  i++;
+} while (i <= 50);
+// --------------------------
+// 打印70 65 60 55 50
+var i = 70;
+do {
+  console.log("70-50:", i);
+  i -= 5;
+} while (i >= 50);
+// --------------------------
+// 打印1-100之间所有能被3整除的数字
+var i = 1;
+do {
+  if (i % 3 === 0) {
+    console.log("1-100能被3整除的数:", i);
+  }
+  i++;
+} while (i <= 100);
+// --------------------------
+// 计算1-100之间所有整数的和
+var i = 1;
+var sum = 0;
+do {
+  sum += i;
+  i++;
+} while (i <= 100);
+console.log("1-100整数的和:", sum);
+// --------------------------
+// 计算1-30之间所有能被3整除或者能被4整除的数字的乘积
+var i = 1;
+var sum = 1;
+do {
+  if (i % 3 === 0 || i % 4 === 0) {
+    sum *= i;
+  }
+  i++;
+} while (i <= 30);
+console.log("1-30之间被3,4整除的乘积:", sum);
+// --------------------------
+// 声明变量保存密码'123456',死循环弹出提示框，并且输入密码，如果输入正确结束循环
+// var password = '123456';
+// while(true){
+//     var pwd = prompt('请输入密码:');
+//     if(password===pwd){
+//         break
+//     };
+// }
+// var password = '123456';
+// do{
+//     var pwd = prompt('请输入密码:');
+// }while(pwd!==password);
+// --------------------------
+// 打印0-9
+for (var i = 0; i <= 9; i++) {
+  console.log("0-9", i);
+}
+// --------------------------
+// 打印 75 80 85 90
+for (var i = 75; i <= 90; i += 5) {
+  console.log("75-90:", i);
+}
+// --------------------------
+// 打印100-50之间所有整数
+for (var i = 100; i >= 50; i--) {
+  console.log("100-50:", i);
+}
+// --------------------------
+// 计算1-100之间所有整数的和
+for (var i = 1, sum = 0; i <= 100; i++) {
+  sum += i;
+}
+console.log("1-100的和:", sum);
+// --------------------------
+// 多个循环条件，只是最后一个起作用
+for (var i = 1, j = 5; j > 1, i < 10; i++, j--) {
+  console.log("i:", i, "j:", j);
+}
+// --------------------------
+// 打印1-10之间所有在整数，不包括4
+for (var i = 1; i <= 10; i++) {
+  if (i === 4) {
+    continue;
+  }
+  console.log("1-10不包括4:", i);
+}
+// --------------------------
+// 打印1-100之间所有的奇数;使用continue，如果遇到偶数就跳过
+for (var i = 1; i <= 100; i++) {
+  if (i % 2 === 0) {
+    continue;
+  }
+  console.log("奇数是:", i);
+}
+// --------------------------
+// 打印1-100之间所有的整数，不包含所能被7整除或9整除的数字
+for (var i = 1; i <= 100; i++) {
+  if (i % 7 === 0 || i % 9 === 0) {
+    continue;
+  }
+  console.log("1-100不被7 9整除的数;", i);
+}
+// --------------------------
+// 本世纪(2000-2099)的前10个闰年
+var number = 1;
+for(var year = 2000;year<=2099;year++){
+    if((year % 4 === 0 && year % 100 !== 0) || year % 400 == 0){
+        if(number<=10){
+            console.log('2000-2099年前10个闰年是:',year);
+            number++;
+        }
+    }
+};
+// --------------------------
+// 计算1-100之间所有整数的和，当和大于4000的时候，提前结束循环，并且打印出此时总和是多少，以及当前循环到了哪个数字
+var number = 0;
+for(var i = 0;i<=100;i++){
+    if(number>4000){
+        break
+    }
+    number+=i;
+}
+console.log('总和是:',number,'此时的循环数字是:',i)
+// --------------------------
+// 循环打印九九乘法表第5行
+// 1x1 = 1
+// 1x2 = 2 2x2 = 4
+// 1x3 = 3 2x3 = 6 3x3 = 9
+for(var i = 1; i <= 9; i++){
+    var str = '';
+     for(var k = 1; k <= 9; k++){
+        if(i >= k){
+            str += k + 'x' + i + '=' + i*k + ' ';
+        }
+    }
+    console.log(str)
+}
+
+
+
+
 
 
 
