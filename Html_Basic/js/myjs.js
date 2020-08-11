@@ -457,7 +457,26 @@ for(var i = 1; i <= 9; i++){
     }
     console.log(str)
 }
-
+// --------------------------
+function say(){
+    // 函数体
+    console.log('hello');
+    console.log('world');
+    console.log('function');
+};
+// 调用
+// say();
+// say();
+// say();
+// 循环调用
+// for(var i = 0;i<3;i++){
+//     say()
+// };
+// --------------------------
+// 创建函数，封装计算 2 + 3
+function getSum(){
+    
+};
 
 
 
