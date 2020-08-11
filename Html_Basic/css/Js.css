@@ -1,4 +1,7 @@
 /* 类选择器 */
+.Main_content {
+  /* background-image: url(../img/bgc05.jpg); */
+}
 .Note_Title_c_1 {
   margin: 25px auto 0 auto;
 }
@@ -15,6 +18,9 @@
 
 .Note_Title_c_2 {
   margin-top: 20px;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  padding: 0 15px 0 15px;
 }
 
 .gird_layout {
@@ -24,7 +30,7 @@
 }
 
 .gird_columns_1 {
-  background-color: #f7f7f7;
+  background-color: #e6e6e6;
   border: 2px;
   border-radius: 10px;
   border-color: tomato;
@@ -37,7 +43,7 @@
   background-image: url("../img/bgc03.jpg");
   background-repeat: no-repeat;
   background-size: 2000px;
-  background-position: -180px -470px;
+  background-position-y:-470px;
 }
 
 .Title_text_d1 {
@@ -49,7 +55,7 @@
 }
 
 .Title_h1 {
-  margin-top: 30px;
+  margin-top: 22px;
 }
 
 .Popular_navigation {
@@ -79,9 +85,15 @@
   border-radius: 3px;
 }
 .footer {
+  margin-top: 15px;
   width: 100%;
   height: 350px;
-  background-color: #e0e2e3;
+  /* background-color: #e0e2e3; */
+  /* opacity: 0.4; */
+  background-image: url(../img/bgc04.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-y: 6fr;
 }
 .footer_dup {
   width: 100%;
@@ -98,9 +110,14 @@
 }
 .footer_dup_d1 {
   text-align: center;
+  border-right: 1px solid #7e7f7f;
+  /* padding: 5px 0 5px 0; */
+  margin:15px 0 15px 0;
 }
 .footer_dup_d2 {
   text-align: center;
+  border-right: 1px solid #7e7f7f;
+  margin:15px 0 15px 0;
 }
 .footer_dup_d3 {
   text-align: center;
@@ -113,6 +130,9 @@
 
 .pointer {
   cursor: pointer;
+}
+.footer_dup_d3 div:nth-child(1) :hover{
+  width: 200px;
 }
 /* id选择器 */
 #main {
@@ -135,9 +155,11 @@ fieldset {
   border-color: rgb(150, 132, 132);
   background-color: rgb(240, 240, 240);
 }
+
 hr {
   border-bottom: none;
 }
+
 a {
   color: #4d4d4d;
 }
@@ -146,14 +168,17 @@ a:hover {
   color: tomato;
   font-weight: bold;
 }
+
 a:active {
   color: tomato;
   font-weight: bold;
 }
+
 span {
   font-size: 14px;
   line-height: 20pt;
 }
+
 legend {
   text-align: center;
   color: tomato;
@@ -162,10 +187,30 @@ legend {
 }
 
 /* 其他选择器 */
+.d_f_1>fieldset{
+  background-image: url(../img/bgc02.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+}
+
+.d_f_1>fieldset>span{
+  color: white;
+  font-weight: bolder;
+  
+}
+
+.d_f_1>fieldset>legend>div{
+  background-color: white;
+  width: 175px;
+  height: 25px;
+  border-radius: 10px;
+}
+
 .Title_text_d1 div:nth-child(1) {
   width: 100%;
   height: 100%;
-  margin-top: 30px;
+  margin-top: 22px;
 }
 
 .Title_text_d1 div:nth-child(2) {
@@ -186,39 +231,58 @@ legend {
 .Popular_navigation div div {
   width: 95%;
   height: 35px;
-  background-color: #f7a293;
+  /* background-color: #f7a293; */
   margin: 0 auto;
   text-align: center;
   line-height: 35px;
 }
+
 .Popular_navigation div div a {
   color: white;
   font-weight: normal;
   font-size: 14px;
 }
+
 .gc1 span {
   color: darkgray;
 }
+
 .footer > div > div > ul > li {
   list-style-type: none;
   margin-top: 20px;
   font-size: 13px;
   font-weight: bold;
-  color: #4d4d4d;
+  color: #c9c9c9;
   letter-spacing: 5px;
 }
+
+/* #b7b7b7 */
+.footer > div > div > ul > li > a {
+  color: #7e7f7f !important;
+}
+
+.footer > div > div > ul > li > a:hover{
+  color: tomato !important;
+}
+
 .footer > div > div > div {
   margin: 0 auto;
   padding-top: 30px;
 }
 .footer_ddown > div {
   padding: 0 80px;
+  margin-top: 50px;
 }
 .footer_ddown > div > span {
   color: #7e7f7f;
 }
-.footer_ddown > div > span > a {
+/* .footer_ddown > div > span > a {
   color: #7e7f7f;
+} */
+
+.footer_ddown > div > span > a :hover{
+  color: tomato !important;
+  font-weight: bolder;
 }
 
 .footer_ddown > div > span:nth-child(2) {

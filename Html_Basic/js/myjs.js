@@ -425,45 +425,45 @@ for (var i = 1; i <= 100; i++) {
 // --------------------------
 // 本世纪(2000-2099)的前10个闰年
 var number = 1;
-for(var year = 2000;year<=2099;year++){
-    if((year % 4 === 0 && year % 100 !== 0) || year % 400 == 0){
-        if(number<=10){
-            console.log('2000-2099年前10个闰年是:',year);
-            number++;
-        }
+for (var year = 2000; year <= 2099; year++) {
+  if ((year % 4 === 0 && year % 100 !== 0) || year % 400 == 0) {
+    if (number <= 10) {
+      console.log("2000-2099年前10个闰年是:", year);
+      number++;
     }
-};
+  }
+}
 // --------------------------
 // 计算1-100之间所有整数的和，当和大于4000的时候，提前结束循环，并且打印出此时总和是多少，以及当前循环到了哪个数字
 var number = 0;
-for(var i = 0;i<=100;i++){
-    if(number>4000){
-        break
-    }
-    number+=i;
+for (var i = 0; i <= 100; i++) {
+  if (number > 4000) {
+    break;
+  }
+  number += i;
 }
-console.log('总和是:',number,'此时的循环数字是:',i)
+console.log("总和是:", number, "此时的循环数字是:", i);
 // --------------------------
 // 循环打印九九乘法表第5行
 // 1x1 = 1
 // 1x2 = 2 2x2 = 4
 // 1x3 = 3 2x3 = 6 3x3 = 9
-for(var i = 1; i <= 9; i++){
-    var str = '';
-     for(var k = 1; k <= 9; k++){
-        if(i >= k){
-            str += k + 'x' + i + '=' + i*k + ' ';
-        }
+for (var i = 1; i <= 9; i++) {
+  var str = "";
+  for (var k = 1; k <= 9; k++) {
+    if (i >= k) {
+      str += k + "x" + i + "=" + i * k + " ";
     }
-    console.log(str)
+  }
+  console.log(str);
 }
 // --------------------------
-function say(){
-    // 函数体
-    console.log('hello');
-    console.log('world');
-    console.log('function');
-};
+function say() {
+  // 函数体
+  console.log("hello");
+  console.log("world");
+  console.log("function");
+}
 // 调用
 // say();
 // say();
@@ -474,12 +474,8 @@ function say(){
 // };
 // --------------------------
 // 创建函数，封装计算 2 + 3
-function getSum(){
-    
-};
-
-
-
-
-
-
+function getSum() {
+    var number = 2 + 3;
+    return number;
+}
+console.log(getSum())
