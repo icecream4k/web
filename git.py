@@ -1,8 +1,6 @@
 import os
 import datetime
 import time
-
-
 def run_this(time_1):
     os.system('git add *')
     time.sleep(1)

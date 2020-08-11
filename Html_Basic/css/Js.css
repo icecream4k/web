@@ -15,14 +15,24 @@
 .t_center {
   text-align: center;
 }
-
+.footer_dup_d3_qq_img:hover{
+    width:10px;
+}
 .Note_Title_c_2 {
+  width: 100%;
+  height: 80px;
   margin-top: 20px;
   border-left: 1px solid lightgrey;
-  border-right: 1px solid lightgrey;
   padding: 0 15px 0 15px;
+  display: grid;
+  grid-template-columns: 6fr 1fr;
 }
-
+.Note_Title_c_2_1 {
+  margin: auto;
+}
+.Note_Title_c_2_1 > img {
+  width: 65px;
+}
 .gird_layout {
   display: grid; /* 开启grid布局 */
   grid-template-columns: 1fr 6fr; /* 设置布局占比 */
@@ -31,10 +41,13 @@
 
 .gird_columns_1 {
   background-color: #e6e6e6;
-  border: 2px;
+  border: 1px solid slategrey;
   border-radius: 10px;
-  border-color: tomato;
   padding: 0 3px 0 3px;
+  /* background-image: url(../img/bgc02.jpg);
+  background-repeat: repeat;
+  background-attachment: fixed; */
+  /* background-position-x: 1590px; */
 }
 
 .Title_text {
@@ -43,7 +56,7 @@
   background-image: url("../img/bgc03.jpg");
   background-repeat: no-repeat;
   background-size: 2000px;
-  background-position-y:-470px;
+  background-position-y: -470px;
 }
 
 .Title_text_d1 {
@@ -69,6 +82,7 @@
   text-align: center;
   padding-top: 7px;
   letter-spacing: 10px;
+  /* margin-bottom: 10px; */
 }
 .gc2 {
   text-align: center;
@@ -76,6 +90,7 @@
   background-color: white;
   padding: 5px 5px 5px 5px;
   border-radius: 3px;
+  margin-bottom: 10px;
 }
 .gc3 {
   text-align: center;
@@ -83,6 +98,7 @@
   background-color: #ececec;
   padding: 5px 5px 5px 5px;
   border-radius: 3px;
+  margin-bottom: 10px;
 }
 .footer {
   margin-top: 15px;
@@ -112,12 +128,12 @@
   text-align: center;
   border-right: 1px solid #7e7f7f;
   /* padding: 5px 0 5px 0; */
-  margin:15px 0 15px 0;
+  margin: 15px 0 15px 0;
 }
 .footer_dup_d2 {
   text-align: center;
   border-right: 1px solid #7e7f7f;
-  margin:15px 0 15px 0;
+  margin: 15px 0 15px 0;
 }
 .footer_dup_d3 {
   text-align: center;
@@ -131,7 +147,7 @@
 .pointer {
   cursor: pointer;
 }
-.footer_dup_d3 div:nth-child(1) :hover{
+.footer_dup_d3 div:nth-child(1) :hover {
   width: 200px;
 }
 /* id选择器 */
@@ -187,26 +203,29 @@ legend {
 }
 
 /* 其他选择器 */
-.d_f_1>fieldset{
+.d_f_1 > fieldset {
   background-image: url(../img/bgc02.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   text-align: center;
+  background-position-y: -180px;
 }
 
-.d_f_1>fieldset>span{
+.d_f_1 > fieldset > span {
+  font-size: 29px;
   color: white;
   font-weight: bolder;
-  
 }
 
-.d_f_1>fieldset>legend>div{
+.d_f_1 > fieldset > legend > div {
   background-color: white;
   width: 175px;
   height: 25px;
   border-radius: 10px;
 }
-
+/* .d_f_2 > fieldset > table > tr > td > div{
+    margin: auto;
+} */
 .Title_text_d1 div:nth-child(1) {
   width: 100%;
   height: 100%;
@@ -246,7 +265,12 @@ legend {
 .gc1 span {
   color: darkgray;
 }
-
+.gc3 a {
+  font-size: 14px;
+}
+.gc2 a {
+  font-size: 14px;
+}
 .footer > div > div > ul > li {
   list-style-type: none;
   margin-top: 20px;
@@ -261,7 +285,7 @@ legend {
   color: #7e7f7f !important;
 }
 
-.footer > div > div > ul > li > a:hover{
+.footer > div > div > ul > li > a:hover {
   color: tomato !important;
 }
 
@@ -280,7 +304,7 @@ legend {
   color: #7e7f7f;
 } */
 
-.footer_ddown > div > span > a :hover{
+.footer_ddown > div > span > a :hover {
   color: tomato !important;
   font-weight: bolder;
 }

@@ -475,7 +475,27 @@ function say() {
 // --------------------------
 // 创建函数，封装计算 2 + 3
 function getSum() {
-    var number = 2 + 3;
-    return number;
+  var number = 2 + 3;
+  return number;
 }
-console.log(getSum())
+console.log(getSum());
+// --------------------------
+// 计算任意两个数字相加的和
+function add(number1, number2) {
+  var result = number1 + number2;
+  return result;
+}
+console.log("两个数字相加:", add(1, 2));
+// --------------------------
+// 创建函数getSum,计算1~任意数字之间所有整数的和
+function getsumadd(number) {
+  var i = 1;
+  var sum = 0;
+  do {
+    sum += i;
+    i++;
+  } while (i <= number);
+  console.log("1-",number,"整数的和:", sum);
+}
+getsumadd(number = 100)
+// --------------------------

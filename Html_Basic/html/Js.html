@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript-Note</title>
@@ -8,621 +9,611 @@
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/Js.css" />
     <script src="../js/myjs.js"></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="Title_text">
-      <!-- 笔记标题 -->
-      <div class="Title_text_d1">
-        <div class="Title_input"></div>
-        <div>
-          <div class="Title_h1">
-            <b>
-              <h1 class="Note_Title_h1_c_1 t_center">
-                <span style="color: tomato; font-size: 40px;">J</span>ava<span
-                  style="color: tomato; font-size: 40px;"
-                  >S</span
-                >cript
-              </h1>
-            </b>
-          </div>
+        <!-- 笔记标题 -->
+        <div class="Title_text_d1">
+            <div class="Title_input"></div>
+            <div>
+                <div class="Title_h1">
+                    <b>
+                        <h1 class="Note_Title_h1_c_1 t_center">
+                            <span style="color: tomato; font-size: 40px;">J</span>ava<span
+                                style="color: tomato; font-size: 40px;">S</span>cript
+                        </h1>
+                    </b>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <div
-      style="
-        width: 100%;
+    <div style="width: 100%;
         height: 35px;
-        background-color: rgba(255, 138, 117, 1);
-      "
-    >
-      <!-- 热门导航 -->
-      <div class="Popular_navigation">
-        <div>
-          <div>
-            <a href="#"><span>常查询知识点</span></a>
-          </div>
+        background-color: rgba(255, 138, 117, 1);">
+        <!-- 热门导航 -->
+        <div class="Popular_navigation">
+            <div>
+                <div>
+                    <span style="color:#ececec">常查询知识点</span>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <a href="#d_f_3">变量赋值</a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <a href="#d_f_5">转换</a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <a href="#d_f_9">循环</a>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <a href="#d_f_10">函数</a>
+                </div>
+            </div>
         </div>
-        <div>
-          <div>
-            <a href="#"><span>测试数据</span></a>
-          </div>
-        </div>
-        <div>
-          <div>
-            <a href="#"><span>测试数据</span></a>
-          </div>
-        </div>
-        <div>
-          <div>
-            <a href="#"><span>测试数据</span></a>
-          </div>
-        </div>
-        <div>
-          <div>
-            <a href="#"><span>测试数据</span></a>
-          </div>
-        </div>
-      </div>
     </div>
     <!-- ----------------- -->
     <div class="Main_content">
-      <div id="main">
-        <div class="Note_Title_c_1" id="Note_Title_i_1">
-          <div class="Title_input"></div><!-- 搜索框 -->
-        </div>
-        <div class="Note_Title_c_2" id="Note_Title_i_2">
-            <div class="Note_Title_c_2_1">
+        <div id="main">
+            <div class="Note_Title_c_1" id="Note_Title_i_1">
+                <div class="Title_input"></div><!-- 搜索框 -->
+            </div>
+            <div class="Note_Title_c_2" id="Note_Title_i_2">
+                <div class="Note_Title_c_2_1">
+                    <span style="font-size: 16px; color: tomato; font-weight: bolder;">
+                        JavaScript简介:
+                    </span>
+                    <br />
+                    <span style="color: tomato;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JavaScript(简称“JS”)
+                    </span>
+                    <span>
+                        是一种具有函数优先的轻量级,解释型或即时编译型的高级编程语言。
+                        虽然它是作为开发Web页面的脚本语言而出名的,但是它也被用到了很多非浏览器环境中,
+                        JavaScript
+                        基于原型编程、多范式的动态脚本语言,并且支持面向对象、命令式和声明式（如函数式编程）风格。
+                    </span>
+                </div>
+                <div class="Note_Title_c_2_1">
+                    <img src="../../logo/java-script.png" alt="">
+                </div>
 
             </div>
-            <div class="Note_Title_c_2_1">
+            <br />
+            <br />
 
-            </div>
-          <span style="font-size: 16px; color: tomato; font-weight: bolder;">
-            JavaScript简介:
-          </span>
-          <br />
-          <span style="color: tomato;">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JavaScript(简称“JS”)
-          </span>
-          <span>
-            是一种具有函数优先的轻量级,解释型或即时编译型的高级编程语言。
-            虽然它是作为开发Web页面的脚本语言而出名的,但是它也被用到了很多非浏览器环境中,
-            JavaScript
-            基于原型编程、多范式的动态脚本语言,并且支持面向对象、命令式和声明式（如函数式编程）风格。
-          </span>
-        </div>
-        <br />
-        <br />
+            <div class="gird_layout">
+                <!-- 笔记主体 -->
 
-        <div class="gird_layout">
-          <!-- 笔记主体 -->
-
-          <div class="gird_columns_1">
-            <!-- 导航栏 -->
-            <div class="gc1">
-              <span style="color: rgb(253, 142, 122);font-weight: bold;">--导航栏--</span>
-            </div>
-            <hr />  
-            <div class="gc2">
-              <a href="#d_f_1">打印示例</a>
-            </div>
-            <hr />
-            <div class="gc3">
-              <a href="#d_f_2">声明变量</a>
-            </div>
-            <hr />
-            <div class="gc2">
-              <a href="#d_f_3">变量赋值</a>
-            </div>
-            <hr />
-            <div class="gc3">
-              <a href="#d_f_4">数据类型</a>
-            </div>
-            <hr />
-            <div class="gc2">
-              <a href="#d_f_5">转换</a>
-            </div>
-            <hr />
-            <div class="gc3">
-              <a href="#d_f_6">运算符</a>
-            </div>
-            <hr />
-            <div class="gc2">
-              <a href="#d_f_7">弹出警示框</a>
-            </div>
-            <hr />
-            <div class="gc3">
-              <a href="#d_f_8">流程控制</a>
-            </div>
-            <hr />
-            <div class="gc2">
-              <a href="#d_f_9">循环</a>
-            </div>
-            <hr />
-            <div class="gc3">
-              <a href="#d_f_10">函数</a>
-            </div>
-            <hr />
-          </div>
-
-          <div class="gird_columns_2">
-            <!-- 内容主体 -->
-            <span id="d_f_1"></span>
-            <div class="d_f_1">
-              <fieldset>
-                <legend>
-                    <div>
-                        打印hello world示例
+                <div class="gird_columns_1">
+                    <!-- 导航栏 -->
+                    <div class="gc1">
+                        <span style="color: rgb(253, 142, 122);font-weight: bold;">--导航栏--</span>
                     </div>
-                </legend>
-                <span>console.log('<span style="color: tomato;">hello world</span>')</span><br />
-              </fieldset>
-            </div>
+                    <hr>
+                    <br />
+                    <div class="gc2">
+                        <a href="#d_f_1">打印示例</a>
+                    </div>
+                    <br />
+                    <div class="gc3">
+                        <a href="#d_f_2">声明变量</a>
+                    </div>
+                    <br />
+                    <div class="gc2">
+                        <a href="#d_f_3">变量赋值</a>
+                    </div>
+                    <br />
+                    <div class="gc3">
+                        <a href="#d_f_4">数据类型</a>
+                    </div>
+                    <br />
+                    <div class="gc2">
+                        <a href="#d_f_5">转换</a>
+                    </div>
+                    <br />
+                    <div class="gc3">
+                        <a href="#d_f_6">运算符</a>
+                    </div>
+                    <br />
+                    <div class="gc2">
+                        <a href="#d_f_7">弹出警示框</a>
+                    </div>
+                    <br />
+                    <div class="gc3">
+                        <a href="#d_f_8">流程控制</a>
+                    </div>
+                    <br />
+                    <div class="gc2">
+                        <a href="#d_f_9">循环</a>
+                    </div>
+                    <br />
+                    <div class="gc3">
+                        <a href="#d_f_10">函数</a>
+                    </div>
+                    <br />
+                </div>
 
-            <br />
-            <br />
-            <span id="d_f_2"></span>
-            <div class="d_f_2">
-              <fieldset>
-                <legend>声明变量</legend>
-                <span id="q">var</span><span>&nbsp;x=1;</span><br />
-                <span>相当于声明了一个变量</span>
-                <span>console.log(x) - 即可在终端中打印x的值</span><br /><br />
-                <span>
-                  <span id="q">var</span> eid = 3;<br />
-                  <span id="q">var</span> ename = 'tom';<br />
-                  <span id="q">var</span> sex = 1;<br />
-                  <span id="q">var</span> birthday = '1990-2-1';<br />
-                  <span id="q">var</span> salary = 8000;<br />
-                  <span id="q">var</span> deptId = 20;<br />
-                  console.log(eid:',eid,'ename:',ename,'sex:',sex,'birthday:',birthday,'salary:',salary,'deptId:',deptId) </span
-                ><br />
-                <span
-                  >结果:<span>
-                    3 ename: tom sex: 1 birthday: 1990-2-1 salary: 8000 deptId:
-                    20</span
-                  ></span
-                >
-              </fieldset>
-            </div>
+                <div class="gird_columns_2">
+                    <!-- 内容主体 -->
+                    <span id="d_f_1"></span>
+                    <div class="d_f_1">
+                        <fieldset>
+                            <legend>
+                                <div>
+                                    打印hello world示例
+                                </div>
+                            </legend>
+                            <span style="color: skyblue;">console.log('<span
+                                    style="color: tomato;font-size: 29px;">hello world</span>')</span><br />
+                        </fieldset>
+                    </div>
 
-            <br />
-            <br />
-            <span id="d_f_3"></span>
-            <div class="d_f_3">
-              <fieldset>
-                <legend>变量赋值</legend>
-                <span id="q">var</span><span>&nbsp;d;</span>
-                <br />
-                <span>变量只是声明,但未赋值,则保存的值为undefined</span>
-                <br />
-                <span
-                  >变量可以被多次赋值,且赋不同类型的值,这个特点也是弱类型语言的特点</span
-                >
-              </fieldset>
-            </div>
+                    <br />
+                    <br />
+                    <span id="d_f_2"></span>
+                    <div class="d_f_2">
+                        <fieldset>
+                            <legend>声明变量</legend>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <span id="q">var</span><span>&nbsp;x=1;</span><br />
+                                            <span>相当于声明了一个变量</span>
+                                            <span>console.log(x) - 即可在终端中打印x的值</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span>
+                                            <span id="q">var</span> eid = 3;<br />
+                                            <span id="q">var</span> ename = 'tom';<br />
+                                            <span id="q">var</span> sex = 1;<br />
+                                            <span id="q">var</span> birthday = '1990-2-1';<br />
+                                            <span id="q">var</span> salary = 8000;<br />
+                                            <span id="q">var</span> deptId = 20;<br />
+                                            console.log(eid:',eid,'ename:',ename,'sex:',sex,'birthday:',birthday,'salary:',salary,'deptId:',deptId)
+                                        </span><br />
+                                        <span>结果:<span>
+                                                3 ename: tom sex: 1 birthday: 1990-2-1 salary: 8000 deptId:
+                                                20</span></span>
+                                    </td>
+                                </tr>
+                            </table>
 
-            <br />
-            <br />
-            <span id="d_f_4"></span>
-            <div class="d_f_4">
-              <fieldset>
-                <legend>数据类型</legend>
-                <span>
-                  检测数据类型<br />
-                  查看任意数据的数据类型<br />
-                  <span id="q">var</span> f1 = 3.14;<br />
-                  consolo.log(typeof f1);<br />
-                </span>
-                <hr />
-                <span>
-                  Unicode编码<br />
-                  查看任意一个字符的Unicode码<br />
-                  <span id="q">var</span> a = '韩';<br />
-                  console.log('a',charCodeAt());<br />
-                </span>
-                <br />
-                <span>
-                  基本数据类型<br />
-                  <span id="q">var</span> x; // undefined<br />
-                  <span id="q">var</span> userName = 'han'; string 字符串<br />
-                  <span id="q">var</span> age = 18; number 数字类型<br />
-                  <span id="q">var</span> y = True or False; boolean 布尔类型<br />
-                  <span id="q">var</span> cars=["Saab","Volvo","BMW"]; array
-                  数组<br />
-                  <span id="q">var</span> b = null;
-                  object(对象),常和引用类型的数据一起使用
-                </span>
-              </fieldset>
-            </div>
-            <br />
-            <br />
-            <span id="d_f_5"></span>
-            <div class="d_f_5">
-              <fieldset>
-                <legend>转换</legend>
-                <span>
-                  隐式转换<br />
-                  在运算过程中,自动发生的数据类型转换<br />
-                  <span id="q">总结</span
-                  >:隐式转换中,如果加号中出现字符串,则数据转为字符串型；其它情况都是自动调用Number函数转为数值型<br />
-                  数值型+字符串型 数值型转为字符串型<br />
-                  <span id="q">var</span> a1 = 2+'3';<br />
-                  console.log(a1,typeof a1); ==> 23 string
-                  <hr />
-                  数值型+布尔类型 布尔类型转化为数值型[true 1;false 0]<br />
-                  <span id="q">var</span> a2 = 2 + false;<br />
-                  console.log(a2,typeof a2); ==> 3 number
-                  <hr />
-                  字符串型+布尔型 布尔型转为字符串型<br />
-                  <span id="q">var</span> a3 = '2' + true;<br />
-                  console.log(a3,typeof a3); ==> '2true' string
-                  <hr />
-                  demo <br />
-                  <span id="q">var</span> a = 1,<br />
-                  b = true,<br />
-                  c = "han";<br />
-                  result1 = a + b + c;<br />
-                  result2 = b + c + a;<br />
-                  result3 = c + a + b;<br />
-                  console.log('a + b + c的结果是',result1,'类型是:',typeof
-                  result1); ==> '2han<br />
-                  console.log('b + c + a的结果是',result2,'类型是:',typeof
-                  result2); ==> 'truehan1'<br />
-                  console.log('c + a + b的结果是',result3,'类型是:',typeof
-                  result3); ==> 'han1true'<br />
-                  <hr />
-                  //
-                  假设已经从数据库中获取到了商品的标题和价格,把这些数据打印成一行<br />
-                  <span id="q">var</span> title = 'macbook pro';<br />
-                  <span id="q">var</span> price = 15999;<br />
-                  console.log('line 72-73>>>','商品名:',title,'价格:',price);
-                  ==> 商品名: macbook pro 价格: 15999<br />
-                  <hr />
+                        </fieldset>
+                    </div>
 
-                  <ul>
-                    强制转换
-                    <li>
-                      强制转字符串<br />
-                      <span id="q">var</span> num = 5;<br />
-                      <span id="q">var</span> new_num = num.toString();<br />
-                      console.log(num,typeof num); ==> 5 string
-                    </li>
-                    <li>
-                      强制转为整型<br />
-                      parseInt()常用于小数或者字符串转为整型,其他都是返回NaN<br />
-                      如果要转换的字符串中以数字开头,,则返回开头整数部分<br />
-                      如果要转换的字符串中非数字开头,则返回NaN<br />
-                      <span id="q">var</span> num = '1';<br />
-                      console.log(parseInt(num),typeof parseInt(num)); ==> 1
-                      string
-                    </li>
-                    <li>
-                      强制转为浮点型<br />
-                      parseFloat()它的用法和parseInt几乎一致,只是常用语将字符串转为浮点型<br />
-                      <span id="q">var</span> num = '3.14';
-                      console.log(parseFloat(num),typeof parseFloat(num)); ==>
-                      3.14 number
-                    </li>
-                  </ul>
-                </span>
-              </fieldset>
-            </div>
-            <br />
-            <br />
-            <span id="d_f_6"></span>
-            <div class="d_f_6">
-              <fieldset>
-                <legend>运算符</legend>
-                <span>
-                  表达式:由数据或数据连接的运算符所组成的形式<br />
-                  分为算术运算符,比较运算符,逻辑运算符,位运算符,赋值运算符,三目运算符
-                </span>
-                <hr />
-                <ul>
-                  <li>
-                    <span>
-                      算术运算符<br />
-                      +&nbsp;&nbsp;-&nbsp;&nbsp;*&nbsp;&nbsp;/&nbsp;&nbsp;%&nbsp;&nbsp;++&nbsp;&nbsp;--<br />
-                      %&nbsp;取余<br />
-                      ++&nbsp;自增<br />
-                      --&nbsp;自减<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;<span id="q">var</span> d = 1;<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;console.log(d++); ==> 1<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;console.log(d); ==> 2<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;先打印一次结果,再执行自增<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;<span id="q">var</span> d = 1;<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;console.log(++d); ==> 2<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;console.log(d); ==> 2<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;先执行自增,再执行打印结果<br />
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      比较运算符<br />
-                      &lt;&nbsp;&gt;&nbsp;&lt;=&nbsp;&gt;=&nbsp;==(等于)&nbsp;!=&nbsp;===(全等于)&nbsp;!==(不全等于)<br />
-                      ==比较值,会发生隐式转换,所以如果比较值和类型,推荐使用===,不等于和不全等类似<br />
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      逻辑运算符<br />
-                      &&&nbsp;并且&nbsp;类似于Python中的and<br />
-                      ||&nbsp;或者&nbsp;类似于Python中的or<br />
-                      !&nbsp;非(逻辑非),取反<br />
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      位运算符(了解)<br />
-                      2进制&nbsp;&nbsp;&nbsp;8进制&nbsp;&nbsp;&nbsp;10进制&nbsp;&nbsp;&nbsp;16进制等
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      赋值运算符<br />
-                      = += -= *= /= %=
-                      ...等[计算赋值:先执行计算,然后执行赋值]<br />
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      三目运算符<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;一目,由一个运算符链接的一个操作数据或表达式&nbsp;&nbsp;++&nbsp;&nbsp;--&nbsp;&nbsp;!<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;二目,由一个运算符链接的两个个操作数据或表达式
-                      + - *<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;三目,由两个运算符链接的三个个操作数据或表达式
-                      条件表达式 ? 表达式1 : 表达式2
-                      如果条件表达式为true,执行表达式1；如果条件表达式未false,执行表达式2<br />
-                    </span>
-                  </li>
-                </ul>
-                <hr />
-                <ul>
-                  短路逻辑
-                  <li>
-                    <span>
-                      并且(&&),如果第一条条件为false,不再执行第二个条件<br />
-                      或者(||),如果第一个条件为true,不再执行第二个条件<br />
-                      查看一下程序是否报错:<br />
-                      <span id="q">var</span>&nbsp;num&nbsp;=&nbsp;3;<br />
-                      num&nbsp;&gt;&nbsp;5&nbsp;&&&nbsp;console.log(a);<br />
-                      num&nbsp;&lt;&nbsp;1&nbsp;&&&nbsp;console.log(a);
-                      ==>报错<br />
-                    </span>
-                  </li>
-                </ul>
-              </fieldset>
-            </div>
-            <br /><br />
-            <span id="d_f_7"></span>
-            <div class="d_f_7">
-              <fieldset>
-                <legend>弹出警示框</legend>
-                <span>
-                  此段已在JS中注释,搜索alertx<br />
-                  alert() 弹出警示框<br />
-                  prompt()
-                  弹出提示(输入)框,需要使用变量保存用户输入的数据,类型是字符串型,如果用户点击取消返回null<br />
-                </span>
-              </fieldset>
-            </div>
-            <br /><br />
-            <span id="d_f_8"></span>
-            <div class="d_f_8">
-              <fieldset>
-                <legend>流程控制</legend>
-                <ul>
-                  <li>
-                    <span>
-                      if语句<br />
-                      满 30 减 20<br />
-                      语法结构<br />
-                      if(条件){<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;语句1<br />
-                      }<br />
-                      满30减20<br />
-                      <span id="q">var</span>&nbsp;total&nbsp;=&nbsp;32;<br />
-                      if(total>=30){total-=20};<br />
-                      console.log(total)<br />
-                      练习:声明变量保存年龄,如果满18打印成年人<br />
-                      <span id="q">var</span>&nbsp;age&nbsp;=&nbsp;21;<br />
-                      if(age>=18){console.log('成年人')}<br />
-                      条件表达是中,一下几个数据会隐式转为false:<br />
-                      [0 NaN "" undefined null]
-                      这五个值作为条件出现,为false,其他都为true<br />
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      if-else嵌套<br />
-                      用于多项分支语句<br />
-                      if(条件表达式1){语句1}else
-                      if(条件表达式n){语句n}else{语句n+1 //
-                      如果以上所有的条件表达式都是false,才会走这句话}<br />
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      多向分支(和if类似)<br />
-                      switch-case语句<br />
-                      也是一种特殊的多想分支语句,是根据一个表达式的不同值来选择执行相应的语句<br />
-                      switch(表达式){<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;case 值1: //
-                      如果表达式的值为值1,泽执行下边的语句<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语句1;<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case
-                      值n:<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语句n;<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:(类似于else)<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语句<br />
-                      }<br />
-                      对比switch-case 和 if-else嵌套<br />
-                      switch-case在比较重只能进行全等于的比较,if-else可以使用各种比较运算,适用范围更广
-                    </span>
-                  </li>
-                </ul>
-              </fieldset>
-            </div>
+                    <br />
+                    <br />
+                    <span id="d_f_3"></span>
+                    <div class="d_f_3">
+                        <fieldset>
+                            <legend>变量赋值</legend>
+                            <span id="q">var</span><span>&nbsp;d;</span>
+                            <br />
+                            <span>变量只是声明,但未赋值,则保存的值为undefined</span>
+                            <br />
+                            <span>变量可以被多次赋值,且赋不同类型的值,这个特点也是弱类型语言的特点</span>
+                        </fieldset>
+                    </div>
 
-            <br /><br />
-            <span id="d_f_9"></span>
-            <div class="d_f_9">
-              <fieldset>
-                <legend>循环</legend>
-                <span>
-                  一遍又一遍执行相同或者相似的代码
-                  <ul>
-                    循环的两个要素<br />
-                    <li>
-                      循环条件:控制循环的次数
-                    </li>
-                    <li>
-                      循环体:重复执行的相同或者相似的代码
-                    </li>
-                  </ul>
-                  <hr />
+                    <br />
+                    <br />
+                    <span id="d_f_4"></span>
+                    <div class="d_f_4">
+                        <fieldset>
+                            <legend>数据类型</legend>
+                            <span>
+                                检测数据类型<br />
+                                查看任意数据的数据类型<br />
+                                <span id="q">var</span> f1 = 3.14;<br />
+                                consolo.log(typeof f1);<br />
+                            </span>
+                            <hr />
+                            <span>
+                                Unicode编码<br />
+                                查看任意一个字符的Unicode码<br />
+                                <span id="q">var</span> a = '韩';<br />
+                                console.log('a',charCodeAt());<br />
+                            </span>
+                            <br />
+                            <span>
+                                基本数据类型<br />
+                                <span id="q">var</span> x; // undefined<br />
+                                <span id="q">var</span> userName = 'han'; string 字符串<br />
+                                <span id="q">var</span> age = 18; number 数字类型<br />
+                                <span id="q">var</span> y = True or False; boolean 布尔类型<br />
+                                <span id="q">var</span> cars=["Saab","Volvo","BMW"]; array
+                                数组<br />
+                                <span id="q">var</span> b = null;
+                                object(对象),常和引用类型的数据一起使用
+                            </span>
+                        </fieldset>
+                    </div>
+                    <br />
+                    <br />
+                    <span id="d_f_5"></span>
+                    <div class="d_f_5">
+                        <fieldset>
+                            <legend>转换</legend>
+                            <span>
+                                隐式转换<br />
+                                在运算过程中,自动发生的数据类型转换<br />
+                                <span id="q">总结</span>:隐式转换中,如果加号中出现字符串,则数据转为字符串型；其它情况都是自动调用Number函数转为数值型<br />
+                                数值型+字符串型 数值型转为字符串型<br />
+                                <span id="q">var</span> a1 = 2+'3';<br />
+                                console.log(a1,typeof a1); ==> 23 string
+                                <hr />
+                                数值型+布尔类型 布尔类型转化为数值型[true 1;false 0]<br />
+                                <span id="q">var</span> a2 = 2 + false;<br />
+                                console.log(a2,typeof a2); ==> 3 number
+                                <hr />
+                                字符串型+布尔型 布尔型转为字符串型<br />
+                                <span id="q">var</span> a3 = '2' + true;<br />
+                                console.log(a3,typeof a3); ==> '2true' string
+                                <hr />
+                                demo <br />
+                                <span id="q">var</span> a = 1,<br />
+                                b = true,<br />
+                                c = "han";<br />
+                                result1 = a + b + c;<br />
+                                result2 = b + c + a;<br />
+                                result3 = c + a + b;<br />
+                                console.log('a + b + c的结果是',result1,'类型是:',typeof
+                                result1); ==> '2han<br />
+                                console.log('b + c + a的结果是',result2,'类型是:',typeof
+                                result2); ==> 'truehan1'<br />
+                                console.log('c + a + b的结果是',result3,'类型是:',typeof
+                                result3); ==> 'han1true'<br />
+                                <hr />
+                                //
+                                假设已经从数据库中获取到了商品的标题和价格,把这些数据打印成一行<br />
+                                <span id="q">var</span> title = 'macbook pro';<br />
+                                <span id="q">var</span> price = 15999;<br />
+                                console.log('line 72-73>>>','商品名:',title,'价格:',price);
+                                ==> 商品名: macbook pro 价格: 15999<br />
+                                <hr />
 
-                  <ul>
-                    <li>
-                      while循环<br />
-                      while(循环条件){<br />
-                      循环体<br />
-                      }<br />
-                      <hr />
-                      break<br />
-                      在循环体重使用,用于强制结束循环,出现break后,循环体剩余语句及后续的循环不再执行<br />
-                      continue<br />
-                      跳过剩余部分的循环体,还会继续执行循环
-                      <hr />
-                      do-while循环<br />
-                      do{<br />&nbsp;&nbsp;循环体<br />}while(循环条件);
-                    </li>
-                    <li>
-                      for循环<br />
-                      for(初始值;循环条件;步长){<br />
-                      &nbsp;&nbsp;循环体<br />
-                      }
-                    </li>
-                  </ul>
-                </span>
-              </fieldset>
+                                <ul>
+                                    强制转换
+                                    <li>
+                                        强制转字符串<br />
+                                        <span id="q">var</span> num = 5;<br />
+                                        <span id="q">var</span> new_num = num.toString();<br />
+                                        console.log(num,typeof num); ==> 5 string
+                                    </li>
+                                    <li>
+                                        强制转为整型<br />
+                                        parseInt()常用于小数或者字符串转为整型,其他都是返回NaN<br />
+                                        如果要转换的字符串中以数字开头,,则返回开头整数部分<br />
+                                        如果要转换的字符串中非数字开头,则返回NaN<br />
+                                        <span id="q">var</span> num = '1';<br />
+                                        console.log(parseInt(num),typeof parseInt(num)); ==> 1
+                                        string
+                                    </li>
+                                    <li>
+                                        强制转为浮点型<br />
+                                        parseFloat()它的用法和parseInt几乎一致,只是常用语将字符串转为浮点型<br />
+                                        <span id="q">var</span> num = '3.14';
+                                        console.log(parseFloat(num),typeof parseFloat(num)); ==>
+                                        3.14 number
+                                    </li>
+                                </ul>
+                            </span>
+                        </fieldset>
+                    </div>
+                    <br />
+                    <br />
+                    <span id="d_f_6"></span>
+                    <div class="d_f_6">
+                        <fieldset>
+                            <legend>运算符</legend>
+                            <span>
+                                表达式:由数据或数据连接的运算符所组成的形式<br />
+                                分为算术运算符,比较运算符,逻辑运算符,位运算符,赋值运算符,三目运算符
+                            </span>
+                            <hr />
+                            <ul>
+                                <li>
+                                    <span>
+                                        算术运算符<br />
+                                        +&nbsp;&nbsp;-&nbsp;&nbsp;*&nbsp;&nbsp;/&nbsp;&nbsp;%&nbsp;&nbsp;++&nbsp;&nbsp;--<br />
+                                        %&nbsp;取余<br />
+                                        ++&nbsp;自增<br />
+                                        --&nbsp;自减<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<span id="q">var</span> d = 1;<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(d++); ==> 1<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(d); ==> 2<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;先打印一次结果,再执行自增<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<span id="q">var</span> d = 1;<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(++d); ==> 2<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(d); ==> 2<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;先执行自增,再执行打印结果<br />
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        比较运算符<br />
+                                        &lt;&nbsp;&gt;&nbsp;&lt;=&nbsp;&gt;=&nbsp;==(等于)&nbsp;!=&nbsp;===(全等于)&nbsp;!==(不全等于)<br />
+                                        ==比较值,会发生隐式转换,所以如果比较值和类型,推荐使用===,不等于和不全等类似<br />
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        逻辑运算符<br />
+                                        &&&nbsp;并且&nbsp;类似于Python中的and<br />
+                                        ||&nbsp;或者&nbsp;类似于Python中的or<br />
+                                        !&nbsp;非(逻辑非),取反<br />
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        位运算符(了解)<br />
+                                        2进制&nbsp;&nbsp;&nbsp;8进制&nbsp;&nbsp;&nbsp;10进制&nbsp;&nbsp;&nbsp;16进制等
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        赋值运算符<br />
+                                        = += -= *= /= %=
+                                        ...等[计算赋值:先执行计算,然后执行赋值]<br />
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        三目运算符<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;一目,由一个运算符链接的一个操作数据或表达式&nbsp;&nbsp;++&nbsp;&nbsp;--&nbsp;&nbsp;!<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;二目,由一个运算符链接的两个个操作数据或表达式
+                                        + - *<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;三目,由两个运算符链接的三个个操作数据或表达式
+                                        条件表达式 ? 表达式1 : 表达式2
+                                        如果条件表达式为true,执行表达式1；如果条件表达式未false,执行表达式2<br />
+                                    </span>
+                                </li>
+                            </ul>
+                            <hr />
+                            <ul>
+                                短路逻辑
+                                <li>
+                                    <span>
+                                        并且(&&),如果第一条条件为false,不再执行第二个条件<br />
+                                        或者(||),如果第一个条件为true,不再执行第二个条件<br />
+                                        查看一下程序是否报错:<br />
+                                        <span id="q">var</span>&nbsp;num&nbsp;=&nbsp;3;<br />
+                                        num&nbsp;&gt;&nbsp;5&nbsp;&&&nbsp;console.log(a);<br />
+                                        num&nbsp;&lt;&nbsp;1&nbsp;&&&nbsp;console.log(a);
+                                        ==>报错<br />
+                                    </span>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+                    <br /><br />
+                    <span id="d_f_7"></span>
+                    <div class="d_f_7">
+                        <fieldset>
+                            <legend>弹出警示框</legend>
+                            <span>
+                                此段已在JS中注释,搜索alertx<br />
+                                alert() 弹出警示框<br />
+                                prompt()
+                                弹出提示(输入)框,需要使用变量保存用户输入的数据,类型是字符串型,如果用户点击取消返回null<br />
+                            </span>
+                        </fieldset>
+                    </div>
+                    <br /><br />
+                    <span id="d_f_8"></span>
+                    <div class="d_f_8">
+                        <fieldset>
+                            <legend>流程控制</legend>
+                            <ul>
+                                <li>
+                                    <span>
+                                        if语句<br />
+                                        满 30 减 20<br />
+                                        语法结构<br />
+                                        if(条件){<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;语句1<br />
+                                        }<br />
+                                        满30减20<br />
+                                        <span id="q">var</span>&nbsp;total&nbsp;=&nbsp;32;<br />
+                                        if(total>=30){total-=20};<br />
+                                        console.log(total)<br />
+                                        练习:声明变量保存年龄,如果满18打印成年人<br />
+                                        <span id="q">var</span>&nbsp;age&nbsp;=&nbsp;21;<br />
+                                        if(age>=18){console.log('成年人')}<br />
+                                        条件表达是中,一下几个数据会隐式转为false:<br />
+                                        [0 NaN "" undefined null]
+                                        这五个值作为条件出现,为false,其他都为true<br />
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        if-else嵌套<br />
+                                        用于多项分支语句<br />
+                                        if(条件表达式1){语句1}else
+                                        if(条件表达式n){语句n}else{语句n+1 //
+                                        如果以上所有的条件表达式都是false,才会走这句话}<br />
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        多向分支(和if类似)<br />
+                                        switch-case语句<br />
+                                        也是一种特殊的多想分支语句,是根据一个表达式的不同值来选择执行相应的语句<br />
+                                        switch(表达式){<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;case 值1: //
+                                        如果表达式的值为值1,泽执行下边的语句<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语句1;<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case
+                                        值n:<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语句n;<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default:(类似于else)<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语句<br />
+                                        }<br />
+                                        对比switch-case 和 if-else嵌套<br />
+                                        switch-case在比较重只能进行全等于的比较,if-else可以使用各种比较运算,适用范围更广
+                                    </span>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+
+                    <br /><br />
+                    <span id="d_f_9"></span>
+                    <div class="d_f_9">
+                        <fieldset>
+                            <legend>循环</legend>
+                            <span>
+                                一遍又一遍执行相同或者相似的代码
+                                <ul>
+                                    循环的两个要素<br />
+                                    <li>
+                                        循环条件:控制循环的次数
+                                    </li>
+                                    <li>
+                                        循环体:重复执行的相同或者相似的代码
+                                    </li>
+                                </ul>
+                                <hr />
+
+                                <ul>
+                                    <li>
+                                        while循环<br />
+                                        while(循环条件){<br />
+                                        循环体<br />
+                                        }<br />
+                                        <hr />
+                                        break<br />
+                                        在循环体重使用,用于强制结束循环,出现break后,循环体剩余语句及后续的循环不再执行<br />
+                                        continue<br />
+                                        跳过剩余部分的循环体,还会继续执行循环
+                                        <hr />
+                                        do-while循环<br />
+                                        do{<br />&nbsp;&nbsp;循环体<br />}while(循环条件);
+                                    </li>
+                                    <li>
+                                        for循环<br />
+                                        for(初始值;循环条件;步长){<br />
+                                        &nbsp;&nbsp;循环体<br />
+                                        }
+                                    </li>
+                                </ul>
+                            </span>
+                        </fieldset>
+                    </div>
+                    <br /><br />
+                    <span id="d_f_10"></span>
+                    <div class="d_f_10">
+                        <fieldset>
+                            <legend>函数</legend>
+                            <span>
+                                Number() , parseInt() , parseFloat() , alert()...<br />
+                                分为系统函数和自定义函数<br />
+                                函数:是一个功能体,接收若干个数据,产出新的结果<br />
+                                函数用于封装反复执行的代码，便于后期的使用和维护
+                                <ul>
+                                    <li>
+                                        普通函数<br />
+                                        创建函数<br />
+                                        function 函数名称(){<br />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;函数体 //封装的代码<br />
+                                        }<br />
+                                    </li>
+                                    <li>
+                                        带有参数的函数<br>
+                                        function 函数名称(形参列表){<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;函数体<br>
+                                        }<br>
+                                        调用(实参列表)<br>
+                                        创建函数时候的参数称之为形参，调用函数时候的参数名称为实参，实参会赋值给形参
+                                    </li>
+                                </ul>
+                            </span>
+                        </fieldset>
+                    </div>
+                </div>
+                <!-- 内容主体 -->
             </div>
-            <br /><br />
-            <span id="d_f_10"></span>
-            <div class="d_f_10">
-              <fieldset>
-                <legend>函数</legend>
-                <span>
-                  Number() , parseInt() , parseFloat() , alert()...<br />
-                  分为系统函数和自定义函数<br />
-                  函数:是一个功能体,接收若干个数据,产出新的结果<br />
-                  函数用于封装反复执行的代码，便于后期的使用和维护
-                  <ul>
-                    <li>
-                      普通函数<br />
-                      创建函数<br />
-                      function 函数名称(){<br />
-                      &nbsp;&nbsp;&nbsp;&nbsp;函数体 //封装的代码<br />
-                      }<br />
-                    </li>
-                    <li></li>
-                  </ul>
-                </span>
-              </fieldset>
-            </div>
-          </div>
-          <!-- 内容主体 -->
+            <!-- 笔记主体 -->
         </div>
-        <!-- 笔记主体 -->
-      </div>
-      <!-- 笔记尾部 -->
+        <!-- 笔记尾部 -->
     </div>
     <!-- 隔断 -->
     <!-- 页面底部信息 -->
     <div class="footer">
-      <div class="footer_dup">
-        <div class="footer_dup_d1 footer_dup_div">
-          <ul>
-            <li><a href="#">关于我</a></li>
-            <li><a href="#">联系我</a></li>
-            <li><a href="#">用户协议</a></li>
-          </ul>
+        <div class="footer_dup">
+            <div class="footer_dup_d1 footer_dup_div">
+                <ul>
+                    <li><a href="#">关于我</a></li>
+                    <li><a href="#">联系我</a></li>
+                    <li><a href="#">用户协议</a></li>
+                </ul>
+            </div>
+            <div class="footer_dup_d2 footer_dup_div">
+                <ul>
+                    <li><a href="#">测试参数</a></li>
+                    <li><a href="#">测试参数</a></li>
+                    <li><a href="#">侵权申诉</a></li>
+                </ul>
+            </div>
+            <div class="footer_dup_d3 footer_dup_div">
+                <div class="footer_dup_d3_qq">
+                    <a href="#">
+                        <img class="pointer footer_dup_d3_qq_img" src="../../logo/QQ.png" alt="" style="width: 65px;" />
+                    </a>
+                </div>
+                <div class="footer_dup_d3_weixin">
+                    <a href="#">
+                        <img class="pointer footer_dup_d3_weixin_img" src="../../logo/weixin.png" alt="" style="width: 65px;" />
+                    </a>
+                </div>
+                <div class="footer_dup_d3_email">
+                    <a href="#">
+                        <img class="pointer footer_dup_d3_email_img" src="../../logo/email.png" alt="" style="width: 65px;" />
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="footer_dup_d2 footer_dup_div">
-          <ul>
-            <li><a href="#">测试参数</a></li>
-            <li><a href="#">测试参数</a></li>
-            <li><a href="#">侵权申诉</a></li>
-          </ul>
+        <div class="footer_ddown">
+            <div>
+                <span>
+                    by
+                    Han:At first, I felt that I wanted to make a knowledge dictionary which can query faster, but I
+                    found that there were some people around who needed to sort out similar knowledge. As one of the
+                    fans of Eva nYou as an open source leader, I naturally wanted to help more people<br>
+                    祝 —— 永远年轻,永远热泪盈眶</span>
+            </div>
+            <div>
+                <span>
+                    违法不良信息举报邮箱：969666859@qq.com |
+                    违法不良信息举报电话：4000233233转3<br />
+                </span>
+                <span>
+                    <img src="../../logo/police.png" alt="" style="width: 18px;" />
+                    <a href="http://www.hangzhoujubao.com/">杭州市违法和不良信息举报中心</a>
+                    | <a href="http://jbts.mct.gov.cn/">12318全国文化市场举报网站</a> |
+                    <a href="mailto:userreport@bilibili.com">儿童色情信息举报专区</a> |
+                    <a href="http://www.shdf.gov.cn/shdf/channels/740.html">扫黄打非举报</a><br />网上有害信息举报专区:<a
+                        href="https://www.12377.cn/">中国互联网违法和不良信息举报中心</a><br />
+                    亲爱的市民朋友,浙江反诈中心专线电话“0571-81234567”系专门针对避免您财产被骗受损而设,如果你受骗了,先第一时间拨打专线,把汇款银行网点、对方卡号、开户人姓名这几项信息告诉反欺诈中心。<br />
+                    公司名称:韩某人的知识笔记 | 公司地址:浙江省杭州市 |
+                    电话:132xxxx9695<br />
+                </span>
+            </div>
         </div>
-        <div class="footer_dup_d3 footer_dup_div">
-          <div class="footer_dup_d3_qq">
-            <a href="">
-              <img
-                class="pointer"
-                src="../../logo/QQ.png"
-                alt=""
-                style="width: 65px;"
-              />
-            </a>
-          </div>
-          <div class="footer_dup_d3_weixin">
-            <a href="">
-              <img
-                class="pointer"
-                src="../../logo/weixin.png"
-                alt=""
-                style="width: 65px;"
-              />
-            </a>
-          </div>
-          <div class="footer_dup_d3_email">
-            <a href="">
-              <img
-                class="pointer"
-                src="../../logo/email.png"
-                alt=""
-                style="width: 65px;"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="footer_ddown">
-        <div>
-          <span>
-            by
-            Han:At first, I felt that I wanted to make a knowledge dictionary which can query faster, but I found that there were some people around who needed to sort out similar knowledge. As one of the fans of EvenYou as an open source leader, I naturally wanted to help more people<br>
-            祝 —— 永远年轻,永远热泪盈眶</span
-          >
-        </div>
-        <div>
-          <span>
-            违法不良信息举报邮箱：969666859@qq.com |
-            违法不良信息举报电话：4000233233转3<br />
-          </span>
-          <span>
-            <img src="../../logo/police.png" alt="" style="width: 18px;" />
-            <a href="http://www.hangzhoujubao.com/"
-              >杭州市违法和不良信息举报中心</a
-            >
-            | <a href="http://jbts.mct.gov.cn/">12318全国文化市场举报网站</a> |
-            <a href="mailto:userreport@bilibili.com">儿童色情信息举报专区</a> |
-            <a href="http://www.shdf.gov.cn/shdf/channels/740.html"
-              >扫黄打非举报</a
-            ><br />网上有害信息举报专区:<a href="https://www.12377.cn/"
-              >中国互联网违法和不良信息举报中心</a
-            ><br />
-            亲爱的市民朋友,浙江反诈中心专线电话“0571-81234567”系专门针对避免您财产被骗受损而设,如果你受骗了,先第一时间拨打专线,把汇款银行网点、对方卡号、开户人姓名这几项信息告诉反欺诈中心。<br />
-            公司名称:韩某人的知识笔记 | 公司地址:浙江省杭州市 |
-            电话:132xxxx9695<br />
-          </span>
-        </div>
-      </div>
     </div>
-  </body>
+</body>
+
 </html>
