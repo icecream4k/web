@@ -495,38 +495,140 @@ function getsumadd(number) {
     sum += i;
     i++;
   } while (i <= number);
-  console.log("1-",number,"整数的和:", sum);
+  console.log("1-", number, "整数的和:", sum);
 }
-getsumadd(number = 100)
+getsumadd((number = 100));
 // --------------------------
 // 创建函数getRun,计算任意两个年份之间闰年个数，调用多次
-function getRun(startyear,endyear){
-    var parameter = 0;
-    if(startyear < endyear){
-        for(startyear;startyear<=endyear;startyear++){
-            if ((startyear % 4 === 0 && startyear % 100 !== 0) || startyear % 400 == 0){
-                parameter += 1;
-            };
-        };
-        return parameter;
-    }else if(startyear > endyear){
-        for(startyear;startyear>=endyear;startyear--){
-            if ((startyear % 4 === 0 && startyear % 100 !== 0) || startyear % 400 == 0){
-                parameter += 1;
-            };
-        };
-        return parameter;
-    }else{
-        if ((startyear % 4 === 0 && startyear % 100 !== 0) || startyear % 400 == 0){
-            parameter += 1;
-        };
-        return parameter;
-    };
-};
+function getRun(startyear, endyear) {
+  var parameter = 0;
+  if (startyear < endyear) {
+    for (startyear; startyear <= endyear; startyear++) {
+      if (
+        (startyear % 4 === 0 && startyear % 100 !== 0) ||
+        startyear % 400 == 0
+      ) {
+        parameter += 1;
+      }
+    }
+    return parameter;
+  } else if (startyear > endyear) {
+    for (startyear; startyear >= endyear; startyear--) {
+      if (
+        (startyear % 4 === 0 && startyear % 100 !== 0) ||
+        startyear % 400 == 0
+      ) {
+        parameter += 1;
+      }
+    }
+    return parameter;
+  } else {
+    if (
+      (startyear % 4 === 0 && startyear % 100 !== 0) ||
+      startyear % 400 == 0
+    ) {
+      parameter += 1;
+    }
+    return parameter;
+  }
+}
 start = 2005;
-end = 1999
-console.log(start,end,'两个年份之间的闰年年份是:',getRun(start,end));
+end = 1999;
+console.log(start, end, "两个年份之间的闰年年份是:", getRun(start, end));
 // --------------------------
+// 创建函数getMax，返回任意两个数字中的最大值
+function getMax(firstnumber, endnumber) {
+  // if(firstnumber>endnumber){
+  //     return firstnumber
+  // }else if(firstnumber<endnumber){
+  //     return endnumber
+  // }else{
+  //     return '相等'
+  // }
+  // 三目运算符
+  return firstnumber > endnumber ? firstnumber : endnumber;
+}
+console.log("比较两个数后的最大数是:", getMax(6, 8));
+// --------------------------
+// 创建函数getMax2，返回任意三个数字中的最大值
+function getMax2(firstnumber, secondnumber, thirdnumber) {
+  if (firstnumber > secondnumber) {
+    if (secondnumber > thirdnumber) {
+      return firstnumber;
+    }
+    return thirdnumber;
+  }
+  return firstnumber;
+}
+console.log(getMax2(3, 4, 6));
+// --------------------------
+// 全局作用域
+var chengguan_a = "杭州市城管"; // 全局变量
+function xihu() {
+  var chengguan_b = "西湖区城管"; // 局部变量
+  console.log(chengguan_a);
+}
+xihu();
+function gongshu() {
+  var chengguan_c = "拱墅区城管";
+}
+// console.log(chengguan_b) // 是找不到chengguan_b的，因为chengguan_b在xihu()函数内部，所以是局部变量
+// --------------------------
+// 声明全局变量n2
+var n2;
+function fn() {
+  // 不推荐
+  n1 = 2; // n1没有加var，就是全局变量，给全局变量重新赋值
+  n2 = 5;
+}
+fn();
+// 访问全局变量n1
+console.log("n1:", n1, "n2:", n2);
+// --------------------------
+function fun() {
+  var m1 = (m2 = m3 = 8);
+};
+fun();
+// console.log('m1',m1); // m1局部
+// console.log('m2',m2); // m2全局
+// console.log('m3',m3); // m3全局
+// --------------------------
+a = 1; // 在console.log之前进行赋值
+console.log(a); // 可以打印
+var a; // 声明提升
+// --------------------------
+var n = 9;
+function fun(){
+    console.log(n);
+    var n = 0;
+};
+fun();
+// --------------------------
+function fn1(n){
+    // 形参是一个局部变量
+    // 赋值 var n = 5;
+    // 函数体
+    console.log(n);
+};
+fn1(5);
+console.log(n);
+// --------------------------
+// 全局作用域下的函数
+var n = 1;
+function tn(){
+    // 局部函数
+    var n = 2;
+    function tn1(){
+        console.log('局部函数打印的n是:',n);
+    };
+    tn1()
+};
+tn();
+// tn1(); // 在全局是调不到tn函数内部的tn函数的
+
+
+
+
 
 
 
