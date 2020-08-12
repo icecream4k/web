@@ -499,3 +499,38 @@ function getsumadd(number) {
 }
 getsumadd(number = 100)
 // --------------------------
+// 创建函数getRun,计算任意两个年份之间闰年个数，调用多次
+function getRun(startyear,endyear){
+    var parameter = 0;
+    if(startyear < endyear){
+        for(startyear;startyear<=endyear;startyear++){
+            if ((startyear % 4 === 0 && startyear % 100 !== 0) || startyear % 400 == 0){
+                parameter += 1;
+            };
+        };
+        return parameter;
+    }else if(startyear > endyear){
+        for(startyear;startyear>=endyear;startyear--){
+            if ((startyear % 4 === 0 && startyear % 100 !== 0) || startyear % 400 == 0){
+                parameter += 1;
+            };
+        };
+        return parameter;
+    }else{
+        if ((startyear % 4 === 0 && startyear % 100 !== 0) || startyear % 400 == 0){
+            parameter += 1;
+        };
+        return parameter;
+    };
+};
+start = 2005;
+end = 1999
+console.log(start,end,'两个年份之间的闰年年份是:',getRun(start,end));
+// --------------------------
+
+
+
+
+
+
+
