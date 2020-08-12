@@ -625,9 +625,18 @@ function tn(){
 };
 tn();
 // tn1(); // 在全局是调不到tn函数内部的tn函数的
-
-
-
+// --------------------------
+// 递归
+var number = 0
+function ft(){
+    alert('2333');
+    number++;
+    if(number===3){
+        return;
+    }
+    ft();
+};
+// ft();
 
 
 
