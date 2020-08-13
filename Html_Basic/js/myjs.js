@@ -360,7 +360,7 @@ do {
 } while (i <= 30);
 console.log("1-30之间被3,4整除的乘积:", sum);
 // --------------------------
-// 声明变量保存密码'123456',死循环弹出提示框，并且输入密码，如果输入正确结束循环
+// 声明变量保存密码'123456',死循环弹出提示框,并且输入密码,如果输入正确结束循环
 // var password = '123456';
 // while(true){
 //     var pwd = prompt('请输入密码:');
@@ -394,12 +394,12 @@ for (var i = 1, sum = 0; i <= 100; i++) {
 }
 console.log("1-100的和:", sum);
 // --------------------------
-// 多个循环条件，只是最后一个起作用
+// 多个循环条件,只是最后一个起作用
 for (var i = 1, j = 5; j > 1, i < 10; i++, j--) {
   console.log("i:", i, "j:", j);
 }
 // --------------------------
-// 打印1-10之间所有在整数，不包括4
+// 打印1-10之间所有在整数,不包括4
 for (var i = 1; i <= 10; i++) {
   if (i === 4) {
     continue;
@@ -407,7 +407,7 @@ for (var i = 1; i <= 10; i++) {
   console.log("1-10不包括4:", i);
 }
 // --------------------------
-// 打印1-100之间所有的奇数;使用continue，如果遇到偶数就跳过
+// 打印1-100之间所有的奇数;使用continue,如果遇到偶数就跳过
 for (var i = 1; i <= 100; i++) {
   if (i % 2 === 0) {
     continue;
@@ -415,7 +415,7 @@ for (var i = 1; i <= 100; i++) {
   console.log("奇数是:", i);
 }
 // --------------------------
-// 打印1-100之间所有的整数，不包含所能被7整除或9整除的数字
+// 打印1-100之间所有的整数,不包含所能被7整除或9整除的数字
 for (var i = 1; i <= 100; i++) {
   if (i % 7 === 0 || i % 9 === 0) {
     continue;
@@ -434,7 +434,7 @@ for (var year = 2000; year <= 2099; year++) {
   }
 }
 // --------------------------
-// 计算1-100之间所有整数的和，当和大于4000的时候，提前结束循环，并且打印出此时总和是多少，以及当前循环到了哪个数字
+// 计算1-100之间所有整数的和,当和大于4000的时候,提前结束循环,并且打印出此时总和是多少,以及当前循环到了哪个数字
 var number = 0;
 for (var i = 0; i <= 100; i++) {
   if (number > 4000) {
@@ -473,7 +473,7 @@ function say() {
 //     say()
 // };
 // --------------------------
-// 创建函数，封装计算 2 + 3
+// 创建函数,封装计算 2 + 3
 function getSum() {
   var number = 2 + 3;
   return number;
@@ -499,7 +499,7 @@ function getsumadd(number) {
 }
 getsumadd((number = 100));
 // --------------------------
-// 创建函数getRun,计算任意两个年份之间闰年个数，调用多次
+// 创建函数getRun,计算任意两个年份之间闰年个数,调用多次
 function getRun(startyear, endyear) {
   var parameter = 0;
   if (startyear < endyear) {
@@ -536,7 +536,7 @@ start = 2005;
 end = 1999;
 console.log(start, end, "两个年份之间的闰年年份是:", getRun(start, end));
 // --------------------------
-// 创建函数getMax，返回任意两个数字中的最大值
+// 创建函数getMax,返回任意两个数字中的最大值
 function getMax(firstnumber, endnumber) {
   // if(firstnumber>endnumber){
   //     return firstnumber
@@ -550,7 +550,7 @@ function getMax(firstnumber, endnumber) {
 }
 console.log("比较两个数后的最大数是:", getMax(6, 8));
 // --------------------------
-// 创建函数getMax2，返回任意三个数字中的最大值
+// 创建函数getMax2,返回任意三个数字中的最大值
 function getMax2(firstnumber, secondnumber, thirdnumber) {
   if (firstnumber > secondnumber) {
     if (secondnumber > thirdnumber) {
@@ -572,13 +572,13 @@ xihu();
 function gongshu() {
   var chengguan_c = "拱墅区城管";
 }
-// console.log(chengguan_b) // 是找不到chengguan_b的，因为chengguan_b在xihu()函数内部，所以是局部变量
+// console.log(chengguan_b) // 是找不到chengguan_b的,因为chengguan_b在xihu()函数内部,所以是局部变量
 // --------------------------
 // 声明全局变量n2
 var n2;
 function fn() {
   // 不推荐
-  n1 = 2; // n1没有加var，就是全局变量，给全局变量重新赋值
+  n1 = 2; // n1没有加var,就是全局变量,给全局变量重新赋值
   n2 = 5;
 }
 fn();
@@ -587,7 +587,7 @@ console.log("n1:", n1, "n2:", n2);
 // --------------------------
 function fun() {
   var m1 = (m2 = m3 = 8);
-};
+}
 fun();
 // console.log('m1',m1); // m1局部
 // console.log('m2',m2); // m2全局
@@ -598,49 +598,107 @@ console.log(a); // 可以打印
 var a; // 声明提升
 // --------------------------
 var n = 9;
-function fun(){
-    console.log(n);
-    var n = 0;
-};
+function fun() {
+  console.log(n);
+  var n = 0;
+}
 fun();
 // --------------------------
-function fn1(n){
-    // 形参是一个局部变量
-    // 赋值 var n = 5;
-    // 函数体
-    console.log(n);
-};
+function fn1(n) {
+  // 形参是一个局部变量
+  // 赋值 var n = 5;
+  // 函数体
+  console.log(n);
+}
 fn1(5);
 console.log(n);
 // --------------------------
 // 全局作用域下的函数
 var n = 1;
-function tn(){
-    // 局部函数
-    var n = 2;
-    function tn1(){
-        console.log('局部函数打印的n是:',n);
-    };
-    tn1()
-};
+function tn() {
+  // 局部函数
+  var n = 2;
+  function tn1() {
+    console.log("局部函数打印的n是:", n);
+  }
+  tn1();
+}
 tn();
 // tn1(); // 在全局是调不到tn函数内部的tn函数的
 // --------------------------
 // 递归
-var number = 0
-function ft(){
-    alert('2333');
-    number++;
-    if(number===3){
-        return;
-    }
-    ft();
-};
+var number = 0;
+function ft() {
+  alert("2333");
+  number++;
+  if (number === 3) {
+    return;
+  }
+  ft();
+}
 // ft();
-
-
-
-
+// --------------------------
+// 使用递归计算1~n之间所有整数的和
+function getSum_recursion(n){
+    // 跳出条件:当n为1到时候,返回1
+    if(n===1){
+        return 1;
+    };
+    // 前n的和,等价于n+前n-1项的和
+    return n+getSum_recursion(n-1);
+};
+console.log('递归之后的结果是:',getSum_recursion(5));
+// --------------------------
+// 匿名函数
+// function(){
+//     var i = 1;
+// }
+// 函数表达式创建
+// 把匿名函数赋给了变量,此时的变来那个名称就是函数名称
+var fun01 = function(){
+    console.log('匿名函数内部打印:',1);
+    return 1;
+};
+// 调用
+fun01()
+console.log(fun01())
+// --------------------------
+// 使用函数表达式创建函数getSum,计算两个数字之间所有整数的和,并返回结果
+var gs = function getSum(firstnumber,endnumber){
+    var sum = 0
+    for(firstnumber,endnumber;firstnumber<=endnumber;firstnumber++){
+        sum+=firstnumber
+    }
+    return sum
+};
+console.log('函数内处理范围内的和:',gs(1,100));
+// --------------------------
+// 匿名函数的自调用
+(function(){
+    var num = 1;
+    console.log('匿名函数内部自调用:',num);
+})();
+// --------------------------
+function gohome(a){
+    console.log('女朋友到家了');
+    a();
+};
+function sendMsg(){
+    console.log('我到家了,放心吧')
+};
+gohome(sendMsg);
+// --------------------------
+// 回调函数
+function hua(a){
+    console.log('开始跑');
+    console.log('跑到了终点');
+    // 让ran开始跑
+    a();
+};
+function ran(){
+    console.log('我到了终点了，请放心吧');
+};
+hua(ran);
 
 
 
