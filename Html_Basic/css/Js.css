@@ -1,7 +1,5 @@
 /* 类选择器 */
-.Main_content {
-  /* background-image: url(../img/bgc05.jpg); */
-}
+
 .Note_Title_c_1 {
   margin: 25px auto 0 auto;
 }
@@ -136,11 +134,13 @@
   border-right: 1px solid #7e7f7f;
   margin: 15px 0 15px 0;
 }
+
 .footer_dup_d3 {
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
 .footer_dup_div {
   padding: 10px 30px 30px 30px;
 }
@@ -148,9 +148,11 @@
 .pointer {
   cursor: pointer;
 }
+
 .footer_dup_d3 div:nth-child(1) :hover {
   width: 200px;
 }
+
 /* img,a .img{border:0} */
 .Floating_window {
   color: #333;
@@ -237,7 +239,7 @@ legend {
   width: 175px;
   height: 25px;
   border-radius: 10px;
-  /* /* box-shadow:-2px -2px 10px  -4px #909090,2px -2px 10px -4px  #909090; */ */
+  /* box-shadow:-2px -2px 10px  -4px #909090,2px -2px 10px -4px  #909090; */
 
 }
 /* .d_f_2 > fieldset > table > tr > td > div{

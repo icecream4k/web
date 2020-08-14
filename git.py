@@ -8,6 +8,5 @@ def run_this(time_1):
     time.sleep(1)
     os.system('git push origin master')
 
-
 time_1 = str(datetime.datetime.now())
 run_this(time_1)

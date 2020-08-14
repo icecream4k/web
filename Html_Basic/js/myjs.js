@@ -173,7 +173,7 @@ if ((year % 4 === 0 && year % 100 !== 0) || year % 400 == 0) {
   console.log("不是闰年");
 }
 // --------------------------
-// 分别弹出两次提示框,要求用户输入商品的单价和数量,计算出总价,如果总价满600打9折；假设卡内余额有1000,如果足以支付,警示框弹出'pay success',否则警示框弹出'pay error'
+// 分别弹出两次提示框,要求用户输入商品的单价和数量,计算出总价,如果总价满600打9折;假设卡内余额有1000,如果足以支付,警示框弹出'pay success',否则警示框弹出'pay error'
 // var price = parseFloat(prompt("请输入单价"));
 // var number = parseFloat(prompt("请输入数量"));
 // var total = price * number;
@@ -238,7 +238,7 @@ switch (day) {
     console.log("喝粥");
 }
 // --------------------------
-// 根据订单的状态码打印对应的汉子状态；1-等待付款 2-等待发货 3-运输中 4-已签收 5-已取消 其他-无法跟踪
+// 根据订单的状态码打印对应的汉子状态;1-等待付款 2-等待发货 3-运输中 4-已签收 5-已取消 其他-无法跟踪
 var Status_code = 3;
 switch (Status_code) {
   case 1:
@@ -639,15 +639,15 @@ function ft() {
 // ft();
 // --------------------------
 // 使用递归计算1~n之间所有整数的和
-function getSum_recursion(n){
-    // 跳出条件:当n为1到时候,返回1
-    if(n===1){
-        return 1;
-    };
-    // 前n的和,等价于n+前n-1项的和
-    return n+getSum_recursion(n-1);
-};
-console.log('递归之后的结果是:',getSum_recursion(5));
+function getSum_recursion(n) {
+  // 跳出条件:当n为1到时候,返回1
+  if (n === 1) {
+    return 1;
+  }
+  // 前n的和,等价于n+前n-1项的和
+  return n + getSum_recursion(n - 1);
+}
+console.log("递归之后的结果是:", getSum_recursion(5));
 // --------------------------
 // 匿名函数
 // function(){
@@ -655,91 +655,177 @@ console.log('递归之后的结果是:',getSum_recursion(5));
 // }
 // 函数表达式创建
 // 把匿名函数赋给了变量,此时的变来那个名称就是函数名称
-var fun01 = function(){
-    console.log('匿名函数内部打印:',1);
-    return 1;
+var fun01 = function () {
+  console.log("匿名函数内部打印:", 1);
+  return 1;
 };
 // 调用
-fun01()
-console.log(fun01())
+fun01();
+console.log(fun01());
 // --------------------------
 // 使用函数表达式创建函数getSum,计算两个数字之间所有整数的和,并返回结果
-var gs = function getSum(firstnumber,endnumber){
-    var sum = 0
-    for(firstnumber,endnumber;firstnumber<=endnumber;firstnumber++){
-        sum+=firstnumber
-    }
-    return sum
+var gs = function getSum(firstnumber, endnumber) {
+  var sum = 0;
+  for (firstnumber, endnumber; firstnumber <= endnumber; firstnumber++) {
+    sum += firstnumber;
+  }
+  return sum;
 };
-console.log('函数内处理范围内的和:',gs(1,100));
+console.log("函数内处理范围内的和:", gs(1, 100));
 // --------------------------
 // 匿名函数的自调用
-(function(){
-    var num = 1;
-    console.log('匿名函数内部自调用:',num);
+(function () {
+  var num = 1;
+  console.log("匿名函数内部自调用:", num);
 })();
 // --------------------------
-function gohome(a){
-    console.log('女朋友到家了');
-    a();
-};
-function sendMsg(){
-    console.log('我到家了,放心吧')
-};
+function gohome(a) {
+  console.log("女朋友到家了");
+  a();
+}
+function sendMsg() {
+  console.log("我到家了,放心吧");
+}
 gohome(sendMsg);
 // --------------------------
 // 回调函数
-function hua(a){
-    console.log('开始跑');
-    console.log('跑到了终点');
-    // 让ran开始跑
-    a();
-};
-function ran(){
-    console.log('我到了终点了,请放心吧');
-};
+function hua(a) {
+  console.log("开始跑");
+  console.log("跑到了终点");
+  // 让ran开始跑
+  a();
+}
+function ran() {
+  console.log("我到了终点了,请放心吧");
+}
 hua(ran);
 // --------------------------
-function URIcode(){
-  var uri = 'https://www.jd.com/search?keyword=笔记本';
+function URIcode() {
+  var uri = "https://www.jd.com/search?keyword=笔记本";
   // 编码为URI,就是将非英文字符编码
   var str = encodeURI(uri);
-  console.log('用encode转码之前:',uri)
-  console.log('用encode转码之后:',str);
+  console.log("用encode转码之前:", uri);
+  console.log("用encode转码之后:", str);
   var str2 = decodeURI(str);
-  console.log('将已经编码的URI进行解码:',str2);
-};
+  console.log("将已经编码的URI进行解码:", str2);
+}
 
 URIcode();
 // --------------------------
-// 声明变量保存任意数据，检测该数据是否为数值，如果不是数值，打印'请提供一个数字'
-(function(){
-    var numbers = '411'
-    if(isNaN(numbers)){
-        console.log('请提供一个数字');
-    }else{
-        console.log('全是数字');
-    };
+// 声明变量保存任意数据,检测该数据是否为数值,如果不是数值,打印'请提供一个数字'
+(function () {
+  var numbers = "411";
+  if (isNaN(numbers)) {
+    console.log("请提供一个数字");
+  } else {
+    console.log("全是数字");
+  }
 })();
 // --------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 创建对象-对象字面量
+(function () {
+  var person = {
+    name: "阿龙",
+    // name 是属性名 '然哥' 是属性值
+    gender: "男",
+    age: 18,
+    hairNumber: 999,
+  };
+  console.log("对象person:", person);
+})();
+// --------------------------
+// 创建一个手机对象,包含有颜色,尺寸,品牌,产地;
+(function () {
+  var phone = {
+    "made-in": "china",
+    color: "red",
+    size: "6.6",
+    brand: "apple",
+  };
+  console.log("手机对象:", phone);
+  // 访问对象中的属性
+  console.log("手机对象中的color属性", phone.color);
+  // 修改属性值
+  phone.size = 5.9;
+  console.log("修改完属性值的手机对象:", phone);
+  // 添加新的属性
+  phone.os = "ios";
+  console.log("添加新的舒心的手机对象:", phone);
+  // 属性名中含有特殊字符
+  // console.log(phone.'made-in') // 报错
+  console.log(phone["made-in"]); // 正确写法
+})();
+// --------------------------
+// 创建图书对象,包含图书的编号,标题,价格,作者;打印图书作者,修改图书的价格,添加图书出版社;最终打印该对象
+(function () {
+  var book = {
+    uid: 101,
+    title: "JavaScript权威指南",
+    price: 80,
+    author: "淘宝前端团队",
+  };
+  console.log("图书对象:", book);
+  console.log("图书的作者:", book.author);
+  book.price = 90;
+  console.log("修改了的图书价格:", book.price);
+  book.press = "浙江出版社";
+  console.log("最终修改的图书对象:", book);
+})();
+// --------------------------
+// 使用内置构造函数创建对象
+(function () {
+  // new Object(); // 构造函数特点 -> 需要使用new来调用，返回一个对象
+  var car = new Object();
+  car.color = '白色',
+  car.brand = '五菱宏光'
+  console.log(car);
+})();
+// --------------------------
+// 创建城市对象，包含名称，肺炎人数，治愈人数，死亡人数
+(function(){
+    var city = new Object();
+    city.name = '纽约';
+    city.number_of_pneumonia_cases = 54543;
+    city.number_of_patients_cured = 45521;
+    city.death_toll = 3123;
+    console.log(city);
+})();
+// --------------------------
+// 创建保存用户数据的对象，包含有编号，用户名，密码，邮箱，手机，注册时间，性别，真实姓名
+(function(){
+    var user = new Object();
+    user.id = 101;
+    user.name = 'han';
+    user.password = '123456';
+    user.email = 'hanlong5716@163.com';
+    user.phone = '132xxxxxxxx';
+    user.registration_time = '2020.08.15';
+    user.gender = 'man';
+    user.gender = 'hanlong';
+    console.log(user);
+})();
+// --------------------------
+// 创建保存商品数据的对象，包含有编号，标题，价格，图像路径
+(function(){
+    var commodity = new Object();
+    commodity.id = 001;
+    commodity.title = '伊利';
+    commodity.price = 24;
+    commodity.img_address = '/usr/img';
+    console.log(commodity);
+})();
+// --------------------------
+// 创建函数，函数的参数是另一个函数，在函数中计算任意两个数字相加的和。最后在函数中调用传递的这个函数
+(function(){
+    function receive(x,fn,en){
+        var sum = fn+en
+        x(sum)
+    };
+    function result(value){
+        console.log('使用回调函数处理之后的值是:',value)
+    };
+    receive(result,4,6)
+})();
 
 
 
