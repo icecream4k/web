@@ -157,6 +157,9 @@
                         <a href="#d_f_13">匿名函数</a>
                     </div>
                     <br>
+                    <div class="gc3">
+                        <a href="#d_f_14">对象</a>
+                    </div>
                 </div>
 
                 <div class="gird_columns_2">
@@ -557,7 +560,22 @@
                                         return
                                         用于获取函数调用后的结果,如果函数中没有return或者有return没有加任何值,则返回undefined;return执行后,函数体中剩余的代码不再执行
                                     </li>
-                                    
+                                    <li>
+                                        回调函数<br>
+                                        传递的参数是另一个函数<br>
+                                        目的:就是为了确保一个函数执行完以后,再去还行另一个函数
+                                    </li>
+                                    <li>
+                                        全局函数(系统函数)<br>
+                                        Number()/parseInt()/parseFloat()<br>
+                                        encodeURL() 编码为一个URI,会把非英文字符进行编码<br>
+                                        decodeURI() 将已编码的URI进行解码<br>
+                                    </li>
+                                    <li>
+                                        验证编码转换后是否是NaN,是NaN -> True 不是NaN -> False<br>
+                                        console.log(Number('1a'));<br>
+                                        console.log(isNaN('1a'));<br>
+                                    </li>
                                 </ul>
                             </span>
                         </fieldset>
@@ -620,7 +638,7 @@
                                         函数表达式 : var fun = function(){}<br>
                                         对比函数名称和函数名称()
                                         函数名称:不管哪种方式创建的函数,函数名称本质上就是一个变量,保存了一个函数<br>
-                                        函数名称():调用函数，得到函数的返回结果<br>
+                                        函数名称():调用函数,得到函数的返回结果<br>
                                         全局污染:全局变量出现会影响所有作用域的变量<br>
                                         开发原则:防止污染全局,尽量少用全局变量<br>
                                     </li>
@@ -628,30 +646,41 @@
                                         匿名函数自调用<br>
                                         目的:创建函数作用域,防止污染全局<br>
                                         (function(){<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;// 函数作用域，里边的变量是局部变量<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;// 函数作用域,里边的变量是局部变量<br>
                                         })<br>
                                     </li>
-                                    <li>
-                                        回调函数<br>
-                                        传递的参数是另一个函数<br>
-                                        目的:就是为了确保一个函数执行完以后，再去还行另一个函数
-                                    </li>
-                                    <li>
-                                        全局函数(系统函数)<br>
-                                        Number()/parseInt()/parseFloat()<br>
-                                        encodeURL() 编码为一个URI，会把非英文字符进行编码<br>
-                                        decodeURI() 将已编码的URI进行解码<br>
-                                    </li>
-                                    <li>
-                                        验证编码转换后是否是NaN,是NaN -> True 不是NaN -> False<br>
-                                        console.log(Number('1a'));<br>
-                                        console.log(isNaN('1a'));<br>
-                                    </li>
+                                    
                                 </ul>
                             </span>
                         </fieldset>
                     </div>
-
+                    <br><br>
+                    <span id="d_f_14"></span>
+                    <div class="d_f_14">
+                        <fieldset>
+                            <legend>对象</legend>
+                            <span>
+                                属于引用类型数据<br>
+                                对象是由一组属性和方法的集合<br>
+                                属性侧重外观,名词;方法侧重功能,动词;
+                                对象具体到某一个事物(万物皆对象)<br>
+                                <ul>
+                                    <li>
+                                        JS中的对象<br>
+                                        自定义对象,用户创建的对象<br>
+                                        内置对象,JS提供的对象<br>
+                                        宿主对象,根据不同的环境划分对象<br>
+                                    </li>
+                                    <li>
+                                        自定义对象<br>
+                                        自定义构造函数(JS 高级)
+                                        对象字面量
+                                    </li>
+                                    <li>是用对象字面量创建对象</li>
+                                </ul>
+                            </span>
+                        </fieldset>
+                    </div>
 
 
 
