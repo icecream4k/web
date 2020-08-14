@@ -708,9 +708,44 @@ function URIcode(){
   console.log('用encode转码之后:',str);
   var str2 = decodeURI(str);
   console.log('将已经编码的URI进行解码:',str2);
-}
+};
 
-URIcode()
+URIcode();
+// --------------------------
+// 声明变量保存任意数据，检测该数据是否为数值，如果不是数值，打印'请提供一个数字'
+(function(){
+    var numbers = '411'
+    if(isNaN(numbers)){
+        console.log('请提供一个数字');
+    }else{
+        console.log('全是数字');
+    };
+})();
+// --------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
