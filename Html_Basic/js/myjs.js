@@ -696,9 +696,21 @@ function hua(a){
     a();
 };
 function ran(){
-    console.log('我到了终点了，请放心吧');
+    console.log('我到了终点了,请放心吧');
 };
 hua(ran);
+// --------------------------
+function URIcode(){
+  var uri = 'https://www.jd.com/search?keyword=笔记本';
+  // 编码为URI,就是将非英文字符编码
+  var str = encodeURI(uri);
+  console.log('用encode转码之前:',uri)
+  console.log('用encode转码之后:',str);
+  var str2 = decodeURI(str);
+  console.log('将已经编码的URI进行解码:',str2);
+}
+
+URIcode()
 
 
 

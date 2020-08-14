@@ -628,7 +628,19 @@
                                     </li>
                                     <li>
                                         回调函数<br>
-                                        传递的参数是另一个函数
+                                        传递的参数是另一个函数<br>
+                                        目的:就是为了确保一个函数执行完以后，再去还行另一个函数
+                                    </li>
+                                    <li>
+                                        全局函数(系统函数)<br>
+                                        Number()/parseInt()/parseFloat()<br>
+                                        encodeURL() 编码为一个URI，会把非英文字符进行编码<br>
+                                        decodeURI() 将已编码的URI进行解码<br>
+                                    </li>
+                                    <li>
+                                        验证编码转换后是否是NaN,是NaN -> True 不是NaN -> False<br>
+                                        console.log(Number('1a'));<br>
+                                        console.log(isNaN('1a'));<br>
                                     </li>
                                 </ul>
                             </span>
