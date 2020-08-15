@@ -774,58 +774,235 @@ URIcode();
 // --------------------------
 // 使用内置构造函数创建对象
 (function () {
-  // new Object(); // 构造函数特点 -> 需要使用new来调用，返回一个对象
+  // new Object(); // 构造函数特点 -> 需要使用new来调用,返回一个对象
   var car = new Object();
-  car.color = '白色',
-  car.brand = '五菱宏光'
+  (car.color = "白色"), (car.brand = "五菱宏光");
   console.log(car);
 })();
 // --------------------------
-// 创建城市对象，包含名称，肺炎人数，治愈人数，死亡人数
-(function(){
-    var city = new Object();
-    city.name = '纽约';
-    city.number_of_pneumonia_cases = 54543;
-    city.number_of_patients_cured = 45521;
-    city.death_toll = 3123;
-    console.log(city);
+// 创建城市对象,包含名称,肺炎人数,治愈人数,死亡人数
+(function () {
+  var city = new Object();
+  city.name = "纽约";
+  city.number_of_pneumonia_cases = 54543;
+  city.number_of_patients_cured = 45521;
+  city.death_toll = 3123;
+  console.log(city);
 })();
 // --------------------------
-// 创建保存用户数据的对象，包含有编号，用户名，密码，邮箱，手机，注册时间，性别，真实姓名
-(function(){
-    var user = new Object();
-    user.id = 101;
-    user.name = 'han';
-    user.password = '123456';
-    user.email = 'hanlong5716@163.com';
-    user.phone = '132xxxxxxxx';
-    user.registration_time = '2020.08.15';
-    user.gender = 'man';
-    user.gender = 'hanlong';
-    console.log(user);
+// 创建保存用户数据的对象,包含有编号,用户名,密码,邮箱,手机,注册时间,性别,真实姓名
+(function () {
+  var user = new Object();
+  user.id = 101;
+  user.name = "han";
+  user.password = "123456";
+  user.email = "hanlong5716@163.com";
+  user.phone = "132xxxxxxxx";
+  user.registration_time = "2020.08.15";
+  user.gender = "man";
+  user.gender = "hanlong";
+  console.log(user);
 })();
 // --------------------------
-// 创建保存商品数据的对象，包含有编号，标题，价格，图像路径
-(function(){
-    var commodity = new Object();
-    commodity.id = 001;
-    commodity.title = '伊利';
-    commodity.price = 24;
-    commodity.img_address = '/usr/img';
-    console.log(commodity);
+// 创建保存商品数据的对象,包含有编号,标题,价格,图像路径
+(function () {
+  var commodity = new Object();
+  commodity.id = 001;
+  commodity.title = "伊利";
+  commodity.price = 24;
+  commodity.img_address = "/usr/img";
+  console.log(commodity);
 })();
 // --------------------------
-// 创建函数，函数的参数是另一个函数，在函数中计算任意两个数字相加的和。最后在函数中调用传递的这个函数
+// 创建函数,函数的参数是另一个函数,在函数中计算任意两个数字相加的和.最后在函数中调用传递的这个函数
+(function () {
+  function receive(x, fn, en) {
+    var sum = fn + en;
+    x(sum);
+  }
+  function result(value) {
+    console.log("使用回调函数处理之后的值是:", value);
+  }
+  receive(result, 4, 6);
+})();
+// --------------------------
+(function () {
+  var person = {
+    name: "han",
+    age: 18,
+    gender: "man",
+  };
+  // 依次访问每个,属于循环
+  for (var key in person) {
+    // key 代表对象中的每个属性名
+    console.log("遍历的属性名:", key, "遍历的值:", person[key]);
+  }
+})();
+// --------------------------
+// 创建对象,保存一个学生的若干成绩,遍历所有的成绩,计算出总成绩
+(function () {
+  var student_achievement = {
+    chinese: 85,
+    math: 91,
+    english: 74,
+    literature_review: 170,
+  };
+  var total_score = 0;
+  for (var key in student_achievement) {
+    console.log("科目:", key, "成绩:", student_achievement[key]);
+    total_score += student_achievement[key];
+  }
+  console.log("总成绩是:", total_score);
+})();
+// --------------------------
+(function () {
+  var car = {
+    color: "white",
+    brand: "五菱之光",
+    madeIn: "china",
+  };
+  // 检测属性是否存在
+  // 传统方式 true 不存在  false 存在
+  console.log(car.color === undefined);
+  // 使用方法检测
+  // true 存在 false 不存在
+  console.log(car.hasOwnProperty("color"));
+  // 使用in关键字
+  // true 存在 false 不存在
+  console.log("madeIn" in car);
+})();
+// --------------------------
+// 创建商品对象,包含商品的编号,名称,价格；判断是否存在产地,如果不存在则添加该属性；
+// 判断是否存在价格,如果存在则将价格在原来的基础上加1000,最后打印该对象
+(function () {
+  var commodity = new Object();
+  commodity.id = 101;
+  commodity.name = "iphone";
+  commodity.price = 6980;
+  console.log("原commodity:", commodity);
+  if ("made" in commodity) {
+    console.log("commodity have made");
+  } else {
+    console.log("commodity not have made");
+    console.log("loading...");
+    commodity["made"] = "china";
+    console.log("更变后的commodity:", commodity);
+  }
+  if ("price" in commodity) {
+    console.log("存在price,在原有基础上增加1000");
+    commodity.price += 1000;
+    console.log("更变之后的commodity:", commodity);
+  }
+})();
+// --------------------------
+(function () {
+  var person = {
+    name: "han",
+    age: 18,
+    gender: "man",
+    // 方法是个匿名函数
+    play: function () {
+      // 找当前所在的对象,和对象的变量名称无关
+      // this 指代当前所在的对象
+      console.log(this.name, "撸码");
+    },
+  };
+  person.play();
+})();
+// --------------------------
+// 创建一个圆对象,包含有半径和圆周率属性,添加计算圆的周长和面积两个方法.最后调用两个方法
+(function () {
+  var circular = {
+    radius: 4,
+    pi: 3.14,
+    perimeter: function () {
+      console.log("周长是:", 2 * this.pi * this.radius);
+    },
+    // c = 2πr
+    area: function () {
+      console.log("面积是:", this.pi * this.radius * this.radius);
+    },
+    // a = πr平方
+  };
+  circular.perimeter();
+  circular.area();
+})();
+// --------------------------
+(function () {
+  // 原始类型数据的存储
+  var a = 1;
+  // 把a中的值赋值给了b，拷贝了一份给b
+  var b = a;
+  // 修改a，b不受影响
+  a += 1;
+  console.log(b);
+
+  // 应用类型数据的存储
+  var han = {
+    color: "red",
+    size: "xxl",
+  };
+  console.log("原来的泳衣", han);
+  // 把对象的地址赋予了另一个变量
+  var zhang = han;
+  console.log("借过来的泳衣", zhang);
+  zhang.color = "green";
+  zhang.size = "xxxl";
+  console.log("原来的泳衣，受到了影响:", han);
+  zhang = null;
+  han = null;
+  // null 空，类型是对象object
+  // null表示对象，不指向任何的堆内存空间
+  // 如果堆内存中的对象不被任何的地址指向，则该数据就会销毁
+  // 赋值为null，就不再指向
+})();
+// --------------------------
 (function(){
-    function receive(x,fn,en){
-        var sum = fn+en
-        x(sum)
+    // 创建数组保存一组学生的姓名
+    // 数组字面量 使用方式和python列表类似
+    var student = ['徐坤','张书研'];
+    console.log(student[0])
+    for(var i = 0;i<student.length;i++){
+        console.log(student[i])
     };
-    function result(value){
-        console.log('使用回调函数处理之后的值是:',value)
-    };
-    receive(result,4,6)
 })();
+// --------------------------
+// 创建数组，包含有一组笔记本数据
+// 创建数组，包含一组城市名称
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

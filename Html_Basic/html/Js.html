@@ -699,12 +699,52 @@
                                         使用内置构造函数创建对象<br>
                                         new Object() 创建一个空的对象，需要单独往对象中添加属性或方法
                                     </li>
+                                    <li>
+                                        遍历属性<br>
+                                        依次访问对象中的每一个属性<br>
+                                        for(var key in 对象名){<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;key // 获取属性<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;对象名[key] // 获取值<br>
+                                        }
+                                    </li>
+                                    <li>
+                                        检测属性是否存在<br>
+                                        对象.属性名&nbsp;===&nbsp;undefined&nbsp;存在&nbsp;false&nbsp;不存在&nbsp;true<br>
+                                        对象.hasOwnProperty('属性名')&nbsp;存在&nbsp;true&nbsp;不存在&nbsp;false<br>
+                                        '属性名'&nbsp;in&nbsp;对象&nbsp;存在&nbsp;true&nbsp;不存在&nbsp;false
+                                    </li>
+                                    <li>
+                                        对象中的方法<br>
+                                        var preson = {<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;name:'han',<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;play:<span style="color: red;">function(){<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this</span>.name /// this 指代当前所在的对象<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;">}</span><br>
+                                        }<br>
+                                        person.play() // 调用对象中的方法
+                                    </li>
+                                    <li>
+                                        引用类型数据的存储<br>
+                                        见myjs.js 中 搜索'堆内存'
+                                    </li>
                                 </ul>
                             </span>
                         </fieldset>
                     </div>
-
-
+                    <br><br>
+                    <span id="d_f_15"></span>
+                    <div class="d_f_15">
+                        <fieldset>
+                            <legend>数组</legend>
+                            <span>
+                                由多个元素组成的数据集合，每个元素就是一个数据<br>
+                                var s1 = 'tom';<br>
+                                var s2 = '蔡徐坤';<br>
+                                使用数组字面量创建数组<br>
+                                [元素1,元素2,...]
+                            </span>
+                        </fieldset>
+                    </div>
 
 
                 
