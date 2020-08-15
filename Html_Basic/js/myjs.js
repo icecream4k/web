@@ -931,9 +931,9 @@ URIcode();
 (function () {
   // 原始类型数据的存储
   var a = 1;
-  // 把a中的值赋值给了b，拷贝了一份给b
+  // 把a中的值赋值给了b,拷贝了一份给b
   var b = a;
-  // 修改a，b不受影响
+  // 修改a,b不受影响
   a += 1;
   console.log(b);
 
@@ -948,30 +948,57 @@ URIcode();
   console.log("借过来的泳衣", zhang);
   zhang.color = "green";
   zhang.size = "xxxl";
-  console.log("原来的泳衣，受到了影响:", han);
+  console.log("原来的泳衣,受到了影响:", han);
   zhang = null;
   han = null;
-  // null 空，类型是对象object
-  // null表示对象，不指向任何的堆内存空间
-  // 如果堆内存中的对象不被任何的地址指向，则该数据就会销毁
-  // 赋值为null，就不再指向
+  // null 空,类型是对象object
+  // null表示对象,不指向任何的堆内存空间
+  // 如果堆内存中的对象不被任何的地址指向,则该数据就会销毁
+  // 赋值为null,就不再指向
 })();
 // --------------------------
 (function(){
     // 创建数组保存一组学生的姓名
     // 数组字面量 使用方式和python列表类似
-    var student = ['徐坤','张书研'];
+    var student = ['xukun','zhangshuyan'];
     console.log(student[0])
     for(var i = 0;i<student.length;i++){
-        console.log(student[i])
+        console.log('学生姓名:',student[i])
     };
 })();
 // --------------------------
-// 创建数组，包含有一组笔记本数据
-// 创建数组，包含一组城市名称
-
-
-
+// 创建数组,包含有一组笔记本数据
+(function(){
+  var notebook = ['thinkpad','macbook','magicbook','msi'];
+  for(var value = 0;value < notebook.length;value++){
+    console.log('遍历出来的笔记本信息:',notebook[value])
+  };
+})();
+// 创建数组,包含一组城市名称
+(function(){
+  var city = ['hangzhou','beijing','shanghai'];
+  city[3] = 'roma' // 添加值
+  city[6] = 'paris' // 可以跳跃添加,但是中间的值就是undefined
+  for(var city_index = 0;city_index<city.length;city_index++){
+    console.log('遍历之后的城市是:',city[city_index]);
+  };
+})();
+// --------------------------
+// 创建数组,包含有多个爱好,修改其中的一个爱好,单独添加一个新的爱好,打印数组
+(function(){
+  var hobby = ['playgame','eatfood'];
+  hobby[1] = 'tour';
+  hobby[hobby.length] = 'read';
+  console.log(hobby)
+})();
+// --------------------------
+// 内置构造函数
+(function(){
+  var car = new Array('五菱宏光','比亚');
+  console.log(car,typeof car);
+  var course = new Array(5);
+  console.log(course);  
+})();
 
 
 

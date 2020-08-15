@@ -109,7 +109,7 @@
                         <a href="#d_f_1">打印示例</a>
                     </div>
                     <br />
-                    <div class="gc3">
+                    <div class="gc2">
                         <a href="#d_f_2">声明变量</a>
                     </div>
                     <br />
@@ -117,7 +117,7 @@
                         <a href="#d_f_3">变量赋值</a>
                     </div>
                     <br />
-                    <div class="gc3">
+                    <div class="gc2">
                         <a href="#d_f_4">数据类型</a>
                     </div>
                     <br />
@@ -125,7 +125,7 @@
                         <a href="#d_f_5">转换</a>
                     </div>
                     <br />
-                    <div class="gc3">
+                    <div class="gc2">
                         <a href="#d_f_6">运算符</a>
                     </div>
                     <br />
@@ -133,7 +133,7 @@
                         <a href="#d_f_7">弹出警示框</a>
                     </div>
                     <br />
-                    <div class="gc3">
+                    <div class="gc2">
                         <a href="#d_f_8">流程控制</a>
                     </div>
                     <br />
@@ -141,7 +141,7 @@
                         <a href="#d_f_9">循环</a>
                     </div>
                     <br />
-                    <div class="gc3">
+                    <div class="gc2">
                         <a href="#d_f_10">函数</a>
                     </div>
                     <br />
@@ -149,7 +149,7 @@
                         <a href="#d_f_11">作用域</a>
                     </div>
                     <br>
-                    <div class="gc3">
+                    <div class="gc2">
                         <a href="#d_f_12">递归</a>
                     </div>
                     <br>
@@ -157,7 +157,7 @@
                         <a href="#d_f_13">匿名函数</a>
                     </div>
                     <br>
-                    <div class="gc3">
+                    <div class="gc2">
                         <a href="#d_f_14">对象</a>
                     </div>
                 </div>
@@ -184,7 +184,7 @@
                         <fieldset>
                             <legend>声明变量</legend>
 
-                            <span id="qq">var</span><span>&nbsp;x=1;</span><br />
+                            <span id="q">var</span><span>&nbsp;x=1;</span><br />
                             <span>相当于声明了一个变量</span>
                             <span>console.log(x) - 即可在终端中打印x的值</span>
                             <span>
@@ -635,7 +635,7 @@
                                     <li>
                                         创建函数<br>
                                         函数声明 : function fn(){}<br>
-                                        函数表达式 : var fun = function(){}<br>
+                                        函数表达式 : <span id="q">var</span> fun = function(){}<br>
                                         对比函数名称和函数名称()
                                         函数名称:不管哪种方式创建的函数,函数名称本质上就是一个变量,保存了一个函数<br>
                                         函数名称():调用函数,得到函数的返回结果<br>
@@ -702,7 +702,7 @@
                                     <li>
                                         遍历属性<br>
                                         依次访问对象中的每一个属性<br>
-                                        for(var key in 对象名){<br>
+                                        for(<span id="q">var</span> key in 对象名){<br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;key // 获取属性<br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;对象名[key] // 获取值<br>
                                         }
@@ -715,7 +715,7 @@
                                     </li>
                                     <li>
                                         对象中的方法<br>
-                                        var preson = {<br>
+                                        <span id="q">var</span> preson = {<br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;name:'han',<br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;play:<span style="color: red;">function(){<br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this</span>.name /// this 指代当前所在的对象<br>
@@ -737,11 +737,24 @@
                         <fieldset>
                             <legend>数组</legend>
                             <span>
-                                由多个元素组成的数据集合，每个元素就是一个数据<br>
-                                var s1 = 'tom';<br>
-                                var s2 = '蔡徐坤';<br>
-                                使用数组字面量创建数组<br>
-                                [元素1,元素2,...]
+                                <ul>
+                                    <li>
+                                        由多个元素组成的数据集合，每个元素就是一个数据<br>
+                                        <span id="q">var</span> s1 = 'tom';<br>
+                                        <span id="q">var</span> s2 = '蔡徐坤';<br>
+                                        使用数组字面量创建数组<br>
+                                        [元素1,元素2,...]
+                                    </li>
+                                    <li>
+                                        访问数组中的元素<br>
+                                        数组[下标]<br>
+                                        下标是从0开始的，如果不存在的元素则返回undefined<br>
+                                    </li>
+                                    <li>
+                                        使用内置构造函数创建数组
+                                    </li>
+                                </ul>
+                               
                             </span>
                         </fieldset>
                     </div>
