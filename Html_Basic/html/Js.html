@@ -160,6 +160,10 @@
                     <div class="gc2">
                         <a href="#d_f_14">对象</a>
                     </div>
+                    <br>
+                    <div class="gc2">
+                        <a href="#d_f_15">数组</a>
+                    </div>
                 </div>
 
                 <div class="gird_columns_2">
@@ -751,7 +755,33 @@
                                         下标是从0开始的，如果不存在的元素则返回undefined<br>
                                     </li>
                                     <li>
-                                        使用内置构造函数创建数组
+                                        使用内置构造函数创建数组<br>
+                                        new Arrray(元素1，元素2...)<br>
+                                        new Array(5) 初始化元素个数为5，需要单独添加每个元素，也可以添加更多个元素
+                                    </li>
+                                    <li>
+                                        数组的长度<br>
+                                        数组.length<br>
+                                        可以在数组的末尾添加新的元素 数组[数组.length] = 值<br>
+                                    </li>
+                                    <li>
+                                        数组的分类<br>
+                                        索引数组:用0，1，2等整数作为下标<br>
+                                        关联数组:用字符串作为下标，每个元素需要单独添加，不推荐使用，有相关需要要建议使用对象代替
+                                    </li>
+                                    <li>
+                                        遍历数组元素<br>
+                                        for-in<br>
+                                        for(var key in 数组){<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;数组[key] 每个下标对应的元素<br>
+                                        }<br>
+                                        既可以遍历关联数组，也可以遍历索引数组<br>
+                                        使用循环<br>
+                                        for(var i = 0;i&lt;数组.length;i++){<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;i 代表下标<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;数组[i] 代表下标对应的元素<br>
+                                        }<br>
+                                        只能遍历索引数组
                                     </li>
                                 </ul>
                                

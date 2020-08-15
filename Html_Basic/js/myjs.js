@@ -957,86 +957,117 @@ URIcode();
   // 赋值为null,就不再指向
 })();
 // --------------------------
-(function(){
-    // 创建数组保存一组学生的姓名
-    // 数组字面量 使用方式和python列表类似
-    var student = ['xukun','zhangshuyan'];
-    console.log(student[0])
-    for(var i = 0;i<student.length;i++){
-        console.log('学生姓名:',student[i])
-    };
+(function () {
+  // 创建数组保存一组学生的姓名
+  // 数组字面量 使用方式和python列表类似
+  var student = ["xukun", "zhangshuyan"];
+  console.log(student[0]);
+  for (var i = 0; i < student.length; i++) {
+    console.log("学生姓名:", student[i]);
+  }
 })();
 // --------------------------
 // 创建数组,包含有一组笔记本数据
-(function(){
-  var notebook = ['thinkpad','macbook','magicbook','msi'];
-  for(var value = 0;value < notebook.length;value++){
-    console.log('遍历出来的笔记本信息:',notebook[value])
-  };
+(function () {
+  var notebook = ["thinkpad", "macbook", "magicbook", "msi"];
+  for (var value = 0; value < notebook.length; value++) {
+    console.log("遍历出来的笔记本信息:", notebook[value]);
+  }
 })();
 // 创建数组,包含一组城市名称
-(function(){
-  var city = ['hangzhou','beijing','shanghai'];
-  city[3] = 'roma' // 添加值
-  city[6] = 'paris' // 可以跳跃添加,但是中间的值就是undefined
-  for(var city_index = 0;city_index<city.length;city_index++){
-    console.log('遍历之后的城市是:',city[city_index]);
-  };
+(function () {
+  var city = ["hangzhou", "beijing", "shanghai"];
+  city[3] = "roma"; // 添加值
+  city[6] = "paris"; // 可以跳跃添加,但是中间的值就是undefined
+  for (var city_index = 0; city_index < city.length; city_index++) {
+    console.log("遍历之后的城市是:", city[city_index]);
+  }
 })();
 // --------------------------
 // 创建数组,包含有多个爱好,修改其中的一个爱好,单独添加一个新的爱好,打印数组
-(function(){
-  var hobby = ['playgame','eatfood'];
-  hobby[1] = 'tour';
-  hobby[hobby.length] = 'read';
-  console.log(hobby)
+(function () {
+  var hobby = ["playgame", "eatfood"];
+  hobby[1] = "tour";
+  hobby[hobby.length] = "read";
+  console.log(hobby);
 })();
 // --------------------------
 // 内置构造函数
-(function(){
-  var car = new Array('五菱宏光','比亚');
-  console.log(car,typeof car);
+(function () {
+  var car = new Array("五菱宏光", "比亚");
+  console.log(car, typeof car);
   var course = new Array(5);
-  console.log(course);  
+  console.log(course);
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// --------------------------
+(function () {
+  // 创建数组,保存多个用户名
+  var id = Array("han", "zhang", "liu", "fang");
+  console.log("用户名:", id);
+  // 创建数组,初始化数组元素个数为5,添加篮球场上5个位置
+  var position = Array(5);
+  position[0] = "Power_forward";
+  position[1] = "Small_forward";
+  position[2] = "Center_forward";
+  position[3] = "point_guard";
+  position[4] = "Point_guard";
+  console.log("篮球场上5个位置:", position);
+})();
+// --------------------------
+// 创建一个空数组,使用数组长度王数组中添加若干个课程名称
+(function () {
+  var curriculum = Array();
+  curriculum[curriculum.length] = "chinese";
+  curriculum[curriculum.length] = "math";
+  curriculum[curriculum.length] = "english";
+  console.log(curriculum);
+})();
+// --------------------------
+// 创建数组,包含有多个商品的数据,其中每个数据包含有编号,名称,图片路径,价格
+(function () {
+  var laptop = [
+    { lid: 3, title: "外星人", pic: "wai.png", price: 12888 },
+    { lid: 5, title: "联想", pic: "lian.png", price: 3799 },
+  ];
+  console.log(laptop);
+})();
+// --------------------------
+(function () {
+  var person = [];
+  person["name"] = "han";
+  person["gender"] = "man";
+  person["age"] = 18;
+  console.log("原数组", person);
+  for (var key in person) {
+    console.log("下标:", key, "值:", person[key]);
+  }
+})();
+// --------------------------
+// 创建索引数组，包含有若干个成绩，计算出平均成绩是多少
+(function () {
+  let result = [];
+  result["math"] = 86;
+  result["chinese"] = 79;
+  result["english"] = 89;
+  let sum = 0;
+  let number = 0;
+  for (var key in result) {
+    sum += result[key];
+    number += 1;
+  }
+  console.log("平均数是:", sum / number);
+  // 使用循环来计算总分
+  var usum = 0;
+  for (var key in result) {
+    usum += result[key];
+  }
+  console.log("总分数是:", usum);
+})();
+// --------------------------
+// 创建数组，包含对个姓名，要求把所有姓名为han的名字改为zhang
+(function(){
+    
+})();
 
 
 
