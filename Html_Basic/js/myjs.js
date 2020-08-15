@@ -1065,9 +1065,55 @@ URIcode();
 })();
 // --------------------------
 // 创建数组，包含对个姓名，要求把所有姓名为han的名字改为zhang
-(function(){
-    
+(function () {
+  var name = ["han", "liu", "zhao", "wu", "sun"];
+  for (var key in name) {
+    if (name[key] === "han") {
+      name[key] = "zhang";
+    }
+  }
+  console.log(name);
 })();
+// --------------------------
+(function () {
+  var arr = [1, 345, 5643, 76, 87654, 987, 234, 0985, 43, 2, 1213, 2, 3];
+  var max = arr[0]; // 保存最大值
+  // 最大值已经保存了第一个元素，所以没必要自己再和自己比较一次
+  for (var index = 1; index < arr.length; index++) {
+    //   arr[index] 每个元素
+    // 如果max小于任何一个元素，则把该元素赋值给max
+    if (max < arr[index]) {
+      max = arr[index];
+    }
+  }
+  console.log(max);
+})();
+// --------------------------
+// 将数组转为字符串
+(function () {
+  var arr = ["a", "b", "c"];
+  console.log("使用API把数组转为字符串:", arr.toString()); // 'a,b,c'
+  var num = 2;
+  console.log(num.toString()); // '2'
+  // 两个方法从属于不同类型的对象，一个是数组下的，一个是数字下的
+  console.log("比较两个不同类型对象的转换:", arr.toString === num.toString); // false
+  console.log("使用join来转换,并且可以设定分隔情况:", arr.join("-"));
+})();
+// --------------------------
+(function () {
+  //   拼接多个数组
+  var arr2 = ["zhang", "yang"];
+  var arr3 = ["zhou", "xu"];
+  var arr4 = ["ran", "dong", "lu"];
+  console.log(arr2.concat(arr3,arr4));
+})();
+// --------------------------
+// 遍历数组，翻转数组中的元素;['a','b','c','d'] => ['d','c','b','a']
+
+// --------------------------
+// 使用冒泡排序将数组中的数字实现从小到大排序
+
+
 
 
 
