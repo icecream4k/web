@@ -675,7 +675,7 @@ console.log("函数内处理范围内的和:", gs(1, 100));
 // --------------------------
 // 匿名函数的自调用
 (function () {
-  var num = 1;
+  let num = 1;
   console.log("匿名函数内部自调用:", num);
 })();
 // --------------------------
@@ -701,12 +701,12 @@ function ran() {
 hua(ran);
 // --------------------------
 function URIcode() {
-  var uri = "https://www.jd.com/search?keyword=笔记本";
+  let uri = "https://www.jd.com/search?keyword=笔记本";
   // 编码为URI,就是将非英文字符编码
-  var str = encodeURI(uri);
+  let str = encodeURI(uri);
   console.log("用encode转码之前:", uri);
   console.log("用encode转码之后:", str);
-  var str2 = decodeURI(str);
+  let str2 = decodeURI(str);
   console.log("将已经编码的URI进行解码:", str2);
 }
 
@@ -714,7 +714,7 @@ URIcode();
 // --------------------------
 // 声明变量保存任意数据,检测该数据是否为数值,如果不是数值,打印'请提供一个数字'
 (function () {
-  var numbers = "411";
+  let numbers = "411";
   if (isNaN(numbers)) {
     console.log("请提供一个数字");
   } else {
@@ -724,7 +724,7 @@ URIcode();
 // --------------------------
 // 创建对象-对象字面量
 (function () {
-  var person = {
+  let person = {
     name: "阿龙",
     // name 是属性名 '然哥' 是属性值
     gender: "男",
@@ -736,7 +736,7 @@ URIcode();
 // --------------------------
 // 创建一个手机对象,包含有颜色,尺寸,品牌,产地;
 (function () {
-  var phone = {
+  let phone = {
     "made-in": "china",
     color: "red",
     size: "6.6",
@@ -758,7 +758,7 @@ URIcode();
 // --------------------------
 // 创建图书对象,包含图书的编号,标题,价格,作者;打印图书作者,修改图书的价格,添加图书出版社;最终打印该对象
 (function () {
-  var book = {
+  let book = {
     uid: 101,
     title: "JavaScript权威指南",
     price: 80,
@@ -775,14 +775,14 @@ URIcode();
 // 使用内置构造函数创建对象
 (function () {
   // new Object(); // 构造函数特点 -> 需要使用new来调用,返回一个对象
-  var car = new Object();
+  let car = new Object();
   (car.color = "白色"), (car.brand = "五菱宏光");
   console.log(car);
 })();
 // --------------------------
 // 创建城市对象,包含名称,肺炎人数,治愈人数,死亡人数
 (function () {
-  var city = new Object();
+  let city = new Object();
   city.name = "纽约";
   city.number_of_pneumonia_cases = 54543;
   city.number_of_patients_cured = 45521;
@@ -792,7 +792,7 @@ URIcode();
 // --------------------------
 // 创建保存用户数据的对象,包含有编号,用户名,密码,邮箱,手机,注册时间,性别,真实姓名
 (function () {
-  var user = new Object();
+  let user = new Object();
   user.id = 101;
   user.name = "han";
   user.password = "123456";
@@ -806,7 +806,7 @@ URIcode();
 // --------------------------
 // 创建保存商品数据的对象,包含有编号,标题,价格,图像路径
 (function () {
-  var commodity = new Object();
+  let commodity = new Object();
   commodity.id = 001;
   commodity.title = "伊利";
   commodity.price = 24;
@@ -817,7 +817,7 @@ URIcode();
 // 创建函数,函数的参数是另一个函数,在函数中计算任意两个数字相加的和.最后在函数中调用传递的这个函数
 (function () {
   function receive(x, fn, en) {
-    var sum = fn + en;
+    let sum = fn + en;
     x(sum);
   }
   function result(value) {
@@ -827,13 +827,13 @@ URIcode();
 })();
 // --------------------------
 (function () {
-  var person = {
+  let person = {
     name: "han",
     age: 18,
     gender: "man",
   };
   // 依次访问每个,属于循环
-  for (var key in person) {
+  for (let key in person) {
     // key 代表对象中的每个属性名
     console.log("遍历的属性名:", key, "遍历的值:", person[key]);
   }
@@ -841,14 +841,14 @@ URIcode();
 // --------------------------
 // 创建对象,保存一个学生的若干成绩,遍历所有的成绩,计算出总成绩
 (function () {
-  var student_achievement = {
+  let student_achievement = {
     chinese: 85,
     math: 91,
     english: 74,
     literature_review: 170,
   };
-  var total_score = 0;
-  for (var key in student_achievement) {
+  let total_score = 0;
+  for (let key in student_achievement) {
     console.log("科目:", key, "成绩:", student_achievement[key]);
     total_score += student_achievement[key];
   }
@@ -856,7 +856,7 @@ URIcode();
 })();
 // --------------------------
 (function () {
-  var car = {
+  let car = {
     color: "white",
     brand: "五菱之光",
     madeIn: "china",
@@ -875,7 +875,7 @@ URIcode();
 // 创建商品对象,包含商品的编号,名称,价格；判断是否存在产地,如果不存在则添加该属性；
 // 判断是否存在价格,如果存在则将价格在原来的基础上加1000,最后打印该对象
 (function () {
-  var commodity = new Object();
+  let commodity = new Object();
   commodity.id = 101;
   commodity.name = "iphone";
   commodity.price = 6980;
@@ -896,7 +896,7 @@ URIcode();
 })();
 // --------------------------
 (function () {
-  var person = {
+  let person = {
     name: "han",
     age: 18,
     gender: "man",
@@ -912,7 +912,7 @@ URIcode();
 // --------------------------
 // 创建一个圆对象,包含有半径和圆周率属性,添加计算圆的周长和面积两个方法.最后调用两个方法
 (function () {
-  var circular = {
+  let circular = {
     radius: 4,
     pi: 3.14,
     perimeter: function () {
@@ -930,21 +930,21 @@ URIcode();
 // --------------------------
 (function () {
   // 原始类型数据的存储
-  var a = 1;
+  let a = 1;
   // 把a中的值赋值给了b,拷贝了一份给b
-  var b = a;
+  let b = a;
   // 修改a,b不受影响
   a += 1;
   console.log(b);
 
   // 应用类型数据的存储
-  var han = {
+  let han = {
     color: "red",
     size: "xxl",
   };
   console.log("原来的泳衣", han);
   // 把对象的地址赋予了另一个变量
-  var zhang = han;
+  let zhang = han;
   console.log("借过来的泳衣", zhang);
   zhang.color = "green";
   zhang.size = "xxxl";
@@ -960,33 +960,33 @@ URIcode();
 (function () {
   // 创建数组保存一组学生的姓名
   // 数组字面量 使用方式和python列表类似
-  var student = ["xukun", "zhangshuyan"];
+  let student = ["xukun", "zhangshuyan"];
   console.log(student[0]);
-  for (var i = 0; i < student.length; i++) {
+  for (let i = 0; i < student.length; i++) {
     console.log("学生姓名:", student[i]);
   }
 })();
 // --------------------------
 // 创建数组,包含有一组笔记本数据
 (function () {
-  var notebook = ["thinkpad", "macbook", "magicbook", "msi"];
-  for (var value = 0; value < notebook.length; value++) {
+  let notebook = ["thinkpad", "macbook", "magicbook", "msi"];
+  for (let value = 0; value < notebook.length; value++) {
     console.log("遍历出来的笔记本信息:", notebook[value]);
   }
 })();
 // 创建数组,包含一组城市名称
 (function () {
-  var city = ["hangzhou", "beijing", "shanghai"];
+  let city = ["hangzhou", "beijing", "shanghai"];
   city[3] = "roma"; // 添加值
   city[6] = "paris"; // 可以跳跃添加,但是中间的值就是undefined
-  for (var city_index = 0; city_index < city.length; city_index++) {
+  for (let city_index = 0; city_index < city.length; city_index++) {
     console.log("遍历之后的城市是:", city[city_index]);
   }
 })();
 // --------------------------
 // 创建数组,包含有多个爱好,修改其中的一个爱好,单独添加一个新的爱好,打印数组
 (function () {
-  var hobby = ["playgame", "eatfood"];
+  let hobby = ["playgame", "eatfood"];
   hobby[1] = "tour";
   hobby[hobby.length] = "read";
   console.log(hobby);
@@ -994,18 +994,18 @@ URIcode();
 // --------------------------
 // 内置构造函数
 (function () {
-  var car = new Array("五菱宏光", "比亚");
+  let car = new Array("五菱宏光", "比亚");
   console.log(car, typeof car);
-  var course = new Array(5);
+  let course = new Array(5);
   console.log(course);
 })();
 // --------------------------
 (function () {
   // 创建数组,保存多个用户名
-  var id = Array("han", "zhang", "liu", "fang");
+  let id = Array("han", "zhang", "liu", "fang");
   console.log("用户名:", id);
   // 创建数组,初始化数组元素个数为5,添加篮球场上5个位置
-  var position = Array(5);
+  let position = Array(5);
   position[0] = "Power_forward";
   position[1] = "Small_forward";
   position[2] = "Center_forward";
@@ -1016,7 +1016,7 @@ URIcode();
 // --------------------------
 // 创建一个空数组,使用数组长度王数组中添加若干个课程名称
 (function () {
-  var curriculum = Array();
+  let curriculum = Array();
   curriculum[curriculum.length] = "chinese";
   curriculum[curriculum.length] = "math";
   curriculum[curriculum.length] = "english";
@@ -1025,7 +1025,7 @@ URIcode();
 // --------------------------
 // 创建数组,包含有多个商品的数据,其中每个数据包含有编号,名称,图片路径,价格
 (function () {
-  var laptop = [
+  let laptop = [
     { lid: 3, title: "外星人", pic: "wai.png", price: 12888 },
     { lid: 5, title: "联想", pic: "lian.png", price: 3799 },
   ];
@@ -1033,12 +1033,12 @@ URIcode();
 })();
 // --------------------------
 (function () {
-  var person = [];
+  let person = [];
   person["name"] = "han";
   person["gender"] = "man";
   person["age"] = 18;
   console.log("原数组", person);
-  for (var key in person) {
+  for (let key in person) {
     console.log("下标:", key, "值:", person[key]);
   }
 })();
@@ -1051,14 +1051,14 @@ URIcode();
   result["english"] = 89;
   let sum = 0;
   let number = 0;
-  for (var key in result) {
+  for (let key in result) {
     sum += result[key];
     number += 1;
   }
   console.log("平均数是:", sum / number);
   // 使用循环来计算总分
-  var usum = 0;
-  for (var key in result) {
+  let usum = 0;
+  for (let key in result) {
     usum += result[key];
   }
   console.log("总分数是:", usum);
@@ -1066,8 +1066,8 @@ URIcode();
 // --------------------------
 // 创建数组，包含对个姓名，要求把所有姓名为han的名字改为zhang
 (function () {
-  var name = ["han", "liu", "zhao", "wu", "sun"];
-  for (var key in name) {
+  let name = ["han", "liu", "zhao", "wu", "sun"];
+  for (let key in name) {
     if (name[key] === "han") {
       name[key] = "zhang";
     }
@@ -1076,10 +1076,10 @@ URIcode();
 })();
 // --------------------------
 (function () {
-  var arr = [1, 345, 5643, 76, 87654, 987, 234, 0985, 43, 2, 1213, 2, 3];
-  var max = arr[0]; // 保存最大值
+  let arr = [1, 345, 5643, 76, 87654, 987, 234, 0985, 43, 2, 1213, 2, 3];
+  let max = arr[0]; // 保存最大值
   // 最大值已经保存了第一个元素，所以没必要自己再和自己比较一次
-  for (var index = 1; index < arr.length; index++) {
+  for (let index = 1; index < arr.length; index++) {
     //   arr[index] 每个元素
     // 如果max小于任何一个元素，则把该元素赋值给max
     if (max < arr[index]) {
@@ -1091,9 +1091,9 @@ URIcode();
 // --------------------------
 // 将数组转为字符串
 (function () {
-  var arr = ["a", "b", "c"];
+  let arr = ["a", "b", "c"];
   console.log("使用API把数组转为字符串:", arr.toString()); // 'a,b,c'
-  var num = 2;
+  let num = 2;
   console.log(num.toString()); // '2'
   // 两个方法从属于不同类型的对象，一个是数组下的，一个是数字下的
   console.log("比较两个不同类型对象的转换:", arr.toString === num.toString); // false
@@ -1102,17 +1102,55 @@ URIcode();
 // --------------------------
 (function () {
   //   拼接多个数组
-  var arr2 = ["zhang", "yang"];
-  var arr3 = ["zhou", "xu"];
-  var arr4 = ["ran", "dong", "lu"];
+  let arr2 = ["zhang", "yang"];
+  let arr3 = ["zhou", "xu"];
+  let arr4 = ["ran", "dong", "lu"];
   console.log(arr2.concat(arr3,arr4));
 })();
 // --------------------------
 // 遍历数组，翻转数组中的元素;['a','b','c','d'] => ['d','c','b','a']
-
+(function(){
+    let arr = ['a','b','c','d'];
+    let arr2 = [];
+    for(let i=0;i<arr.length;i++){
+        // 0 4  3
+        // 1 4  2
+        // 2 4  1
+        // 3 4  0
+        // 对饮下标的值 = 长度 -i -1
+        xindex = arr[arr.length - i - 1];
+        // 用循环中的i为下标，直接用xindex作为值，即可倒过来
+        arr2[i] = xindex;
+        // console.log(xindex)
+    };
+    console.log(arr2);
+})();
 // --------------------------
 // 使用冒泡排序将数组中的数字实现从小到大排序
-
+(function(){
+    let arr = [7,6,3,8,5,1,2];
+    for(let i=0;i<arr.length-1;i++){
+        // 1 4 
+        // 2 3
+        // 3 2
+        // 4 1
+        // 内层循环来控制循环的次数
+        // 从0开始循环 从第一个数开始往后比较
+        for(let j=0;j<arr.length-i;j++){
+            // 每次循环，如果当前的数大于后边的数，则位置互换
+            // 当前元素就是arr[j]
+            if(arr[j]>arr[j+1]){
+                // js不像python可以a,b=b,a，所以需要用第三个变量来充当辅助参数来交换参数
+                let auxiliary=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=auxiliary;
+            }
+            ;
+        };
+    };
+    console.log(arr);
+})();
+// --------------------------
 
 
 
