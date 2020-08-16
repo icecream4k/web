@@ -1043,7 +1043,7 @@ URIcode();
   }
 })();
 // --------------------------
-// 创建索引数组，包含有若干个成绩，计算出平均成绩是多少
+// 创建索引数组,包含有若干个成绩,计算出平均成绩是多少
 (function () {
   let result = [];
   result["math"] = 86;
@@ -1064,7 +1064,7 @@ URIcode();
   console.log("总分数是:", usum);
 })();
 // --------------------------
-// 创建数组，包含对个姓名，要求把所有姓名为han的名字改为zhang
+// 创建数组,包含对个姓名,要求把所有姓名为han的名字改为zhang
 (function () {
   let name = ["han", "liu", "zhao", "wu", "sun"];
   for (let key in name) {
@@ -1078,10 +1078,10 @@ URIcode();
 (function () {
   let arr = [1, 345, 5643, 76, 87654, 987, 234, 0985, 43, 2, 1213, 2, 3];
   let max = arr[0]; // 保存最大值
-  // 最大值已经保存了第一个元素，所以没必要自己再和自己比较一次
+  // 最大值已经保存了第一个元素,所以没必要自己再和自己比较一次
   for (let index = 1; index < arr.length; index++) {
     //   arr[index] 每个元素
-    // 如果max小于任何一个元素，则把该元素赋值给max
+    // 如果max小于任何一个元素,则把该元素赋值给max
     if (max < arr[index]) {
       max = arr[index];
     }
@@ -1095,7 +1095,7 @@ URIcode();
   console.log("使用API把数组转为字符串:", arr.toString()); // 'a,b,c'
   let num = 2;
   console.log(num.toString()); // '2'
-  // 两个方法从属于不同类型的对象，一个是数组下的，一个是数字下的
+  // 两个方法从属于不同类型的对象,一个是数组下的,一个是数字下的
   console.log("比较两个不同类型对象的转换:", arr.toString === num.toString); // false
   console.log("使用join来转换,并且可以设定分隔情况:", arr.join("-"));
 })();
@@ -1108,7 +1108,7 @@ URIcode();
   console.log(arr2.concat(arr3,arr4));
 })();
 // --------------------------
-// 遍历数组，翻转数组中的元素;['a','b','c','d'] => ['d','c','b','a']
+// 遍历数组,翻转数组中的元素;['a','b','c','d'] => ['d','c','b','a']
 (function(){
     let arr = ['a','b','c','d'];
     let arr2 = [];
@@ -1119,7 +1119,7 @@ URIcode();
         // 3 4  0
         // 对饮下标的值 = 长度 -i -1
         xindex = arr[arr.length - i - 1];
-        // 用循环中的i为下标，直接用xindex作为值，即可倒过来
+        // 用循环中的i为下标,直接用xindex作为值,即可倒过来
         arr2[i] = xindex;
         // console.log(xindex)
     };
@@ -1137,10 +1137,10 @@ URIcode();
         // 内层循环来控制循环的次数
         // 从0开始循环 从第一个数开始往后比较
         for(let j=0;j<arr.length-i;j++){
-            // 每次循环，如果当前的数大于后边的数，则位置互换
+            // 每次循环,如果当前的数大于后边的数,则位置互换
             // 当前元素就是arr[j]
             if(arr[j]>arr[j+1]){
-                // js不像python可以a,b=b,a，所以需要用第三个变量来充当辅助参数来交换参数
+                // js不像python可以a,b=b,a,所以需要用第三个变量来充当辅助参数来交换参数
                 let auxiliary=arr[j];
                 arr[j]=arr[j+1];
                 arr[j+1]=auxiliary;
@@ -1151,6 +1151,50 @@ URIcode();
     console.log(arr);
 })();
 // --------------------------
+(function(){
+    let arr = ['js','mysql','node.js','html','css','vue','react'];
+    // 截取数组中的元素
+    // 和python中的列表切片相同,注意的是,python是arr[1:4],js是arr.slice(1,4)
+    console.log(arr.slice(0,3));
+})();
+// --------------------------
+// 创建数组,包含有a~h,没一个字符是一个元素,分别截取出cd,f,最后要求拼接成一个新的数组
+(function(){
+    let arr = ['a','b','c','d','e','f','g','h'];
+    let first_str = arr.slice(2,4);
+    let end_str = arr.slice(4,5);
+    console.log(first_str.concat(end_str));
+})();
+// --------------------------
+// 删除数组元素
+(function(){
+    let arr = ['烤羊肉','火锅','东坡肉','肉夹馍','酸辣粉'];
+    // splice(start,number) start 是下标,number是从下标开始往后删除的个数
+    console.log('删除成功的数组:',arr.splice(3,4)); // 返回的是删除成功的元素
+    console.log('处理之后的数组:',arr); // 处理之后的数组
+})();
+// --------------------------
+// 按照位置插入元素
+(function(){
+    let arr = ['han','zhang'];
+    // 如果splice以(index,0,'xx','xx') 的方式呈现,那么index则为插入的下标位置,'xx'则为内容
+    arr.splice(arr.length,0,'liu','wang');
+    console.log('插入元素之后的数组:',arr);
+})();
+// --------------------------
+// 创建数组,包含a~h,每个字母是一个元素,删除de,替换f为m,在下标为1的位置插入z
+(function(){
+    let arr = ['a','b','c','d','e','f','g','h'];
+    arr.splice(3,2); // 删除de
+    arr.splice(3,1,'m'); // 替换f为m
+    arr.splice(1,0,'z'); // 在下标为1的位置插入z
+    console.log(arr);
+})();
+// --------------------------
+
+
+
+
 
 
 
