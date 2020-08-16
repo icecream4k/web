@@ -1191,6 +1191,76 @@ URIcode();
     console.log(arr);
 })();
 // --------------------------
+// 翻转数组
+(function(){
+    let arr = [1,2,3,4,5];
+    arr.reverse(); // 翻转数组
+    console.log('翻转后的数组:',arr);
+})();
+// --------------------------
+// 排序
+(function(){
+    let arr = [1,2,3,6,4,2,3,6,7,4,1,234,567,6543,23,4];
+    // 默认是按Unicode码排序
+    // console.log(arr.sort());
+    // 按照数字大小排序 -- 回调函数
+    arr.sort(function(a,b){
+        // return a-b; // 从小到大
+        return b-a; // 从大到小
+    });
+    console.log('排序之后的数组:',arr);
+})();
+// --------------------------
+// 在数组末尾添加元素
+(function(){
+    let arr = ['锅包肉','烤腰子','羊肉泡馍'];
+    console.log('返回数组的长度:',arr.push('荔枝肉','菠萝古老肉'));
+    console.log('更变之后的数组:',arr);
+    // 删除数组末尾的一个元素    
+    console.log('删除数组末尾的元素:',arr.pop());
+    console.log('',arr);
+})();
+// --------------------------
+// 在数组的开头添加或删除元素
+(function(){
+    let arr = [1,2,3,4,5];
+    // 在开头添加
+    console.log('此时的数组长度:',arr.unshift(-1,0));
+    console.log('在开头添加了-1,0的数组:',arr);
+    // 在开头删除
+    arr.shift();
+    console.log('删除开头一个元素之后的数组:',arr);
+})();
+// --------------------------
+(function(){
+    // 一组省份
+    let arr = ['广东','湖南','浙江'];
+    // 一组城市
+    // let arr = ['广州','深圳','东莞','长沙','张家界','怀化','杭州','宁波','绍兴'];
+    let arr2 = [
+        ['广州','深圳','东莞'],
+        ['长沙','张家界','怀化'],
+        ['杭州','宁波','绍兴']
+    ];
+    for(let key in arr){
+        var a = '';
+        for(let ukey in arr2){
+            a += arr2[key][ukey];
+        };
+        console.log(arr[key],'的城市有:',a);
+        delete a;
+    };
+})();
+
+
+
+
+
+
+
+
+
+
 
 
 

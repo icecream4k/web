@@ -786,20 +786,46 @@
                                     <li>
                                         API<br>
                                         JS中的API,表示预定义好的一些方法或函数<br>
-                                        应用程序编程接口<br>
-                                        toString() 将数组转为字符串<br>
-                                        join(str) 将数组转为字符串,默认是按照逗号分隔元素,也可以提供参数作为制定的分隔符,str就是制定的字符<br>
-                                        concat(arr1,arr2..) 用于拼接多个数字,arr1,arr2 是要作为拼接的数组<br>
-                                        slice(start,end) 截取数组中的元素,返回一个新数组；start是开始的下标,end是结束的下标,不包含end;如果end为空表示截取到最后,如果下标为负数表示倒数<br>
-                                        splice(start,count,value1,value2,...)删除数组中的元素，返回删除后的元素格式为数组，原数组会发生变化.start开始的下标，count删除的长度，value1，value2,...删除后补充的元素;如果count为空表示删除到最后，如果start为负数表示倒数<br>
+                                        如何学习一个API -&gt; 了解API的作用;知道API需要哪些参数,哪些是必须的,哪些是可选的;返回结果;<br>
+                                        应用程序编程接口<br><hr>
+                                        toString() 将数组转为字符串<br><hr>
+                                        join(str) 将数组转为字符串,默认是按照逗号分隔元素,也可以提供参数作为制定的分隔符,str就是制定的字符<br><hr>
+                                        concat(arr1,arr2..) 用于拼接多个数字,arr1,arr2 是要作为拼接的数组<br><hr>
+                                        slice(start,end) 截取数组中的元素,返回一个新数组；start是开始的下标,end是结束的下标,不包含end;如果end为空表示截取到最后,如果下标为负数表示倒数<br><hr>
+                                        splice(start,count,value1,value2,...)删除数组中的元素,返回删除后的元素格式为数组,原数组会发生变化.start开始的下标,count删除的长度,value1,value2,...删除后补充的元素;如果count为空表示删除到最后,如果start为负数表示倒数<br><hr>
+                                        
+                                        reverse() 翻转数组中的元素,不需要任何参数,返回翻转后的数组,原数组也会发生变化<br><hr>
+                                        sort() 对数组元素进行排序，默认是按照Unicode码从小到大，返回排序后的数组，对原数组也会发生变化;<br>
+                                        按照数字排序<br>
+                                        sort(function(a,b){<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;return a-b; // 从小到大<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;return b-a; // 从大到小<br>
+                                        })<br><hr>
+                                        push(value1,value2,...) 往数组的末尾添加元素，返回数组的长度，原数组会发生变化;value1，value2表示要添加的元素<br><hr>
+                                        pop() 删除数组末尾的一个元素，返回删除的元素，原数组会发生变化<br><hr>
+                                        unshift(value1,value2,...) 往数组的开头添加元素，返回数组的长度，原数组会发生变化；value1，value2表示要添加的元素<br><hr>
+                                        shift() 删除数组开头的一个元素，返回删除的元素，原数组会发生变化
+                                    </li>
+                                    <li>
+                                        二维数组<br>
+                                        数组中的每个元素还是数组<br>
+                                        [[],[],[],[],...]<br>
+                                        访问二维数组中的元素 数组[下标][下标]
                                     </li>
                                 </ul>
-                               
                             </span>
                         </fieldset>
                     </div>
-
-
+                    <br><br>
+                    <span id="d_f_16"></span>
+                    <div class="d_f_16">
+                        <fieldset>
+                            <legend>字符串对象</legend>
+                            <span>
+                                包装对象:
+                            </span>
+                        </fieldset>
+                    </div>
                 
 
 
