@@ -1153,15 +1153,28 @@ URIcode();
 // --------------------------
 // test run
 (function(){
-    let number_arr = [1,3,45,6,3];
-    for(let index = 0;index<number_arr;index++){
-        for(let jindex = 0;jindex<number_arr-index;jindex++){
-            if(number_ar[jindex]>number_arr[jindex+1]){
-                
+    let test_arr = [
+        3213.5,4564.4,3,45,3452,342,345,
+        1,3,4,5,666,4,990,71,
+    ];
+    let aux_arr = [];
+    for(let index = 0;index < test_arr.length-1;index++){
+        for(let jindex = 0;jindex<test_arr.length-index;jindex++){
+            if(test_arr[jindex]>test_arr[jindex+1]){
+                aux_arr = test_arr[jindex];
+                test_arr[jindex] = test_arr[jindex+1];
+                test_arr[jindex+1] = aux_arr;
             };
         };
     };
+    console.log('test run:',test_arr)
 })();
+
+
+
+
+
+
 
 // --------------------------
 (function(){
