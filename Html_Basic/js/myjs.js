@@ -1151,6 +1151,19 @@ URIcode();
     console.log(arr);
 })();
 // --------------------------
+// test run
+(function(){
+    let number_arr = [1,3,45,6,3];
+    for(let index = 0;index<number_arr;index++){
+        for(let jindex = 0;jindex<number_arr-index;jindex++){
+            if(number_ar[jindex]>number_arr[jindex+1]){
+                
+            };
+        };
+    };
+})();
+
+// --------------------------
 (function(){
     let arr = ['js','mysql','node.js','html','css','vue','react'];
     // 截取数组中的元素
