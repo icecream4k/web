@@ -14,7 +14,7 @@
   text-align: center;
 }
 .footer_dup_d3_qq_img:hover {
-  width: 10px;
+  
 }
 .Note_Title_c_2 {
   width: 100%;
@@ -158,6 +158,9 @@
   height: 40px;
   font-size: 24px;
   z-index: 1040;
+}
+.Floating_window:active{
+    border: none;
 }
 /* id选择器 */
 #main {
@@ -320,4 +323,10 @@ legend {
 
 .footer_ddown > div > span:nth-child(2) {
   color: #7e7f7f;
+}
+/* .Floating_window>a>img:active{
+    border:3px solid red;
+} */
+.Floating_window>a>img:visited{
+    border:2px solid red;
 }
