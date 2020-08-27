@@ -1683,11 +1683,29 @@ URIcode();
     }else{
         // 向页面中写代码片段
         document.write(`包含敏感词，禁止发送`);
-
     }
-
 });
-
+(function(){
+    // 请用户输入一条消息内容
+    // 查找消息中是否包含敏感词卧槽
+    // 如果包含敏感词
+    // let msg = prompt('请输入消息内容:');
+    let msg = '卧槽';
+    let arr = msg.match(/([我卧])|\s*([艹操槽草]|cao)/i);
+    if(arr != null){
+        // 位置 x 发现敏感词 x
+        document.write(`在位置${arr.index}发现敏感词"${arr[0]}"，禁止发送`);
+    }else{
+        console.log(`没找到敏感词，返回null`)
+    }
+});
+(function(){
+    let str = '老师说:请用小红 我的 朋友造句.小亮:小红是我的朋友.小然:朋友!小红是我的!';
+    // 希望查找出str中所有以小字开头的人名
+    // 因为汉字没有大小写之分，所以不用加 i
+    let arr = str.match(/小[\u4e00-\u9fa5]/g);
+    console.log('小字开头的人名:',arr);
+})();
 // --------------------------
 // (function(){
 //     // 想把电子邮件切割成用户名和域名两部分
