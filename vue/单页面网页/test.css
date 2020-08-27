@@ -1,0 +1,7 @@
+#app>fieldset{
+    border-radius:10px;
+}
+.router-link-exact-active{
+    color: aquamarine;
+    font-size: +10px;
+}
