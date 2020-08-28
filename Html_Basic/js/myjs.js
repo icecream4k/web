@@ -1440,10 +1440,12 @@ URIcode();
   // g -> global 全局的
   console.log(str.match(/han/gi));
   // 查找并替换
-  console.log(str.replace(/han/gi, function(str){
-      str = '**';
+  console.log(
+    str.replace(/han/gi, function (str) {
+      str = "**";
       return str;
-  }));
+    })
+  );
 })();
 // --------------------------
 // 截取出一个文件的后缀名(code.web.png)
@@ -1465,12 +1467,12 @@ URIcode();
   console.log(arr.join(" "));
 })();
 // 回调函数的方式
-(function(){
-    let str = 'you can you up';
-    str = str.replace(/\b[a-z]/ig,function(a){
-        return a.toUpperCase();
-    });
-    console.log(str);
+(function () {
+  let str = "you can you up";
+  str = str.replace(/\b[a-z]/gi, function (a) {
+    return a.toUpperCase();
+  });
+  console.log(str);
 })();
 // --------------------------
 (function () {
@@ -1615,13 +1617,13 @@ URIcode();
     arr2.push(arr[index]);
     // 获取到以后,把该元素从原数组中删除
     // splice
-    arr.splice(index,1);
-  };
+    arr.splice(index, 1);
+  }
   // 从小到大排序
-  arr2.sort(function(a,b){
-      return a-b;
+  arr2.sort(function (a, b) {
+    return a - b;
   });
-  arr2.push(Math.floor((Math.random()*16)+1)); // 随机蓝球
+  arr2.push(Math.floor(Math.random() * 16 + 1)); // 随机蓝球
   console.log(arr2);
 })();
 // --------------------------
@@ -1630,155 +1632,203 @@ URIcode();
 // 第二位 1位大写字母
 // 第三位 . 有一个点
 // 后五位 每一位:都是一位大写字母或数字
-(function(){
-    let phonenumber = '13211110000';
-    let matching = '10';
-    console.log(`匹配到的${matching}位置的下标是:`,phonenumber.search(matching));
-    // [\u4e00-\u9fa5][A-Z]·[0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z]
+(function () {
+  let phonenumber = "13211110000";
+  let matching = "10";
+  console.log(`匹配到的${matching}位置的下标是:`, phonenumber.search(matching));
+  // [\u4e00-\u9fa5][A-Z]·[0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z][0-9A-Z]
 })();
 // --------------------------
-(function(){
-    // 请用户输入一条消息内容
-    // 查找消息中是否包含敏感词卧槽
-    // 如果包含敏感词
-    // let msg = prompt('请输入消息内容:');
-    let msg = '卧槽';
-    let i = msg.indexOf('卧槽');
-    if(i !=! -1){
-        console.log(msg)
-    }else{
-        // 向页面中写代码片段
-        document.write(`包含敏感词，禁止发送`);
-    };
-
+(function () {
+  // 请用户输入一条消息内容
+  // 查找消息中是否包含敏感词卧槽
+  // 如果包含敏感词
+  // let msg = prompt('请输入消息内容:');
+  let msg = "卧槽";
+  let i = msg.indexOf("卧槽");
+  if (i != !-1) {
+    console.log(msg);
+  } else {
+    // 向页面中写代码片段
+    document.write(`包含敏感词，禁止发送`);
+  }
 });
-(function(){
-    // 请用户输入一条消息内容
-    // 查找消息中是否包含敏感词卧槽
-    // 如果包含敏感词
-    // let msg = prompt('请输入消息内容:');
-    let msg = '卧槽';
-    let i = msg.search(/([我卧])|\s*([艹操槽]|cao)/);
-    if(i !=! -1){
-        console.log(msg)
-    }else{
-        // 向页面中写代码片段
-        document.write(`包含敏感词，禁止发送`);
+(function () {
+  // 请用户输入一条消息内容
+  // 查找消息中是否包含敏感词卧槽
+  // 如果包含敏感词
+  // let msg = prompt('请输入消息内容:');
+  let msg = "卧槽";
+  let i = msg.search(/([我卧])|\s*([艹操槽]|cao)/);
+  if (i != !-1) {
+    console.log(msg);
+  } else {
+    // 向页面中写代码片段
+    document.write(`包含敏感词，禁止发送`);
+  }
+});
+(function () {
+  // 请用户输入一条消息内容
+  // 查找消息中是否包含敏感词卧槽
+  // 如果包含敏感词
+  // let msg = prompt('请输入消息内容:');
+  let msg = "卧槽";
+  let arr = msg.match(/([我卧])|\s*([艹操槽草]|cao)/i);
+  if (arr != null) {
+    // 位置 x 发现敏感词 x
+    document.write(`在位置${arr.index}发现敏感词"${arr[0]}"，禁止发送`);
+  } else {
+    console.log(`没找到敏感词，返回null`);
+  }
+});
+(function () {
+  let str =
+    "老师说:请用小红 我的 朋友造句.小亮:小红是我的朋友.小然:朋友!小红是我的!";
+  // 希望查找出str中所有以小字开头的人名
+  // 因为汉字没有大小写之分，所以不用加 i
+  let arr = str.match(/小[\u4e00-\u9fa5]/g);
+  console.log("小字开头的人名:", arr);
+})();
+// --------------------------
+(function () {
+  let str =
+    "老师说:请用小红 我的 朋友造句.小亮:小红是我的朋友.小然:朋友!小红是我的!";
+  // 还想显示共替换了多少处,先用match在替换前再找一次，然后查找结果的元素个数，也就是将来要替换的个数!
+  let arr = str.match(/小[\u4e00-\u9fa5]/gi);
+  // 希望替换str中所有以小字开头的人名为**
+  let new_str = str.replace(/小[\u4e00-\u9fa5]/gi, function (st) {
+    st = "**";
+    return st;
+  });
+  console.log(new_str);
+  // 如果match找到了敏感词，才输出arr.length
+  // 否则如果match没找到敏感词，直接输出0处代替
+  // if(arr!=null){
+  //     console.log(`共替换了${arr.length}处`);
+  // }else{
+  //     console.log(`共替换了0处`);
+  // };
+  // 三目运算
+  console.log(`共替换了${arr != null ? arr.length : 0}处`);
+})();
+// --------------------------
+(function () {
+  let str = "you can you up";
+  let number = 1;
+  str = str.replace(/\b[a-z]/gi, function (initials) {
+    console.log(
+      `调用了${number++}次回调函数,形参是${initials},处理之后是${initials.toUpperCase()}`
+    );
+    return initials.toUpperCase();
+  });
+  console.log(str);
+})();
+// --------------------------
+(function () {
+  // trimLeft() 可以去掉字符串开头的空字符
+  function trimLeft(str) {
+    // let str2 = str.replace(/^\s+/,'');
+    return str.trimLeft();
+  }
+  // trimRight() 可以去掉字符串结尾的空字符
+  function trimRight(str) {
+    // let str2 = str.replace(/\s+$/,'');
+    return str.trimRight();
+  }
+  // trim() 可以去掉字符串开头和结尾的空字符
+  function trim(str) {
+    // 因为/^\s+|\s+$/在字符串中匹配到两组敏感词，一组是开头的空字符，一组是结尾的空字符，如果想把两组空字符都替换，必须加g
+    // let str2 = str.replace(/^\s+|\s+$/g,'');
+    return str.trim();
+  }
+  let str = "   hello    world   ";
+  console.log("去掉左边空格的字符串:", trimLeft(str));
+  console.log("去掉右边空格的字符串:", trimRight(str));
+  console.log("去掉两边空格的字符串:", trim(str));
+  // 其实ES5和ES6标注那种,已经提供了线程的trim系列函数,不用自己定义
+})();
+// --------------------------
+(function () {
+  // 想把电子邮件切割成用户名和域名两部分
+  let email = "hanlong@qq.com";
+  // 按照@将字符串email一分为二
+  let arr = email.split("@"); // 从@开始切成了两个数组
+  let uname = arr[0];
+  let domain = arr[1];
+  console.log("切割之后的用户名和域名:", uname, domain);
+  let str = "you can you up";
+  let arr2 = str.split(" ");
+  console.log("把英文切成了4个单词:", arr2);
+  // 如果每个单词之间的空格个数不确定有几个
+  let str2 = " jin tian tain      qi  zhen  hao   a ";
+  // 去掉两端的空格
+  str2 = str2.trim();
+  // 按一个或多个空格切割str
+  let arr3 = str2.split(/\s+/);
+  console.log("处理一个或者多个空格之后:", arr3);
+})();
+// --------------------------
+(function () {
+  // 翻转字符串
+  // let arr = ['h','e','l','l','o'];
+  let str = "helloworld";
+  let arr2 = str.split(""); // 打散为字符数组
+  // reverse()是数组的翻转
+  // console.log(arr.reverse());
+  // console.log(str); // 'dlrowolleh'
+  console.log("翻转前的数组:", arr2);
+  arr2.reverse(); // 翻转处理
+  console.log("翻转后的数组:", arr2);
+  str = arr2.join(""); // 将翻转后的字符数组无缝拼接回字符串 join是无缝拼接字符串，toString是用逗号做了字符串的分割
+  str2 = console.log("使用join来进行转化后的字符串:", str);
+})();
+// --------------------------
+(function () {
+  // 假设从服务器端用ajax请求过来一个敏感词数组
+  let arr = ["青天", "明月", "紫烟"]; // 将来数组里有什么词，程序就要防住什么词
+  // 我们不可能提前预知从服务器范湖id数组中包含哪些词
+  console.log(arr.join("|"));
+  // 请用户输入一条消息内容
+  // var msg = prompt('请输入消息内容:')
+  let msg = "日照香炉生紫烟";
+  // 先定义正则表达式对象,自然也不可能提前预防
+  // 错误的解决:将动态生成正则表达式的js语句，直接放入//中
+  // 原因:// 中是正则表达式的地盘 并不认识js语句 -> let reg = /arr.join("|")/;
+  // 正确的做法:被迫使用new RegExp("正则")
+  // 原因:new RegExp()参数刚好需要一个字符串，而我们有很多种方法能拼出我们想要的任意字符串
+  let reg = new RegExp(arr.join("|"));
+  // let reg = /青天|明月/;
+  // 用正则表达式对象查找消息内容中是否包含敏感词
+  let i = msg.search(reg);
+  let msgs = `包含敏感词:${msg}`;
+  let reply = "不包含敏感词";
+  console.log(i);
+  console.log(`${i === -1 ? reply : msgs}`);
+})();
+// --------------------------
+(function () {
+  // 请用户输入一个密码，密码要求必须是6位的数字
+  let pwd = "abc123456";
+  // 定义正则表达式,匹配六位数字
+  let reg = /^\d{6}$/;
+  // 用正则表达式去验证密码的格式，是否符合要求
+  let bool = reg.test(pwd);
+  console.log(`${bool === true ? "格式正确" : "格式不正确"}`);
+})();
+// --------------------------
+(function () {
+  var str =
+    "老师:请用小红 我的 朋友造句。小亮:小红是我的朋友。小韩说:朋友！小红是我的!";
+  // 只找第一个敏感词的情况
+  var reg = /小[\u4e00-\u9fa5]/g;
+  // let arr = str.match(reg);
+  // console.log('使用match来寻找到的结果:',arr);
+  // 反复执行,知道arr==null结束,不然一直执行
+  // do while:因为即使不确定字符串中有没有敏感词，也必须至少查找一次时，首选do while
+  do {
+    var arr2 = reg.exec(str);
+    if (arr2 != null) {
+      console.log(`在位置${arr2.index},发现敏感词${arr2[0]}`);
     }
-});
-(function(){
-    // 请用户输入一条消息内容
-    // 查找消息中是否包含敏感词卧槽
-    // 如果包含敏感词
-    // let msg = prompt('请输入消息内容:');
-    let msg = '卧槽';
-    let arr = msg.match(/([我卧])|\s*([艹操槽草]|cao)/i);
-    if(arr != null){
-        // 位置 x 发现敏感词 x
-        document.write(`在位置${arr.index}发现敏感词"${arr[0]}"，禁止发送`);
-    }else{
-        console.log(`没找到敏感词，返回null`)
-    }
-});
-(function(){
-    let str = '老师说:请用小红 我的 朋友造句.小亮:小红是我的朋友.小然:朋友!小红是我的!';
-    // 希望查找出str中所有以小字开头的人名
-    // 因为汉字没有大小写之分，所以不用加 i
-    let arr = str.match(/小[\u4e00-\u9fa5]/g);
-    console.log('小字开头的人名:',arr);
+  } while (arr2 != null);
 })();
-// --------------------------
-(function(){
-    let str = '老师说:请用小红 我的 朋友造句.小亮:小红是我的朋友.小然:朋友!小红是我的!';
-    // 还想显示共替换了多少处,先用match在替换前再找一次，然后查找结果的元素个数，也就是将来要替换的个数!
-    let arr = str.match(/小[\u4e00-\u9fa5]/ig);
-    // 希望替换str中所有以小字开头的人名为**
-    let new_str = str.replace(/小[\u4e00-\u9fa5]/ig,function(st){
-        st = '**';
-        return st;
-    });
-    console.log(new_str);
-    // 如果match找到了敏感词，才输出arr.length
-    // 否则如果match没找到敏感词，直接输出0处代替
-    // if(arr!=null){
-    //     console.log(`共替换了${arr.length}处`);
-    // }else{
-    //     console.log(`共替换了0处`);
-    // };
-    // 三目运算
-    console.log(`共替换了${arr!=null?arr.length:0}处`)
-})();
-// --------------------------
-(function(){
-    let str = 'you can you up';
-    let number = 1;
-    str = str.replace(/\b[a-z]/ig,function(initials){
-        console.log(`调用了${number++}次回调函数,形参是${initials},处理之后是${initials.toUpperCase()}`)
-        return initials.toUpperCase()
-    });
-    console.log(str);
-})();
-// --------------------------
-(function(){
-    // trimLeft() 可以去掉字符串开头的空字符
-    function trimLeft(str){
-        // let str2 = str.replace(/^\s+/,'');
-        return str.trimLeft()
-    };
-    // trimRight() 可以去掉字符串结尾的空字符
-    function trimRight(str){
-        // let str2 = str.replace(/\s+$/,'');
-        return str.trimRight()
-        
-    };
-    // trim() 可以去掉字符串开头和结尾的空字符
-    function trim(str){
-        // 因为/^\s+|\s+$/在字符串中匹配到两组敏感词，一组是开头的空字符，一组是结尾的空字符，如果想把两组空字符都替换，必须加g
-        // let str2 = str.replace(/^\s+|\s+$/g,'');
-        return str.trim()
-    };
-    let str = '   hello    world   ';
-    console.log('去掉左边空格的字符串:',trimLeft(str));
-    console.log('去掉右边空格的字符串:',trimRight(str));
-    console.log('去掉两边空格的字符串:',trim(str));
-    // 其实ES5和ES6标注那种,已经提供了线程的trim系列函数,不用自己定义
-})();
-// --------------------------
-(function(){
-    // 想把电子邮件切割成用户名和域名两部分
-    let email = 'hanlong@qq.com';
-    // 按照@将字符串email一分为二
-    let arr = email.split('@'); // 从@开始切成了两个数组
-    let uname = arr[0];
-    let domain = arr[1];
-    console.log('切割之后的用户名和域名:',uname,domain);
-    let str = 'you can you up';
-    let arr2 = str.split(' ');
-    console.log('把英文切成了4个单词:',arr2);
-    // 如果每个单词之间的空格个数不确定有几个
-    let str2 = ' jin tian tain      qi  zhen  hao   a ';
-    // 去掉两端的空格
-    str2 =  str2.trim();
-    // 按一个或多个空格切割str
-    let arr3 = str2.split(/\s+/);
-    console.log('处理一个或者多个空格之后:',arr3);
-})();
-// --------------------------
-(function(){
-    // 翻转字符串
-    // let arr = ['h','e','l','l','o'];
-    let str = 'helloworld';
-    let arr2 = str.split(''); // 打散为字符数组
-    // reverse()是数组的翻转
-    // console.log(arr.reverse());
-    // console.log(str); // 'dlrowolleh'
-    console.log('翻转前的数组:',arr2);
-    arr2.reverse(); // 翻转处理
-    console.log('翻转后的数组:',arr2);
-    str=arr2.join('');// 将翻转后的字符数组无缝拼接回字符串
-    console.log(str);
-})();
-// --------------------------
-
-
-
