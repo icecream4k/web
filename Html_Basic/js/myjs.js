@@ -1440,7 +1440,10 @@ URIcode();
   // g -> global 全局的
   console.log(str.match(/han/gi));
   // 查找并替换
-  console.log(str.replace(/han/gi, "**"));
+  console.log(str.replace(/han/gi, function(str){
+      str = '**';
+      return str;
+  }));
 })();
 // --------------------------
 // 截取出一个文件的后缀名(code.web.png)
@@ -1622,27 +1625,6 @@ URIcode();
   console.log(arr2);
 })();
 // --------------------------
-(function(){
-    // trimLeft() 可以去掉字符串开头的空字符
-    function trimLeft(str){
-        return str.trimLeft()
-    };
-    // trimRight() 可以去掉字符串结尾的空字符
-    function trimRight(str){
-        return str.trimRight()
-        
-    };
-    // trim() 可以去掉字符串开头和结尾的空字符
-    function trim(str){
-        return str.trim()
-    };
-    let str = '   hello    world   ';
-    console.log('去掉左边空格的字符串:',trimLeft(str));
-    console.log('去掉右边空格的字符串:',trimRight(str));
-    console.log('去掉两边空格的字符串:',trim(str));
-    // 其实ES5和ES6标注那种,已经提供了线程的trim系列函数,不用自己定义
-})();
-// --------------------------
 // 利用字符集简写定义车牌号规则
 // 第一位 1位汉字
 // 第二位 1位大写字母
@@ -1667,8 +1649,7 @@ URIcode();
     }else{
         // 向页面中写代码片段
         document.write(`包含敏感词，禁止发送`);
-
-    }
+    };
 
 });
 (function(){
@@ -1707,15 +1688,97 @@ URIcode();
     console.log('小字开头的人名:',arr);
 })();
 // --------------------------
-// (function(){
-//     // 想把电子邮件切割成用户名和域名两部分
-//     let email = 'hanlong@qq.com';
-//     // 按照@将字符串email一分为二
-//     let arr = email.split('@'); // 从@开始切成了两个数组
-//     let uname = arr[0];
-//     let domain = arr[1];
-//     console.log(uname,domain);
-//     let str = 'you can you up';
-//     let arr2 = str.split(' ');
-//     console.log(arr2);
-// })();
+(function(){
+    let str = '老师说:请用小红 我的 朋友造句.小亮:小红是我的朋友.小然:朋友!小红是我的!';
+    // 还想显示共替换了多少处,先用match在替换前再找一次，然后查找结果的元素个数，也就是将来要替换的个数!
+    let arr = str.match(/小[\u4e00-\u9fa5]/ig);
+    // 希望替换str中所有以小字开头的人名为**
+    let new_str = str.replace(/小[\u4e00-\u9fa5]/ig,function(st){
+        st = '**';
+        return st;
+    });
+    console.log(new_str);
+    // 如果match找到了敏感词，才输出arr.length
+    // 否则如果match没找到敏感词，直接输出0处代替
+    // if(arr!=null){
+    //     console.log(`共替换了${arr.length}处`);
+    // }else{
+    //     console.log(`共替换了0处`);
+    // };
+    // 三目运算
+    console.log(`共替换了${arr!=null?arr.length:0}处`)
+})();
+// --------------------------
+(function(){
+    let str = 'you can you up';
+    let number = 1;
+    str = str.replace(/\b[a-z]/ig,function(initials){
+        console.log(`调用了${number++}次回调函数,形参是${initials},处理之后是${initials.toUpperCase()}`)
+        return initials.toUpperCase()
+    });
+    console.log(str);
+})();
+// --------------------------
+(function(){
+    // trimLeft() 可以去掉字符串开头的空字符
+    function trimLeft(str){
+        // let str2 = str.replace(/^\s+/,'');
+        return str.trimLeft()
+    };
+    // trimRight() 可以去掉字符串结尾的空字符
+    function trimRight(str){
+        // let str2 = str.replace(/\s+$/,'');
+        return str.trimRight()
+        
+    };
+    // trim() 可以去掉字符串开头和结尾的空字符
+    function trim(str){
+        // 因为/^\s+|\s+$/在字符串中匹配到两组敏感词，一组是开头的空字符，一组是结尾的空字符，如果想把两组空字符都替换，必须加g
+        // let str2 = str.replace(/^\s+|\s+$/g,'');
+        return str.trim()
+    };
+    let str = '   hello    world   ';
+    console.log('去掉左边空格的字符串:',trimLeft(str));
+    console.log('去掉右边空格的字符串:',trimRight(str));
+    console.log('去掉两边空格的字符串:',trim(str));
+    // 其实ES5和ES6标注那种,已经提供了线程的trim系列函数,不用自己定义
+})();
+// --------------------------
+(function(){
+    // 想把电子邮件切割成用户名和域名两部分
+    let email = 'hanlong@qq.com';
+    // 按照@将字符串email一分为二
+    let arr = email.split('@'); // 从@开始切成了两个数组
+    let uname = arr[0];
+    let domain = arr[1];
+    console.log('切割之后的用户名和域名:',uname,domain);
+    let str = 'you can you up';
+    let arr2 = str.split(' ');
+    console.log('把英文切成了4个单词:',arr2);
+    // 如果每个单词之间的空格个数不确定有几个
+    let str2 = ' jin tian tain      qi  zhen  hao   a ';
+    // 去掉两端的空格
+    str2 =  str2.trim();
+    // 按一个或多个空格切割str
+    let arr3 = str2.split(/\s+/);
+    console.log('处理一个或者多个空格之后:',arr3);
+})();
+// --------------------------
+(function(){
+    // 翻转字符串
+    // let arr = ['h','e','l','l','o'];
+    let str = 'helloworld';
+    let arr2 = str.split(''); // 打散为字符数组
+    // reverse()是数组的翻转
+    // console.log(arr.reverse());
+    // console.log(str); // 'dlrowolleh'
+    console.log('翻转前的数组:',arr2);
+    arr2.reverse(); // 翻转处理
+    console.log('翻转后的数组:',arr2);
+    str=arr2.join('');// 将翻转后的字符数组无缝拼接回字符串
+    console.log(str);
+})();
+// --------------------------
+
+
+
