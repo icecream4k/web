@@ -1832,3 +1832,48 @@ URIcode();
     }
   } while (arr2 != null);
 })();
+// --------------------------
+(function(){
+    function cook(greenstuff,age,noodle){
+        console.log(`炒${age}`);
+        console.log(`炒${greenstuff}`);
+        console.log(`${greenstuff}和${age}一起炒`);
+        console.log(`煮${noodle}`);
+        return `香喷喷的${greenstuff}${age}${noodle}`
+    };
+    // 周一
+    let bowl = cook('西红柿','鸡蛋','面');
+    console.log('周一的菜:',bowl);
+    // 周二 西红柿没了，只有黄瓜，鸡蛋没了，只有辣条
+    let bowl2 = cook('黄瓜','辣条','面');
+    console.log('周二的菜:',bowl2)
+})();
+// --------------------------
+// 函数创建方式一
+(function(){
+    function fun(){console.log('1')};
+    fun(); // 2
+    function fun(){console.log('2')};
+    fun(); // 2
+})();
+// --------------------------
+// 函数创建方式二
+(function(){
+    var fun = function(){console.log('1')};
+    fun(); // 1
+    var fun = function(){console.log('2')};
+    fun(); // 2
+})();
+// --------------------------
+// 函数创建方式三
+(function(){
+    var f1 = new Function('a',console.log('a'));
+})();
+// --------------------------
+// 想定义一种付款函数，支持三种支付方式:手机支付，现金支付，刷卡支付
+
+
+
+
+
+
