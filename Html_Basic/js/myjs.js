@@ -532,8 +532,8 @@
       return parameter;
     }
   }
-  start = 2005;
-  end = 1999;
+  var start = 2005;
+  var end = 1999;
   console.log(start, end, "两个年份之间的闰年年份是:", getRun(start, end));
   // --------------------------
   // 创建函数getMax,返回任意两个数字中的最大值
@@ -712,18 +712,16 @@
 
   URIcode();
 })();
-(
-  // --------------------------
-  // 声明变量保存任意数据,检测该数据是否为数值,如果不是数值,打印'请提供一个数字'
-  function () {
-    let numbers = "411";
-    if (isNaN(numbers)) {
-      console.log("请提供一个数字");
-    } else {
-      console.log("全是数字");
-    }
+// --------------------------
+// 声明变量保存任意数据,检测该数据是否为数值,如果不是数值,打印'请提供一个数字'
+(function () {
+  let numbers = "411";
+  if (isNaN(numbers)) {
+    console.log("请提供一个数字");
+  } else {
+    console.log("全是数字");
   }
-)();
+})();
 // --------------------------
 // 创建对象-对象字面量
 (function () {
@@ -875,7 +873,7 @@
   console.log("madeIn" in car);
 })();
 // --------------------------
-// 创建商品对象,包含商品的编号,名称,价格；判断是否存在产地,如果不存在则添加该属性；
+// 创建商品对象,包含商品的编号,名称,价格;判断是否存在产地,如果不存在则添加该属性;
 // 判断是否存在价格,如果存在则将价格在原来的基础上加1000,最后打印该对象
 (function () {
   let commodity = new Object();
@@ -1121,7 +1119,7 @@
     // 2 4  1
     // 3 4  0
     // 对饮下标的值 = 长度 -i -1
-    xindex = arr[arr.length - i - 1];
+    var xindex = arr[arr.length - i - 1];
     // 用循环中的i为下标,直接用xindex作为值,即可倒过来
     arr2[i] = xindex;
     // console.log(xindex)
@@ -1906,45 +1904,86 @@
   console.log(`开始加载页面内容:${start.toLocaleString()}`);
   var end = new Date();
   console.log(`页面内容加载完成:${end.toLocaleString()}`);
-  // 变量start和end，在弹窗提示后，就不再使用了，但是依旧在内存当中，占用着内存
+  // 变量start和end,在弹窗提示后,就不再使用了,但是依旧在内存当中,占用着内存
+})();
+// --------------------------
+(function () {
+  var a = 10;
+  function fun() {
+    a = 100;
+    a++;
+    console.log("函数内部的a:", a);
+  }
+  fun();
+  console.log("函数外部的a:", a);
+})();
+// --------------------------
+(function () {
+  // 定义一个函数替小孩保管零花钱
+  // 小孩每花一笔钱,就从总钱数中减去花的钱,并且提示余额剩余多少
+  // 问题:总钱数total 1000元保存在哪?
+  // 定义外层函数包裹要保护的变量和内层函数
+  function outer() {
+    var total = 500;
+    // 内层函数不要起函数名
+    return function (money) {
+      total -= money;
+      console.log(`花了${money}元,还剩${total}元`);
+    };
+  }
+  //   函数只有调用才会执行,才能获得返回结果
+  // 反之,函数如果不执行,就不会执行,也不回获得返回结果
+  // 花了100
+  var pay = outer();
+
+  pay(100);
+  // 又花了100
+  pay(100);
+  // total = 0; // 万一凑巧被篡改了
+  // 又花了100
+  pay(100);
+
+  var pay2 = outer();
+  pay2(100);
+})();
+// --------------------------
+// 使用闭包实现取号机功能
+
+// 测试代码
+(function () {
+  function take_the_number(){
+      var i = 0;
+      return function(){
+        i ++;
+        console.log(i)
+      }
+  }
+  var getNum = take_the_number()
+  getNum(); // 1
+  getNum(); // 2
+  // 如果用i记录当前号码,即使写 i = 0;也不会影响
+  i = 0;
+  getNum(); // 3
+  getNum(); // 4
+  getNum(); // 5
+  getNum = null;
+//   console.log(getNum);
 })();
 // --------------------------
 (function(){
-    var a = 10;
-    function fun(){
-        a = 100;
-        a++;
-        console.log('函数内部的a:',a);
+    var student = {
+        sname : 'han',
+        sage : 18,
+        intrSelf:function(){
+            console.log(`han说:i'm han,i'm ${this.sage}`)
+        },
     };
-    fun();
-    console.log('函数外部的a:',a);
+    console.log(`han今年:${lilei.sage}`);
+    lilei.intrSelf();
+    lilei.sage++;
+    console.log(`han今年:${lilei.sage}`);
+    lilei.intrSelf();
 })();
-// --------------------------
-(function(){
-    // 定义一个函数替小孩保管零花钱
-    // 小孩每花一笔钱，就从总钱数中减去花的钱，并且提示余额剩余多少
-    // 问题:总钱数total 1000元保存在哪?
-    var total = 1000;
-    function pay(money){
-        total -= money;
-        console.log(`花了${money}元，还剩${total}元`);
-    };
-    // 花了100
-    pay(100);
-    // 又花了100
-    pay(100);
-    total = 0;// 万一凑巧被篡改了
-    // 又花了100
-    pay(100);
-})();
-
-
-
-
-
-
-
-
 
 
 
