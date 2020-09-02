@@ -1971,20 +1971,35 @@
 })();
 // --------------------------
 (function(){
-    var student = {
+    var student = {  
+        // js中只有两种作用域:全局作用域和函数作用域
+        // 对象中的内容，既不是全局，也不是函数作用域
+        // 对象给仅仅是一种结构复杂的特殊存储结构而已
         sname : 'han',
         sage : 18,
         intrSelf:function(){
-            console.log(`han说:i'm han,i'm ${this.sage}`)
+            console.log(`${this.sname}说:i'm ${this.sname},i'm ${this.sage}`)
         },
     };
-    console.log(`han今年:${lilei.sage}`);
-    lilei.intrSelf();
-    lilei.sage++;
-    console.log(`han今年:${lilei.sage}`);
-    lilei.intrSelf();
+    console.log(`han今年:${student.sage}`);
+    student.intrSelf();
+    student.sage++;
+    console.log(`han今年:${student.sage}`);
+    student.intrSelf();
+    var intrSelf = student.intrSelf;
+    intrSelf();
 })();
-
+// --------------------------
+(function(){
+    var han = new Object();
+    console.log(han);
+    han.sname = 'hanlong';
+    han.sage = 18;
+    han.intr = function(){
+        console.log(`i'm ${this.sname},i'm ${this.sage}`)
+    };
+    
+})();
 
 
 
