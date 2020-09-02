@@ -1951,14 +1951,14 @@
 
 // 测试代码
 (function () {
-  function take_the_number(){
-      var i = 0;
-      return function(){
-        i ++;
-        console.log(i)
-      }
+  function take_the_number() {
+    var i = 0;
+    return function () {
+      i++;
+      console.log(i);
+    };
   }
-  var getNum = take_the_number()
+  var getNum = take_the_number();
   getNum(); // 1
   getNum(); // 2
   // 如果用i记录当前号码,即使写 i = 0;也不会影响
@@ -1967,39 +1967,98 @@
   getNum(); // 4
   getNum(); // 5
   getNum = null;
-//   console.log(getNum);
+  //   console.log(getNum);
 })();
 // --------------------------
-(function(){
-    var student = {  
-        // js中只有两种作用域:全局作用域和函数作用域
-        // 对象中的内容，既不是全局，也不是函数作用域
-        // 对象给仅仅是一种结构复杂的特殊存储结构而已
-        sname : 'han',
-        sage : 18,
-        intrSelf:function(){
-            console.log(`${this.sname}说:i'm ${this.sname},i'm ${this.sage}`)
-        },
-    };
-    console.log(`han今年:${student.sage}`);
-    student.intrSelf();
-    student.sage++;
-    console.log(`han今年:${student.sage}`);
-    student.intrSelf();
-    var intrSelf = student.intrSelf;
-    intrSelf();
+(function () {
+  var student = {
+    // js中只有两种作用域:全局作用域和函数作用域
+    // 对象中的内容，既不是全局，也不是函数作用域
+    // 对象给仅仅是一种结构复杂的特殊存储结构而已
+    sname: "han",
+    sage: 18,
+    intrSelf: function () {
+      console.log(`${this.sname}说:i'm ${this.sname},i'm ${this.sage}`);
+    },
+  };
+  console.log(`han今年:${student.sage}`);
+  student.intrSelf();
+  student.sage++;
+  console.log(`han今年:${student.sage}`);
+  student.intrSelf();
+  var intrSelf = student.intrSelf;
+  intrSelf();
 })();
 // --------------------------
-(function(){
-    var han = new Object();
-    console.log(han);
-    han.sname = 'hanlong';
-    han.sage = 18;
-    han.intr = function(){
-        console.log(`i'm ${this.sname},i'm ${this.sage}`)
-    };
-    
+(function () {
+  var han = new Object();
+  console.log(han);
+  han.sname = "hanlong";
+  han.sage = 18;
+  han.intr = function () {
+    console.log(`i'm ${this.sname},i'm ${this.sage}`);
+  };
+  console.log(han.sname);
 })();
+// --------------------------
+// (function () {
+//   // 定义函数，可以克隆一个对象
+//   function clone(old) {
+//     // 先创建一个新的空对象
+//     var obj = {
+//     };
+//         // 遍历久对象中的每个属性
+//     for(var  in ){
+//         // 每遍历一个属性，就为新对象添加同名的属性，值为旧对象中同名属性值
+//         obj[]
+//     };
+//   };
+//   var lilei = {
+//     sname: "li lei",
+//     sage: 18,
+//   };
+//   var lilei2 = clone(lilei);
+//   console.log(lilei);
+//   console.log(lilei2);
+//   console.log(lilei == lilei2); // false
+//   // 如果 == 左右都是对象，则 == 不再比较对象内容，而是比较两个对象的地址是否相同
+//   // 如果返回true，说明克隆失败，因为地址是同一个对象，说明没有多出一个对象
+//   // 如果返回false，说明成功，因为地址不同，说明是先后创建的两个对象
+// })();
+// --------------------------
+(function(){
+    // 冗余创建
+    let han = {
+        sname:'han',
+        sage:20,
+        intr:function(){
+            console.log(`i'm ${this.sname},i'm ${this.sage}`);
+        }
+    };
+    let zhang = {
+        sname:'zhang',
+        sage:21,
+        intr:function(){
+            console.log(`i'm ${this.sname},i'm ${this.sage}`);
+        }
+    };
+    // 使用构造函数创建
+    function student(sname,sage){
+        this.sname = sname;
+        this.sage = sage;
+        this.intr = function(){
+            console.log(`i'm ${this.sname},i'm ${this.sage}`);
+        }
+    };
+    let hanlong = student('hanlong',18);
+    console.log(hanlong);
+})();
+
+
+
+
+
+
 
 
 
