@@ -2026,33 +2026,40 @@
 //   // 如果返回false，说明成功，因为地址不同，说明是先后创建的两个对象
 // })();
 // --------------------------
-(function(){
-    // 冗余创建
-    let han = {
-        sname:'han',
-        sage:20,
-        intr:function(){
-            console.log(`i'm ${this.sname},i'm ${this.sage}`);
-        }
+(function () {
+  // 冗余创建
+  let han = {
+    sname: "han",
+    sage: 20,
+    intr: function () {
+      console.log(`i'm ${this.sname},i'm ${this.sage}`);
+    },
+  };
+  let zhang = {
+    sname: "zhang",
+    sage: 21,
+    intr: function () {
+      console.log(`i'm ${this.sname},i'm ${this.sage}`);
+    },
+  };
+  // 使用构造函数创建
+  function student(sname, sage) {
+    this.sname = sname;
+    this.sage = sage;
+    this.intr = function () {
+      console.log(`i'm ${this.sname},i'm ${this.sage}`);
     };
-    let zhang = {
-        sname:'zhang',
-        sage:21,
-        intr:function(){
-            console.log(`i'm ${this.sname},i'm ${this.sage}`);
-        }
-    };
-    // 使用构造函数创建
-    function student(sname,sage){
-        this.sname = sname;
-        this.sage = sage;
-        this.intr = function(){
-            console.log(`i'm ${this.sname},i'm ${this.sage}`);
-        }
-    };
-    let hanlong = student('hanlong',18);
-    console.log(hanlong);
+  }
+
+  var hanlong = new student("hanlong", 18);
+  console.log("创建的hanlong对象:", hanlong);
+  console.log(`${hanlong.sname}的年龄是${hanlong.sage}`);
+
+  var hmm = new student("han meimei", 20);
+  console.log("创建的hanmm对象:", hmm);
+  console.log(`${hmm.sname}的年龄是${hmm.sage}`);
 })();
+// --------------------------
 
 
 

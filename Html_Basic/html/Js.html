@@ -1753,12 +1753,16 @@
                                                                 属性值不能写死,因为每个对象虽然树形结构相同,但是属性值各不相同,所以应该用形参变量来传入具体的值<br>
                                                                 &nbsp;&nbsp;&nbsp;&nbsp;this.属性名 = 形参1;<br>
                                                                 &nbsp;&nbsp;&nbsp;&nbsp;this.属性名 = 形参2;<br>
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;this.方法名 = function(){<br>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;this.方法名[将来的构造函数中不应该包含方法名] = function(){<br>
                                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;..this.属性名...<br>
                                                                 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
                                                                 };
+                                                                new 做了几件事? : 1,创建了一个空对象、2,、3,调用构造函数，传入属性值实参，还自动将构造函数中的this全都指向new创建的新对象、
                                                             </li>
                                                         </ol>
+                                                        构造函数的优点:重用对象结构代码<br>
+                                                        问题:如果在构造函数中包含方法定义，则每创建一个对象，都会反复创建完全相同的函数对象的副本，而不是只创建一个所有对象公用 -- 浪费了内存<br>
+                                                        但是确实所有的对象都需要相同的方法<br>
                                                     </li>
                                                 </ul>
                                             </li>
