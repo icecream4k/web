@@ -1830,6 +1830,21 @@
                                                 正确做法:共有属性,只能用原型对象修改:构造函数.prototype.共有属性 = 新值 
                                             </li>
                                         </ol>
+                                        内置对象的原型对象<br>
+                                        ECMAScript标准中规定的，浏览器已经实现的对象或类型:<br>
+                                        String Number Boolean Array Date RegExp Math(不是类型，已经是一个对象了) Error Function Object global(在浏览器里面被window代替)<br>
+                                        什么是类型 - 构造函数 + 原型对象形成的整体<br>
+                                        构造函数负责:创建该类型的子对象，构造函数中的所有属性会成为将来子对象内的自由属性<br>
+                                        原型对象负责:集中保存该类型所有子对象共有的成员(属性值/方法)，原型对象中的方法和属性值都会成为将来所有子对象的共有成员<br>
+                                        如何知道数组家共有哪些函数 - 只要看类型.prototype中有哪些函数即可<br>
+                                        Array,prototype.新函数名 = function(){<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;// this 今后调用这个函数的 . 前面的子对象<br>
+                                        }<br>
+                                        将来任何一个数组都可以.新函数名()<br>
+                                        <hr>
+                                        原型链<br>
+                                        什么是原型链 - 由多级父对象，逐级集成，形成的链式结果<br>
+                                        
                                     </li>
                                     <li>
                                         多态
