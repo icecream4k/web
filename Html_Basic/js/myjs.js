@@ -2178,3 +2178,7 @@
     console.log('arr1的toString:',arr1.toString());
     console.log('now的toString:',now.toString())
 })();
+// --------------------------
+(function(){
+
+})();
