@@ -1,3 +1,4 @@
+// 'use strict';
 // function saoma_01() {
 //   let c = document.getElementById("denglu_div_01");
 //   c.innerHTML = `
@@ -2165,20 +2166,123 @@
 })();
 // --------------------------
 (function() {
-    function student(sname,sage){
+    function student(sname, sage) {
         this.sname = sname;
         this.sage = sage;
     };
-    var lilei = new student('lilei',11);
-    var arr1 = new Array(1,2,3);
+    var lilei = new student('lilei', 11);
+    var arr1 = new Array(1, 2, 3);
     var now = new Date();
     // 分别输出函数 lilei,arr1和now的toString()
-    console.log('student的toString:',student.toString());
-    console.log('lilei的toString:',lilei.toString());
-    console.log('arr1的toString:',arr1.toString());
-    console.log('now的toString:',now.toString())
+    console.log('student的toString:', student.toString());
+    console.log('lilei的toString:', lilei.toString());
+    console.log('arr1的toString:', arr1.toString());
+    console.log('now的toString:', now.toString())
+})();
+// --------------------------
+(function() {
+    function Student(sname, sage) {
+        this.sname = sname;
+        this.sage = sage;
+    };
+
+    var father = {
+        bal: 100000000,
+        car: 'Ferrari'
+    };
+
+    Student.prototype = father; // 只要在子对象创建之前，将父对象的构造函数进行绑定的更变，那么子对象也可以拥有新的属性
+
+    var lilei = new Student('lilei', 11);
+    var hmm = new Student('hmm', 12);
+    console.log(lilei);
+    console.log(hmm);
+
+
+    // hmm.__proto__ = father; // 只更换一个对象的父对象，其实就是修改对象的__proto__继承自新的父对象
+    // Object.setPrototypeOf(hmm,father); // 等效于上一句，只是有些浏览器在不允许换__proto__的时候，就可以使用这句话
+    console.log(hmm.bal, hmm.car);
+    console.log(lilei.bal, lilei.car)
 })();
 // --------------------------
 (function(){
+    // 'use strict'; // 如果加上use strict则启动严格模式
+    function send(){
+        var gf;
+        // 想给我的女朋友发一条消息
+        // gf = '今晚204，w84u'
+        // 不小心错发给了前女友
+        xgf='今晚204，w84u'; 
+        console.log('女友:',gf);
+    };
+    // console.log(gf); // 报错，因为函数外没有gf变量
+    send();
+    console.log('前女友:',xgf);
 
 })();
+// --------------------------
+// 静默失败升级为错误
+(function(){
+    'use strict';
+    var eric = {
+        eid:1001,
+        ename:'埃里克'
+    };
+    Object.defineProperty(eric,'eid',{
+        writable:true // 如果是false，则不允许修改
+    });
+    eric.eid = 1002;
+    console.log(eric);
+})();
+// --------------------------
+(function(){
+    function Student(sname, sage) {
+        this.sname = sname;
+        this.sage = sage;
+    };
+
+    var lilei = new Student('lilei',11);
+    // 错误的使用了构造函数:
+    var hmm = Student('han meimei',12);
+    console.log(lilei);
+    console.log(hmm);
+    console.log('已经造成的全局污染:',sname,sage);
+})();
+// --------------------------
+(function(){
+    // 'use strict'; // 如果启动了严格模式，下方的arguments.callee则会报错
+    // 斐波那契额数列
+    // 1 1 2 3 5 8 13 21 34 55
+    // 1 2 3 4 5 6 7  8  9  10
+    // 第一个数是1，第二个数也是1，从第三个数开始，每个数都是它相邻的前两个数的和
+    function fib(n){ // 裘斐波那契额数列中第n个数是几
+        if(n<3){ // 前两个数
+            return 1; // 直接返回1
+        }else{//之后每个数，都是等于相邻的前两个数的和
+            return arguments.callee(n-1)+arguments.callee(n-2);
+        };
+    };
+    // 想获得数列中第10个数
+    console.log('斐波那契数列的值是:',fib(10));
+})();
+// --------------------------
+(function(){
+    var eric = {
+        eid:1001,
+        ename:'埃里克',
+        salary:12000
+    };
+    // 系统要求 - eid制度，ename禁止删除，salary禁止遍历
+    // 试图修改eid
+    eric.eid  = -2;
+    // 试图删除ename
+    delete eric.ename;
+    // 试图遍历eric所有属性(包括salary)
+    for(var key in eric){
+        console.log(`属性名:${key},属性值:${eric[key]}`)
+    };
+    console.log(eric);
+})();
+// --------------------------
+
+

@@ -26,8 +26,7 @@
                 <div class="Title_h1">
                     <b>
                         <h1 class="Note_Title_h1_c_1 t_center">
-                            <span style="color: tomato; font-size: 40px;">J</span>ava<span
-                                style="color: tomato; font-size: 40px;">S</span>cript
+                            <span style="color: tomato; font-size: 40px;">J</span>ava<span style="color: tomato; font-size: 40px;">S</span>cript
                         </h1>
                     </b>
                 </div>
@@ -205,6 +204,10 @@
                     <div class="gc2">
                         <a href="#d_f_25">面向对象</a>
                     </div>
+                    <br>
+                    <div class="gc2">
+                        <a href="#d_f_26">ES5</a>
+                    </div>
                 </div>
 
                 <div class="gird_columns_2">
@@ -217,8 +220,7 @@
                                     打印hello world示例
                                 </div>
                             </legend>
-                            <span style="color: skyblue;">console.log('<span
-                                    style="color: tomato;font-size: 29px;">hello world</span>')</span><br />
+                            <span style="color: skyblue;">console.log('<span style="color: tomato;font-size: 29px;">hello world</span>')</span><br />
                         </fieldset>
                     </div>
 
@@ -634,8 +636,7 @@
                                 <ul>
                                     <li>
                                         变量的作用域<br>
-                                        函数的作用域:在函数中使用<span id="q">var</span>声明的变量,叫做<span
-                                            style="font-weight: bolder;">局部变量</span>,只能在当前作用域下访问到<br>
+                                        函数的作用域:在函数中使用<span id="q">var</span>声明的变量,叫做<span style="font-weight: bolder;">局部变量</span>,只能在当前作用域下访问到<br>
                                         全局的作用域:在全局(函数外)声明的变量,叫做<span style="font-weight: bolder;">全局变量</span><br>
                                         函数中,不加var声明的变量自动就变成了全局变量<br>
                                         变量提升 - js程序执行之前,会把var声明的变量提升到所在作用域的最前边,但是赋值还是在原来的位置<br>
@@ -1361,7 +1362,7 @@
                             </span>
                             <hr>
                             <span>
-                                切割字符串:按指定的切割福,把一个完整的字符串,切割为多段子字符串<br>
+                                切割字符串:按指定的切割福,把一个完整的字符串,切割为多段子字符串
                                 <ul>简单切割:切割符是固定的
                                     <li>
                                         <span id="q">var</span> arr = str.split('切割符')
@@ -1686,9 +1687,11 @@
                                         广义的解释:js中除开五中原始类型(number,string,bool,null,undefined)之外,其余无法直接保存在变量中的数据类型都称为对象
                                     </li>
                                 </ol>
+                                <ul>
                                 什么是面向对象编程:程序显示都用对象结构集中存储一个事物的属性和功能,然后再按需调用对象中的属性和功能,这种做事方式,就称之为面向对象编程<br>
                                 为什么使用面向对象编程:便于大量数据的管理和维护<br>
                                 今后,几乎所有的项目,都是用面向对象的方式开发的<br>
+                            </ul>
                                 <ol>使用方式三步:
                                     <li>
                                         封装<br>
@@ -1868,13 +1871,85 @@
                                         今后,只要从父对象继承来的东西不好用,就得重写自己<br>
                                         只要在当前子对象中定义一个和父对象中不好用的成员同名的新成员即可<br>
                                         根据就近原则,优先使用子对象自己定义的。不再使用父对象中不好使用的--推翻<br>
-                                        
                                     </li>
                                 </ol>
+                                <hr>
+                                <ul>
+                                    自定义继承<br>
+                                    如果整个父对象都不是想要的,就可以自定义继承,简称就是换爹 - 其实可以修改一个对象的父对象<br>
+                                    只更换一个对象的父对象 - 其实就是修改对象的__proto__继承新的父对象<br>
+                                    子对象.__protp__ = 新父对象<br>
+                                    有的浏览器不允许擅自修改__proto__ 解决方法 - Object.setPrototypeOf(子对象,新父对象) 等效于子对象.__protp__ = 新父对象<br>
+                                </ul>
                             </span>
                         </fieldset>
                     </div>
-
+                    <br><br>
+                    <span id="d_f_26"></span>
+                    <div class="d_f_26">
+                        <fieldset>
+                            <legend>ES5:ECMAScript标准的第五个版本</legend>
+                            <span>
+                                <ul>
+                                    <li>
+                                        严格模式 - 比普通的js运行机制要求更严格的新的运行机制
+                                        js语言本身有很多广受诟病的缺陷
+                                        今后几乎所有的js程序都必须运行在严格模式下
+                                        在当前作用域顶部:'use strict'
+                                        新规定
+                                        <ol>
+                                            <li>
+                                                禁止给未声明过的变量赋值 - 旧js中:给未声明的变量赋值,不报错,而是在全局自动创建该变量<br>
+                                                缺点 - 极易造成全局污染和歧义<br>
+                                                启动严格模式之后,禁止给未声明的变量赋值 - 报错!<br>
+                                                好处 - 大大减少了全局污染的可能!也避免了部分拼写错误!便于调试
+                                            </li>
+                                            <li>
+                                                静默失败升级为错误<br>
+                                                什么是静默失败 - 程序执行不成功,但也不报错<br>
+                                                缺点 - 机器不便于程序的调试<br>
+                                                启动严格模式 - 几乎将所有静默失败都升级为了错误<br>
+                                                好处 - 便于程序调试<br>
+                                            </li>
+                                            <li>
+                                                普通函数调用中的this不再指向windows,而是undefined<br>
+                                                普通函数中的this默认指window<br>
+                                                缺点 - 极大的增加了全局污染的概率<br>
+                                                启动严格模式 - 普通函数调用中的this不再指向window,而是undefined
+                                                好处 - this后不能随便加.xxx,加上就报错,所以有效的防止了因为this造成的全局污染
+                                            </li>
+                                            <li>
+                                                禁用arguments.callee<br>
+                                                什么是arguments.callee - 是在一个函数内自动获得当前函数本身的关键字<br>
+                                                何时使用 - 递归调用时<br>
+                                                如果在递归调用时,在函数内写死函数名,是非常不好的,因为 - 紧耦合,万一外部函数名发生了变化,总要记得修改内部写死的函数名,一旦忘记修改写死的函数名,程序立刻出错<br>
+                                                所以 - 将来就算用递归算法,也不能在函数内写死函数名,应该用arguments.callee代替写死的函数名,自动获得当前函数本身,则与函数无关了<br>
+                                                好处 - 从此及时修改了外部的函数名,函数内部一点都不用修改,保持不变即可<br>
+                                                为什么禁用 - 其实不推荐使用递归调用<br>
+                                                递归调用的问题 - 重复计算量太大<br>
+                                                解决 - 绝大多数的递归都可以用循环来解决 -- 难度太高<br>
+                                                如果使用递归算法可以轻松解决问题，又不影响效率，完全可以首选递归算法，值不过不要用arguments.callee了，依然在函数里面写死函数名<br>
+                                                只有用递归算法非常影响效率时，才被迫寻找循环的算法来代替递归<br>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        保护对象 - 阻止别人的程序对我们自己的对象执行不合理的非法的修改操作
+                                        <ol>
+                                            <li>
+                                                保护属性
+                                                问题 - js中的对象毫无自保能力，外界的程序可以随意修改对象中的属性
+                                                解决 - 
+                                            </li>
+                                            <li>
+                                                保护结构
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </span>
+                        </fieldset>
+                    </div>
 
 
 
@@ -1921,14 +1996,12 @@
                 </div>
                 <div class="footer_dup_d3_weixin">
                     <a href="#">
-                        <img class="pointer footer_dup_d3_weixin_img" src="../../logo/weixin.png" alt=""
-                            style="width: 65px;" />
+                        <img class="pointer footer_dup_d3_weixin_img" src="../../logo/weixin.png" alt="" style="width: 65px;" />
                     </a>
                 </div>
                 <div class="footer_dup_d3_email">
                     <a href="#">
-                        <img class="pointer footer_dup_d3_email_img" src="../../logo/email.png" alt=""
-                            style="width: 65px;" />
+                        <img class="pointer footer_dup_d3_email_img" src="../../logo/email.png" alt="" style="width: 65px;" />
                     </a>
                 </div>
             </div>
@@ -1952,8 +2025,7 @@
                     <a href="http://www.hangzhoujubao.com/">杭州市违法和不良信息举报中心</a>
                     | <a href="http://jbts.mct.gov.cn/">12318全国文化市场举报网站</a> |
                     <a href="mailto:userreport@bilibili.com">儿童色情信息举报专区</a> |
-                    <a href="http://www.shdf.gov.cn/shdf/channels/740.html">扫黄打非举报</a><br />网上有害信息举报专区:<a
-                        href="https://www.12377.cn/">中国互联网违法和不良信息举报中心</a><br />
+                    <a href="http://www.shdf.gov.cn/shdf/channels/740.html">扫黄打非举报</a><br />网上有害信息举报专区:<a href="https://www.12377.cn/">中国互联网违法和不良信息举报中心</a><br />
                     亲爱的市民朋友,浙江反诈中心专线电话“0571-81234567”系专门针对避免您财产被骗受损而设,如果你受骗了,先第一时间拨打专线,把汇款银行网点、对方卡号、开户人姓名这几项信息告诉反欺诈中心。<br />
                     公司名称:韩某人的知识笔记 | 公司地址:浙江省杭州市 |
                     电话:132xxxx9695<br />
