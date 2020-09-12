@@ -1688,10 +1688,10 @@
                                     </li>
                                 </ol>
                                 <ul>
-                                什么是面向对象编程:程序显示都用对象结构集中存储一个事物的属性和功能,然后再按需调用对象中的属性和功能,这种做事方式,就称之为面向对象编程<br>
-                                为什么使用面向对象编程:便于大量数据的管理和维护<br>
-                                今后,几乎所有的项目,都是用面向对象的方式开发的<br>
-                            </ul>
+                                    什么是面向对象编程:程序显示都用对象结构集中存储一个事物的属性和功能,然后再按需调用对象中的属性和功能,这种做事方式,就称之为面向对象编程<br>
+                                    为什么使用面向对象编程:便于大量数据的管理和维护<br>
+                                    今后,几乎所有的项目,都是用面向对象的方式开发的<br>
+                                </ul>
                                 <ol>使用方式三步:
                                     <li>
                                         封装<br>
@@ -1928,21 +1928,57 @@
                                                 为什么禁用 - 其实不推荐使用递归调用<br>
                                                 递归调用的问题 - 重复计算量太大<br>
                                                 解决 - 绝大多数的递归都可以用循环来解决 -- 难度太高<br>
-                                                如果使用递归算法可以轻松解决问题，又不影响效率，完全可以首选递归算法，值不过不要用arguments.callee了，依然在函数里面写死函数名<br>
-                                                只有用递归算法非常影响效率时，才被迫寻找循环的算法来代替递归<br>
+                                                如果使用递归算法可以轻松解决问题,又不影响效率,完全可以首选递归算法,值不过不要用arguments.callee了,依然在函数里面写死函数名<br>
+                                                只有用递归算法非常影响效率时,才被迫寻找循环的算法来代替递归<br>
                                             </li>
                                         </ol>
                                     </li>
                                     <li>
-                                        保护对象 - 阻止别人的程序对我们自己的对象执行不合理的非法的修改操作
+                                        保护对象 - 阻止别人的程序对我们自己的对象执行不合理的非法的修改操作<br>
                                         <ol>
                                             <li>
-                                                保护属性
-                                                问题 - js中的对象毫无自保能力，外界的程序可以随意修改对象中的属性
-                                                解决 - xz
+                                                保护属性<br>
+                                                问题 - js中的对象毫无自保能力,外界的程序可以随意修改对象中的属性<br>
+                                                <ul>解决 - 在ES5标准中,每个对象中的每个属性,都变成一个微小的对象,每个属性的小对象中,都包含四个更小的属性<br>
+                                                    <li>
+                                                        value - 为当前属性保存属性值<br>
+                                                    </li>
+                                                    <li>
+                                                        writable - 开关,控制是否可修改当前属性值<br>
+                                                    </li>
+                                                    <li>
+                                                        enumerable - 开关,控制着是否可用for in遍历到该属性；强调 :只强调for in 防不住 . - 版隐藏<br>
+                                                    </li>
+                                                    <li>
+                                                        configurable - 开关,两件事,控制前面的开关能否使用,控制是否可以修改该属性<br>
+                                                    </li>
+                                                </ul>
+                                                如果修改开关的值来限制对属性的操作<br>
+                                                错误 - 细微的开关属性,不能用.直接访问!<br>
+                                                只能用专门的函数<br>
+                                                只修改一个属性中的多个开关(重新定义属性) - Object.defineProperty(对象名,'属性名',{<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;开关明:true或false,<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+                                                });<br>
+                                                我们关上的开关,别人可以随意再打开 -- 相当于没有保护<br>
+                                                今后只要修改 writable he  enumerable 开关时,都要同时设置configurable:false<br>
+                                                configurable开关一旦改为false,任何人不可逆,除非修改源代码!<br>
+                                                <hr>
+                                                同时修改多个属性的多个开关 - Object.defineProperty()一次只能修改一个对象的属性，如果对象中有很多属性都需要保护，则反复写Object.defineProperty()太麻烦了<br>
+                                                Object.defineproperties(对象名,{<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;属性名:{<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开关:true或false,<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;属性名:{<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开关:true或false,<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;...<br>
+                                                })
                                             </li>
                                             <li>
-                                                
+                                                保护结构
                                             </li>
                                         </ol>
                                     </li>

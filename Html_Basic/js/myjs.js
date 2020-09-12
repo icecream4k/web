@@ -1993,7 +1993,7 @@
 (function() {
     var student = {
         // js中只有两种作用域:全局作用域和函数作用域
-        // 对象中的内容，既不是全局，也不是函数作用域
+        // 对象中的内容,既不是全局,也不是函数作用域
         // 对象给仅仅是一种结构复杂的特殊存储结构而已
         sname: "han",
         sage: 18,
@@ -2022,14 +2022,14 @@
 })();
 // --------------------------
 // (function () {
-//   // 定义函数，可以克隆一个对象
+//   // 定义函数,可以克隆一个对象
 //   function clone(old) {
 //     // 先创建一个新的空对象
 //     var obj = {
 //     };
 //         // 遍历久对象中的每个属性
 //     for(var  in ){
-//         // 每遍历一个属性，就为新对象添加同名的属性，值为旧对象中同名属性值
+//         // 每遍历一个属性,就为新对象添加同名的属性,值为旧对象中同名属性值
 //         obj[]
 //     };
 //   };
@@ -2041,9 +2041,9 @@
 //   console.log(lilei);
 //   console.log(lilei2);
 //   console.log(lilei == lilei2); // false
-//   // 如果 == 左右都是对象，则 == 不再比较对象内容，而是比较两个对象的地址是否相同
-//   // 如果返回true，说明克隆失败，因为地址是同一个对象，说明没有多出一个对象
-//   // 如果返回false，说明成功，因为地址不同，说明是先后创建的两个对象
+//   // 如果 == 左右都是对象,则 == 不再比较对象内容,而是比较两个对象的地址是否相同
+//   // 如果返回true,说明克隆失败,因为地址是同一个对象,说明没有多出一个对象
+//   // 如果返回false,说明成功,因为地址不同,说明是先后创建的两个对象
 // })();
 // --------------------------
 (function() {
@@ -2089,12 +2089,12 @@
     student.prototype.intr = function() {
         console.log(`i'm ${this.sname},i'm ${this.sage}`);
     };
-    // 因为今后所有学生对象都要能自我介绍，
-    // 所以应该在学生类型的构造函数的原型对象中强行添加一个intr()方法，
+    // 因为今后所有学生对象都要能自我介绍,
+    // 所以应该在学生类型的构造函数的原型对象中强行添加一个intr()方法,
     // 供将来所有学生公用
     var hanlong = new student("hanlong", 18);
     console.log(hanlong);
-    hanlong.intr(); // 判断原型函数里面的this，需要看调用时 . 前面指的是谁
+    hanlong.intr(); // 判断原型函数里面的this,需要看调用时 . 前面指的是谁
 
     console.log(hanlong.__proto__ == student.prototype);
 })();
@@ -2105,7 +2105,7 @@
         this.sname = sname;
         this.age = sage;
     }
-    // 所有学生都来自初一二班，所以应该在原型对象中添加一个classname属性保存所有学生统一的班级
+    // 所有学生都来自初一二班,所以应该在原型对象中添加一个classname属性保存所有学生统一的班级
     student.prototype.className = "初一7班";
 
     var hanlong = new student("hanlong", 18);
@@ -2116,14 +2116,14 @@
 
     var hanmeimei = new student("hanmeimei", 20);
     console.log(`${hanmeimei.sname}的班级是:${hanlong.className}`); // 读取hanmeimei的姓名和班级
-    // 第一年，输出两个人的班级
+    // 第一年,输出两个人的班级
     console.log(
         "hanlong的班级:",
         hanlong.className,
         "hanmeimei的班级",
         hanmeimei.className
     );
-    // 过了一年，两个人同时升级到初二7班
+    // 过了一年,两个人同时升级到初二7班
     // 错误做法
     hanlong.className = "六年级二7班";
     console.log(
@@ -2132,7 +2132,7 @@
         "hanmeimei的班级",
         hanmeimei.className
     );
-    // 又过了一年，大家一起升初三7班
+    // 又过了一年,大家一起升初三7班
     student.prototype.className = "初三7班";
     console.log(
         "hanlong的班级:",
@@ -2144,15 +2144,15 @@
 // --------------------------
 (function() {
     // 经常需要对各种数组内容求和
-    // 应该自定义一个sum函数，添加到数组类型的原型对象中
+    // 应该自定义一个sum函数,添加到数组类型的原型对象中
     Array.prototype.sum = function() {
         // this - 将来调用这个sum()函数的 . 前的某个数组
-        // 例如arr1.sum()，this 就是指的arr1
+        // 例如arr1.sum(),this 就是指的arr1
         // 对当前正在调用sum()函数的某个数组所有元素求和
         var result = 0;
         for (var i = 0; i < this.length; i++) {
-            // for in 循环，禁止用于遍历索引数组，只能遍历关联数组和对象，
-            // 因为in不但遍历当前对象的每个属性，
+            // for in 循环,禁止用于遍历索引数组,只能遍历关联数组和对象,
+            // 因为in不但遍历当前对象的每个属性,
             // 且还会沿着__proto__继续遍历父对象中的未隐藏的成员
             // 错误 - in 会把sum()函数本身的定义也遍历进来
             result += this[i];
@@ -2191,7 +2191,7 @@
         car: 'Ferrari'
     };
 
-    Student.prototype = father; // 只要在子对象创建之前，将父对象的构造函数进行绑定的更变，那么子对象也可以拥有新的属性
+    Student.prototype = father; // 只要在子对象创建之前,将父对象的构造函数进行绑定的更变,那么子对象也可以拥有新的属性
 
     var lilei = new Student('lilei', 11);
     var hmm = new Student('hmm', 12);
@@ -2199,8 +2199,8 @@
     console.log(hmm);
 
 
-    // hmm.__proto__ = father; // 只更换一个对象的父对象，其实就是修改对象的__proto__继承自新的父对象
-    // Object.setPrototypeOf(hmm,father); // 等效于上一句，只是有些浏览器在不允许换__proto__的时候，就可以使用这句话
+    // hmm.__proto__ = father; // 只更换一个对象的父对象,其实就是修改对象的__proto__继承自新的父对象
+    // Object.setPrototypeOf(hmm,father); // 等效于上一句,只是有些浏览器在不允许换__proto__的时候,就可以使用这句话
     console.log(hmm.bal, hmm.car);
     console.log(lilei.bal, lilei.car)
 })();
@@ -2210,12 +2210,12 @@
     function send(){
         var gf;
         // 想给我的女朋友发一条消息
-        // gf = '今晚204，w84u'
+        // gf = '今晚204,w84u'
         // 不小心错发给了前女友
-        xgf='今晚204，w84u'; 
+        xgf='今晚204,w84u'; 
         console.log('女友:',gf);
     };
-    // console.log(gf); // 报错，因为函数外没有gf变量
+    // console.log(gf); // 报错,因为函数外没有gf变量
     send();
     console.log('前女友:',xgf);
 
@@ -2229,7 +2229,7 @@
         ename:'埃里克'
     };
     Object.defineProperty(eric,'eid',{
-        writable:true // 如果是false，则不允许修改
+        writable:true // 如果是false,则不允许修改
     });
     eric.eid = 1002;
     console.log(eric);
@@ -2250,29 +2250,68 @@
 })();
 // --------------------------
 (function(){
-    // 'use strict'; // 如果启动了严格模式，下方的arguments.callee则会报错
+    // 'use strict'; // 如果启动了严格模式,下方的arguments.callee则会报错
     // 斐波那契额数列
     // 1 1 2 3 5 8 13 21 34 55
     // 1 2 3 4 5 6 7  8  9  10
-    // 第一个数是1，第二个数也是1，从第三个数开始，每个数都是它相邻的前两个数的和
+    // 第一个数是1,第二个数也是1,从第三个数开始,每个数都是它相邻的前两个数的和
     function fib(n){ // 裘斐波那契额数列中第n个数是几
         if(n<3){ // 前两个数
             return 1; // 直接返回1
-        }else{//之后每个数，都是等于相邻的前两个数的和
+        }else{//之后每个数,都是等于相邻的前两个数的和
             return arguments.callee(n-1)+arguments.callee(n-2);
         };
     };
     // 想获得数列中第10个数
-    console.log('斐波那契数列的值是:',fib(10));
+    console.log('斐波那契数列的值是:',fib(4));
 })();
 // --------------------------
-(function(){
+(function(){ 
+    "user strict";
     var eric = {
         eid:1001,
         ename:'埃里克',
         salary:12000
     };
-    // 系统要求 - eid制度，ename禁止删除，salary禁止遍历
+    // 系统要求 - eid只读
+    Object.defineProperty(eric,"eid",{
+        writable:false,
+        configurable:false // 记得每次都添加，更改为不能修改
+    });
+    
+    // ename禁止删除
+    Object.defineProperty(eric,'ename',{
+        configurable:false
+    });
+
+    // salary禁止遍历
+    Object.defineProperty(eric,'salary',{
+        enumerable:false
+    });
+    
+    // -- 
+
+    // 一次修改多种属性开关
+    Object.defineProperties(eric,{
+        eid:{
+            writable:false,
+            configurable:false
+        },
+        ename:{
+            configurable:false
+        },
+        salary:{
+            enumerable:false,
+            configurable:false
+        }
+    })
+
+
+
+    // 试图重新打开被关闭的writable开关
+    // Object.defineProperty(eric,"eid",{ // 别人试图修改这个开关的属性
+    //     writable:true
+    // })
     // 试图修改eid
     eric.eid  = -2;
     // 试图删除ename
