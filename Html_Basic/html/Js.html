@@ -1961,10 +1961,10 @@
                                                 &nbsp;&nbsp;&nbsp;&nbsp;...<br>
                                                 });<br>
                                                 我们关上的开关,别人可以随意再打开 -- 相当于没有保护<br>
-                                                今后只要修改 writable he  enumerable 开关时,都要同时设置configurable:false<br>
+                                                今后只要修改 writable he enumerable 开关时,都要同时设置configurable:false<br>
                                                 configurable开关一旦改为false,任何人不可逆,除非修改源代码!<br>
                                                 <hr>
-                                                同时修改多个属性的多个开关 - Object.defineProperty()一次只能修改一个对象的属性，如果对象中有很多属性都需要保护，则反复写Object.defineProperty()太麻烦了<br>
+                                                同时修改多个属性的多个开关 - Object.defineProperty()一次只能修改一个对象的属性,如果对象中有很多属性都需要保护,则反复写Object.defineProperty()太麻烦了<br>
                                                 Object.defineproperties(对象名,{<br>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;属性名:{<br>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开关:true或false,<br>
@@ -1975,10 +1975,61 @@
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...<br>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;},<br>
                                                 &nbsp;&nbsp;&nbsp;&nbsp;...<br>
-                                                })
+                                                })<br>
+                                                问题 - 开关只能机械的保护一种情况,无法灵活的设定自定义的保护条件;比如员工的年龄可以修改,但是必须基于18-65之间<br>
+                                                解决 - 访问器属性<br>
+                                                什么是访问器属性 - 不实际保存属性值,仅提供对其他数据属性的保护,这样的就叫访问器属性 -- 像极了保镖<br>
+                                                如果需要用自定义的规则来限制用户对属性的操作时,都要用访问器属性<br>
+                                                <ol>
+                                                    使用步骤
+                                                    <li>
+                                                        先定义一个隐姓埋名且半隐藏的数据属性实际保存数据
+                                                    </li>
+                                                    <li>
+                                                        请保镖:<br>
+                                                        能够起名冒名顶替要保护的属性<br>
+                                                        保镖一请就是一对:名字都是固定的 一个叫 get 一个叫 set<br>
+                                                        因为保镖可以执行验证和加工等操作,所以两个保镖应该都是函数才对<br>
+                                                        其中:get函数专门负责从受保护的数据属性中读取属性值;set函数专门负责接收新值,并且保存到受保护的数据属性上<br>
+                                                        外界如何使用访问器属性<br>
+                                                        前提 - 外界不知道有受保护的属性,也不知道自己访问的是访问器属性,更不知道还有get和set函数。外界只知道有一个属性可以获取和修改值,仅此而已<br>
+                                                        当外界视图获取属性值时,访问器属性会自动调用get函数,从受保护的属性中取出值来<br>
+                                                        当外界视图修改属性值时,访问器属性会自动调用set函数,并且把要修改的新值传给set函数的value形参,先验证,如果新值验证通过,才由set函数保存到受保护的变量中,如果验证不通过,则可以报错且不保存非法的属性值<br>
+                                                    </li>
+                                                </ol>
                                             </li>
                                             <li>
-                                                保护结构
+                                                保护结构 - 防止别人的程序擅自篡改对象的树形结构<br>
+                                                <ol>三个级别
+                                                    <li>
+                                                        防止扩展:禁止给对象添加新属性<br>
+                                                        Object.preventExtensions(对象)
+                                                        问题:preventExtensions()只防添加，不防删除，如果一个对象所有属性都禁止删除，就必须给每个属性手工添加configurable:false<br>
+                                                    </li>
+                                                    <li>
+                                                        密封 - 既禁止扩展，又禁止删除属性<br>
+                                                        Object.seal(对象)<br>
+                                                        原理 - 既自动调用preventExtensions();又自动设置所有属性的 configurable:false<br>
+                                                        结论 - 今后，绝大多数对象，保护到seal级别就够了，一般用了seal就不用preventExtensions()了
+                                                        示例 - 演示防拓展和密封
+                                                    </li>
+                                                    <li>
+                                                        冻结:Object.freeze(对象) 既禁止拓展，又禁止删除，甚至禁止修改所有属性值
+                                                        Object.freeze(对象)
+                                                        <ol>原理:3件事情
+                                                            <li>
+                                                                既自动调用 perventExtensions()
+                                                            </li>
+                                                            <li>
+                                                                又自动设置所有属性的configurable:false
+                                                            </li>
+                                                            <li>
+                                                                又自动修改所有属性的writable:false
+                                                            </li>
+                                                        </ol>
+                                                        何时 - 绝大多数情况下，属性值还是应该可以修改的，所以不用冻结!如果一个对象被多个模块同时使用，最好精致修改属性值，否则任由其中一个模块修改公用对象的属性值，一定会牵一发而动全身
+                                                    </li>
+                                                </ol>
                                             </li>
                                         </ol>
                                     </li>

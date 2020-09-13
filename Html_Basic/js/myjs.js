@@ -2205,104 +2205,104 @@
     console.log(lilei.bal, lilei.car)
 })();
 // --------------------------
-(function(){
+(function() {
     // 'use strict'; // 如果加上use strict则启动严格模式
-    function send(){
+    function send() {
         var gf;
         // 想给我的女朋友发一条消息
         // gf = '今晚204,w84u'
         // 不小心错发给了前女友
-        xgf='今晚204,w84u'; 
-        console.log('女友:',gf);
+        xgf = '今晚204,w84u';
+        console.log('女友:', gf);
     };
     // console.log(gf); // 报错,因为函数外没有gf变量
     send();
-    console.log('前女友:',xgf);
+    console.log('前女友:', xgf);
 
 })();
 // --------------------------
 // 静默失败升级为错误
-(function(){
+(function() {
     'use strict';
     var eric = {
-        eid:1001,
-        ename:'埃里克'
+        eid: 1001,
+        ename: '埃里克'
     };
-    Object.defineProperty(eric,'eid',{
-        writable:true // 如果是false,则不允许修改
+    Object.defineProperty(eric, 'eid', {
+        writable: true // 如果是false,则不允许修改
     });
     eric.eid = 1002;
     console.log(eric);
 })();
 // --------------------------
-(function(){
+(function() {
     function Student(sname, sage) {
         this.sname = sname;
         this.sage = sage;
     };
 
-    var lilei = new Student('lilei',11);
+    var lilei = new Student('lilei', 11);
     // 错误的使用了构造函数:
-    var hmm = Student('han meimei',12);
+    var hmm = Student('han meimei', 12);
     console.log(lilei);
     console.log(hmm);
-    console.log('已经造成的全局污染:',sname,sage);
+    console.log('已经造成的全局污染:', sname, sage);
 })();
 // --------------------------
-(function(){
+(function() {
     // 'use strict'; // 如果启动了严格模式,下方的arguments.callee则会报错
     // 斐波那契额数列
     // 1 1 2 3 5 8 13 21 34 55
     // 1 2 3 4 5 6 7  8  9  10
     // 第一个数是1,第二个数也是1,从第三个数开始,每个数都是它相邻的前两个数的和
-    function fib(n){ // 裘斐波那契额数列中第n个数是几
-        if(n<3){ // 前两个数
+    function fib(n) { // 裘斐波那契额数列中第n个数是几
+        if (n < 3) { // 前两个数
             return 1; // 直接返回1
-        }else{//之后每个数,都是等于相邻的前两个数的和
-            return arguments.callee(n-1)+arguments.callee(n-2);
+        } else { //之后每个数,都是等于相邻的前两个数的和
+            return arguments.callee(n - 1) + arguments.callee(n - 2);
         };
     };
     // 想获得数列中第10个数
-    console.log('斐波那契数列的值是:',fib(4));
+    console.log('斐波那契数列的值是:', fib(4));
 })();
 // --------------------------
-(function(){ 
+(function() {
     "user strict";
     var eric = {
-        eid:1001,
-        ename:'埃里克',
-        salary:12000
+        eid: 1001,
+        ename: '埃里克',
+        salary: 12000
     };
     // 系统要求 - eid只读
-    Object.defineProperty(eric,"eid",{
-        writable:false,
-        configurable:false // 记得每次都添加，更改为不能修改
+    Object.defineProperty(eric, "eid", {
+        writable: false,
+        configurable: false // 记得每次都添加,更改为不能修改
     });
-    
+
     // ename禁止删除
-    Object.defineProperty(eric,'ename',{
-        configurable:false
+    Object.defineProperty(eric, 'ename', {
+        configurable: false
     });
 
     // salary禁止遍历
-    Object.defineProperty(eric,'salary',{
-        enumerable:false
+    Object.defineProperty(eric, 'salary', {
+        enumerable: false
     });
-    
+
     // -- 
 
     // 一次修改多种属性开关
-    Object.defineProperties(eric,{
-        eid:{
-            writable:false,
-            configurable:false
+    Object.defineProperties(eric, {
+        eid: {
+            writable: false,
+            configurable: false
         },
-        ename:{
-            configurable:false
+        ename: {
+            configurable: false
         },
-        salary:{
-            enumerable:false,
-            configurable:false
+        salary: {
+            enumerable: false,
+            configurable: false
         }
     })
 
@@ -2313,15 +2313,96 @@
     //     writable:true
     // })
     // 试图修改eid
-    eric.eid  = -2;
+    eric.eid = -2;
     // 试图删除ename
     delete eric.ename;
     // 试图遍历eric所有属性(包括salary)
-    for(var key in eric){
+    for (var key in eric) {
         console.log(`属性名:${key},属性值:${eric[key]}`)
     };
     console.log(eric);
 })();
 // --------------------------
+(function() {
+    "user strict";
+    var eric = {
+        ename: '艾瑞克',
+        eage: 25
+    };
+    // eric的eage属性值可以改,但是必须介于18-65之间
+    // 先添加一个半隐藏的_eage属性,实际保存原eage单属性的值
+    Object.defineProperties(eric, {
+        _eage: {
+            // 将原eric独享的eage属性值板甲到_eage中隐藏起来
+            value: eric.eage,
+            // 因为eage是可以修改的
+            writable: true,
+            // 因为_eage应该半隐藏
+            enumerable: false,
+            // 双保险
+            configurable: false
+        },
+        // 将原eage属性替换为保镖
+        eage: { // 冒名顶替原属性,迷惑外界
+            // 保镖一请就是一对
+            get: function() { // 保镖
+                // 专门负责从受保护的_eage中取出现在属性值
+                console.log(`自动调用了一次eage内的get函数,返回了${this._eage}`)
+                return this._eage
+            },
+            set: function(value) { // 保镖
+                // 专门接受新值,验证后,保存到受保护的数据属性中
+                console.log(`自动调用一次eage中的set(),形参value=${value}`)
+                if (value >= 18 && value <= 65) {
+                    console.log(`验证通过,保存到_eage中`)
+                    this._eage = value;
+                } else {
+                    console.log(`验证不通过,则报错`)
+                    throw Error('年龄超范围!必须介于18-65之间!')
+                }
+            },
+            // 访问器属性应该代替受保护的属性抛头露面
+            enumerable: true,
+            // 访问器属性不能随意被删除,并且当成双保险
+            configurable: false,
+            // 访问器属性已经没有value和writable
+            // 因为访问器属性自己不实际保存属性值,所以没有value属性
+            // 因为writable不好用,太单一,所以我们才被迫使用访问器属性,所以访问器属性代替了开关writable的作用,所以访问器属性中也不再需要writable开关了
+
+        }
+    });
+    // 外界不知道_eage,get和set,只知道一个eage属性保存年龄
+    // 外界试图获取年龄时:会自动调用get函数
+    console.log(eric.eage)
+    // 外界试图修改年龄时:会自动调用set函数
+    eric.eage = 26;
+    // 外界试图修改年龄为非法时,会报错
+    // eric.eage = -2;
+
+    // 防止扩展
+    // Object.preventExtensions(eric);
+
+    // 密封
+    Object.seal(eric);
 
 
+    // 尝试修改eric的eid
+    eric.Eid = -2;
+    // 尝试删除ename
+    delete eric.ename;
+
+    console.log(eric);
+})();
+// --------------------------
+(function(){
+    "use strict";
+    var pool = {
+        ip:'127.0.0.1',
+        port:3306,
+        db:'xz'
+    };
+    // 希望pool中的所有属性值禁止修改
+    Object.freeze(pool) // 冻结
+    // 视图修改pool的ip属性值
+    // pool.ip = '192.168.0.1'; // 报错 不能给ip赋值
+})();
