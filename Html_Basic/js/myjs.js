@@ -2394,15 +2394,51 @@
     console.log(eric);
 })();
 // --------------------------
-(function(){
+(function() {
     "use strict";
     var pool = {
-        ip:'127.0.0.1',
-        port:3306,
-        db:'xz'
+        ip: '127.0.0.1',
+        port: 3306,
+        db: 'xz'
     };
     // 希望pool中的所有属性值禁止修改
     Object.freeze(pool) // 冻结
     // 视图修改pool的ip属性值
     // pool.ip = '192.168.0.1'; // 报错 不能给ip赋值
+})();
+// --------------------------
+(function() {
+    // 有一个公共的计算薪资的函数
+    function jisuan(base,bonus1,bonus2){
+        console.log(`${this.name}的薪资是:${base+bonus1+bonus2}`)
+    };
+
+    // 有两个员工
+    var lilei = {name:'lilei'};
+    var hanmm = {name:'hanmm'};
+
+    // 两个员工都想用计算这个函数，计算自己的薪资，都希望计算结果中显示自己的名字
+    // 错误做法1
+    // 例如lilei想调用这个函数，计算自己的薪资，希望计算结果中显示自己的名字'lilei'
+    // jisuan(10000,1000,2000); // this 指向的是window
+    // 错误做法2
+    // lilei.jisuan(10000,1000,2000); // 报错:lilei.jisuan is not function
+    // jisuan()函数虽然是全局，但是却没有在lilei的原型链上，所以lilei.jisuan()找不到，就会报错
+
+    // 其实就是希望把jisuan()函数中的this换成lilei
+    // 正确做法
+    // jisuan.call(lilei,10000,1000,2000);
+
+    // 为什么是临时的
+    // jisaun(500,30,20);
+
+    // hanmm也想调用jisuan函数，计算自己的薪资
+    // jisuan.call(hanmm,4000,500,200);
+
+    // lilei的薪资是放在一个数组中给的
+    var arr = [10000,1000,2000];
+    // 错误的做法
+    // jisuan.call(lilei,arr);
+
+    // 正确的做法 - 先打散数组
 })();
