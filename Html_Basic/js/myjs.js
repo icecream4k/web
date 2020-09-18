@@ -662,7 +662,7 @@
     // }
     // 函数表达式创建
     // 把匿名函数赋给了变量,此时的变来那个名称就是函数名称
-    var fun01 = function () {
+    var fun01 = function() {
         console.log("匿名函数内部打印:", 1);
         return 1;
     };
@@ -912,7 +912,7 @@
         age: 18,
         gender: "man",
         // 方法是个匿名函数
-        play: function () {
+        play: function() {
             // 找当前所在的对象,和对象的变量名称无关
             // this 指代当前所在的对象
             console.log(this.name, "撸码");
@@ -926,11 +926,11 @@
     let circular = {
         radius: 4,
         pi: 3.14,
-        perimeter: function () {
+        perimeter: function() {
             console.log("周长是:", 2 * this.pi * this.radius);
         },
         // c = 2πr
-        area: function () {
+        area: function() {
             console.log("面积是:", this.pi * this.radius * this.radius);
         },
         // a = πr平方
@@ -1255,7 +1255,7 @@
     // 默认是按Unicode码排序
     // console.log(arr.sort());
     // 按照数字大小排序 -- 回调函数
-    arr.sort(function (a, b) {
+    arr.sort(function(a, b) {
         // return a-b; // 从小到大
         return b - a; // 从大到小
     });
@@ -1461,7 +1461,7 @@
     console.log(str.match(/han/gi));
     // 查找并替换
     console.log(
-        str.replace(/han/gi, function (str) {
+        str.replace(/han/gi, function(str) {
             str = "**";
             return str;
         })
@@ -1489,7 +1489,7 @@
 // 回调函数的方式
 (() => {
     let str = "you can you up";
-    str = str.replace(/\b[a-z]/gi, function (a) {
+    str = str.replace(/\b[a-z]/gi, function(a) {
         return a.toUpperCase();
     });
     console.log(str);
@@ -1640,7 +1640,7 @@
         arr.splice(index, 1);
     }
     // 从小到大排序
-    arr2.sort(function (a, b) {
+    arr2.sort(function(a, b) {
         return a - b;
     });
     arr2.push(Math.floor(Math.random() * 16 + 1)); // 随机蓝球
@@ -1716,7 +1716,7 @@
     // 还想显示共替换了多少处,先用match在替换前再找一次d,然后查找结果的元素个数d,也就是将来要替换的个数!
     let arr = str.match(/小[\u4e00-\u9fa5]/gi);
     // 希望替换str中所有以小字开头的人名为**
-    let new_str = str.replace(/小[\u4e00-\u9fa5]/gi, function (st) {
+    let new_str = str.replace(/小[\u4e00-\u9fa5]/gi, function(st) {
         st = "**";
         return st;
     });
@@ -1735,7 +1735,7 @@
 (() => {
     let str = "you can you up";
     let number = 1;
-    str = str.replace(/\b[a-z]/gi, function (initials) {
+    str = str.replace(/\b[a-z]/gi, function(initials) {
         console.log(
             `调用了${number++}次回调函数,形参是${initials},处理之后是${initials.toUpperCase()}`
         );
@@ -1883,11 +1883,11 @@
 // --------------------------
 // 函数创建方式二
 (() => {
-    var fun = function () {
+    var fun = function() {
         console.log("1");
     };
     fun(); // 1
-    var fun = function () {
+    var fun = function() {
         console.log("2");
     };
     fun(); // 2
@@ -1946,7 +1946,7 @@
     function outer() {
         var total = 500;
         // 内层函数不要起函数名
-        return function (money) {
+        return function(money) {
             total -= money;
             console.log(`花了${money}元,还剩${total}元`);
         };
@@ -1973,7 +1973,7 @@
 (() => {
     function take_the_number() {
         var i = 0;
-        return function () {
+        return function() {
             i++;
             console.log(i);
         };
@@ -1997,7 +1997,7 @@
         // 对象给仅仅是一种结构复杂的特殊存储结构而已
         sname: "han",
         sage: 18,
-        intrSelf: function () {
+        intrSelf: function() {
             console.log(`${this.sname}说:i'm ${this.sname},i'm ${this.sage}`);
         },
     };
@@ -2015,7 +2015,7 @@
     console.log(han);
     han.sname = "hanlong";
     han.sage = 18;
-    han.intr = function () {
+    han.intr = function() {
         console.log(`i'm ${this.sname},i'm ${this.sage}`);
     };
     console.log(han.sname);
@@ -2051,14 +2051,14 @@
     let han = {
         sname: "han",
         sage: 20,
-        intr: function () {
+        intr: function() {
             console.log(`i'm ${this.sname},i'm ${this.sage}`);
         },
     };
     let zhang = {
         sname: "zhang",
         sage: 21,
-        intr: function () {
+        intr: function() {
             console.log(`i'm ${this.sname},i'm ${this.sage}`);
         },
     };
@@ -2066,7 +2066,7 @@
     function student(sname, sage) {
         this.sname = sname;
         this.sage = sage;
-        this.intr = function () {
+        this.intr = function() {
             console.log(`i'm ${this.sname},i'm ${this.sage}`);
         };
     }
@@ -2086,7 +2086,7 @@
         this.sname = sname;
         this.age = sage;
     }
-    student.prototype.intr = function () {
+    student.prototype.intr = function() {
         console.log(`i'm ${this.sname},i'm ${this.sage}`);
     };
     // 因为今后所有学生对象都要能自我介绍,
@@ -2145,7 +2145,7 @@
 (() => {
     // 经常需要对各种数组内容求和
     // 应该自定义一个sum函数,添加到数组类型的原型对象中
-    Array.prototype.sum = function () {
+    Array.prototype.sum = function() {
         // this - 将来调用这个sum()函数的 . 前的某个数组
         // 例如arr1.sum(),this 就是指的arr1
         // 对当前正在调用sum()函数的某个数组所有元素求和
@@ -2345,12 +2345,12 @@
         // 将原eage属性替换为保镖
         eage: { // 冒名顶替原属性,迷惑外界
             // 保镖一请就是一对
-            get: function () { // 保镖
+            get: function() { // 保镖
                 // 专门负责从受保护的_eage中取出现在属性值
                 console.log(`自动调用了一次eage内的get函数,返回了${this._eage}`)
                 return this._eage
             },
-            set: function (value) { // 保镖
+            set: function(value) { // 保镖
                 // 专门接受新值,验证后,保存到受保护的数据属性中
                 console.log(`自动调用一次eage中的set(),形参value=${value}`)
                 if (value >= 18 && value <= 65) {
@@ -2471,18 +2471,18 @@
     var arr1 = [1, 2, 3, 4, 5, 6]; // false
     var arr2 = [2, 4, 6, 4, 2]; // true
     // 判断那个数组全由偶数组成
-    var result1 = arr1.every(function (value, index, arr) {
+    var result1 = arr1.every(function(value, index, arr) {
         return value % 2 == 0; // 当前元素是否是偶数
     });
-    var result2 = arr2.every(function (value, index, arr) {
+    var result2 = arr2.every(function(value, index, arr) {
         return value % 2 == 0; // 当前元素是否是偶数
     });
     console.log(result1, result2);
     // 判断哪个数组包含偶数
-    var result3 = arr1.some(function (value, index, arr) {
+    var result3 = arr1.some(function(value, index, arr) {
         return value % 2 == 0;
     });
-    var result4 = arr2.some(function (value, index, arr) {
+    var result4 = arr2.some(function(value, index, arr) {
         return value % 2 == 0;
     });
     if (result3 == true && result4 == true) {
@@ -2492,7 +2492,7 @@
 // --------------------------
 (() => {
     var arr = ['马冬梅', '阿龙', '纪梵希'];
-    // 遍历花名册中每个人名，点到谁，谁就喊到
+    // 遍历花名册中每个人名,点到谁,谁就喊到
     // for (var i = 0; i < arr.length; i++) {
     //     console.log(`${arr[i]} - 到`)
     // };
@@ -2504,11 +2504,11 @@
     // arr.forEach((value)=>{
     //     console.log(`${value} - 到`)
     // });
-    // // 箭头函数，如果只有一个形参，可以省略()
+    // // 箭头函数,如果只有一个形参,可以省略()
     // arr.forEach(value=>{
     //     console.log(`${value} - 到`)
     // });
-    // // 箭头函数如果只有一句函数体，可以省略{}
+    // // 箭头函数如果只有一句函数体,可以省略{}
     // arr.forEach(value=>
     //     console.log(`${value} - 到`)
     // );
@@ -2518,9 +2518,9 @@
 // --------------------------
 (() => {
     var arr = [1, 2, 3, 4, 5];
-    // 相对数组中每个元素*2,返回新数组，但是原数组保持不变
+    // 相对数组中每个元素*2,返回新数组,但是原数组保持不变
     var arr2 = arr.map(value => {
-        console.log(`arr.map()自动调用了一次回调函数，将原数组[${arr}]中${i}位置的旧值${value},传入回调函数`)
+        console.log(`arr.map()自动调用了一次回调函数,将原数组[${arr}]中${i}位置的旧值${value},传入回调函数`)
         // 想把当前元素值*2后的新值放入新数组中
         return value * 2;
     });
@@ -2530,7 +2530,7 @@
 // --------------------------
 (() => {
     var arr = [1, 2, 3, 4, 5];
-    // 希望过滤出数组中的偶数，放入新数组返回
+    // 希望过滤出数组中的偶数,放入新数组返回
     var arr2 = arr.filter((value, index, arr) => {
         return value % 2 == 0;
     });
@@ -2540,7 +2540,7 @@
 // --------------------------
 (() => {
     var arr = [3, 45, 6, 78, 76, 543, 2];
-    // 对数组的内容求和，但是不写for循环
+    // 对数组的内容求和,但是不写for循环
     var sum = arr.reduce((box, value, i, arr) => {
         return box + value
     }, 0); // 从0开始累加
@@ -2564,6 +2564,33 @@
     var orderTime = 1600360964709;
     // 将毫秒数转成人能看懂的日期
     console.log(`下单时间:${new Date(orderTime).toLocaleString()}`)
+})();
+// --------------------------
+(() => {
+    var t = 0; // 定义全局变量t,用于累加每个函数的执行时间
+    function fun1() {
+        console.log(`fun1执行耗时0.3s`);
+        t += 0.3;
+    };
 
+    function fun2() {
+        console.log(`fun2执行耗时0.8s`);
+        t += 0.8; // 因为fun2中已经有了局部变量t,所以0.8不会加到全局变量,而是加给局部变量t,所以最后全局变量t少了0.8s
 
+        // 将来可能会增加一段新的代码
+        // 使用var
+        // if (false) {
+        //     var t = new Date();
+        //     console.log(`新代码在${t.toLocaleString()}被执行`)
+        // };
+
+        // 使用let
+        if (true) {
+            let t = new Date();
+            console.log(`新代码在${t.toLocaleString()}被执行`)
+        };
+    };
+    fun1();
+    fun2();
+    console.log(`共耗时${t}s`);
 })();
