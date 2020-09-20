@@ -2594,3 +2594,55 @@
     fun2();
     console.log(`共耗时${t}s`);
 })();
+// --------------------------
+(()=>{
+    let c = 10;
+    // let c = 100; // 报错 - 变量名/标识符已经被声明
+    console.log(c);
+    // console.log(d); // 报错 不能访问 d 在初始化之前
+    let d = 100;
+})();
+// --------------------------
+(()=>{
+    function add(a,b){
+        return a+b;
+    };
+    console.log(add(3,5));
+    
+    var arr=[23,12,4,1,24,675,66,1];
+    arr.sort(function(a,b){return a-b});
+    console.log(arr);
+
+    var str = 'you can you up';
+    str = str.replace(/\b[a-z]/g,function(keyword){return keyword.toUpperCase()});
+    console.log(str);
+
+    var arr2 = ['han','wu','li','shu'];
+    arr2.forEach(function(value){console.log(`${value} - 到`)})
+
+    var arr3 = [1,2,3,4,5];
+    var arr3_1 = arr3.map(function(value){return value*2})
+    console.log(arr3_1)
+    
+    var arr4 = [1,2,3,4,5];
+    var result = arr4.reduce(function(box,value){return box+value},0);
+    console.log(result)
+
+    (function(){
+        var t = new Date();
+        console.log(`网页加载完成,at:${t.toLocaleString()}`)
+    })();
+
+    var s = 5;
+    var timer = setInterval(function(){
+        console.log(s);
+        s--;
+        if(s == 0){
+            console.log(`boom!!`);
+            clearInterval(timer);
+        }
+    },1000)
+
+
+
+})();
