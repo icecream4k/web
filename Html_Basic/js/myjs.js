@@ -2595,7 +2595,7 @@
     console.log(`共耗时${t}s`);
 })();
 // --------------------------
-(()=>{
+(() => {
     let c = 10;
     // let c = 100; // 报错 - 变量名/标识符已经被声明
     console.log(c);
@@ -2603,46 +2603,117 @@
     let d = 100;
 })();
 // --------------------------
-(()=>{
-    function add(a,b){
-        return a+b;
-    };
-    console.log(add(3,5));
-    
-    var arr=[23,12,4,1,24,675,66,1];
-    arr.sort(function(a,b){return a-b});
+(() => {
+    // 普通函数转为箭头函数
+    // function add(a, b) {
+    //     return a + b;
+    // };
+    var add = (a, b) =>
+        a + b; // 如果函数体只有一句话,则可以删掉大括号,但是又有return,所以把return给删了
+    console.log(add(3, 5));
+
+    var arr = [23, 12, 4, 1, 24, 675, 66, 1];
+    // arr.sort(function(a, b) {
+    //     return a - b
+    // });
+    arr.sort((a, b) =>
+        a - b
+    );
     console.log(arr);
 
     var str = 'you can you up';
-    str = str.replace(/\b[a-z]/g,function(keyword){return keyword.toUpperCase()});
+    // str = str.replace(/\b[a-z]/g, function(keyword) {
+    //     return keyword.toUpperCase()
+    // });
+    str = str.replace(/\b[a-z]/g, (keyword) =>
+        keyword.toUpperCase()
+    );
     console.log(str);
 
-    var arr2 = ['han','wu','li','shu'];
-    arr2.forEach(function(value){console.log(`${value} - 到`)})
+    var arr2 = ['han', 'wu', 'li', 'shu'];
+    // arr2.forEach(function(value) {
+    //     console.log(`${value} - 到`)
+    // });
+    arr2.forEach(value =>
+        console.log(`${value} - 到`)
+    );
+    console.log(arr2);
 
-    var arr3 = [1,2,3,4,5];
-    var arr3_1 = arr3.map(function(value){return value*2})
-    console.log(arr3_1)
-    
-    var arr4 = [1,2,3,4,5];
-    var result = arr4.reduce(function(box,value){return box+value},0);
-    console.log(result)
+    var arr3 = [1, 2, 3, 4, 5];
+    // var arr3_1 = arr3.map(function(value) {
+    //     return value * 2
+    // });
+    var arr3_1 = arr3.map(value =>
+        value * 2
+    );
+    console.log(arr3_1);
 
-    (function(){
+    var arr4 = [1, 2, 3, 4, 5];
+    // var result = arr4.reduce(function(box, value) {
+    //     return box + value
+    // }, 0);
+    var result = arr4.reduce((box, value) =>
+        box + value, 0);
+    console.log(result);
+
+    // (function() {
+    //     var t = new Date();
+    //     console.log(`网页加载完成,at:${t.toLocaleString()}`)
+    // })();
+    (() => {
         var t = new Date();
         console.log(`网页加载完成,at:${t.toLocaleString()}`)
     })();
 
-    var s = 5;
-    var timer = setInterval(function(){
-        console.log(s);
-        s--;
-        if(s == 0){
-            console.log(`boom!!`);
-            clearInterval(timer);
+    // var s = 1;
+    // var timer = setInterval(function() {
+    //     console.log(s);
+    //     s--;
+    //     if (s == 0) {
+    //         console.log(`boom!!`);
+    //         clearInterval(timer);
+    //     }
+    // }, 1000);
+    // var timer = setInterval(() => {
+    // console.log(s);
+    // s--;
+    // if (s == 0) {
+    // console.log(`boom!!`);
+    // clearInterval(timer);
+    // }
+    // }, 1000);
+})();
+// --------------------------
+(() => {
+    var lilei = {
+        sname: 'lilei',
+        friends: ['han', 'wu', 'zhao'],
+        // intr: function() {// 如果这里用箭头函数，那么下方的forEach则会报错，
+        intr() { // 在es6的标准中，对象方法的简写,可以不写:  可以不写"function",但是ES6简写绝对不等于箭头函数，因为不影响this，this还和使用function保持一致
+            // 希望lilei会说: 
+            // lilei认识han
+            // lilei认识wu
+            // lilei认识zhao
+            // 遍历lilei自己的friends数组
+            this.friends.forEach((value) => {
+                // 内部的this也指向了外部的this，指向了lilei
+                console.log(`${this.sname}认识${value}`)
+            });
         }
-    },1000)
-
-
-
+    };
+    lilei.intr();
+})();
+// --------------------------
+(() => {
+    var arr = ['han', 'wu', 'zhang', 'zhao'];
+    // 3中遍历方法
+    // for (var i = 0; i < arr.length; i++) {
+    //     console.log(`${arr[i]}-到`)
+    // };
+    // arr.forEach((v) => {
+    //     console.log(`${v}-到`)
+    // });
+    for(var v of arr){
+        console.log(`${v}-到`)
+    }
 })();
