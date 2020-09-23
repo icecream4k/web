@@ -2543,7 +2543,7 @@
     // 对数组的内容求和,但是不写for循环
     var sum = arr.reduce((box, value, i, arr) => {
         return box + value
-    }, 0); // 从0开始累加
+    }, 0); // 从 0 开始累加
     console.log(sum);
 })();
 // --------------------------
@@ -2688,15 +2688,15 @@
     var lilei = {
         sname: 'lilei',
         friends: ['han', 'wu', 'zhao'],
-        // intr: function() {// 如果这里用箭头函数，那么下方的forEach则会报错，
-        intr() { // 在es6的标准中，对象方法的简写,可以不写:  可以不写"function",但是ES6简写绝对不等于箭头函数，因为不影响this，this还和使用function保持一致
+        // intr: function() {// 如果这里用箭头函数,那么下方的forEach则会报错,
+        intr() { // 在es6的标准中,对象方法的简写,可以不写:  可以不写"function",但是ES6简写绝对不等于箭头函数,因为不影响this,this还和使用function保持一致
             // 希望lilei会说: 
             // lilei认识han
             // lilei认识wu
             // lilei认识zhao
             // 遍历lilei自己的friends数组
             this.friends.forEach((value) => {
-                // 内部的this也指向了外部的this，指向了lilei
+                // 内部的this也指向了外部的this,指向了lilei
                 console.log(`${this.sname}认识${value}`)
             });
         }
@@ -2713,7 +2713,83 @@
     // arr.forEach((v) => {
     //     console.log(`${v}-到`)
     // });
-    for(var v of arr){
+    for (var v of arr) {
         console.log(`${v}-到`)
-    }
+    };
+
+    var add = () => {
+        var sum = 0;
+        // for(var i = 0;i<arguments.length;i++){
+        //     sum+=arguments[i];
+        // };
+        // 类数组对象 - 所以会报错
+        // arguments.forEach(v=>sum+=v); // 报错
+
+        // 但是使用for of则不会报错
+        for (var v of arguments) {
+            sum += v
+        };
+        return sum;
+    };
+    console.log(add(1, 2, 3)); // 6
+    console.log(add(1, 2, 3, 4, 5)); // 15 
+})();
+// --------------------------
+(() => {
+    // 定义一个函数,显示自我介绍
+    var intr = (msg = '这个人很懒,什么都没有留下') => {
+        console.log(`我的自我介绍是:${msg}`)
+    };
+    // 正常情况,如果传入了msg
+    intr('you can you up');
+    intr();
+
+    // 定义一个点套餐的函数
+    var order = (zhushi = '香辣鸡腿堡', xiaochi = '薯条', yinliao = '可乐') => {
+        console.log(`您点的餐是:
+            主食:${zhushi},
+            小吃:${xiaochi},
+            饮料:${yinliao}
+        `)
+    };
+    // 第一个人不着急,套餐中每个东西都自己定义
+    order('香辣鸡腿堡', '薯条', '可乐');
+    // 第二个人着急赶火车,没空挨个选择,想要套餐原装的内容
+    order();
+    // 第三个人只想把最后一个可乐换成咖啡
+    order('咖啡');
+    // 第四个人只想换第二个薯条为菠萝派，第一个和第三个保持不变
+    order();
+})();
+// --------------------------
+(() => {
+    var add = (...arr) => {
+        // ...收集，arr是数组名
+        // 将身故实参值都收集到arr数组中保存
+        // sum = 0;
+        //     for(var v of arr){
+        //         sum+=v;
+        //     };
+        //     return sum;
+        // };
+        var sum = arr.reduce((box, v) => box + v, 0)
+        return sum;
+    };
+    console.log(add(1, 2, 3, 4, 5)); // 15
+
+    // 定义一个计算总工资的函数
+    // 用户至少输入自己的员工姓名，但是每个员工的工资项目数不一样
+    var jisuan = (ename, ...arr) => {
+        console.log('arguments:',arguments);
+        console.log('arr:',arr);
+        console.log(`${ename}的总工资是:${
+            arr.reduce((box,v)=>box+v,0)
+        }`);
+    };
+    jisuan('hanlong', 10000, 200, 500);
+    jisuan('hanmm', 5000, 400, 32, 40);
+})();
+// --------------------------
+(() => {
+
 })();

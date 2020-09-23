@@ -168,6 +168,10 @@
 #q {
   color: blue;
 }
+#for_table{
+    width: 600px;
+    height: 400px;
+}
 /* 标签选择器 */
 
 body {
