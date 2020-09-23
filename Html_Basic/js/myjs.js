@@ -2758,13 +2758,13 @@
     order();
     // 第三个人只想把最后一个可乐换成咖啡
     order('咖啡');
-    // 第四个人只想换第二个薯条为菠萝派，第一个和第三个保持不变
+    // 第四个人只想换第二个薯条为菠萝派,第一个和第三个保持不变
     order();
 })();
 // --------------------------
 (() => {
     var add = (...arr) => {
-        // ...收集，arr是数组名
+        // ...收集,arr是数组名
         // 将身故实参值都收集到arr数组中保存
         // sum = 0;
         //     for(var v of arr){
@@ -2778,10 +2778,10 @@
     console.log(add(1, 2, 3, 4, 5)); // 15
 
     // 定义一个计算总工资的函数
-    // 用户至少输入自己的员工姓名，但是每个员工的工资项目数不一样
+    // 用户至少输入自己的员工姓名,但是每个员工的工资项目数不一样
     var jisuan = (ename, ...arr) => {
-        console.log('arguments:',arguments);
-        console.log('arr:',arr);
+        console.log('arguments:', arguments);
+        console.log('arr:', arr);
         console.log(`${ename}的总工资是:${
             arr.reduce((box,v)=>box+v,0)
         }`);
@@ -2791,5 +2791,66 @@
 })();
 // --------------------------
 (() => {
+    var sum_max = Math.max(1, 6, 8, 3, 7);
+    var sum_min = Math.min(1, 6, 8, 3, 7);
+    console.log('最大值:', sum_max, '最小值:', sum_min);
 
+    var arr = [2, 7, 1, 5];
+    // console.log(Math.max(arr)); // max不支持数组
+
+    console.log(Math.max.apply(1,arr)); // 因为本案例和this无关,所以第一个实参值,填什么都行
+
+    // ES6的spread语法 简单
+    console.log('ES6的max语法:',Math.max(...arr));
+    console.log('ES6的min语法:',Math.min(...arr));
 })();
+// --------------------------
+(()=>{
+    var arr = [1,2,3];
+    var arr2 = [...arr];
+    console.log('复制了arr的arr2:',arr2);
+    console.log(arr == arr2); // false 判断是否是复制
+    var arr1 = [1,2,3,4];
+    var arr2 = [5,6,7];
+    var arr3 = [...arr1,'a',...arr2,'b'];
+    console.log('套了两层数组的arr3:',arr3);
+    
+    // 克隆一个对象
+    var lilei = {
+        sname:'lilei',
+        sage:11
+    };
+    var lilei2 = {...lilei};
+    console.log('打散之后复制的lilei2',lilei2);
+    console.log('判断lilei和lilei2是不是复制的:',lilei==lilei2);
+
+    // 合并两个对象或者多个对象以及属性值
+    var obj1 = {x:1,y:2};
+    var obj2 = {m:3,n:4};
+    var obj3 = {...obj1,a:5,...obj2,b:6};
+    console.log(obj3);
+})();
+// --------------------------
+(()=>{
+    var arr = [
+        {pname:'小米',price:3488},
+        {pname:'三星',price:5488},
+        {pname:'苹果',price:7488},
+        {pname:'锤子',price:9488}
+    ];
+    var p1,p2,p3
+    [p1,p2,p3] = arr; // 可以提取两个不同的商品对象，对应数组的下标位置
+    console.log(p1);
+    p1.price -= 1000;
+    console.log('更改了p1的price之后的arr数组的对象:',arr[0]);
+    console.log(p2);
+    console.log(p3);
+
+    // 如果想奥索取第1个，第3个，第6个商品
+    var arr = [1,2,3,4,5,6];
+    [p1,,p3,,,p6] = arr;
+    console.log(p1);
+    console.log(p3);
+    console.log(p6);
+})();
+// --------------------------
