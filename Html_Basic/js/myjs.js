@@ -2798,79 +2798,112 @@
     var arr = [2, 7, 1, 5];
     // console.log(Math.max(arr)); // max不支持数组
 
-    console.log(Math.max.apply(1,arr)); // 因为本案例和this无关,所以第一个实参值,填什么都行
+    console.log(Math.max.apply(1, arr)); // 因为本案例和this无关,所以第一个实参值,填什么都行
 
     // ES6的spread语法 简单
-    console.log('ES6的max语法:',Math.max(...arr));
-    console.log('ES6的min语法:',Math.min(...arr));
+    console.log('ES6的max语法:', Math.max(...arr));
+    console.log('ES6的min语法:', Math.min(...arr));
 })();
 // --------------------------
-(()=>{
-    var arr = [1,2,3];
+(() => {
+    var arr = [1, 2, 3];
     var arr2 = [...arr];
-    console.log('复制了arr的arr2:',arr2);
+    console.log('复制了arr的arr2:', arr2);
     console.log(arr == arr2); // false 判断是否是复制
-    var arr1 = [1,2,3,4];
-    var arr2 = [5,6,7];
-    var arr3 = [...arr1,'a',...arr2,'b'];
-    console.log('套了两层数组的arr3:',arr3);
-    
+    var arr1 = [1, 2, 3, 4];
+    var arr2 = [5, 6, 7];
+    var arr3 = [...arr1, 'a', ...arr2, 'b'];
+    console.log('套了两层数组的arr3:', arr3);
+
     // 克隆一个对象
     var lilei = {
-        sname:'lilei',
-        sage:11
+        sname: 'lilei',
+        sage: 11
     };
-    var lilei2 = {...lilei};
-    console.log('打散之后复制的lilei2',lilei2);
-    console.log('判断lilei和lilei2是不是复制的:',lilei==lilei2);
+    var lilei2 = {
+        ...lilei
+    };
+    console.log('打散之后复制的lilei2', lilei2);
+    console.log('判断lilei和lilei2是不是复制的:', lilei == lilei2);
 
     // 合并两个对象或者多个对象以及属性值
-    var obj1 = {x:1,y:2};
-    var obj2 = {m:3,n:4};
-    var obj3 = {...obj1,a:5,...obj2,b:6};
+    var obj1 = {
+        x: 1,
+        y: 2
+    };
+    var obj2 = {
+        m: 3,
+        n: 4
+    };
+    var obj3 = {
+        ...obj1,
+        a: 5,
+        ...obj2,
+        b: 6
+    };
     console.log(obj3);
 })();
 // --------------------------
-(()=>{
-    var arr = [
-        {pname:'小米',price:3488},
-        {pname:'三星',price:5488},
-        {pname:'苹果',price:7488},
-        {pname:'锤子',price:9488},
-        {pname:'oppo',price:2488},
-        {pname:'vivo',price:1488},
+(() => {
+    var arr = [{
+            pname: '小米',
+            price: 3488
+        },
+        {
+            pname: '三星',
+            price: 5488
+        },
+        {
+            pname: '苹果',
+            price: 7488
+        },
+        {
+            pname: '锤子',
+            price: 9488
+        },
+        {
+            pname: 'oppo',
+            price: 2488
+        },
+        {
+            pname: 'vivo',
+            price: 1488
+        },
     ];
     // var p1,p2,p3 // 先声明3个变量，再从数组中解构
 
-    var [p1,p2,p3] = arr; // 可以提取两个不同的商品对象，对应数组的下标位置 ; 上一行的简写
+    var [p1, p2, p3] = arr; // 可以提取两个不同的商品对象，对应数组的下标位置 ; 上一行的简写
     console.log(p1);
     p1.price -= 1000;
-    console.log('更改了p1的price之后的arr数组的对象:',arr[0]);
+    console.log('更改了p1的price之后的arr数组的对象:', arr[0]);
     console.log(p2);
     console.log(p3);
 
     // 如果想奥索取第1个，第3个，第6个商品
-    var arr = [1,2,3,4,5,6];
-    var [p1,,p3,,,p6] = arr; // 上一行的简写
+    var arr = [1, 2, 3, 4, 5, 6];
+    var [p1, , p3, , , p6] = arr; // 上一行的简写
     console.log(p1);
     console.log(p3);
     console.log(p6);
 })();
 // --------------------------
-(()=>{
+(() => {
     var user = {
-        uname : 'han',
-        upwd : '123456',
-        login(){ // 原写 login:function(){}
+        uname: 'han',
+        upwd: '123456',
+        login() { // 原写 login:function(){}
             console.log(`注册...`)
         },
-        logout(){
+        logout() {
             console.log(`注销...`)
         }
     }
     // 只想用uname属性值和logout方法
-    var {uname:un,logout:lo} = user;
-    console.log('解构出来的uname:',un);
+    var {
+        uname: un,
+        logout: lo
+    } = user;
+    console.log('解构出来的uname:', un);
     lo();
 })();
 // --------------------------
