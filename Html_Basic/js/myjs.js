@@ -2870,16 +2870,16 @@
             price: 1488
         },
     ];
-    // var p1,p2,p3 // 先声明3个变量，再从数组中解构
+    // var p1,p2,p3 // 先声明3个变量,再从数组中解构
 
-    var [p1, p2, p3] = arr; // 可以提取两个不同的商品对象，对应数组的下标位置 ; 上一行的简写
+    var [p1, p2, p3] = arr; // 可以提取两个不同的商品对象,对应数组的下标位置 ; 上一行的简写
     console.log(p1);
     p1.price -= 1000;
     console.log('更改了p1的price之后的arr数组的对象:', arr[0]);
     console.log(p2);
     console.log(p3);
 
-    // 如果想奥索取第1个，第3个，第6个商品
+    // 如果想奥索取第1个,第3个,第6个商品
     var arr = [1, 2, 3, 4, 5, 6];
     var [p1, , p3, , , p6] = arr; // 上一行的简写
     console.log(p1);
@@ -2907,3 +2907,96 @@
     lo();
 })();
 // --------------------------
+(() => {
+    // var order = (zhushi = '香辣鸡腿堡', xiaochi = '薯条', yinliao = '可乐') => {
+    //     console.log(`您点的餐是:
+    //         主食:${zhushi},
+    //         主食:${xiaochi},
+    //         主食:${yinliao}
+    //     `)
+    // };
+
+    // 参数解构需要把形参装饰成对象结构
+    var order = ({
+        zhushi: zhushi = '香辣鸡腿堡',
+        xiaochi: xiaochi = '薯条',
+        yinliao: yinliao = '可乐'
+    }) => {
+        console.log(`您点的餐是:
+            主食:${zhushi},
+            主食:${xiaochi},
+            主食:${yinliao}
+            `)
+    }
+    // 第一个人使用默认餐品
+    order({});
+
+    // 第二个人更换自己想要的餐品
+    order({
+        zhushi: '奥尔良烤腿堡',
+        xiaochi: '菠萝派',
+        yinliao: '咖啡'
+    });
+
+    // 第三个人只想换饮料,其他两个人保持不变
+    // 错误的做法
+    // order(,,'豆浆')
+    order({
+        yinliao: '豆浆'
+    })
+    // 第四个人只想换小吃,其余两个保持不变
+    // 错误的做法
+    // order(,'土豆泥')
+    order({
+        xiaochi: '土豆泥'
+    })
+})();
+// --------------------------
+(() => {
+    class Student {
+        constructor(sname, sage) {
+            this.sname = sname;
+            this.sage = sage;
+        }
+        // 默认就是放在原型对象中的方法,代码极简化
+        intr() {
+            console.log(`i'm ${this.sname},i;m${this.sage}`)
+        };
+    }
+    var lilei = new Student('lilei', 18);
+    lilei.intr()
+})();
+// --------------------------
+(()=>{
+    class Student {
+        // 直接放在class内的属性值,默认不会放在原型对象中,而是成为子对象的自由属性 今后框架也不能这么写
+        // className = '初一二班';
+        constructor(sname, sage) {
+            // 错误1
+            // this.className = '初一二班'; 自有属性
+            // 凡是在构造函数中用this.xxx方式添加的属性,都会成为子对象的自有属性
+            this.sname = sname;
+            this.sage = sage;
+        }
+        // 默认就是放在原型对象中的方法,代码极简化
+        intr() {
+            console.log(`i'm ${this.sname},i;m${this.sage}`)
+        };
+    }
+
+    // 正确做法
+    Student.prototype.className = '初一二班';
+
+    var lilei = new Student('lilei', 18);
+    var hmm = new Student('hanmeimei',16);
+    hmm.intr();
+    lilei.intr();
+    console.log(hmm);
+    console.log(lilei);
+})();
+// --------------------------
+
+
+
+
+
