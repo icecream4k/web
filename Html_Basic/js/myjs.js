@@ -2967,7 +2967,7 @@
     lilei.intr()
 })();
 // --------------------------
-(()=>{
+(() => {
     class Student {
         // 直接放在class内的属性值,默认不会放在原型对象中,而是成为子对象的自由属性 今后框架也不能这么写
         // className = '初一二班';
@@ -2988,14 +2988,132 @@
     Student.prototype.className = '初一二班';
 
     var lilei = new Student('lilei', 18);
-    var hmm = new Student('hanmeimei',16);
+    var hmm = new Student('hanmeimei', 16);
     hmm.intr();
     lilei.intr();
     console.log(hmm);
     console.log(lilei);
 })();
 // --------------------------
+(() => {
+    // 代码重复的问题
+    class Plane {
+        constructor(x, y, score) {
+            this.x = x;
+            this.y = y;
+            this.score = score;
+        }
+        fly() {
+            console.log(`飞到 x = ${this.x},y = ${this.y}位置`)
+        }
+        getScore() {
+            console.log(`击落一架低级得${this.score}分`)
+        }
+    };
+    var p1 = new Plane(50,100,5);
+    console.log(p1);
+    p1.fly();
+    p1.getScore();
 
+    class San{
+        constructor(x,y,award){
+            this.x = x;
+            this.y = y;
+            this.award = award;
+        }
+        fly(){
+            console.log(`飞到x:${this.x},y:${this.y}位置`)
+        }
+        getAward(){
+            console.log(`打掉一个降落伞得${this.award}`)
+        }
+    };
+    var s1 = new San(100,20,'1 life');
+    console.log(s1);
+    s1.fly();
+    s1.getAward();
+})();
+(() => {
+    // 解决上方代码重复的问题
+    class Enemy{
+        constructor(x,y){
+            this.x = x;
+            this.y = y;
+
+        }
+        fly(){
+            console.log(`飞到x:${this.x},y:${this.y}位置`)
+        }
+    }
+    class Plane extends Enemy{
+        constructor(x, y, score) {
+            super(x,y);
+            this.score = score;
+        }
+        getScore() {
+            console.log(`击落一架低级得${this.score}分`)
+        }
+    };
+    var p1 = new Plane(50,100,5);
+    console.log(p1);
+    p1.fly();
+    p1.getScore();
+
+    class San extends Enemy{
+        constructor(x,y,award){
+            super(x,y)
+            this.award = award;
+        }
+        getAward(){
+            console.log(`打掉一个降落伞得${this.award}`)
+        }
+    };
+    var s1 = new San(100,20,'1 life');
+    console.log(s1);
+    s1.fly();
+    s1.getAward();
+})();
+// --------------------------
+(()=>{
+    // 运动会，han，lilei，hmm参加百米赛跑项目
+    function han(che){
+        console.log(`han起跑...`);
+        setTimeout(function(){ // 异步执行
+            console.log(`han到达终点`)
+            // 在han到达终点之后卸车
+            che();
+        },6000)
+    };
+    function lilei(che){
+        console.log(`lilei起跑...`);
+        setTimeout(function(){ // 异步执行
+            console.log(`lilei到达终点`)
+            // 在lilei到达终点之后卸车
+            che()
+        },4000)
+    };
+    function hmm(){
+        console.log(`hmm起跑...`);
+        setTimeout(function(){ // 异步执行
+            console.log(`hmm到达终点`)
+        },2000)
+    };
+
+    // 现在希望三个人能够接力跑 一个跑完 下一个才能起跑，顺序执行
+    // 错误的解决 - 仅顺序调用
+    // 因为异步函数，在主程序之外独立执行，谁也不等谁
+    han(
+        // han的车能得到这个function
+        function(){
+        lilei(
+            // lilei的车会得到这个function
+            function(){
+                hmm();
+            }
+        );
+    })
+
+})();
 
 
 
