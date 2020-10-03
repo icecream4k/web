@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+
+
+        <div>
+            <label for="">
+                Id:
+                <input type="text" v-model='id'>
+            </label>
+
+            <label for="">
+                Name:
+                <input type="text" v-model='name'>
+            </label>
+
+            <input type="button" value='添加' @click='add'>
+
+        </div>
+
+        <!-- 注意 v-for 循环的时候，key 属性只能使用 number或者string -->
+        <!-- 注意 key 在使用的时候，必须使用 v-bind 属性绑定的形式指定key的值 -->
+        <!-- 在组件中，使用v-for循环的时候，或者在一些特殊情况中，如果v-for有问题，必须在使用v-for的同时，指定唯一的 字符串/数字 类型 :key 值 -->
+        <p v-for='item in list' :key='item.id'> <!-- 可以通过:key 来绑定一个值,防止数据漂移 -->
+            <input type="checkbox">
+            {{item.id}} -------- {{item.name}}
+        </p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                id: '',
+                name: '',
+                list: [{
+                        id: 1,
+                        name: 'lisi'
+                    },
+                    {
+                        id: 2,
+                        name: 'zhangsan'
+                    },
+                    {
+                        id: 3,
+                        name: 'wangwu'
+                    },
+                ]
+            },
+            methods: {
+                add(){ // 添加方法
+                    // this.list.push({id:this.id,name:this.name})
+                    this.list.unshift({id:this.id,name:this.name}) // 使用 unshift 添加对象的时候,本来选中的 checkbox 会被推至前一位,所以得用 key 来指定绑定的哪一项
+
+                }
+           }
+        });
+    </script>
+</body>
+
+</html>

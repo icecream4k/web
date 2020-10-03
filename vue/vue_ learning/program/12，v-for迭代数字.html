@@ -11,18 +11,15 @@
 
 <body>
     <div id="app">
-        <!-- 在遍历对象身上的键值对的时候，除了 有 value key 之外，在第三个位置，还有一个索引 -->
-        <p v-for='(value,key,index) in user'>键:{{key}} -- 值:{{value}}  -- 索引:{{index}}</p>
+        <!-- <p v-for='(item,index) in list'>这是第{{index+1}}次循环</p> -->
+        <!-- 如果使用v-for迭代数字，那么则会迭代的值从1开始 -->
+        <p v-for='i in 10'>这是第{{i}}次循环</p>
     </div>
     <script>
         var vm=new Vue({
            el:'#app',
            data:{
-               user:{
-                   id:1,
-                   name:'托尼',
-                   gender:'男'
-               }
+               list:[1,2,3,4,5,6]
            },
            methods:{}
         });
