@@ -33,6 +33,11 @@
 
                 <!-- 在vue中使用事件绑定机制，为元素指定处理函数的时候，如果加了小括号，就可以给函数传参了 -->
                 <input type="button" value="添加" class="btn btn-primary" @click='add()'>
+
+                <label for="">
+                    搜索名称关键字:
+                    <input type="text" class="form-control" v-model='keywords'>
+                </label>
             </div>
         </div>
 
@@ -49,12 +54,15 @@
                 </tr>
             </thead>
             <thead>
-                <tr v-for='item in list' :key='item.id'>
+                <!-- 之前，v-for中的数据，都是直接从 data 上的 list 中直接渲染过来的 -->
+                <!-- 现在，我们自定义了一个 search 方法，同时，把 所有的关键字，通过传参的形式，传递给了 search 方法 -->
+                <!-- 在 search 方法内部，通过 执行 for 循环，把所有符合搜索关键字的数据，保存到一个新数组中，返回 -->
+                <tr v-for='item in search(keywords)' :key='item.id'>
                     <td>{{item.id}}</td>
                     <td v-text='item.name'></td>
                     <td>{{item.ctime}}</td>
                     <td>
-                        <a href="">删除</a>
+                        <a href="" @click.prevent='del(item.id)'>删除</a>
                     </td>
                 </tr>
             </thead>
@@ -66,6 +74,7 @@
             data: {
                 id: '',
                 name: '',
+                keywords: '', // 搜索的关键字
                 list: [{
                         id: 1,
                         name: '奔驰',
@@ -94,15 +103,58 @@
                     var car = {
                         id: this.id,
                         name: this.name,
-                        ctime:new Date()
+                        ctime: new Date()
                     }
                     if (car.id != '' && car.name != '') {
                         this.list.push(car);
                         this.id = this.name = ''
                     }
-                    
-                    
+
+
+                },
+                del(id) { // 根据id删除数据
+                    // 分析
+                    // 如何根据id，找到要删除这一项的索引
+                    // 如果找到了索引，直接调用 数组的 splice 方法 
+
+                    // 使用some实现
+                    // this.list.some((item,i)=>{
+                    //     if(item.id == id){
+                    //         this.list.splice(i,1)
+                    //         // 在数组的some方法中，如果 return  true ，就会立刻终止这个数组的后续循环
+                    //         return true
+                    //     }
+                    // })
+
+                    // 使用findIndex实现
+                    var index = this.list.findIndex(item => item.id == id);
+                    console.log(index);
+                    this.list.splice(index, 1)
+                },
+                search(keywords) { // 根据关键字进行数据的搜索
+                    // var newList = [];
+                    // this.list.forEach(item => {
+                    //     if (item.name.indexOf(keywords) != -1){
+                    //         newList.push(item)
+                    //     }
+                    // });
+                    // return newList;
+
+                    // 注意 forEach some filter findIndex 这些都是数组的新方法
+                    // 都会对数组的每一项，进行遍历，执行相关的操作
+                    return this.list.filter(item=>{
+                        // if(item.name.indexOf(keywords)!=-1)
+
+                        // 注意：在es6中，为字符串提供了一个新方法，叫做 String.prototype.includes('要包含的字符串')
+                        // 如果包含，则返回true，否则返回false
+                        // contain
+                        if(item.name.includes(keywords)){
+                            return item
+                        }
+                    });
+
                 }
+
             },
         });
     </script>
