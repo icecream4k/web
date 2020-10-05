@@ -1256,7 +1256,7 @@
     // console.log(arr.sort());
     // 按照数字大小排序 -- 回调函数
     arr.sort(function(a, b) {
-        // return a-b; // 从小到大
+        // returnƒ a-b; // 从小到大
         return b - a; // 从大到小
     });
     console.log("排序之后的数组:", arr);

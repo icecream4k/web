@@ -36,7 +36,8 @@
 
                 <label for="">
                     搜索名称关键字:
-                    <input type="text" class="form-control" v-model='keywords'>
+                    <!-- 注意：Vue中所有的指令,在调用的时候,都以 v- 开头 -->
+                    <input type="text" class="form-control" v-model='keywords' id="search" v-focus v-color="'blue'">
                 </label>
             </div>
         </div>
@@ -69,7 +70,7 @@
         </table>
     </div>
     <div id="app2">
-        <h1>{{dt|dataFormat}}</h1>
+        <h1 v-color="'skyblue'" v-fontweight='100' v-fontsize="'40px'">{{dt|dataFormat}}</h1>
     </div>
     <script>
         // 全局的过滤器,进行实践的格式化
@@ -82,8 +83,6 @@
             var m = (dt.getMonth() + 1).toString().padStart(2, '0');
             var d = dt.getDate().toString().padStart(2, '0');
             // return y + '-' + m + '-' + d
-
-
             if (pattern.toLowerCase() === 'yyyy-mm-dd') {
                 return `${y}-${m}-${d}`;
             } else {
@@ -97,6 +96,41 @@
         // 自定义全局键盘按键修饰符
         Vue.config.keyCodes.f2 = 113; // 匹配上对应的keycode,即可
 
+        // 使用 Vue.directive() 定义全局的指令
+        // 其中：参数1 - 指令的名称,注意,在定义的时候,指令的名称前面,不需要加 v-前缀,在调用的时候需要加 v-作为前缀
+        // 参数2 - 是一个对象,这个对象,身上有一些指令相关的函数,这些函数可以在特定的阶段,执行相关的操作
+        Vue.directive('focus', {
+            bind: function(el) { // 每当指令绑定到元素上的时候,就会立即执行这个 bind 函数,只执行一次
+                // 注意:在每个函数中,第一个参数,永远是el,表示被绑定了指令的那个元素,这个el参数,是一个原生的js对象
+                // 在元素 刚绑定了指令的时候,还没有插入到DOM中去,这时候,调用focus方法没有作用
+                // 因为一个元素,只有插入DOM之后,才能获取焦点
+                // el.focus()
+            },
+            inserted: function(el) { // inserted 表示元素 插入到 DOM 中的时候，会执行 inserted 函数
+                // 和js行为有关的操作,最好再inserted中去执行,防止js行为不生效
+                el.focus()
+            },
+            updated: function(el) { // 当VNode更新的时候,会执行updated,可能会触发多次奥
+
+            }
+        });
+
+        // 自定义设置字体颜色的指令
+        Vue.directive('color', {
+            // 样式,只要通过指令绑定给了元素,不管这个元素有没有被插入到页面中去,这个元素肯定有了一个内联的样式
+            // 和样式相关的操作,一般都可以在bind中操作
+            // 将来元素肯定会显示到页面中去,这时候,浏览器的渲染引擎必然会解析样式,应用给这个元素
+            bind: function(el, binding) {
+                // el.style.color = 'red';
+                // binding会获取到v-color后面传过来的字符串,并且可以和el.style.color进行联动,渲染成需要的字体颜色
+                // console.log(binding)
+
+
+                console.log(binding.value)
+                el.style.color = binding.value;
+
+            }
+        })
 
         var vm = new Vue({
             el: '#app',
@@ -215,8 +249,23 @@
                         return `${y}-${m}-${d} ${hh}:${mm}:${ss} 这是私有过滤器生成的喔`;
                     }
                 }
+            },
+            directives: { // 自定义私有指令
+                'fontweight': { // 设置字体粗细
+                    bind: function(el, binding) {
+                        el.style.fontWeight = binding.value
+                    }
+                },
+                'fontsize': function(el, binding) { // 注意:这个function 等同于把代码写到了bind和pudate中去
+                    el.style.fontSize = parseInt(binding.value) + 'px'
+                }
             }
         })
+
+
+
+
+        // document.getElementById('search').focus() // js中默认获取焦点的方式,但是Vue中不提倡操作DOM
     </script>
 </body>
 
