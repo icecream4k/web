@@ -16,21 +16,21 @@
 
 <body>
     <div id="app" v-cloak>
-            
-            <div class="panel panel-primary">
-                  <div class="panel-heading">
-                        <h3 class="panel-title">添加品牌</h3>
-                  </div>
-                  <div class="panel-body form-inline">
-                        <label for="">
-                            Name:
-                            <input type="text" v-model = 'name' class="form-control">
-                        </label>
 
-                        <input type="button" value="添加" @click='app()' class="btn btn-primary">
-                  </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">添加品牌</h3>
             </div>
-            
+            <div class="panel-body form-inline">
+                <label for="">
+                    Name:
+                    <input type="text" v-model='name' class="form-control">
+                </label>
+
+                <input type="button" value="添加" @click='app()' class="btn btn-primary">
+            </div>
+        </div>
+
 
 
 
@@ -46,33 +46,68 @@
             </thead>
             <tbody v-cloak>
                 <tr v-for='item in list' :key='item.id'>
-                    <td>{{item.id}}</td>
+                    <!-- <td>{{item.id}}</td>
                     <td>{{item.name}}</td>
-                    <td>{{item.ctime}}</td>
+                    <td>{{item.ctime}}</td> -->
+                    <td>{{item[0]}}</td>
+                    <td>{{item[1]}}</td>
+                    <td>{{item[2]}}</td>
                     <td>
                         <a href="">删除</a>
                     </td>
                 </tr>
             </tbody>
         </table>
-        
+
     </div>
     <script>
-        var vm=new Vue({
-            el:'#app',
-            data:{
-                name:'',
-                list:[
-                    {id:1,name:'五菱宏光',ctime:new Date()},
-                    {id:2,name:'众泰',ctime:new Date()},
-                    {id:3,name:'大众',ctime:new Date()},
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                name: '',
+                list: [ // 存放所有品牌列表的数组
+                    {
+                        id: 1,
+                        name: '五菱宏光',
+                        ctime: new Date()
+                    },
+                    {
+                        id: 2,
+                        name: '众泰',
+                        ctime: new Date()
+                    },
+                    {
+                        id: 3,
+                        name: '大众',
+                        ctime: new Date()
+                    },
                 ]
             },
-            methods:{
-                add(){
+            methods: {
+                add() {
 
-                }
+                },
+                getAlllist() { // 获取所有的车辆的品牌列表
+                    // 分析
+                    // 1.由于已经导入了 vue-resource 这个包,所以,可以直接通过 this.$http 来发起数据请求
+                    // 2.根据 API 文档,知道,获取列表的时候,应该发起一个 get 请求
+                    // 3.this.$http.get('url').then(function(result){})
+                    // 4.当通过 then 制定回调函数之后,在回调函数中,可以拿到数据服务器返回的 result  
+                    // 5.先判断 reuslt.status 是否等于0,如果等于0,就成功了,可以 把result.mesage 赋值给 this.list就完事儿了;如果不等于0,则可以弹框提示失败
+                    this.$http.get('http://localhost:5000/vuetest').then(result => {
+                        this.list = result.body;
+                        console.log(this.list)
+                    })
+
+                },
+
             },
+            created() { // 当 vm 实例的data 和 methods 初始化完毕后,vm 实例会自动执行
+                this.getAlllist()
+            },
+            mounted() {
+                
+            }
         });
     </script>
 </body>
