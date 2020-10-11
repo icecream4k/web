@@ -125,7 +125,6 @@
                 // binding会获取到v-color后面传过来的字符串,并且可以和el.style.color进行联动,渲染成需要的字体颜色
                 // console.log(binding)
 
-
                 console.log(binding.value)
                 el.style.color = binding.value;
 
@@ -214,9 +213,7 @@
                             return item
                         }
                     });
-
                 }
-
             },
         });
         var vm2 = new Vue({
@@ -237,7 +234,6 @@
                     var m = (dt.getMonth() + 1).toString().padStart(2, '0');
                     var d = dt.getDate().toString().padStart(2, '0');
                     // return y + '-' + m + '-' + d
-
 
                     if (pattern.toLowerCase() === 'yyyy-mm-dd') {
                         return `${y}-${m}-${d}`;
