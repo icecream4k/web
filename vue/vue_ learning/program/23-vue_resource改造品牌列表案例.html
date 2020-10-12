@@ -84,9 +84,7 @@
                 ]
             },
             methods: {
-                add() {
 
-                },
                 getAlllist() { // 获取所有的车辆的品牌列表
                     // 分析
                     // 1.由于已经导入了 vue-resource 这个包,所以,可以直接通过 this.$http 来发起数据请求
@@ -94,19 +92,33 @@
                     // 3.this.$http.get('url').then(function(result){})
                     // 4.当通过 then 制定回调函数之后,在回调函数中,可以拿到数据服务器返回的 result  
                     // 5.先判断 reuslt.status 是否等于0,如果等于0,就成功了,可以 把result.mesage 赋值给 this.list就完事儿了;如果不等于0,则可以弹框提示失败
-                    this.$http.get('http://localhost:5000/vuetest').then(result => {
-                        this.list = result.body;
-                        console.log(this.list)
+                    this.$http.get('http://localhost:5000/vuetest_01').then(result => {
+                        // 注意:通过 $http 获取的数据,都在 result.body 里面存放
+                        console.log(result);
+                        if (result.status === 200) {
+                            // 成功了
+                            this.list = result.body;
+                        } else {
+                            // 失败了
+                            alert('获取数据失败')
+                        }
                     })
 
                 },
+                add() { // 添加品牌列表到后台服务器
+                    // 分析
+                    // 1.经过查看 数据API接口 要发送一个post请求, this.$http.post
+                    // 2.this.$http.post() 中接收三个参数 -- 请求的url地址;要提交到服务器的数据,要以对象的形式提交给服务器{name:this.name};是一个配置对象,要以哪种表单数据类型提交过去{emulateJSON:true},以普通表单格式,将数据提交给服务器 application/x-www-form-urlencoded
+                    // 3.在post方法中,使用 .then 来设置成功的回调函数,如果想要拿到成功的结果,需要 result.body
+                    
+                },
 
             },
-            created() { // 当 vm 实例的data 和 methods 初始化完毕后,vm 实例会自动执行
+            created() { // 当 vm 实例的data 和 methods 初始化完毕后,vm 实例会自动执行这个生命周期函数
                 this.getAlllist()
             },
-            mounted() {
-                
+            mounted() { // 这个时候如果发ajax请求的话,虚拟dom已经挂在了页面中,挂载时已经还有假数据,得等待数据,所以尽量在created中发送
+
             }
         });
     </script>
