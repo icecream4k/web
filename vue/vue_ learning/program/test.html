@@ -37,14 +37,7 @@
                     })
                 },
                 
-            },
-            mounted() {
-                axios.get('http://127.0.0.1:5000/vuetest_02')
-                        .then(result => {
-                            this.value_str_01 = result.body;
-                            console.log(this.value_str_01)
-                        })
-            },
+            }
         });
     </script>
 </body>
