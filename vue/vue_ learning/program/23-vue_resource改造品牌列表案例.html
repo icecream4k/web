@@ -85,7 +85,7 @@
             },
             methods: {
 
-                getAlllist() { // 获取所有的车辆的品牌列表
+                getAllList() { // 获取所有的车辆的品牌列表
                     // 分析
                     // 1.由于已经导入了 vue-resource 这个包,所以,可以直接通过 this.$http 来发起数据请求
                     // 2.根据 API 文档,知道,获取列表的时候,应该发起一个 get 请求
@@ -108,14 +108,21 @@
                 add() { // 添加品牌列表到后台服务器
                     // 分析
                     // 1.经过查看 数据API接口 要发送一个post请求, this.$http.post
-                    // 2.this.$http.post() 中接收三个参数 -- 请求的url地址;要提交到服务器的数据,要以对象的形式提交给服务器{name:this.name};是一个配置对象,要以哪种表单数据类型提交过去{emulateJSON:true},以普通表单格式,将数据提交给服务器 application/x-www-form-urlencoded
+                    // 2.this.$http.post() 中接收三个参数 -- 1)请求的url地址;2)要提交到服务器的数据,要以对象的形式提交给服务器{name:this.name};3)是一个配置对象,要以哪种表单数据类型提交过去{emulateJSON:true},以普通表单格式,将数据提交给服务器 application/x-www-form-urlencoded
                     // 3.在post方法中,使用 .then 来设置成功的回调函数,如果想要拿到成功的结果,需要 result.body
-                    
+                    this.$http.post('',{name:this.name},{emulateJSON:true}).then(result=>{
+                        if(result.body.status === 0){
+                            // 成功
+                            getAllList() // 如果添加了之后,只需要手动在调用一下 getAllList 就能刷新品牌列表
+                        }else{
+                            // 失败
+                            alert('添加失败')
+                        }
+                    })
                 },
-
             },
             created() { // 当 vm 实例的data 和 methods 初始化完毕后,vm 实例会自动执行这个生命周期函数
-                this.getAlllist()
+                this.getAllList()
             }
         });
     </script>

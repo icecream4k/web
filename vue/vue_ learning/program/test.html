@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="./lib/vue.js"></script>
-    <script src="./lib/axios.min.js"></script>
     <script src="./lib/vue-resource.js"></script>
     <style>
 
@@ -16,28 +15,44 @@
 
 <body>
     <div id="app">
-        <h1>{{value_str_01}}</h1>
-        <h1>{{value_str_02}}</h1>
-        <input type="button" @click='mydo_01()' value="更变1">
-        <input type="button" @click='mydo_02()' value="更变2">
+        <div>
+            <label for="">
+                Name:
+                <input type="text" v-model='name'>
+            </label>
+            <input type="button" value="添加" @click='add()'>
+        </div>
     </div>
     <script>
         var vm = new Vue({
             el: '#app',
             data: {
-                value_str_01: 'data',
-                value_str_02: 'test',
+                name: ''
             },
             methods: {
-                mydo_01() {
-
-                    this.$http.get('http://127.0.0.1:5000/vuetest_02').then(result => {
-                        this.value_str_01 = result.body;
-                        console.log(this.value_str_01)
+                add() { // 添加品牌列表到后台服务器
+                    // 分析
+                    // 1.经过查看 数据API接口 要发送一个post请求, this.$http.post
+                    // 2.this.$http.post() 中接收三个参数 -- 1)请求的url地址;2)要提交到服务器的数据,要以对象的形式提交给服务器{name:this.name};3)是一个配置对象,要以哪种表单数据类型提交过去{emulateJSON:true},以普通表单格式,将数据提交给服务器 application/x-www-form-urlencoded
+                    // 3.在post方法中,使用 .then 来设置成功的回调函数,如果想要拿到成功的结果,需要 result.body
+                    this.$http.post('http://localhost:5000/vuetest_04', {
+                        name: this.name
+                    }, {
+                        emulateJSON: true
+                    }).then(result => {
+                        if (result.status === 200) {
+                            // 成功
+                            // getAllList() // 如果添加了之后,只需要手动在调用一下 getAllList 就能刷新品牌列表
+                            console.log(result)
+                            alert('添加成功 ')
+                        } else {
+                            // 失败
+                            console.log(result)
+                            alert('添加失败')
+                        }
                     })
-                },
-                
-            }
+                }
+            },
         });
     </script>
 </body>
