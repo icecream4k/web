@@ -58,9 +58,12 @@
                 </tr>
             </tbody>
         </table>
-
     </div>
     <script>
+        // 如果我们通过全局配置了,请求的数据结构 根域名,则,在每次单独发起 http 请求的时候,请求的 url 路径,应该以相对路径开头,前面不能带 / ,否则就不会启用根路径做拼接
+        Vue.http.options.root = 'http://127.0.0.1:5000/';
+        // 全局启用 emulateJSON 选项
+        Vue.http.options.emulateJSON = true;
         var vm = new Vue({
             el: '#app',
             data: {
@@ -92,7 +95,7 @@
                     // 3.this.$http.get('url').then(function(result){})
                     // 4.当通过 then 制定回调函数之后,在回调函数中,可以拿到数据服务器返回的 result  
                     // 5.先判断 reuslt.status 是否等于0,如果等于0,就成功了,可以 把result.mesage 赋值给 this.list就完事儿了;如果不等于0,则可以弹框提示失败
-                    this.$http.get('http://localhost:5000/vuetest_01').then(result => {
+                    this.$http.get('vuetest_01').then(result => {
                         // 注意:通过 $http 获取的数据,都在 result.body 里面存放
                         console.log(result);
                         if (result.status === 200) {
@@ -109,10 +112,8 @@
                     // 1.经过查看 数据API接口 要发送一个post请求, this.$http.post
                     // 2.this.$http.post() 中接收三个参数 -- 1)请求的url地址;2)要提交到服务器的数据,要以对象的形式提交给服务器{name:this.name};3)是一个配置对象,要以哪种表单数据类型提交过去{emulateJSON:true},以普通表单格式,将数据提交给服务器 application/x-www-form-urlencoded
                     // 3.在post方法中,使用 .then 来设置成功的回调函数,如果想要拿到成功的结果,需要 result.body
-                    this.$http.post('http://127.0.0.1:5000/vuetest_04', {
+                    this.$http.post('vuetest_04', {
                         name: this.name
-                    }, {
-                        emulateJSON: true
                     }).then(result => {
                         if (result.status === 200) {
                             // 成功
@@ -126,10 +127,8 @@
                     })
                 },
                 del(data_id) { // 删除品牌
-                    this.$http.post('http://127.0.0.1:5000/vuetest_05', {
+                    this.$http.post('vuetest_05', {
                         data_id: data_id
-                    }, {
-                        emulateJSON: true
                     }).then(result => {
                         if (result.status == 200) {
                             // 删除成功
@@ -141,6 +140,7 @@
                         }
                     })
                 }
+
             },
             created() { // 当 vm 实例的data 和 methods 初始化完毕后,vm 实例会自动执行这个生命周期函数
                 this.getAllList()
