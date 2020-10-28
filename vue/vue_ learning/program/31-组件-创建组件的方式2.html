@@ -21,7 +21,13 @@
     </div>
     <script>
         Vue.component('mycom2',{
-            template:'<h3>这是直接使用 Vue.component 创建出来的组件</h3>'
+            // 注意:无论是哪种方式创建出来的组件,组件的 template 属性指向的模板内容,必须有且只能有唯一的一个根元素
+            template:`
+            <div>
+                <h3>这是直接使用 Vue.component 创建出来的组件</h3>
+                <span>这是个span</span>    
+            </div>
+            `
         })
 
         var vm=new Vue({
