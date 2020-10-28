@@ -14,8 +14,10 @@
             line-height: 35px;
             padding-left: 5px;
             font-size: 15px;
+            width: 100%;
         }
-        li:hover{
+
+        li:hover {
             background-color: skyblue;
             transition: all 0.5s ease;
         }
@@ -29,6 +31,16 @@
         .v-enter-active,
         .v-leave-active {
             transition: all 1s ease;
+        }
+
+
+        /* 下面的 .v-move 和 .v-leave-active 配合使用,能够实现列表后续的元素,渐渐地飘上来的效果 */
+        .v-move {
+            transition: all 0.6s ease;
+        }
+
+        .v-leave-active {
+            position: absolute;
         }
     </style>
 </head>
@@ -47,17 +59,17 @@
             <input type="button" value="添加" @click='add'>
         </div>
 
-        <ul>
-            <!-- 在实现列表过度的时候,如果需要过渡的元素,是通过 v-for 循环渲染出来的话,不能使用 transition 包裹,需要使用 transition-group -->
-            <!-- 如果要为 v-for 循环创建的元素设置动画,必须为没一个 元素 设置 :key 属性 -->
-            <transition-group>
-                <li v-for='item in list' :key='item.id'>
-                    {{item.id}} -- {{item.name}}
-                </li>
-            </transition-group>
 
+        <!-- 在实现列表过度的时候,如果需要过渡的元素,是通过 v-for 循环渲染出来的话,不能使用 transition 包裹,需要使用 transition-group -->
+        <!-- 如果要为 v-for 循环创建的元素设置动画,必须为没一个 元素 设置 :key 属性 -->
+        <!-- 给 ransition-group 添加 appear 属性,实现页面展示出来的时候,入场效果 -->
+        <!-- 设置tag = 'ul' 可以让 transition-group 渲染成为 ul,如归不指定 tag 属性,默认 渲染为 span 标签 -->
+        <transition-group appear tag='ul'>
+            <li v-for='(item,i) in list' :key='item.id' @click='del(i)'>
+                {{item.id}} -- {{item.name}}
+            </li>
+        </transition-group>
 
-        </ul>
     </div>
     <script>
         var vm = new Vue({
@@ -90,6 +102,10 @@
                         name: this.name
                     });
                     this.id = this.name = '';
+                },
+                del(i) {
+                    this.list.splice(i, 1)
+
                 }
             },
         });
