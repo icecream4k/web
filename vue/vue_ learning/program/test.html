@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="./lib/vue.js"></script>
-    <script src="./lib/vue-resource.js"></script>
     <style>
 
     </style>
@@ -15,43 +14,43 @@
 
 <body>
     <div id="app">
-        <div>
-            <label for="">
-                Name:
-                <input type="text" v-model='name'>
-            </label>
-            <input type="button" value="添加" @click='add()'>
-        </div>
+        <!-- 点击加号按钮实现增加1,并分组  -->
+        <test></test>
+        <hr>
+        <test></test>
+        <hr>
+        <test></test>
+        <hr>
+        <test></test>
+        <hr>
     </div>
+
+    <template id="test">
+        <div>
+            <input type="button" value="+" @click='add'>
+            <h2>{{number}}</h2>
+        </div>
+    </template>
     <script>
-        var vm = new Vue({
-            el: '#app',
-            data: {
-                name: ''
+        Vue.component('test',{
+            template:'#test',
+            data:function(){
+                return {number:0}
             },
-            methods: {
-                add() { // 添加品牌列表到后台服务器
-                    // 分析
-                    // 1.经过查看 数据API接口 要发送一个post请求, this.$http.post
-                    // 2.this.$http.post() 中接收三个参数 -- 1)请求的url地址;2)要提交到服务器的数据,要以对象的形式提交给服务器{name:this.name};3)是一个配置对象,要以哪种表单数据类型提交过去{emulateJSON:true},以普通表单格式,将数据提交给服务器 application/x-www-form-urlencoded
-                    // 3.在post方法中,使用 .then 来设置成功的回调函数,如果想要拿到成功的结果,需要 result.body
-                    this.$http.post('http://localhost:5000/vuetest_04', {
-                        name: this.name
-                    }, {
-                        emulateJSON: true
-                    }).then(result => {
-                        if (result.status === 200) {
-                            // 成功
-                            // getAllList() // 如果添加了之后,只需要手动在调用一下 getAllList 就能刷新品牌列表
-                            console.log(result)
-                            alert('添加成功 ')
-                        } else {
-                            // 失败
-                            console.log(result)
-                            alert('添加失败')
-                        }
-                    })
+            methods:{
+                add(){
+                    this.number += 1
                 }
+            }
+        })
+
+        var vm=new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+
             },
         });
     </script>
