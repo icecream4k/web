@@ -14,12 +14,14 @@
 
 <body>
     <div id="app">
-        <a href="" @click.prevent='flag=true'>登录</a>
-        <a href="" @click.prevent='flag=false'>注册</a>
-        <login v-if='flag'></login>
-        <register v-else='flag'></register>
+        <input type="button" value="登录" @click="comName='login'">
+        <input type="button" value="注册" @click="comName='register'">
+        <!-- Vue提供了component,来展示对应名称的组件 -->
+        <!-- component是一个占位符, :is 属性,可以用来指定要展示的组件的名称 -->
+        <component :is="comName"></component>
     </div>
     <script>
+        // 组件名称是字符串
         Vue.component('login', {
             template: '<h1>登录组件</h1>'
         })
@@ -30,7 +32,7 @@
         var vm = new Vue({
             el: '#app',
             data: {
-                flag:true
+                comName:'' // 当前 component 中 :is 绑定的组件名称
             },
             methods: {
 

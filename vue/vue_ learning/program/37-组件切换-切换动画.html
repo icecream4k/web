@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+    <style>
+        .v-enter,
+        .v-leave-to{
+            opacity: 0;
+            transform: translateX(150px);
+        }
+        .v-enter-active,
+        .v-leave-active{
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="登录" @click="comName='login'">
+        <input type="button" value="注册" @click="comName='register'">
+        <!-- Vue提供了component,来展示对应名称的组件 -->
+        <!-- component是一个占位符, :is 属性,可以用来指定要展示的组件的名称 -->
+        <!-- :is 如果一开始就为空,说明这个组件一开始不展示,只有点击之后才会展示,所以还是设置一个组件的为好 -->
+        <!-- 通过 mode  属性,设置组件切换时候的 模式 -->
+        <transition mode='out-in'>
+            <component :is="comName"></component>
+        </transition>
+
+        <!-- 总结:当前学习了几个Vue标签 -->
+        <!-- component / template / transition过渡 / transitionGroup过渡(多个元素过渡) -->
+
+    </div>
+    <script>
+        // 组件名称是字符串
+        Vue.component('login', {
+            template: '<h1>登录组件</h1>'
+        })
+
+        Vue.component('register', {
+            template: '<h1>注册组件</h1>'
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                comName: '' // 当前 component 中 :is 绑定的组件名称
+            },
+            methods: {
+
+            },
+        });
+    </script>
+</body>
+
+</html>

@@ -14,23 +14,14 @@
 
 <body>
     <div id="app">
-        <a href="" @click.prevent='flag=true'>登录</a>
-        <a href="" @click.prevent='flag=false'>注册</a>
-        <login v-if='flag'></login>
-        <register v-else='flag'></register>
+
     </div>
     <script>
-        Vue.component('login', {
-            template: '<h1>登录组件</h1>'
-        })
-
-        Vue.component('register', {
-            template: '<h1>注册组件</h1>'
-        })
+        // 创建 Vue 实例,得到 ViewModel
         var vm = new Vue({
             el: '#app',
             data: {
-                flag:true
+
             },
             methods: {
 
