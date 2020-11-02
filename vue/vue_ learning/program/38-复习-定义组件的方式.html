@@ -14,9 +14,19 @@
 
 <body>
     <div id="app">
-
+        <mylogin></mylogin>
     </div>
     <script>
+        // 定义组件的时候,如果要定义全局的组件,Vue.component('组件的名称'.{})
+
+        // 通过 对象 字面量的形式,定义了一个 组件模板对象
+        var mylogin = {
+            template: `<h2>这是一个测试用的h1</h2>`
+        }
+        // 通过 Vue.component 把 组件模板对象,注册为一个全局 Vue 组件,同时,为这个组件起了一个名称,可以让我们 通过 标签形式,在页面中直接引入这个组件
+        // Vue.component('mylogin',mylogin)
+
+        
         // 创建 Vue 实例,得到 ViewModel
         var vm = new Vue({
             el: '#app',
@@ -26,7 +36,10 @@
             methods: {
 
             },
-            component:{}
+            components:{ // 组件的定义
+                // '组件名称':'组件的模板对象'
+                'mylogin':mylogin
+            }
         });
     </script>
 </body>
