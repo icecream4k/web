@@ -22,7 +22,7 @@
         var vm = new Vue({
             el: '#app',
             data: {
-                msg:'123 啊-父组件中的数据'
+                msg:'啊-父组件中的数据'
             },
             methods: {
 
@@ -30,8 +30,8 @@
             components:{
                 // 结论:经过演示,发现,子组件中,默认无法访问到 父组件中的 data 上的数据 和 methods 中的方法
                 com1:{
-                    template:'<h1>这是子组件 --- {{props[0]}}</h1>',
-                    props:['parentmsg'] 
+                    template:'<h1>这是子组件 --- {{parentmsg}}</h1>',
+                    props:['parentmsg']  // 把父组件传递过来的 parentmsg 属性,现在 props 数组中,定义一下,这样才能使用这个数据
                 }
             }
         });
