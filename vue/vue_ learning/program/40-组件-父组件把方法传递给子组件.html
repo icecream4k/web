@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_Document</title>
+    <script src="./lib/vue.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 父组件向子组件 传递 方法,使用的是 事件绑定机制 v-on / @, 当我们自定义了一个 事件属性之后,那么子组件就能够通过某些方式,就能够调用传递进去的这个方法了 -->
+        <com2 @func="show"></com2>
+    </div>
+
+    <template id='tmpl'>
+        <div>
+            <h1>这是 子组件</h1>
+        </div>
+    </template>
+    <script>
+        // 定义了一个字面量类型的 组件模板对象
+        var com2 = {
+            template: '#tmpl' // 通过制定了一个 ID,表示 说,要去加载这个指定 ID的 template 与元素中的内容,当做 组件 的HTML结构
+        }
+
+
+        // 创建 Vue 实例,得到 ViewModel
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+                show(){
+                    console.log('调用了父组件上的show方法');
+                }
+            },
+            components:{
+                com2:com2
+            }
+        });
+    </script>
+</body>
+
+</html>
