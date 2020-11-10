@@ -1,10 +1,10 @@
 ---------------------------
 JSON.stringify
     把JS对象或者值转成 JSON字符串
-    JSON.stringify({"name":"han","age":18}) => {"name":"han","age":18}
+    JSON.stringify({"name":"han","age":18}) => {"name":"han","age":18} 类型 : string
 JSON.parse
     把一个JSON字符串转成对象
-    JSON.parse()
+    JSON.parse({"name":"han","age":18}) => {"name":"han","age":18}  类型 : object
 ---------------------------
 
 ---------------------------

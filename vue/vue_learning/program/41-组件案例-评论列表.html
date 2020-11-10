@@ -9,13 +9,7 @@
     <script src="./lib/vue.js"></script>
     <link rel="stylesheet" href="./lib/bootstrap.css">
     <style type="text/css">
-        body {
-            CURSOR: url('./lib/mouseicon.cur'),default
-        }
 
-        a {
-            CURSOR: url('./lib/mouseicon.cur'),default
-        }
     </style>
 </head>
 
@@ -69,7 +63,7 @@
                     // 2,先组织处一个最新的评论数据对象
                     // 3,想办法,把第二步中得到的评论对象保存到 localStorage 中
                     // 3.1 localStorage 只支持存放字符串数据,先调用 JSON.stringify
-                    // 3.2 在保存最新的评论数据之前,要先从 localStorage 获取之前的评论数据(string),转换成一个 数组对象,然后把最新的评论,push到这个数组中
+                    // 3.2 在保存最新的评论数据之前,要先从 localStorage 获取之 前的评论数据(string),转换成一个 数组对象,然后把最新的评论,push到这个数组中
                     // 3.3 如果获取到的 localStorage 中的 评论字符串,为空不存在,则可以返回一个 '[]' 让 JSON.parse 去转换 
                     // 3.4 把 最新的 评论列表数组,再次调用 JSON.stringify 转为一个数组字符串,然后调动 localStorage.setItem()
                     var comment = {
