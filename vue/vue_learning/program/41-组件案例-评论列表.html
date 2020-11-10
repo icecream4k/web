@@ -8,12 +8,22 @@
     <title>Vue_Document</title>
     <script src="./lib/vue.js"></script>
     <link rel="stylesheet" href="./lib/bootstrap.css">
-    <style>
+    <style type="text/css">
+        body {
+            CURSOR: url('./lib/mouseicon.cur'),default
+        }
 
+        a {
+            CURSOR: url('./lib/mouseicon.cur'),default
+        }
     </style>
 </head>
 
 <body>
+
+    <div>
+        <a href="https://www.baidu.com">点我</a>
+    </div>
     <div id="app">
         <cmt-box></cmt-box>
         <br>
@@ -45,15 +55,15 @@
     </template>
     <script>
         var commentBox = {
-            data(){
-                return{
-                    user:'',
-                    content:''
+            data() {
+                return {
+                    user: '',
+                    content: ''
                 }
             },
             template: '#tmpl',
             methods: {
-                postComment(){ // 发表评论的方法
+                postComment() { // 发表评论的方法
                     // 分析发表评论的业务逻辑
                     // 1,评论数据存到哪里去   存放到了 localStorage 中 localStorage.setItem('键','值')
                     // 2,先组织处一个最新的评论数据对象
@@ -62,12 +72,16 @@
                     // 3.2 在保存最新的评论数据之前,要先从 localStorage 获取之前的评论数据(string),转换成一个 数组对象,然后把最新的评论,push到这个数组中
                     // 3.3 如果获取到的 localStorage 中的 评论字符串,为空不存在,则可以返回一个 '[]' 让 JSON.parse 去转换 
                     // 3.4 把 最新的 评论列表数组,再次调用 JSON.stringify 转为一个数组字符串,然后调动 localStorage.setItem()
-                    var comment = {id:Date.now(),user:this.user,content:this.content}
+                    var comment = {
+                        id: Date.now(),
+                        user: this.user,
+                        content: this.content
+                    }
                     // 从 localStorage 中获取所有的评论
                     var list = JSON.parse(localStorage.getItem('cmts') || '[]')
                     list.unshift(comment)
                     // 重新保存最新的 评论数据
-                    localStorage.setItem('cmts',JSON.stringify(list))
+                    localStorage.setItem('cmts', JSON.stringify(list))
                     this.user = this.content = ''
                 }
             },
@@ -95,11 +109,11 @@
                 ]
             },
             methods: {
-                
+
             },
-            components:{
-                    'cmt-box':commentBox
-                }
+            components: {
+                'cmt-box': commentBox
+            }
         });
     </script>
 </body>

@@ -1,5 +1,5 @@
 // 'use strict';
 (()=>{
-    var str = {"name":"菜鸟教程", "site":"http://www.runoob.com"}
-    console.log(JSON.stringify(str));
+    console.log(JSON.stringify({"name":"韩", "age":18}));
+    console.log(JSON.parse);
 })()
