@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_Document</title>
+    <link rel="icon" href="https://cn.vuejs.org/images/logo.png">
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/axios.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" value="更变(get)" @click='GetValue'>
+        <input type="button" value="更变(post)" @click='PostValue'>
+        <input type="button" value="更变(多个post)" @click='LotOfValue'>
+
+        <h1>{{msg}}</h1>
+        <ul v-for='item,number in msg_list'>
+            <h1>编号 - {{item[0]}}</h1>
+            <h1>汽车品牌 - {{item[1]}}</h1>
+            <h1>时间 - {{item[2]}}</h1>
+        </ul>
+        <h2>{{LotOfMsg}}</h2>
+    </div>
+    <script>
+        // 创建 Vue 实例,得到 ViewModel
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: '',
+                LotOfMsg: "",
+                msg_list: []
+            },
+            methods: {
+                // get请求
+                GetValue() {
+                    axios.get('http://127.0.0.1:5000/vuetest_06')
+                        .then(response => {
+                            console.log(response.data);
+                            this.msg_list = response.data
+                        })
+                        .catch(function(error) { // 异常情况
+                            console.log(error);
+                        });
+
+                    // 带参请求
+                    // axios.get('/user', {
+                    //         params: {
+                    //             ID: 12345
+                    //         }
+                    //     })
+                    //     .then(function(response) {
+                    //         console.log(response);
+                    //     })
+                    //     .catch(function(error) {
+                    //         console.log(error);
+                    //     });
+                },
+
+                // post请求
+                PostValue() {
+                    axios.post('http://127.0.0.1:5000/vuetest_06', {
+                            // firstName: 'Fred',
+                            // lastName: 'Flintstone'
+                        })
+                        .then(response => {
+                            console.log(response.data);
+                            this.msg_list = response.data
+                        })
+                        .catch(function(error) {
+                            console.log(error);
+                        });
+                },
+
+                // 多个同时请求,这个只能在 钩子函数 created() 中使用,因为当时 data  和 methods 刚初始化完毕
+                LotOfValue() {
+                    function request01() {
+                        return axios.get('http://127.0.0.1:5000/vuetest_07_1');
+                    }
+
+                    function request02() {
+                        return axios.get('http://127.0.0.1:5000/vuetest_07_2');
+                    }
+
+                    function request03() {
+                        return axios.post('http://127.0.0.1:5000/vuetest_07_3');
+                    }
+
+                    axios.all([request01(), request02(),request03()])
+                        .then(axios.spread((r1, r2,r3)=>{
+                            // 两个请求现在都执行完成
+                            console.log(r1,r2,r3);
+                            this.LotOfMsg = r1.data+' 和 '+r2.data+' 和 '+r3.data
+                        }));
+                }
+
+            },
+            created() { // 当 vm 实例的data 和 methods 初始化完毕后,vm 实例会自动执行这个生命周期函数
+                this.LotOfValue()
+            }
+        });
+    </script>
+</body>
+
+</html>
