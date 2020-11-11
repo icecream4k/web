@@ -32,7 +32,7 @@
             methods: {
                 getInfo() { // 发起get请求
                     // 当发起get请求之后,通过 .then 来设置成功的回调函数
-                    this.$http.get('http://localhost:5000/result?%E5%A7%93%E5%90%8D=han&%E7%89%A9%E7%90%86=90&%E5%8C%96%E5%AD%A6=100&%E6%95%B0%E5%AD%A6=90').then(function(result) {
+                    this.$http.get('http://127.0.0.1:5000/wangkaiyue').then(function(result) {
                         // 通过 result.body 拿到服务器返回的成功的数据
 
                         console.log(result);
