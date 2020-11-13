@@ -14,12 +14,9 @@
 </head>
 
 <body>
-
-    <div>
-        <a href="https://www.baidu.com">点我</a>
-    </div>
     <div id="app">
-        <cmt-box></cmt-box>
+        <cmt-box @func="loadComments"></cmt-box>
+
         <br>
         <ul class="list-group">
             <li class="list-group-item" v-for='item in list' :key='item.id'>
@@ -76,7 +73,9 @@
                     list.unshift(comment)
                     // 重新保存最新的 评论数据
                     localStorage.setItem('cmts', JSON.stringify(list))
-                    this.user = this.content = ''
+                    this.user = this.content = '';
+                    // this.loadComments() // 直接使用不行,因为这个位置是子组件
+                    this.$emit('func')
                 }
             },
         }
@@ -102,8 +101,17 @@
                     },
                 ]
             },
-            methods: {
+            breforCreate(){ // 这里不能调用 loadComment 方法,因为在执行这个钩子函数的时候,data和methods 还没有被初始化
 
+            },
+            created() {
+                this.loadComments();
+            },
+            methods: {
+                loadComments(){ // 从本地的 localStorage 中,加载评论列表
+                    var list = JSON.parse(localStorage.getItem('cmts') || '[]');
+                    this.list = list
+                }
             },
             components: {
                 'cmt-box': commentBox
