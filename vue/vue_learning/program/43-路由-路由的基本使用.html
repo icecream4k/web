@@ -19,7 +19,13 @@
 
 <body>
     <div id="app">
-        
+
+        <a href="#/login">登录</a>
+        <a href="#/register">注册</a>
+        <!-- 这是 vue-router 提供的元素,专门用来 当做占位符的,将来,路由规则,匹配到的组件,就会展示到这个 router-view 里面去 -->
+        <!-- 所以:我们可以吧 router-view 认为是一个占位符 -->
+        <router-view></router-view>
+
     </div>
     <script>
         // login是当前的模板对象

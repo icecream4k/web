@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="../css/reset.css">
     <!-- <link rel="icon" href="https://cn.vuejs.org/images/logo.png"> -->
     <style>
-        .t_value_01_d1{
+        /* 组件版 */
+        /* .t_value_01_d1{
             background-color: skyblue;
             width: 300px;
             height: 800px;
@@ -23,12 +24,13 @@
             width: 300px;
             height: 800px;
             border-radius: 5%;
-        }
+        } */
     </style>
 </head>
 
 <body>
-    <div id="app">
+    <!-- 组件版 -->
+    <!-- <div id="app">
         <div>
             <button @click="comName=""></button>
             <input type="button" value="更变"  @click="comName='v1'">
@@ -76,6 +78,25 @@
 
             },
         });
+    </script> -->
+
+    <!-- router 路由版 -->
+
+
+    <div id="app2">
+
+    </div>
+    <script>
+        var vm = new Vue({
+            el:"#app2",
+            data:{
+
+            },
+            methods: {
+                
+            },
+            router:'',
+        })
     </script>
 </body>
 
