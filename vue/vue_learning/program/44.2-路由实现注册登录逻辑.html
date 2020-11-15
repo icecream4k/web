@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_Document</title>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/axios.js"></script>
+    <script src="./lib/vue-router.js"></script>
+    <link rel="stylesheet" href="./lib/reset.css">
+    <link rel="icon" href="https://cn.vuejs.org/images/logo.png">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <router-link to="/login" tag='button'>登录</router-link>
+        <router-link to="/register" tag="button">注册</router-link>
+        <router-view></router-view>
+    </div>
+
+    <script>
+        var show = {
+            template: `
+            <div>
+                <h1>账号 -- {{register_id}}</h1>
+                <h1>密码 -- {{register_password}}</h1>
+            </div>
+            `
+        }
+
+        var Login_registration_component = new VueRouter({
+            routes: [{
+                    path: '/',
+                    redirect: '/register'
+                },
+                {
+                    path: '/login',
+                    component: this.login
+                },
+                {
+                    path: '/register',
+                    component: this.register
+                }
+            ]
+        })
+
+        // 创建 Vue 实例,得到 ViewModel
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                register_id: '',
+                register_password: '',
+                login_id: '',
+                login_password: ''
+            },
+            methods: {
+
+            },
+            components: {
+                login: {
+                    template: `
+                                <div>
+                                    <input type="text" value="请输入账号:" v-model='login_id'>
+                                    <input type="text" value="请输入密码:" v-model='login_password'>
+                                </div>
+                                `
+                },
+                show: {
+                    template: `
+                                <div>
+                                    <h1>账号 -- {{register_id}}</h1>
+                                    <h1>密码 -- {{register_password}}</h1>
+                                </div>
+                                `
+                },
+                register: {
+                    template: `
+                                <div>
+                                    <input type="text" value="请输入账号:" v-model='register_id'>
+                                    <input type="text" value="请输入密码:" v-model='register_password'>
+                                </div>
+                                `
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
