@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_Document</title>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/axios.js"></script>
+    <script src="./lib/vue-router.js"></script>
+    <link rel="stylesheet" href="./lib/reset.css">
+    <link rel="icon" href="https://cn.vuejs.org/images/logo.png">
+    <style>
+        .header {
+            background-color: orange;
+            height: 80px;
+        }
+
+        .container {
+            display: flex;
+            height: 400px;
+
+        }
+        .left{
+            background-color:lightgreen;
+            flex:2
+        }
+        .main{
+            background-color:lightpink;
+            flex:8
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <router-view name='default'></router-view>
+        <div class="container">
+            <router-view name='left'></router-view>
+            <router-view name='main'></router-view>
+
+        </div>
+    </div>
+
+    <template id="header">
+        <div class="header">
+            <h1>这是 Header 头部</h1>
+        </div>
+    </template>
+    <template id="leftBox">
+        <div class="left">
+            <h1>这是 leftBox 侧边栏</h1>
+        </div>
+    </template>
+    <template id="mainBox">
+        <div class="main">
+            <h1>这是 mainBox 主体区域</h1>
+        </div>
+    </template>
+
+    <script>
+        var header = {
+            template: '#header'
+        }
+        var leftBox = {
+            template: '#leftBox'
+        }
+        var mainBox = {
+            template: '#mainBox'
+        }
+
+        var routerObj = new VueRouter({
+            routes: [{
+                path: '/',
+                components: {
+                    'default': header,
+                    'left': leftBox,
+                    'main': mainBox
+                }
+            }]
+        })
+
+        // 创建 Vue 实例,得到 ViewModel
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+
+            },
+            router: routerObj
+        });
+    </script>
+</body>
+
+</html>

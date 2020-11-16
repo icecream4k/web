@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_Document</title>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/axios.js"></script>
+    <script src="./lib/vue-router.js"></script>
+    <link rel="stylesheet" href="./lib/reset.css">
+    <link rel="icon" href="https://cn.vuejs.org/images/logo.png">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <router-link to='/'>首页</router-link>
+        <router-link to="/account">Account</router-link>
+        <router-view></router-view>
+    </div>
+
+    <template id="tmpl">
+        <div>
+            <h1>这是 Account 组件</h1>
+            <router-link to='/account/login'>登录</router-link>
+            <router-link to='/account/register'>注册</router-link>
+
+            <router-view></router-view>
+        </div>
+    </template>
+
+
+    <template id="login">
+        <div>
+            <h2>
+                登录组件
+            </h2>
+        </div>
+    </template>
+
+    <template id="register">
+        <div>
+            <h2>
+                注册组件
+            </h2>
+        </div>
+    </template>
+
+    <script>
+        const account = {
+            template: "#tmpl"
+        }
+
+
+        const login = {
+            template: "#login"
+        }
+
+        const register = {
+            template: "#register"
+        }
+        
+        // 使用 children 属性,实现子路由,同时,子路由的path前面,不要带 / ,否则永远以根路径开始请求,这样不方便我们用户去理解url地址
+        const routerObj = new VueRouter({
+            routes: [{
+                    path: '/account',
+                    component: account,
+                    children:[
+                        // 注意 children 里面的 path 不要加  /  根路径  
+                        {path:'login',component:login},
+                        {path:'register',component:register},
+                    ]
+                },
+                // {
+                //     path: '/account/login',
+                //     component: login
+                // },
+                // {
+                //     path: '/account/register',
+                //     component: register
+                // }
+
+            ]
+        })
+        // 创建 Vue 实例,得到 ViewModel
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+
+            },
+            router: routerObj
+        });
+    </script>
+</body>
+
+</html>
