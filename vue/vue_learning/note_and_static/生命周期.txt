@@ -3,33 +3,33 @@ Vue 实例的生命周期
 
     Init Events & Lifecycle --> 表示,刚初始化了一个Vue空的实例对象,这时候,这个对象身上,只有默认的一些生命周期函数 和 默认的事件,其他的东西都未创建;注意,在beforcCreate生命周期函数执行的时候,data和methods中的数据都还没有被初始化
 
-    breforeCreate --> 执行第一个生命周期函数 breforeCreate
+    #(1)#.    breforeCreate --> 执行第一个生命周期函数 breforeCreate
     Init injections & reactivity -->在created中,data和methods都已经被初始化好了;如果要调用methods中的方法,或者操作data中的数据,最早,只能在created中操作
 
-    createad --> 执行第二个生命周期函数 createad
+    #(2)#.    createad --> 执行第二个生命周期函数 createad
 
     Complie template into rander function--> 表示 Vue 开始编译模板,把 Vue 代码中的那些指令进行执行,最终,在内存中生成一个编译好的最终模板字符串,然后把这个模板字符串渲染内存中的DOM;此时,只是在内存中渲染好了模板,并没有把模板挂载到真正的页面中去
 
-    beforeMount --> 执行第三个生命周期函数 beforeMount 此函数执行的时候,模板已经在内存中编译好了,但是尚未挂载到页面当中去,此时页面,还是旧的
+    #(3)#.    beforeMount --> 执行第三个生命周期函数 beforeMount 此函数执行的时候,模板已经在内存中编译好了,但是尚未挂载到页面当中去,此时页面,还是旧的
 
     Create vm.$el and replace 'el' with it --> 这一步把内存中,编译好的模板,真是的替换到浏览器的页面中去
 
-    mounted --> 执行第四个生命周期函数 mounted 如果要通过某些插件操作页面上的DOM节点了,最早要在mounted中进行,只要执行完了mounted,就表示整个Vue实例已经初始化完毕了;此时组件已经脱离了创建阶段;进入到了运行阶段
+    #(4)#.    mounted --> 执行第四个生命周期函数 mounted 如果要通过某些插件操作页面上的DOM节点了,最早要在mounted中进行,只要执行完了mounted,就表示整个Vue实例已经初始化完毕了;此时组件已经脱离了创建阶段;进入到了运行阶段
 
         ************************
     以下是 组件运行 阶段生命周期函数,只有两个,这俩事件,会根据data数据的改变选择性触发0次到多次
 
-    beforUpdate --> 得出结论:当执行 beforeUpdate 的时候,页面中的显示的数据,还是旧的,此时 data 数据是最新的,页面尚未和 最新的数据保持同步
+    #(5)#.    beforUpdate --> 得出结论:当执行 beforeUpdate 的时候,页面中的显示的数据,还是旧的,此时 data 数据是最新的,页面尚未和 最新的数据保持同步
 
     Virtual DOM re-render and patch --> 这一步执行的是:现根据data中最新的数据,在内存中,重新渲染出一份 最新的 内存DOM树,当 最新的 内存 DOM树 被更新之后,会 把 最新的内存DOM树,重新渲染到真实的页面中去,这时候,就完成了 数据 从 data(Model层) --> view(视图层)的更新
 
-    updated --> updated 事件执行的时候,页面和 data 数据已经保持同步了,已经是最新的
+    #(6)#.    updated --> updated 事件执行的时候,页面和 data 数据已经保持同步了,已经是最新的
 
         ************************
 
-    deforeDestroy --> 当执行 deforeDestroy 钩子函数的时候,就已经从 运行阶段 进入到了 销毁阶段;当执行 deforeDestroy 的时候,实例身上所有的 data 和 methods 以及 过滤器,指令 ... 都处于可用状态,还没有真正的执行销毁的过程
+    #(7)#.    deforeDestroy --> 当执行 deforeDestroy 钩子函数的时候,就已经从 运行阶段 进入到了 销毁阶段;当执行 deforeDestroy 的时候,实例身上所有的 data 和 methods 以及 过滤器,指令 ... 都处于可用状态,还没有真正的执行销毁的过程
     
-    destroyed --> 当执行到 destroyed 函数的时候,组件已经完全被销毁了,此时,组件中所有的数据,方法,指令,过滤器 ... 都已经不可用了
+    #(8)#.    destroyed --> 当执行到 destroyed 函数的时候,组件已经完全被销毁了,此时,组件中所有的数据,方法,指令,过滤器 ... 都已经不可用了
 
 
     主要的生命周期函数分类
