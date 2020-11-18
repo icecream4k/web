@@ -178,8 +178,68 @@
 // }
 
 // 打印 10 - 20 之间所有的整数
-var number = 10;
-while (number <= 20) {
-    console.log(number); // 10  11 12 ..... 19 20
-    number++; // 11 12 ...  20 21 
-}
+// var number = 10;
+// while (number <= 20) {
+//     console.log(number); // 10  11 12 ..... 19 20
+//     number++; // 11 12 ...  20 21 
+// }
+
+// 计算 1 - 100 之间所有整数的和
+// var number = 1;
+// var s = 0; // 辅助参数
+// while (number <= 100) { // 1 + 2 + 3 4 5 
+//     s+=number // s-6  n-3  
+//     number += 1; // 自增一个 number 的值
+// }
+// console.log(s);
+
+// break   //  停止 - 停止循环/终止循环  吃到坏的瓜子 - 我就不吃了
+// continue // 停止 - 停止本次循环/终止本次循环  吃到坏的瓜子,我这颗瓜子不吃了,然后继续吃
+
+// var n = 0;
+// while (n < 10) { // 4
+//     if (n === 5) { // n-5
+//         n++; // n-6
+//         continue
+//     } else {
+//         console.log(n); // 0 1 2 3 4 6
+//         n++;
+//     }
+// }
+// console.log('循环已经结束');
+
+// 用 continue 来实现 打印 1 - 500 之内所有的奇数
+// var n = 1;
+// while (n <= 500) {
+//     if (n % 2 === 0) {
+//         n++;
+//         continue;
+//     } else {
+//         console.log(n);
+//         n++;
+//     }
+// }
+
+
+// 在系统里面,存储一个 账号 和一个 密码
+// 账号 - lixiaoyao110
+// 密码 - 111
+// var id = 'lixiaoyao110';
+// var pwd = '111';
+
+// var uid = '';
+// var upwd ;
+// 循环的去判断账号和密码的正确性;
+// 1,先判断账号,账号正确的了,再判断密码
+// 2,你有3次错误的机会(账号和密码的共有)
+// 10m  19:13
+// for 
+
+// 数组
+
+// 1demo
+
+// 函数 function(){}
+
+
+

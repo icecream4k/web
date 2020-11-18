@@ -1,5 +1,5 @@
 Vue 实例的生命周期
-    new Vue() --> var vm = new Vue({}) 表示开始创阿金一个 Vue 的实例对象
+    new Vue() --> var vm = new Vue({}) 表示开始创建一个 Vue 的实例对象
 
     Init Events & Lifecycle --> 表示,刚初始化了一个Vue空的实例对象,这时候,这个对象身上,只有默认的一些生命周期函数 和 默认的事件,其他的东西都未创建;注意,在beforcCreate生命周期函数执行的时候,data和methods中的数据都还没有被初始化
 

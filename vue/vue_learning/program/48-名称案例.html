@@ -23,8 +23,8 @@
         <!-- 1.我们要监听到 文本框数据的改变,这样才能知道 什么时候去拼接 出一个 fullname -->
         <!-- 2.如何监听到文本框的改变? -->
 
-        <input type="text" v-model='firstname' @keyup="getFullname"> +
-        <input type="text" v-model='lastname' @keyup="getFullname"> =
+        <input type="text" v-model='firstname'> +
+        <input type="text" v-model='lastname'> =
         <input type="text" v-model='fullname'>
     </div>
     <script>
@@ -37,8 +37,21 @@
                 fullname: ''
             },
             methods: {
-                getFullname() {
-                    this.fullname = this.firstname + '-' + this.lastname
+
+            },
+            watch: { // 使用这个属性,可以监视 data 中制定数据的变化,然后出发这个watch中对应的fucntion处理函数
+                // 'firstname':function(){ // 注意,这里的function不能用匿名函数
+                //     this.fullname = this.firstname + '-' + this.lastname
+                // },
+                // 'lastname':function(){
+                //     this.fullname = this.firstname + '-' + this.lastname
+                // }
+                'firstname': function(newvalue, oldvalue) { // 注意,这里的function不能用匿名函数
+                    // console.log(newvalue + '----' + oldvalue);
+                    this.fullname = newvalue + '-' + this.lastname
+                },
+                'lastname': function(newvalue, oldvalue) {
+                    this.fullname = this.firstname + '-' + newvalue
                 }
             },
         });
