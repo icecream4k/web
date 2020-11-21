@@ -34,10 +34,7 @@
                     // 当发起get请求之后,通过 .then 来设置成功的回调函数
                     this.$http.get('http://127.0.0.1:5000/wangkaiyue').then(function(result) {
                         // 通过 result.body 拿到服务器返回的成功的数据
-
-                        console.log(result);
-                        this.msg = result.body
-                    })
+                        console.log(result);this.msg = result.body})
                 },
                 postInfo() { // 发起post请求  application/x-wwww-form-urlencoded
                     // 手动发起的 post 请求,默认没有表单格式,所以有的服务器处理不了

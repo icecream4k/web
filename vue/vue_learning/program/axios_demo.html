@@ -40,11 +40,7 @@
             methods: {
                 // get请求
                 GetValue() {
-                    axios.get('http://127.0.0.1:5000/vuetest_06')
-                        .then(response => {
-                            console.log(response.data);
-                            this.msg_list = response.data
-                        })
+                    axios.get('http://127.0.0.1:5000/vuetest_06').then(response => {console.log(response.data);this.msg_list = response.data})
                         .catch(function(error) { // 异常情况
                             console.log(error);
                         });
