@@ -4,17 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../public_static_files/logo/vue.png">
     <title>脚手架</title>
+    <style>
+        .header_d1{
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="header_d1">
+        <h1><span style="color:#41b783 ;">Vue-Cli 脚手架</span>以及<span style="color: #bdcaab;">ES6</span>部分知识</h1>
+    </div>
     <hr>
     <ul>
         <li>
-            什么是脚手架：已经具有核心功能的标准化的半成品项目
+            <h1>脚手架的安装和介绍</h1>
         </li>
         <li>
-            为什么使用脚手架：
+            <h3>
+            什么是脚手架：已经具有核心功能的标准化的半成品项目
+            </h3>
+        </li>
+        <li>
+            <h3>为什么使用脚手架：</h3>
             <ul>
                 <li>
                     标准化：凡是用vue脚手架工具生成的脚手架代码结构完全一样
@@ -25,10 +39,14 @@
             </ul>
         </li>
         <li>
-            何时使用：今后所有企业中的前段项目都是在脚手架代码基础上开发的
+            <h3>
+                何时使用：今后所有企业中的前段项目都是在脚手架代码基础上开发的
+            </h3>
+            
         </li>
         <li>
-            如何使用：2步
+            <h3>如何使用：2步</h3>
+            
             <ul>
                 <li>
                     先安装用于反复生成脚手架的命令行工具：(一只老母鸡)[不需要每个项目重复做]--在任意目录下都行<br>
@@ -42,7 +60,7 @@
             </ul>
         </li>
         <li>
-            vue create 项目名：安装步骤
+            <h3>vue create 项目名：安装步骤</h3>
             <ul>
                 <li>
                     第一步,选择预设,推荐选择第二个的自定义
@@ -109,7 +127,7 @@
         </li>
     </ul>
     <hr>
-    <span>懒加载</span>
+    <h2>懒加载</h2>
     <ul>
         <li>
             问题：单页面应用首屏加载时,默认会讲所有页面组件的内容都下载到客户端,首屏加载非常慢
@@ -129,7 +147,7 @@
             </ul>
         </li>
     </ul>
-    <span>全局组件</span>
+    <h2>全局组件</h2>
     <ul>
         <li>
             在src文件夹/components文件夹下新建组件 .vue文件
@@ -155,9 +173,82 @@
         </li>
     </ul>
     <hr>
+
     <ul>
         <li>
+            <h1>箭头函数</h1>
+            ES6中的 箭头函数来定义函数<br>
+            const func = (参数列表)=>{函数体}<br>
+            const func = (n1,n2)=>{return n1+n2}<br>
+            const func = n=>{n*n} # 如果参数列表里面只有一个参数的时候,括号是可以省略的<br>
+            例如 函数中有多行代码的时<br>
+            const test = () => {<br>console.log('hello world');<br>console.log('hello world');<br>}<br>
+            例如函数代码块中只有一行代码时<br>
+            const mul = (n1,n2) => n1 + n2;<br>
+            console.log(mul(30,40));
+        </li>
+        <li>
             <h1>Vue Cli</h1>
+            <p>创建vue项目 - vue init webpack projectname</p>
+            <p>vue程序执行流程</p>
+            <ol>
+                <li>
+                    <p>
+                        template
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        ast
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        rander
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        virtual dom
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        真实 DOM
+                    </p>
+                </li>
+            </ol>
+            <hr>
+            <p>
+                runtime-compiler()<br>
+                template -> ast -> rander -> vdom -> ui<br>
+                runtime-only(1,性能更高 2,下面的vue代码量更少)<br>
+                rander -> vdom -> ui<br>
+            </p>
+            <ol>vue-cli 3和2版本的区别
+                <li>
+                    <p>
+                        vue-cli 3 是基于 webpack 4 打造的,vue-cli 2还是 webpack 3
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        vue-cli 3 的设计原则是 '0配置' ,移除的配置文件根目录下的,build和config等目录
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        vue-cli 3 提供了 vue ui 命令,提供了可视化配置,更加人性化
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        移除了 static 文件夹,新增了 public 文件夹,并且index.html 移动到 public 中
+                    </p>
+                </li>
+            </ol>
+
+
         </li>
         <li>
             <h1>Vue-Router</h1>
