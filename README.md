@@ -12,7 +12,7 @@ In HTML\_ In basic, you can find the HTML folder, which is recommended to open J
 
 # If you want to see the knowledge points of Vue
 
-In the Vue folder, you can find a folder called ue 基础代码, where myvue.html It's a record of knowledge about Vue
+In the Vue folder, you can find a folder called Vue_basic , where myvue.html It's a record of knowledge about Vue
 
 
 
