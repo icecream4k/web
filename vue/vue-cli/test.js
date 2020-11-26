@@ -8,4 +8,17 @@
 // }
 // palindRome("abcb");//true
 //
-
+// (() => {
+//     function grilled_savory_crepe() {
+//         if (arguments.length == 0) {
+//             console.log('默认加薄脆和生菜');
+//         } else if (arguments.length == 1) {
+//             console.log(`默认加薄脆和生菜再加点${arguments[0]}`);
+//         } else if (arguments.length == 2) {
+//             console.log(`默认加薄脆和生菜再加点${arguments[0]}和${arguments[1]}`);
+//         }
+//     }
+//     grilled_savory_crepe();
+//     grilled_savory_crepe('萝卜丝');
+//     grilled_savory_crepe('土豆丝', '里脊肉');
+// })();
