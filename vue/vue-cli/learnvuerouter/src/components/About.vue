@@ -7,6 +7,11 @@
 <script>
 export default {
     name: "About",
+    created() { // 串讲组件时候回调的
+        console.log('created');
+        document.title = '关于'
+
+    }
 };
 </script>
 <style scoped>
