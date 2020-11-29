@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -10,4 +11,6 @@ new Vue({
   router,
   render: h => h(App)
 })
-console.log(router);
+
+// 在这里用require可以引用css
+// require('./assets/css/base.css')

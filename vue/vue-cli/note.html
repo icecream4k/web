@@ -347,7 +347,98 @@
         <p>$router为VueRouter实例,想要导航到不同URL,则使用$router.push方法</p>
         <p>$route为当前router跳转对象,里面可以获取name,path,query,params等</p>
         <h3>导航守卫</h3>
-        <p></p>
+        <p>网页标题是通过&lt;title&gt;来显示,但是SPA只有一个固定的HTML,切换不同的页面时,标题并不会改变</p>
+        <p>但是我们可以通过javascript来修改&lt;title&gt;的内容.window.document.title = '新的标题'</p>
+        <p>那么在Vue项目中,在哪里修改?什么时候修改比较合适呢</p>
+        <p>我们比较容易想到的修改标题的位置是每一个路由对应的组件.vue文件中</p>
+        <p>通过mounted声明周期函数,执行对应的代码进行修改即可</p>
+        <p>但是当页面比较多时,这种方式不容易维护(因为需要再多个页面执行类似的代码)</p>
+        <ul>
+            <p>更好的方式 - 我们可以利用beforeEach来完成标题的修改</p>
+            <li>
+                <p>
+                    首先,我们可以在钩子当中定义一些标题,可以利用meta来定义
+                </p>
+            </li>
+            <li>
+                <p>
+                    其次,利用导航收尾,修改我们的标题
+                </p>
+            </li>
+        </ul>
+        <ul>
+            <p>导航钩子的三个参数解析</p>
+            <li>
+                to : 即将要进入的目标的路有对象
+            </li>
+            <li>
+                from : 当前导航即将要离开的路由对象
+            </li>
+            <li>
+                next : 调用该方法后,才能进入下一个钩子
+            </li>
+        </ul>
+        <hr>
+        <h3>keep-alive与vue-router</h3>
+        <ul>
+            <li>
+                keep-alive是Vue内置的一个组件,可以被包含在组件保留状态,或避免重新渲染
+                <ul>
+                    <li>
+                        include - 字符串或正则表达,只有匹配的组件会被缓存
+                    </li>
+                    <li>
+                        exclude - 字符串或正则表达式,任何匹配的组件都不会被缓存
+                    </li>
+                </ul>
+            </li>
+            <li>
+                router-view也是一个组件,如果直接被包在keep-alive里面,所有路径匹配到的视图组件都会被缓存
+            </li>
+            <li>
+                一但使用了keep-alive之后,就可以使用activated和deactivated两个判断当前组件是否会激活的函数
+            </li>
+        </ul>
+        <hr>
+        <h3>TabBar demo 实现思路</h3>
+        <ol>
+            <li>
+                <p>如果在下方有一个单独的TabBar组件,你如何封装</p>
+                <ul>
+                    <li>
+                        自定义TabBar组件,在APP中使用
+                    </li>
+                    <li>
+                        让TabBar出于底部,并且设置相关的样式
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>TabBar中显示的内容由外界决定</p>
+                <ul>
+                    <li>
+                        定义插槽
+                    </li>
+                    <li>
+                        flex布局评分TabBar
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>自定义TabBarItem,可以传入 图片和文字</p>
+                <ul>
+                    <li>
+                        定义TabBarItem,并且定义两个插槽:图片.文字
+                    </li>
+                    <li>
+                        给两个插槽外层包装div,用于设置样式
+                    </li>
+                    <li>
+                        填充插槽,实现底部TabBar的效果
+                    </li>
+                </ul>
+            </li>
+        </ol>
         <li>
             <h1>Vuex</h1>
         </li>

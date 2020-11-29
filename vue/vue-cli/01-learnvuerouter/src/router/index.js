@@ -8,7 +8,6 @@ import Router from 'vue-router'
 // import About from '../components/About.vue'
 // import User from '../components/User.vue'
 
-
 // 懒加载处理
 const Home = () => import('../components/Home.vue')
 const HomeNews = () => import('../components/HomeNews.vue')
@@ -16,7 +15,6 @@ const HomeMessage = () => import('../components/HomeMessage.vue')
 const About = () => import('../components/About.vue')
 const User = () => import('../components/User.vue')
 const Profile = () => import('../components/Profile.vue')
-
 
 // 通过Vue.use(插件),来安装这个插件
 Vue.use(Router)
@@ -54,14 +52,22 @@ export default new Router({
         },
         {
             path: '/about',
+            
+            component: About,
             meta:{
                 title:'关于'
             },
-            component: About
+            beforeEnter: (to, from, next) => {
+                console.log('进入了about');
+                next()
+              }
         },
         {
             path: '/user/:Id',
-            component: User
+            component: User,
+            meta:{
+                title:'我的'
+            }
         },
         {
             path:'/profile',
@@ -84,8 +90,9 @@ const router = new VueRouter({
     linkActiveClass:'active'
 })
 
-router.beforeEach((to, from, next) => {
-    // 从 from 跳转到 to
-    document.title = to.meta.title
-    next()
-})
+// router.beforeEach((to, from, next) => {
+//     // 从 from 跳转到 to
+//     document.title = to.matched[0].meta.title;
+//     console.log('进入了beforeEach');
+//     next();
+// })

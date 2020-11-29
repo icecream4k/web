@@ -1,18 +1,29 @@
 <template>
     <div id="app">
         <h2>这里是App.vue组件</h2>
-        
 
         <router-link to="/home" tag="button" replace>首页</router-link>
         <router-link to="/about" tag="button" replace>关于</router-link>
-        <router-link :to="'/user/'+userId" tag="button" replace>我的</router-link>
+        <router-link :to="'/user/' + userId" tag="button" replace
+            >我的</router-link
+        >
         <!-- <router-link to="/profile" tag="button">档案</router-link> -->
-        <router-link :to="{path:'/profile',query:{name:'hanlong',age:18,height:178}}" tag="button">档案</router-link>
+        <router-link
+            :to="{
+                path: '/profile',
+                query: { name: 'hanlong', age: 18, height: 178 },
+            }"
+            tag="button"
+            >档案</router-link
+        >
         <!-- <button @click="userClick">用户</button> -->
         <!-- <button @click="profileClick">档案</button> -->
         <br />
-        
-        <router-view></router-view>
+
+        <!-- 跟上 exclude 之后,在里面写上对应组件的name,这样的话,这个组件就不会被缓存,依旧会被销毁 -->
+        <keep-alive exclude="Profile,User">
+            <router-view></router-view>
+        </keep-alive>
         <img :src="imgURL" alt="" class="app_img_01" />
     </div>
 </template>
@@ -23,9 +34,8 @@ export default {
     data() {
         return {
             userId: "zhangsan",
-            imgURL: 
+            imgURL:
                 "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606391969218&di=e8a9f2e4eff438e42d1de2a2d33cbb02&imgtype=0&src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg",
-            
         };
     },
     methods: {
@@ -41,9 +51,8 @@ export default {
         //             height:1.99
         //         }
         //     })
-            
         // }
-    }
+    },
 };
 </script>
 
