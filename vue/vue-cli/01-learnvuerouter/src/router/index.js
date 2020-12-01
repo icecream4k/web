@@ -30,64 +30,63 @@ export default new Router({
         {
             path: '/home',
             component: Home,
-            meta:{
-                title:'首页'
+            meta: {
+                title: '首页'
             },
-            children:[
-                {
-                    path:'news',
-                    meta:{
-                        title:'新闻'
+            children: [{
+                    path: 'news',
+                    meta: {
+                        title: '新闻'
                     },
-                    component:HomeNews
+                    component: HomeNews
                 },
                 {
-                    path:'message',
-                    meta:{
-                        title:'信息'
+                    path: 'message',
+                    meta: {
+                        title: '信息'
                     },
-                    component:HomeMessage
+                    component: HomeMessage
                 }
             ]
         },
         {
             path: '/about',
-            
+
             component: About,
-            meta:{
-                title:'关于'
+            meta: {
+                title: '关于'
             },
             beforeEnter: (to, from, next) => {
                 console.log('进入了about');
                 next()
-              }
+            }
         },
         {
             path: '/user/:Id',
             component: User,
-            meta:{
-                title:'我的'
+            meta: {
+                title: '我的'
             }
         },
         {
-            path:'/profile',
-            meta:{
-                title:'档案'
+            path: '/profile',
+            meta: {
+                title: '档案'
             },
-            component:Profile
+            component: Profile
         }
     ],
     // 如果设置模式为history,那么url则为传统html的url
- 
+
     mode: 'history',
     linkActiveClass: 'active'
-    
+
 })
 const router = new VueRouter({
     //配置路由和组件之间的应用关系
     router,
-    mode:'history',
-    linkActiveClass:'active'
+    mode: 'history',
+    linkActiveClass: 'active'
 })
 
 // router.beforeEach((to, from, next) => {
