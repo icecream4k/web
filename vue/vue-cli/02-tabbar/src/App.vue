@@ -1,7 +1,8 @@
 <template>
     <div id="app">
+        <router-view></router-view>
         <tab-bar>
-            <tab-bar-item>
+            <tab-bar-item path="/home" activeColor="#0bc15f">
                 <img
                     slot="item-icon"
                     src="./assets/img/tabbar/首页.png"
@@ -14,7 +15,7 @@
                 />
                 <div slot="item-text">首页</div>
             </tab-bar-item>
-            <tab-bar-item>
+            <tab-bar-item path="/category" activeColor="#dd6572">
                 <img
                     slot="item-icon"
                     src="./assets/img/tabbar/分类.png"
@@ -27,7 +28,7 @@
                 />
                 <div slot="item-text">分类</div>
             </tab-bar-item>
-            <tab-bar-item>
+            <tab-bar-item path="/cart" activeColor="#548fd5">
                 <img
                     slot="item-icon"
                     src="./assets/img/tabbar/购物车.png"
@@ -40,7 +41,7 @@
                 />
                 <div slot="item-text">购物车</div>
             </tab-bar-item>
-            <tab-bar-item>
+            <tab-bar-item path="/profile" activeColor="#84b5e2">
                 <img
                     slot="item-icon"
                     src="./assets/img/tabbar/我的.png"

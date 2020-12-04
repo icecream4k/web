@@ -1,6 +1,6 @@
 <template>
     <!-- 所有的item都展示同一个图片,同一个文字 -->
-    <div class="tab-bar-item">
+    <div class="tab-bar-item" @click="itemClick">
         <!-- 如果是动态绑定属性,使用一个div进行包裹即可 -->
         <div v-if="!isActive">
             <slot name="item-icon"></slot>
@@ -8,7 +8,7 @@
         <div v-else>
             <slot name="item-icon-active"></slot>
         </div>
-        <div :class="{ active: isActive }">
+        <div :style="activeStyle">
             <slot name="item-text"></slot>
         </div>
     </div>
@@ -17,10 +17,31 @@
 <script>
 export default {
     name: "TabBarItem",
+    props: {
+        path: String,
+        activeColor: {
+            type: String,
+            default: "red",
+        },
+    },
     data() {
         return {
-            isActive: true,
+            // isActive: true,
         };
+    },
+    computed: {
+        isActive() {
+            return !this.$route.path.indexOf(this.path);
+        },
+        activeStyle(){
+            console.log(this.activeColor);
+            return this.isActive ? {color:this.activeColor} : {}
+        }
+    },
+    methods: {
+        itemClick() {
+            this.$router.push(this.path);
+        },
     },
 };
 </script>
