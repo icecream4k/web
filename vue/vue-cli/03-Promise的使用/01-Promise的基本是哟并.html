@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 使用serTimeout
+        // setTimeout(()=>{
+        //     console.log('hello world');
+        // },1000)
+
+        // 参数 -> 函数
+        // resolve,reject本身他们又是函数
+        // 链式编程
+        new Promise((resolve, reject) => {
+            // 模拟第一次网络请求的代码
+            setTimeout(() => {
+                resolve()
+            }, 1000)
+        }).then(() => {
+            // 模拟第一次网络处理的代码
+            console.log('hello world');
+            console.log('hello world');
+            console.log('hello world');
+            console.log('hello world');
+            console.log('hello world');
+            console.log('hello world');
+            return new Promise((resolve, reject) => {
+                // 模拟第二次网络请求的代码
+                setTimeout(() => {
+                    resolve()
+                }, 1000)
+            }).then(() => {
+                // 模拟第二次网络处理的代码
+                console.log('hello vue.js');
+                console.log('hello vue.js');
+                console.log('hello vue.js');
+                console.log('hello vue.js');
+                console.log('hello vue.js');
+                console.log('hello vue.js');
+                return new Promise((resolve, reject) => {
+                    // 模拟第三次网络请求的代码
+                    setTimeout(() => {
+                        resolve()
+                    }, 1000)
+                }).then(() => {
+                    // 模拟第三次网络处理的代码
+                    console.log('hello python');
+                    console.log('hello python');
+                    console.log('hello python');
+                    console.log('hello python');
+                    console.log('hello python');
+                    console.log('hello python');
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

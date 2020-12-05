@@ -34,7 +34,6 @@ export default {
             return !this.$route.path.indexOf(this.path);
         },
         activeStyle(){
-            console.log(this.activeColor);
             return this.isActive ? {color:this.activeColor} : {}
         }
     },
