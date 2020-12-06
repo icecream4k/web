@@ -1,6 +1,5 @@
 import os
 import datetime
-import time
 
 
 def run_this(time_1):
@@ -11,7 +10,3 @@ def run_this(time_1):
 
 time_1 = str(datetime.datetime.now())
 run_this(time_1)
-
-
-
-
