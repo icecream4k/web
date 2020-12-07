@@ -2,8 +2,8 @@
   <div id="app">
       <h2>------------APP内容------------</h2>
       <h2>{{$store.state.conter}}</h2>
-      <button @click="$store.state.conter++">+</button>
-      <button @click="$store.state.conter--">-</button>
+      <button @click="addition">+</button>
+      <button @click="subtraction">-</button>
       <h2>------------Vuex内容------------</h2>
       <hello-vuex></hello-vuex>
   </div>
@@ -20,7 +20,15 @@ export default {
   },
   components:{
       HelloVuex
-  }
+  },
+  methods: {
+      addition(){
+          this.$store.commit('increment')
+      },
+      subtraction(){
+          this.$store.commit('decrement')
+      }
+  },
 }
 </script>
 

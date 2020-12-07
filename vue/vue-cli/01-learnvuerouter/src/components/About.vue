@@ -10,7 +10,6 @@ export default {
     created() { // 串讲组件时候回调的
         console.log('关于创建');
         document.title = '关于'
-
     }
 };
 </script>

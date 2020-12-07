@@ -11,7 +11,13 @@ const store = new Vuex.Store({
         conter:1000
     },
     mutations:{
-
+        // 方法
+        increment(state){
+            state.conter++ 
+        },
+        decrement(state){
+            state.conter--
+        }
     },
     actions:{
 
