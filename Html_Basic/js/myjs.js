@@ -1898,6 +1898,7 @@
     var f1 = new Function("a", console.log("a"));
 })();
 // --------------------------
+// 重载
 // 想定义一种付款函数d,支持三种支付方式:手机支付d,现金支付d,刷卡支付
 (() => {
     // 都是支付
@@ -1916,6 +1917,21 @@
     pay();
     pay("18");
     pay(340803, 123457);
+})();
+// --------------------------
+(() => {
+    function grilled_savory_crepe() {
+        if (arguments.length == 0) {
+            console.log('默认加薄脆和生菜');
+        } else if (arguments.length == 1) {
+            console.log(`默认加薄脆和生菜再加点${arguments[0]}`);
+        } else if (arguments.length == 2) {
+            console.log(`默认加薄脆和生菜再加点${arguments[0]}和${arguments[1]}`);
+        }
+    }
+    grilled_savory_crepe();
+    grilled_savory_crepe('萝卜丝');
+    grilled_savory_crepe('土豆丝', '里脊肉');
 })();
 // --------------------------
 (() => {
@@ -3010,111 +3026,162 @@
             console.log(`击落一架低级得${this.score}分`)
         }
     };
-    var p1 = new Plane(50,100,5);
+    var p1 = new Plane(50, 100, 5);
     console.log(p1);
     p1.fly();
     p1.getScore();
 
-    class San{
-        constructor(x,y,award){
+    class San {
+        constructor(x, y, award) {
             this.x = x;
             this.y = y;
             this.award = award;
         }
-        fly(){
+        fly() {
             console.log(`飞到x:${this.x},y:${this.y}位置`)
         }
-        getAward(){
+        getAward() {
             console.log(`打掉一个降落伞得${this.award}`)
         }
     };
-    var s1 = new San(100,20,'1 life');
+    var s1 = new San(100, 20, '1 life');
     console.log(s1);
     s1.fly();
     s1.getAward();
 })();
 (() => {
     // 解决上方代码重复的问题
-    class Enemy{
-        constructor(x,y){
+    class Enemy {
+        constructor(x, y) {
             this.x = x;
             this.y = y;
 
         }
-        fly(){
+        fly() {
             console.log(`飞到x:${this.x},y:${this.y}位置`)
         }
     }
-    class Plane extends Enemy{
+    class Plane extends Enemy {
         constructor(x, y, score) {
-            super(x,y);
+            super(x, y);
             this.score = score;
         }
         getScore() {
             console.log(`击落一架低级得${this.score}分`)
         }
     };
-    var p1 = new Plane(50,100,5);
+    var p1 = new Plane(50, 100, 5);
     console.log(p1);
     p1.fly();
     p1.getScore();
 
-    class San extends Enemy{
-        constructor(x,y,award){
-            super(x,y)
+    class San extends Enemy {
+        constructor(x, y, award) {
+            super(x, y)
             this.award = award;
         }
-        getAward(){
+        getAward() {
             console.log(`打掉一个降落伞得${this.award}`)
         }
     };
-    var s1 = new San(100,20,'1 life');
+    var s1 = new San(100, 20, '1 life');
     console.log(s1);
     s1.fly();
     s1.getAward();
 })();
 // --------------------------
-(()=>{
-    // 运动会，han，lilei，hmm参加百米赛跑项目
-    function han(che){
-        console.log(`han起跑...`);
-        setTimeout(function(){ // 异步执行
-            console.log(`han到达终点`)
-            // 在han到达终点之后卸车
-            che();
-        },6000)
-    };
-    function lilei(che){
-        console.log(`lilei起跑...`);
-        setTimeout(function(){ // 异步执行
-            console.log(`lilei到达终点`)
-            // 在lilei到达终点之后卸车
-            che()
-        },4000)
-    };
-    function hmm(){
-        console.log(`hmm起跑...`);
-        setTimeout(function(){ // 异步执行
-            console.log(`hmm到达终点`)
-        },2000)
-    };
+// (()=>{
+//     // 运动会，han，lilei，hmm参加百米赛跑项目
+//     function han(che){
+//         console.log(`han起跑...`);
+//         setTimeout(function(){ // 异步执行
+//             console.log(`han到达终点`)
+//             // 在han到达终点之后卸车
+//             che();
+//         },60)
+//     };
+//     function lilei(che){
+//         console.log(`lilei起跑...`);
+//         setTimeout(function(){ // 异步执行
+//             console.log(`lilei到达终点`)
+//             // 在lilei到达终点之后卸车
+//             che()
+//         },40)
+//     };
+//     function hmm(){
+//         console.log(`hmm起跑...`);
+//         setTimeout(function(){ // 异步执行
+//             console.log(`hmm到达终点`)
+//         },20)
+//     };
 
-    // 现在希望三个人能够接力跑 一个跑完 下一个才能起跑，顺序执行
-    // 错误的解决 - 仅顺序调用
-    // 因为异步函数，在主程序之外独立执行，谁也不等谁
-    han(
-        // han的车能得到这个function
-        function(){
-        lilei(
-            // lilei的车会得到这个function
-            function(){
-                hmm();
-            }
-        );
-    })
+//     // 现在希望三个人能够接力跑 一个跑完 下一个才能起跑，顺序执行
+//     // 错误的解决 - 仅顺序调用
+//     // 因为异步函数，在主程序之外独立执行，谁也不等谁
+//     han(
+//         // han的车能得到这个function
+//         function(){
+//         lilei(
+//             // lilei的车会得到这个function
+//             function(){
+//                 hmm();
+//             }
+//         );
+//     })
 
+// })();
+// --------------------------
+// 判断回文
+(() => {
+    function Palindrome(s) {
+        let len = s.length; // 先获取一个字符串的长度
+        let handlestr = ''; // 设定一个空的字符串
+        for (let i = len - 1; i >= 0; i--) {
+            handlestr += s[i] // 用空字符串去拼接下标索引的原字符串
+        }
+        if (handlestr === s) {
+            console.log('是回文');
+        } else {
+            console.log('不是回文');
+        }
+    }
+    Palindrome('1234321')
 })();
+// --------------------------
+// this指向问题
+(() => {
+    const obj = {
+        aaa() {
+            setTimeout(function() {
+                console.log('非箭头函数 >>> ', this); // 指向会是 window
+            })
 
-
-
-
+            setTimeout(() => {
+                console.log('箭头函数 >>> ', this); // obj对象
+            })
+        }
+    }
+    obj.aaa();
+    console.log('直接console.log obj的对象 >>> ', obj); // 直接打印obj对象,此时打印的obj对象和箭头函数指向的
+})();
+// --------------------------
+// 数组去重
+(() => {
+    function duplicate_removal(arr) {
+        return Array.from(new Set(arr))
+    }
+    var arr = [1, 3, 3, 3, 3, 4, 5, 5, 5, 6]
+    var dr = new Set(arr)
+    console.log('数组去重 >>> ', duplicate_removal(arr));
+    console.log('new set去重 >>> ', dr);
+})();
+// Array.from()方法
+(() => {
+    new_arr = Array.from('hello')
+    console.log('hello的字符串拆解成数组方法 >>> ', new_arr);
+})();
+// new Set()方法
+(() => {
+    console.log('new Set处理之后的数据 >>> ', new Set([1, 2, 3, 3]));
+})();
+// --------------------------
