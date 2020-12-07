@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 如果有一个需求需要两个请求才能完成一次操作的原始demo
+        // let isResult1 = false;
+        // let isResult2 = false;
+        //     $ajax({
+        //         url:'',
+        //         success:function(){
+        //             console.log('结果1');
+        //             isResult1 = true;
+        //             handleResult()
+        //         }
+        //     })
+
+        //     $ajax({
+        //         url:'',
+        //         success:function(){
+        //             console.log('结果2');
+        //             isResult2=true;
+        //             handleResult()
+        //         }
+        //     })
+
+        //     function handleResult(){
+        //         if(isResult2 && isResult1){
+        //             // 可以接着处理一些业务相关的事情
+        //         }
+        //     }
+
+
+        // 使用promise来进行处理
+        Promise.all([
+            // 因为此处的ajax url为假的,所以用setTimeou来模拟
+            // new Promise((res, rej) => {
+            //     $ajax({
+            //         url: '',
+            //         success: function(data) {
+            //             resolve(data)
+            //         }
+            //     })
+            // }),
+            // new Promise((res,rej)=>{
+            //     $ajax({
+            //         url:'',
+            //         success:function(data){
+            //             resolve(data)
+            //         }
+            //     })
+            // })
+
+            // 因为此处的ajax url为假的,所以用setTimeou来模拟
+            new Promise((res, rej) => {
+                setTimeout(() => {
+                    res({
+                        'name': 'hanlong',
+                        'age': 18
+                    })
+                }, 1000)
+            }),
+            new Promise((res, rej) => {
+                setTimeout(() => {
+                    res({
+                        'name': 'wuziye',
+                        'age': 17
+                    })
+                }, 2000)
+            })
+        ]).then(results => {
+            // 这里的results是一个数组,下标值为0是第一个结果,下标值是1的是第二个结果
+            console.log(results[0]['name'] + ' 和 ' + results[1]['name']);
+            // console.log(results[1]);
+        })
+    </script>
+</body>
+
+</html>

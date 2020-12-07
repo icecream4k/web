@@ -53,27 +53,30 @@
         //     console.log(res, `第四层处理代码`);
         // })
 
-        new Promise((resolve, rejcet) => {
-            setTimeout(() => {
-                resolve('aaa')
-            }, 1000)
-        }).then((res,rej) => {
-            // 1.自己处理 10行
-            console.log(rej,`第一层处理的失败代码`);
-            // 2.对结果进行第一次的处理
-            // return Promise.reject(`error message`)
-            throw `error message`
-        }).then(res => {
-            console.log(res, `是第二层处理代码`);
-            return Promise.resolve(res + '222')
-        }).then(res => {
-            console.log(res, `第三层处理代码`);
-            return Promise.resolve(res + '333')
-        }).then((res) => {
-            console.log(res, `第四层处理代码`);
-        }).catch(err=>{
-            console.log(err);
-        })
+        // 万一有reject需要用catch的情况
+        // new Promise((resolve, rejcet) => {
+        //     setTimeout(() => {
+        //         resolve('aaa')
+        //     }, 1000)
+        // }).then((res,rej) => {
+        //     // 1.自己处理 10行
+        //     console.log(rej,`第一层处理的失败代码`);
+        //     // 2.对结果进行第一次的处理
+        //     // return Promise.reject(`error message`)
+        //     throw `error message`
+        // }).then(res => {
+        //     console.log(res, `是第二层处理代码`);
+        //     return Promise.resolve(res + '222')
+        // }).then(res => {
+        //     console.log(res, `第三层处理代码`);
+        //     return Promise.resolve(res + '333')
+        // }).then((res) => {
+        //     console.log(res, `第四层处理代码`);
+        // }).catch(err=>{
+        //     console.log(err);
+        // })
+
+        
     </script>
 </body>
 
