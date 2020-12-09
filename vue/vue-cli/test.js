@@ -22,3 +22,36 @@
 //     grilled_savory_crepe('萝卜丝');
 //     grilled_savory_crepe('土豆丝', '里脊肉');
 // })();
+
+
+var students = [{
+        id: 110,
+        name: 'han',
+        age: 11
+    },
+    {
+        id: 111,
+        name: 'zhang',
+        age: 28
+    },
+    {
+        id: 112,
+        name: 'wu',
+        age: 15
+    },
+    {
+        id: 113,
+        name: 'liu',
+        age: 19
+    },
+]
+var handleStudentsArray = [];
+for (var i = 0; i < students.length; i++) {
+    if (students[i]['age'] <= 18) {
+        handleStudentsArray.push(new Object({
+            'name': students[i]['name'],
+            'age': students[i]['age']
+        }))
+    }
+}
+console.log(handleStudentsArray); 
