@@ -5,6 +5,55 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 // 2.创建对象
+const moduleA = {
+    state: {
+        name: 'zhangsan',
+        info: {
+            name: 'hl',
+            age: 18,
+            gender: 'man'
+        }
+    },
+    mutations: {
+        moduleAupdateName(state, payload) {
+            state.name = payload
+        },
+        moduleAupdateInfoName(state, payload) {
+            state.info.name = payload
+        }
+    },
+    actions: {
+        moduleAupdateInfoName(context, payload) {
+            // 在moduleA中的actions中,commit的话,会commit到自己的mutations
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    context.commit('moduleAupdateInfoName', payload)
+                    res('AupdateName内部代码执行完毕')
+                }, 1000);
+            })
+
+        }
+    },
+    getters: {
+        fullname(state) {
+            return state.name + '111'
+        },
+        fullname2(state, getters) {
+            return getters.fullname + `222`
+        },
+        fullname3(state, getters, rootState) {
+            return getters.fullname2 + rootState.conter
+        }
+    }
+}
+
+const moduleB = {
+    state: {},
+    mutation: {},
+    actions: {},
+    getters: {}
+}
+
 const store = new Vuex.Store({
     state: {
         // 保存状态
@@ -81,13 +130,36 @@ const store = new Vuex.Store({
             // setTimeout(() => {
             //     state.info.name = 'codehl'
             // }, 1000);
-            // console.log(state.info.name);
+            state.info.name = 'codehl'
+            console.log(state.info.name);
         }
     },
     actions: {
+        // 在这里来进行异步操作的
+        // aupdateInfo的第二个参数可以接收传过来的参数,回调的函数和参数都可以
+        // aupdateInfo(context,payload){
+        //     setTimeout(() => {
+        //         context.commit('updateInfo');
+        //         console.log(payload.message); 
+        //         payload.success()
+        //     }, 1000);
+        //     // console.log(state.info.name);
+        // },
 
+        // 优雅的接收参数的方式
+        aupdateInfo(context, payload) {
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    context.commit('updateInfo');
+                    console.log(payload);
+
+                    res(`parameter value`)
+                }, 1000);
+            })
+        }
     },
     getters: {
+        // 处理数据
         powerCounter(state) {
             return state.conter * state.conter;
         },
@@ -128,7 +200,8 @@ const store = new Vuex.Store({
         }
     },
     modules: {
-
+        a: moduleA,
+        b: moduleB
     }
 })
 

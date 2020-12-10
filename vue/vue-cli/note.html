@@ -582,9 +582,9 @@
                 </li>
             </ul>
             <ul>
-                <h3>Vuex有几个比较核心的概念</h3>
+                <h2>Vuex有几个比较核心的概念</h2>
                 <li>
-                    <p>State</p>
+                    <h2>State</h2>
                     <p>状态信息的管理</p>
                     <ul>
                         <li>
@@ -627,13 +627,13 @@
                     </ul>
                 </li>
                 <li>
-                    <p>Getters</p>
+                    <h2>Getters</h2>
                     <p>
                         Geters可以定义一些全局组件都可以使用的方法,通常是对state里面的存储数据做过滤操作,比如等级制度,1代表初级,2代表中级,3代表高级.在state中存储level值为1,2或者3,想在页面中获取对应的登记就需要进行转换,那么这个时候就需要用到getters
                     </p>
                 </li>
                 <li>
-                    <p>Mutation</p>
+                    <h2>Mutation</h2>
                     <p>Vuex的store状态的更新唯一方式:提交Mutation</p>
                     <ul>
                         <p>Mutation主要包括两部分</p>
@@ -702,7 +702,7 @@
                     </ul>
                 </li>
                 <li>
-                    <p>Action</p>
+                    <h2>Action</h2>
                     <ul>
                         <p>我们强调,不要在Mutation中进行异步操作</p>
                         <li>
@@ -714,13 +714,160 @@
                     </ul>
                 </li>
                 <li>
-                    <p>Module</p>
-
+                    <h2>Module</h2>
+                    <ul>
+                        <p>Module是模块的意思,为什么在Vuex中我们要使用模块呢</p>
+                        <li>
+                            <ul>
+                                <li>
+                                    Vue使用单一状态树,那么也意味着很多状态都会交给Vuex来管理
+                                </li>
+                                <li>
+                                    当应用编的非常复杂时,store对象就有可能变得相当臃肿
+                                </li>
+                                <li>
+                                    为了解决这个问题,Vuex允许我们将store分割成模块(Module),而每个模块拥有自己的,State,Mutation,Action,Getters等
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </li>
         <li>
             <h1>Axios</h1>
+            <ul>
+                <li>
+                    <p>Vue中发送网络请求有非常多的方式,那么,在开发中,如何选择呢</p>
+                    <ul>
+                        <li>
+                            <p>选择一:传统的Ajax是基于XMLHttpRequest(XHR)</p>
+                            <ol>
+                                <p>为什么不使用它呢?</p>
+                                <li>
+                                    配置和调用方式等非常混乱
+                                </li>
+                                <li>
+                                    编码起来看起来就非常蛋疼
+                                </li>
+                                <li>    
+                                    所以真是开发中很少直接使用,而是使用jQuery-Ajax
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <p>选择二:使用jQuery-Ajax 相对于传统的Ajax非常好用</p>
+                            <ol>
+                                <p>为什么不选择它呢</p>
+                                <li>
+                                    明确一点:在Vue的整个开发中都是不需要使用jQuery了
+                                </li>
+                                <li>    
+                                    那么,就意味着为了方便我们进行一个网络请求,特意引用一个jQuery,你觉得合理么
+                                </li>
+                                <li>
+                                    jQuery 1W+行<br>
+                                    Vue的代码才 1W+行
+                                </li>
+                                <li>
+                                    完全没有必要为了用网络请求就引用在这个重量级的框架
+                                </li>   
+                            </ol>
+                        </li>
+                        <li>
+                            <p>选择三:官方在Vue1.x的时候,推出了Vue-resource</p>
+                            <ul>
+                                <li>Vue-resource的体积相对于jQuery小很多</li>
+                                <li>另外Vue-resource是官方推出的</li>
+                            </ul>
+                            <ol>
+                                <p>为什么不选择呢</p>
+                                <li>在Vue2.0推出后,Vue作者尤雨溪在Github的Issues中就说明了去掉vue-resource,并且以后也不会再更新</li>
+                                <li>那么意味着以后vue-reource不再支持新的版本,也不回再继续更新和维护</li>
+                                <li>对以后的项目开发和维护都存在很大的隐患</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <p>选择四:在说明白不再更新和维护vue-resource的同时,作者还推荐了一个框架:axios </p>
+                            <ol>
+                                <li>
+                                    axios有非常多的优点,并且用起来也非常方便
+                                </li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <p>在前端开发中,我们一种常见的网络请求方式就是JSPNP</p>
+                    <ol>
+                        <li>使用JSONP最主要的原因往往是为了解决跨域访问的问题</li>
+                    </ol>
+                </li>
+                <li>
+                    <p>JSONP的原理是什么呢</p>
+                    <ol>
+                        <li>
+                            JSONP的核心在于通过&lt;script&gt;标签的src来帮助我们请求数据
+                        </li>
+                        <li>
+                            原因是我们在项目部署在domain1.com服务器上时,是不能直接访问domain2.com服务器上的资料的
+                        </li>
+                        <li>
+                            这个时候,我们利用&lt;script&gt;标签的src帮助我们去服务器请求到数据,将数据当做一个javascript的函数来执行,并且执行的过程中传入我们需要的json
+                        </li>
+                        <li>
+                            所以,封装jsonp的核心就在于我们监听window上的jsonp进行回调时的名称
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+            <h4>为什么推荐AXIOS</h4>
+            <ul>
+                <p>功能特点</p>
+                <li>
+                    在浏览器中发送XMLHttpRequests请求
+                </li>
+                <li>
+                    在node.js中发送http请求
+                </li>
+                <li>
+                    支持Promise API
+                </li>
+                <li>
+                    拦截请求和响应
+                </li>
+                <li>
+                    转换请求和响应数据
+                </li>
+            </ul>
+            
+            <ul>
+                <h4>支持多种请求方式</h4>
+                <li>
+                    axios(config)
+                </li>
+                <li>
+                    axios.request(config)
+                </li>
+                <li>
+                    axios.get(url[,config])
+                </li>
+                <li>
+                    axios.delte(url[,config])
+                </li>
+                <li>
+                    axios.head(url[,config])
+                </li>
+                <li>
+                    axios.post(url[,data[,config]])
+                </li>
+                <li>
+                    axios.put(url[,data[,config]])
+                </li>
+                <li>
+                    axios.patch(url[,data[,config]])
+                </li>
+            </ul>
         </li>
     </ul>
 
