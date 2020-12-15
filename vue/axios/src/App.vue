@@ -6,9 +6,6 @@
 
 
 <script>
-axios({
-    
-})
 
 
 
