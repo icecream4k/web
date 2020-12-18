@@ -1,5 +1,5 @@
 {
-  "name": "firstdatev",
+  "name": "l2",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "icecream4k <969666859@qq.com>",
@@ -13,8 +13,6 @@
     "@jiaminghi/charts": "^0.2.18",
     "@jiaminghi/data-view": "^2.10.0",
     "less": "^3.13.0",
-    "less-loader": "^7.1.0",
-    "lessc": "^1.0.2",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
