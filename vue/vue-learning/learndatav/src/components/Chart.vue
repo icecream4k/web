@@ -9,8 +9,7 @@ export default {
     name: "Chart",
     data() {
         return {
-            name:'周口',
-            value:55
+            // 把数据放在data里面,然后背景设定为黑色即可
         }
     },
 };
