@@ -53,10 +53,7 @@
                 <li>
                     <p>装饰2-1</p>
                     <div class="background_box">
-                        <dv-decoration-2
-                            :reverse="true"
-                            style="width: 5px; height: 150px"
-                        />
+                        <dv-decoration-2 :reverse="true" style="width: 5px; height: 150px" />
                     </div>
                 </li>
                 <li>
@@ -74,10 +71,7 @@
                 <li>
                     <p>装饰4-1</p>
                     <div class="background_box">
-                        <dv-decoration-4
-                            :reverse="true"
-                            style="width: 250px; height: 5px"
-                        />
+                        <dv-decoration-4 :reverse="true" style="width: 250px; height: 5px" />
                     </div>
                 </li>
                 <li>
@@ -109,10 +103,7 @@
                 <li>
                     <p>装饰8-1</p>
                     <div class="background_box">
-                        <dv-decoration-8
-                            :reverse="true"
-                            style="width: 300px; height: 50px"
-                        />
+                        <dv-decoration-8 :reverse="true" style="width: 300px; height: 50px" />
                     </div>
                 </li>
                 <li>
@@ -132,21 +123,27 @@
                 <li>
                     <p>装饰11</p>
                     <div class="background_box">
-                        <dv-decoration-11 style="width: 200px; height: 60px"
-                            ><span style="color: white"
-                                ><b>样板文字</b></span
-                            ></dv-decoration-11
-                        >
+                        <dv-decoration-11 style="width: 200px; height: 60px"><span style="color: white"><b>样板文字</b></span></dv-decoration-11>
                     </div>
                 </li>
                 <li>
                     <table>
                         <tr>
-                            <td><p><b>属性</b></p></td>
-                            <td><p><b>说明</b></p></td>
-                            <td><p><b>类型</b></p></td>
-                            <td><p><b>可选值</b></p></td>
-                            <td><p><b>默认值</b></p></td>
+                            <td>
+                                <p><b>属性</b></p>
+                            </td>
+                            <td>
+                                <p><b>说明</b></p>
+                            </td>
+                            <td>
+                                <p><b>类型</b></p>
+                            </td>
+                            <td>
+                                <p><b>可选值</b></p>
+                            </td>
+                            <td>
+                                <p><b>默认值</b></p>
+                            </td>
                         </tr>
                         <tr>
                             <td>scanDur</td>
@@ -173,9 +170,9 @@
     </div>
 </template>
 <script>
-export default {
-    name: "Decorate",
-};
+    export default {
+        name: "Decorate",
+    };
 </script>
 <style scoped>
 </style>

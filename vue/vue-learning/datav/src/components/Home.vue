@@ -5,7 +5,10 @@
         <router-link to='loading_demo' tag="button">loading加载</router-link>
         <router-link to='dvborderbox' tag="button">边框特效</router-link>
         <router-link to="decorate" tag="button">装饰</router-link>
-        <router-link to="chart" tag="button">图表</router-link>
+        <router-link to="dynamic_ring_graph" tag="button">动态环形图表</router-link>
+        <router-link to="capsule_column" tag="button">胶囊柱图</router-link>
+        <router-link to="water_level_chart" tag="button">水位图</router-link>
+        <router-link to="progress_pool" tag="button">进度池</router-link>
     </div>
 </template>
 <script>
