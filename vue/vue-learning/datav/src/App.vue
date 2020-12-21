@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-      <div></div>
+      <div class="view_d">
     <router-view/>
+
+      </div>
   </div>
 </template>
 
@@ -19,5 +21,8 @@ export default {
 }
 div{
     border-radius: 5px;
+}
+.view_d{
+    margin: 0 auto;
 }
 </style>

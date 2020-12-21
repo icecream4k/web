@@ -13,16 +13,17 @@ const Dynamic_ring_graph = () => import('../components/Chart/Dynamic_ring_graph.
 const Capsule_column = () => import('../components/Chart/Capsule_column.vue')
 const Water_level_chart = () => import('../components/Chart/Water_level_chart.vue')
 const Progress_pool = () =>import('../components/Chart/Progress_pool.vue')
-
-
-
+const Flying_line_diagram = () => import('../components/Chart/Flying_line_diagram.vue')
+const Cone_column_chart = () => import('../components/Chart/Cone_column_chart.vue')
+const Digital_flipper = () => import('../components/Digital_flipper.vue')
 
 
 
 // 注册
 Vue.use(Router)
 export default new Router({
-    routes: [{
+    routes: [
+        {
             path: '',
             redirect: '/home'
         },
@@ -65,6 +66,18 @@ export default new Router({
         {
             path:'/progress_pool',
             component:Progress_pool
+        },
+        {
+            path:'/flying_line_diagram',
+            component:Flying_line_diagram
+        },
+        {
+            path:'/cone_column_chart',
+            component:Cone_column_chart
+        },
+        {
+            path:'/digital_flipper',
+            component:Digital_flipper
         }
     ],
 
