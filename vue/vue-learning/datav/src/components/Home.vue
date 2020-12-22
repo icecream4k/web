@@ -14,6 +14,7 @@
                 <router-link to="flying_line_diagram" tag="button">飞线图</router-link><br><br>
                 <router-link to="cone_column_chart" tag='button'>锥形柱图</router-link>
                 <router-link to="digital_flipper" tag="button">数字翻牌器</router-link>
+                <router-link to="Ranking_rotation_table" tag="button">轮播表</router-link>
             </div>
     </div>
 </template>

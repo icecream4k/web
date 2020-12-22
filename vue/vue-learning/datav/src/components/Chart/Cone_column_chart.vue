@@ -1,7 +1,7 @@
 <template>
     <div>
         <router-link to="/home" tag="button">首页</router-link>
-        <dv-decoration-7 class="chart_title_text">
+        <dv-decoration-7 class="chart_title_text Cone_column_chart_title_text">
             <h2 style="color: white">&nbsp;&nbsp;锥形柱图&nbsp;&nbsp;</h2>
         </dv-decoration-7>
         <div class="chart_title_text_grid_show grid_show">
@@ -18,8 +18,6 @@
 </template>
 <script>
     export default {
-        
-
         name: 'Cone_column_chart',
         data() {
             return {
@@ -116,8 +114,8 @@
         width: 450px;
         padding-left: 10px;
     }
-    .chart_title_text{
-        width: 450px;
+    .Cone_column_chart_title_text{
+        width: 460px;
     }
     .chart_title_text_grid_show_d>p{
         font-size: 14px;

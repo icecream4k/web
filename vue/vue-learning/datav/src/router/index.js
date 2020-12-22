@@ -16,7 +16,7 @@ const Progress_pool = () =>import('../components/Chart/Progress_pool.vue')
 const Flying_line_diagram = () => import('../components/Chart/Flying_line_diagram.vue')
 const Cone_column_chart = () => import('../components/Chart/Cone_column_chart.vue')
 const Digital_flipper = () => import('../components/Digital_flipper.vue')
-
+const Ranking_rotation_table = () => import('../components/Ranking_rotation_table.vue')
 
 
 // 注册
@@ -78,6 +78,10 @@ export default new Router({
         {
             path:'/digital_flipper',
             component:Digital_flipper
+        },
+        {
+            path:'/Ranking_rotation_table',
+            component:Ranking_rotation_table
         }
     ],
 

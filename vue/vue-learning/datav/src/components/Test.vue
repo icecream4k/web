@@ -1,7 +1,8 @@
 <template>
     <div>
         <router-link to="/home" tag="button">首页</router-link>
-        <dv-flyline-chart :config="config" style="width:400px;height:400px;" class="test_flyline"/>
+        <dv-digital-flop :config="config" style="width:100px;height:50px;" class="td" />
+        <input type="button" value="更变" @click="changevalue">
     </div>
 </template>
 <script>
@@ -9,33 +10,42 @@
         name: 'Test',
         data() {
             return {
-                config: {
-                    centerPoint: [0.48, 0.35],
-                    points: [
-                        [0.52, 0.23],
-                        [0.43, 0.29],
-                        [0.59, 0.35],
-                        [0.53, 0.47],
-                        [0.45, 0.54],
-                        [0.36, 0.38],
-                        [0.62, 0.55],
-                        [0.56, 0.56],
-                        [0.37, 0.66],
-                        [0.55, 0.81],
-                        [0.55, 0.67],
-                        [0.37, 0.29],
-                        [0.20, 0.36],
-                        [0.76, 0.41],
-                        [0.59, 0.18],
-                        [0.68, 0.17],
-                        [0.59, 0.10]
-                    ],
-                    bgImgUrl: '../../static/img/henanmap.jpg'
+                tnumber:1,
+                config:{number: [100],
+                    content: `{nt}个`},
+                config1: {
+                    number: [100],
+                    content: `{nt}个`
+                },
+                config2: {
+                    number: [999],
+                    content: `{nt}个`
                 }
             }
         },
+        methods: {
+            changevalue() {
+                if (this.tnumber%2===0) {
+                    this.config = this.config1;
+                    this.tnumber += 1
+                } else{
+                    this.config = this.config2;
+                    this.tnumber += 1
+                }
+                // this.config1=this.config2;
+                // console.log(this.config1);
+            }
+        },
+        
 
     };
 </script>
 <style lang='less'>
+    @import '../../styles/overall.less';
+
+    .td {
+        background-color: @tebgc;
+        width: 500px;
+        height: 500px;
+    }
 </style>
