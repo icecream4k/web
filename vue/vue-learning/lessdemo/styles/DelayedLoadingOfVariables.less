@@ -1,0 +1,21 @@
+// {} 作用域里面的内容都会在编译完成之后才会加载,并且只会编译作用域内部的变量,不会跨作用域编译
+#wrap {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  border: 1px solid;
+  margin: 0 auto;
+  @var: blue;
+
+  .cd1 {
+    @var: red;
+
+    .d1 {
+      @var: green;
+      background-color: @var; // yellow
+      @var: yellow;
+    }
+
+    background-color: @var; // red
+  }
+}
