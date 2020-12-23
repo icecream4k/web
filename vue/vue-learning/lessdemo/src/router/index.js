@@ -9,6 +9,12 @@ const FirstAcquaintanceLess = () => import("../components/FirstAcquaintanceLess.
 const Variable = () => import("../components/Variable.vue")
 const DelayedLoadingOfVariables = () => import("../components/DelayedLoadingOfVariables.vue")
 const NestedRules = () =>import("../components/NestedRules.vue")
+const OrdinaryMixing = () => import("../components/Mixing/OrdinaryMixing.vue")
+const ParameterMixing = () => import("../components/Mixing/ParameterMixing.vue")
+const ParameterDefaultMixed = () => import("../components/Mixing/ParameterDefaultMixed.vue")
+const NamedParameterMixing = () => import("../components/Mixing/NamedParameterMixing.vue")
+const MatchingPatternMixing = () => import("../components/Mixing/MatchingPatternMixing.vue")
+
 
 export default new Router({
     routes: [{
@@ -34,6 +40,26 @@ export default new Router({
         {
             path:'/NestedRules',
             component:NestedRules
+        },
+        {
+            path:"/OrdinaryMixing",
+            component:OrdinaryMixing
+        },
+        {
+            path:"/ParameterMixing",
+            component:ParameterMixing
+        },
+        {
+            path:"/ParameterDefaultMixed",
+            component:ParameterDefaultMixed
+        },
+        {
+            path:"/NamedParameterMixing",
+            component:NamedParameterMixing
+        },
+        {
+            path:"/MatchingPatternMixing",
+            component:MatchingPatternMixing
         }
     ],
     mode: "history"

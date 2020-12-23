@@ -1,0 +1,45 @@
+.wrap() {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    border: 1px solid;
+    margin: 0 auto;
+
+}
+
+.definitiontriangle(@_) {
+    width: @w;
+    height: @h;
+    border-width: 40px;
+    border-style: solid;
+    overflow: hidden;
+    background-color: blue;
+}
+
+.definitiontriangle(@w: 0, @h: 0, @c: red, @to: toleft) {
+    border-color: transparent transparent transparent @c ;
+    width: 100px;
+    height: 100px;
+    
+}
+
+.definitiontriangle(@w: 0, @h: 0, @c: red, @to: toright) {
+    border-color: transparent transparent @c transparent;
+    width: 100px;
+    height: 100px;
+    
+}
+
+.definitiontriangle(@w: 0, @h: 0, @c: red, @to: tobottom) {
+    border-color: @c transparent transparent transparent;
+    width: 100px;
+    height: 100px;
+    
+}
+
+.definitiontriangle(@w: 0, @h: 0, @c: red, @to: totop) {
+    border-color: transparent @c transparent transparent;
+    width: 100px;
+    height: 100px;
+    
+}
