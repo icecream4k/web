@@ -7,39 +7,38 @@
 
 }
 
-.definitiontriangle(@_) {
+.publicWidthAndHeight(@pw,@ph) {
+    width: @pw;
+    height: @ph;
+}
+
+.definitionTrianglePublic(@w, @h) {
     width: @w;
     height: @h;
     border-width: 40px;
     border-style: solid;
-    overflow: hidden;
-    background-color: blue;
 }
 
-.definitiontriangle(@w: 0, @h: 0, @c: red, @to: toleft) {
-    border-color: transparent transparent transparent @c ;
-    width: 100px;
-    height: 100px;
-    
-}
-
-.definitiontriangle(@w: 0, @h: 0, @c: red, @to: toright) {
-    border-color: transparent transparent @c transparent;
-    width: 100px;
-    height: 100px;
-    
-}
-
-.definitiontriangle(@w: 0, @h: 0, @c: red, @to: tobottom) {
-    border-color: @c transparent transparent transparent;
-    width: 100px;
-    height: 100px;
-    
-}
-
-.definitiontriangle(@w: 0, @h: 0, @c: red, @to: totop) {
+.definitiontriangle(toleft, @w: 0, @h: 0, @c: red,@pw,@ph) {
     border-color: transparent @c transparent transparent;
-    width: 100px;
-    height: 100px;
-    
+    .publicWidthAndHeight(@pw,@ph);
+    .definitionTrianglePublic(@w, @h)
+}
+
+.definitiontriangle(toright, @w: 0, @h: 0, @c: red,@pw,@ph) {
+    border-color: transparent transparent transparent @c;
+    .publicWidthAndHeight(@pw,@ph);
+    .definitionTrianglePublic(@w, @h)
+}
+
+.definitiontriangle(tobottom, @w: 0, @h: 0, @c: red,@pw,@ph) {
+    border-color: @c transparent transparent transparent;
+    .publicWidthAndHeight(@pw,@ph);
+    .definitionTrianglePublic(@w, @h)
+}
+
+.definitiontriangle(totop, @w: 0, @h: 0, @c: red,@pw,@ph) {
+    border-color: transparent transparent @c transparent;
+    .publicWidthAndHeight(@pw,@ph);
+    .definitionTrianglePublic(@w, @h)
 }

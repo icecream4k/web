@@ -3,7 +3,8 @@
 @{selector} {
     .wrap();
     .triangle {
-        .definitiontriangle(@w:0,@h:0,@c:black,@to:tobottom);
+        // 这个地方传入的值一定要放在传参的第一个位置,不然不会生效
+        .definitiontriangle(totop,@w:0,@h:0,@c:black,@pw:100px,@ph:100px);
         margin: auto;
     }
 }
