@@ -14,6 +14,9 @@ const ParameterMixing = () => import("../components/Mixing/ParameterMixing.vue")
 const ParameterDefaultMixed = () => import("../components/Mixing/ParameterDefaultMixed.vue")
 const NamedParameterMixing = () => import("../components/Mixing/NamedParameterMixing.vue")
 const MatchingPatternMixing = () => import("../components/Mixing/MatchingPatternMixing.vue")
+const Arguments = () => import("../components/Mixing/Arguments.vue")
+const Calculation  = () => import("../components/Calculation.vue")
+const Inherit = () => import("../components/Inherit.vue")
 
 
 export default new Router({
@@ -60,6 +63,18 @@ export default new Router({
         {
             path:"/MatchingPatternMixing",
             component:MatchingPatternMixing
+        },
+        {
+            path:'/Arguments',
+            component:Arguments
+        },
+        {
+            path:"/Calculation",
+            component:Calculation
+        },
+        {
+            path:"/Inherit",
+            component:Inherit
         }
     ],
     mode: "history"

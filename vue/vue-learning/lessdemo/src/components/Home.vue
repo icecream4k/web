@@ -10,7 +10,10 @@
             <router-link to="ParameterMixing" tag="button">参数混合</router-link>
             <router-link to="ParameterDefaultMixed" tag="button">参数默认值混合</router-link>
             <router-link to="NamedParameterMixing" tag="button">命名参数混合</router-link>
-            <router-link to="MatchingPatternMixing" tag="button">匹配模式混合</router-link>
+            <router-link to="MatchingPatternMixing" tag="button">匹配模式混合</router-link><br><br>
+            <router-link to="Arguments" tag="button">Arguments</router-link>
+            <router-link to="Calculation" tag="button">计算</router-link>
+            <router-link to="Inherit" tag="button">继承</router-link>
         </div>
     </div>
 </template>

@@ -1,0 +1,35 @@
+.internalElements(@width,@height,@bgc){
+    width:@width;
+    height:@height;
+    backgroud-color:@bgc
+}
+#wrap {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 1px solid;
+  margin: 0 auto;
+
+  .inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+
+    &:nth-child(2) {
+        .internalElements(100px,100px,pink)
+    }
+
+    ;
+
+    &:nth-child(3) {
+      width: 50px;
+      height: 50px;
+      background-color: deeppink;
+    }
+
+    ;
+  }
+}

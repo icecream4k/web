@@ -1,0 +1,13 @@
+#wrap {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  border: 1px solid;
+  margin: 0 auto;
+}
+#wrap .cd1 {
+  background-color: red;
+}
+#wrap .cd1 .d1 {
+  background-color: yellow;
+}

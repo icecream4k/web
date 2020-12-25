@@ -11,4 +11,7 @@
 </script>
 
 <style>
+    *{
+        border-radius: 5px;
+    }
 </style>

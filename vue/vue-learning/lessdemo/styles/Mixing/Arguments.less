@@ -1,0 +1,14 @@
+.border(@1,@2,@3){
+    border: @arguments;
+}
+
+#wrap{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    border: 1px solid;
+    margin: 0 auto;
+    .arguments{
+        .border(1px,solid,black)
+    }
+}
