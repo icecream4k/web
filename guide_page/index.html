@@ -5,9 +5,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Lawrence Han</title>
-    <link rel="icon" href="https://s3.ax1x.com/2020/12/11/rA3OSg.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="../public_static_files/logo/index_logo.png">
+    <link rel="icon" href="https://s3.ax1x.com/2020/12/11/rA3OSg.png">
     <style>
         /* cyrillic-ext */
         @font-face {
@@ -235,7 +234,17 @@
             transition: top 200ms cubic-bezier(0, .8, .13, 1);
             background-color: rgba(229, 23, 45, 0.5);
         }
-
+        .gitee_a::after{
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 60%;
+            left: -0.1em;
+            right: -0.1em;
+            bottom: 0;
+            transition: top 200ms cubic-bezier(0, .8, .13, 1);
+            background-color: rgba(199, 29, 35, 0.5);
+        }
         .these_knowledge_base:hover:after,
         .Twitter:hover:after,
         .Medium:hover:after,
@@ -248,10 +257,11 @@
 <body>
     <h1>Hello.</h1>
     <p style="font-weight:500; font-size:2.2em">
-        My name is Lawrence Han.
+        My name is Lawrence Han.<br>
+        I also have a favorite nickname is iceream4k.
     </p>
     <p>
-        As a front-end software developer, I like to sort out some front-end knowledge points and synchronize them to <a href="https://github.com/icecream4k" target="_blank">GitHub</a>.
+        As a front-end software developer, I like to sort out some front-end knowledge points and synchronize them to <a href="https://github.com/icecream4k" target="_blank">GitHub</a> and <a href="https://gitee.com/icecream4k" target="_blank" class="gitee_a">Gitee</a>.
     </p>
     <p>
         My Chinese name is 韩龙.

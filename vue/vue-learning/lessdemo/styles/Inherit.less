@@ -1,8 +1,21 @@
-.internalElements(@width,@height,@bgc){
-    width:@width;
-    height:@height;
-    background-color:@bgc
+// .parameterTransmission(@width, @height, @bgc) {
+//   width: @width;
+//   height: @height;
+//   background-color: @bgc
+// }
+.InheritanceMethod {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
 }
+.InheritanceMethod:hover{
+    // 如果需要调整,那么定义优先级即可
+    background-color: red !important;
+}
+
 #wrap {
   position: relative;
   width: 300px;
@@ -10,26 +23,21 @@
   border: 1px solid;
   margin: 0 auto;
 
-  .inner {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    margin: auto;
-
+  //   如果需要使用继承,则可以在选择器后面使用:extend( 父选择器 )
+  //   继承的效率虽然比混合高,但是灵活性较差们不能传参
+  .inner:extend(.InheritanceMethod all) {
     &:nth-child(2) {
-        .internalElements(100px,100px,pink)
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      //   .parameterTransmission(100px, 100px, pink)
     }
-
-    ;
 
     &:nth-child(3) {
       width: 50px;
       height: 50px;
-      background-color: deeppink;
+      background-color: yellow;
+      //   .parameterTransmission(50px, 50px, deeppink)
     }
-
-    ;
   }
 }

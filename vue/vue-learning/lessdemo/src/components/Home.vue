@@ -14,6 +14,7 @@
             <router-link to="Arguments" tag="button">Arguments</router-link>
             <router-link to="Calculation" tag="button">计算</router-link>
             <router-link to="Inherit" tag="button">继承</router-link>
+            <router-link to="AvoidCompilation" tag="button">避免编译</router-link>
         </div>
     </div>
 </template>

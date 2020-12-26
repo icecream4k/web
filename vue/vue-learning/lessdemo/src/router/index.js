@@ -17,7 +17,7 @@ const MatchingPatternMixing = () => import("../components/Mixing/MatchingPattern
 const Arguments = () => import("../components/Mixing/Arguments.vue")
 const Calculation  = () => import("../components/Calculation.vue")
 const Inherit = () => import("../components/Inherit.vue")
-
+const AvoidCompilation = () => import("../components/AvoidCompilation.vue")
 
 export default new Router({
     routes: [{
@@ -75,6 +75,10 @@ export default new Router({
         {
             path:"/Inherit",
             component:Inherit
+        },
+        {
+            path:"/AvoidCompilation",
+            component:AvoidCompilation
         }
     ],
     mode: "history"

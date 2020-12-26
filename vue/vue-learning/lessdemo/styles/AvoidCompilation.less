@@ -1,0 +1,15 @@
+#wrap {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  border: 1px solid;
+  margin: 0 auto;
+
+  .innerdemo {
+    width: (10 * 10px);
+    // 如果希望避免编译, 用 ~" 内容 " 即可
+    height: ~'calc(50px+50px)';
+    margin: auto;
+    background-color: red;
+  }
+}
