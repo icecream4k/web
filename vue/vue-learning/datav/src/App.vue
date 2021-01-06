@@ -1,7 +1,8 @@
 <template>
   <div id="app">
       <div class="view_d">
-    <router-view/>
+        <router-link to=""></router-link>
+        <router-view/>
 
       </div>
   </div>
