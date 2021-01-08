@@ -3,24 +3,27 @@ import Router from 'vue-router'
 
 
 const Home = () => import('../components/Home.vue')
-const Demo = () => import('../components/Demo.vue')
+const GlobalConfiguration = () => import('../components/GlobalConfiguration.vue')
 
 Vue.use(Router)
 
 
 export default new Router({
-  routes: [
-    {
-      path:"",
-      redirect:'/Home'
+  routes: [{
+      path: "",
+      redirect: '/Home'
     },
     {
-      path:"/Home",
-      component:Home
+      path: "/Home",
+      component: Home
     },
     {
-      path:"/Demo",
-      component:Demo
+      path: "/GlobalConfiguration",
+      component: GlobalConfiguration
+    },
+    {
+      path: "/Example",
+      component:() => import("../components/Example.vue")
     }
   ],
   mode: 'history',
