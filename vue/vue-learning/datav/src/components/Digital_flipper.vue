@@ -76,6 +76,7 @@
         },
         methods: {
             basic_examples_changeData() {
+                // 可以用解构来进行替换 [a,b] = [b,a]
                 if (this.basic_examples_frequency % 2 === 0) {
                     this.basic_examples_config = this.basic_examples_config_1;
                     this.basic_examples_frequency++;
