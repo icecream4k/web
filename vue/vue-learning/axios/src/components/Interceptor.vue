@@ -1,6 +1,6 @@
 <template>
     <div class="Interceptor">
-        
+
     </div>
 </template>
 <script>
@@ -8,7 +8,21 @@
         request
     } from "../network/request"
     export default {
-        name: 'Interceptor'
+        name: 'Interceptor',
+        methods: {
+            showData() {
+                request({
+                    url: "/home/multidata"
+                }).then(
+                    res => console.log('使用时的res结果 : ',res)
+                ).catch(
+                    // rej => console.log(rej)
+                )
+            }
+        },
+        created() {
+            this.showData()
+        },
     };
 </script>
 <style lang='less'>

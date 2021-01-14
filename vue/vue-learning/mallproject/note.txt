@@ -1,0 +1,35 @@
+进度 - https://www.bilibili.com/video/BV15741177Eh?p=152
+新项目:
+    1,划分目录结构
+        src
+            assets 资源
+                img 图片
+                less 预处理css
+            common 公共JS/公共工具方法
+            components 组件
+                common 公用组件(可以抽离出去给别的项目使用) 
+                content 只能本项目使用的组件
+            network 网络请求相关配置
+            router 路由相关设置
+            store Vuex等状态管理
+            views 一些比较大的视图组件,组成页面的那些大的内容
+
+    2,引入css,做标签的统一和样式的基本设置
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
