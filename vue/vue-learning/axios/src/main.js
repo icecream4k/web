@@ -2,22 +2,22 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
-
+Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  render: h => h(App)
+    el: '#app',
+    router,
+    render: h => h(App)
 })
 
 // axios的基本使用
 axios({
-  url: 'http://123.207.32.32:8000/home/multidata',
-  method: 'get'
+    url: 'http://123.207.32.32:8000/home/multidata',
+    method: 'get'
 }).then(res => {
-  // console.log(res);
+    // console.log(res);
 })
 
 // axios发送并发请求
@@ -45,15 +45,55 @@ axios({
 // )
 // 对象的解构
 const obj = {
-  name:'kobe',
-  age:30
+    name: 'kobe',
+    age: 30
 }
-const {name,age} = obj;
+const {
+    name,
+    age
+} = obj;
 
 // 数组的解构
-const names = ['why','kobe','han']
+const names = ['why', 'kobe', 'han']
 // 传统写法
 // const name1 = names[0]
 // 解构写法
-const [name1,name2,name3] = names;
-console.log('name1 >>> ',name1);
+const [name1, name2, name3] = names;
+
+
+
+// -----------------------
+import {
+    request
+} from "./network/request"
+// 封装requests 模块 1.0 使用普通请求方式封装 弃用
+
+// request(
+//     {
+//         url: '/home/multidata',
+//     }, 
+//     res=>{
+//         console.log('这是通过自定义封装requests模块所回调的res >>> ',res);
+//     },
+//     err=>{
+//         console.log('这是通过自定义封装requests模块所回调的err >>> ',err);
+//     }
+// )
+
+// 封装requests 模块 2.0 使用Promise方式封装
+// request({
+//         url: '/home/multidata'
+//     })
+//     .then(res => console.log(res))
+//     .catch(err => console.log(err))
+
+// 终极解决方案,因为axios内部已经用Promise封装了,所以不需要惊醒Promise封装
+request({
+        url: '/home/multidata'
+    })
+    .then(res => {
+        // console.log(res)
+    })
+    .catch(err => {
+        // console.log(err)
+    })
