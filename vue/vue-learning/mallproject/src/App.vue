@@ -1,18 +1,10 @@
 <template>
-    <div id='app'>
-
-    </div>
+  <div id="app">
+      <router-view />
+      <main-tab-bar />
+  </div>
 </template>
 
-<script>
-    export default {
-        name: 'App',
-        components: {
-
-        }
-    }
-</script>
-
 <style lang="less">
-    @import "assets/css/base.less";
+
 </style>
