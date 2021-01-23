@@ -10,7 +10,18 @@ const routes = [
     },
     {
         path:"/Index",
-        component:()=>import('../views/Index')
+        component:()=>import('../views/Index'),
+        children:[{
+            path:'',
+            components:{
+                Header:()=>import('../components/header/Header.vue'),
+                Footer:()=>import('../components/footer/Footer.vue'),
+            }
+        }]
+    },
+    {
+        path:"/test",
+        component:()=>import('../components/test/test.vue')
     }
 ]
 

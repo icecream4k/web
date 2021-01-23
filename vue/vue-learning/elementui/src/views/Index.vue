@@ -3,7 +3,7 @@
         <div class="integratedContainer">
             <!-- 首页上方导航内容 -->
             <div class="pageHeader">
-                <router-view></router-view>
+                <router-view name="Header"></router-view>
             </div>
             <!-- 主体内容 -->
             <div class="pageMain">
@@ -11,7 +11,7 @@
             </div>
             <!-- 页脚 -->
             <div class="pageFooter">
-                <router-view></router-view>
+                <router-view name="Footer"></router-view>
             </div>
         </div>
     </div>
@@ -24,5 +24,5 @@
 </script>
 
 <style lang='less'>
-    @import "~assets/less/Index.less";
+    // @import "~assets/less/Index.less";
 </style>
