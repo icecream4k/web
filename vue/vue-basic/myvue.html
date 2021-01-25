@@ -8,10 +8,10 @@
     <!-- <link rel="icon" href="../../logo/code.png"> -->
     <link rel="icon" href="./vue_logo.png">
     <!-- 引入vue.js文件 -->
-    <script src="../js/vue.js"></script>
-    <script src="../js/vue-router.js"></script>
+    <script src="../public-js/vue.js"></script>
+    <script src="../public-js/vue-router.js"></script>
     <script src="./myvuejs.js"></script>
-    <script src="../../vue/js/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         Vue.component('hl-hr', {
             template: `
@@ -20,16 +20,14 @@
 				<hr style='color: black;size: 2px;'>
 				<br>
 			</div>`,
-            data() {//相当于以前的data
+            data() { //相当于以前的data
                 return {}
             },
-        }
-        )
-        
+        })
     </script>
     <style>
         * {
-            cursor: url('../../mouse/pointer_32px_1231389_easyicon.net.ico'),default !important;
+            cursor: url('../../mouse/pointer_32px_1231389_easyicon.net.ico'), default !important;
         }
     </style>
     <link rel="stylesheet" type="text/css" href="./myvuecss.css">
@@ -38,46 +36,44 @@
 <body style="width:980px;background-color: #fdfcf8;margin: 0 auto;">
     <div id="bodﬁy_div">
         <div id="fudongchuangkou">
-			<fieldset style="border-radius:10px;background-color: #fdfcf8;">
-				<legend> <span style="color: #41B883"><b>目</span>&nbsp;&nbsp;&nbsp;<span
-						style="color:#35495E ">录</b></span><br></legend>
-				<a href="#dingbu"><img src="../../logo/shouye.png" style="width: 35%;"></a><br>
-				<hr noshade='noshade'>
-				<a id="test-a-01" href="#MVVM"><b>MVVM</b></a><br>
-				<hr noshade='noshade'>
-				<a id="test-a-01" href="#Vuezhiling"><b>Vue指令</b></a><br>
-				<a id="test-a-01" href="#v-bind">v-bind</a><br>
-				<a id="test-a-01" href="#v-show">v-show</a><br>
-				<a id="test-a-01" href="#v-if">v-if v-esle</a><br>
-				<a id="test-a-01" href="#v-else-if">v-else-if</a><br>
-				<a id="test-a-01" href="#v-for">v-for</a><br>
-				<a id="test-a-01" href="#shijianbangding">v-on</a><br>
-				<a id="test-a-01" href="#v-vloak">v-vloak</a><br>
-				<a id="test-a-01" href="#v-html">v-html</a><br>
-				<a id="test-a-01" href="#v-once">v-once</a><br>
-				<a id="test-a-01" href="#v-pre">v-pre</a><br>
-				<a id="test-a-01" href="#v-model">v-model</a><br>
-				<a id="test-a-01" href="#v-model-radio">v-model-radio</a><br>
-				<a id="test-a-01" href="#select">select</a><br>
-				<a id="test-a-01" href="#fuxuankuang">复选框</a><br>
-				<a id="test-a-01" href="#jianshihanshu">watch</a><br>
-				<a id="test-a-01" href="#bangdingyangshi">绑定样式</a><br>
-				<a id="test-a-01" href="#vue-class">vue-class</a><br>
-				<a id="test-a-01" href="#zidingyizhiling">自定义指令</a><br>
-				<a id="test-a-01" href="#jisuanshuxing">计算属性</a><br>
-				<a id="test-a-01" href="#guolvqi">过滤器</a><br>
-				<a id="test-a-01" href="#axios">axios</a><br>
-				<a id="test-a-01" href="#zujianshengming">组件生命周期</a><br>
-				<a id="test-a-01" href="#zujianhuakaifa">组件化</a><br>
-				<a id="test-a-01" href="#zujianchuanzhi">组件间传值</a><br>
-				<a id="test-a-01" href="#SPA">单页面应用</a>
-				<hr noshade='noshade'>
-				<a href="#code_here"><img src="../../logo/dibu.png" style="width: 35%;"></a>
-			</fieldset>
-		</div>
+            <fieldset style="border-radius:10px;background-color: #fdfcf8;">
+                <legend> <span style="color: #41B883"><b>目</span>&nbsp;&nbsp;&nbsp;<span style="color:#35495E ">录</b></span><br></legend>
+                <a href="#dingbu"><img src="../../logo/shouye.png" style="width: 35%;"></a><br>
+                <hr noshade='noshade'>
+                <a id="test-a-01" href="#MVVM"><b>MVVM</b></a><br>
+                <hr noshade='noshade'>
+                <a id="test-a-01" href="#Vuezhiling"><b>Vue指令</b></a><br>
+                <a id="test-a-01" href="#v-bind">v-bind</a><br>
+                <a id="test-a-01" href="#v-show">v-show</a><br>
+                <a id="test-a-01" href="#v-if">v-if v-esle</a><br>
+                <a id="test-a-01" href="#v-else-if">v-else-if</a><br>
+                <a id="test-a-01" href="#v-for">v-for</a><br>
+                <a id="test-a-01" href="#shijianbangding">v-on</a><br>
+                <a id="test-a-01" href="#v-vloak">v-vloak</a><br>
+                <a id="test-a-01" href="#v-html">v-html</a><br>
+                <a id="test-a-01" href="#v-once">v-once</a><br>
+                <a id="test-a-01" href="#v-pre">v-pre</a><br>
+                <a id="test-a-01" href="#v-model">v-model</a><br>
+                <a id="test-a-01" href="#v-model-radio">v-model-radio</a><br>
+                <a id="test-a-01" href="#select">select</a><br>
+                <a id="test-a-01" href="#fuxuankuang">复选框</a><br>
+                <a id="test-a-01" href="#jianshihanshu">watch</a><br>
+                <a id="test-a-01" href="#bangdingyangshi">绑定样式</a><br>
+                <a id="test-a-01" href="#vue-class">vue-class</a><br>
+                <a id="test-a-01" href="#zidingyizhiling">自定义指令</a><br>
+                <a id="test-a-01" href="#jisuanshuxing">计算属性</a><br>
+                <a id="test-a-01" href="#guolvqi">过滤器</a><br>
+                <a id="test-a-01" href="#axios">axios</a><br>
+                <a id="test-a-01" href="#zujianshengming">组件生命周期</a><br>
+                <a id="test-a-01" href="#zujianhuakaifa">组件化</a><br>
+                <a id="test-a-01" href="#zujianchuanzhi">组件间传值</a><br>
+                <a id="test-a-01" href="#SPA">单页面应用</a>
+                <hr noshade='noshade'>
+                <a href="#code_here"><img src="../../logo/dibu.png" style="width: 35%;"></a>
+            </fieldset>
+        </div>
         <p><b style="font-style: italic">
-                <h1 class="c-center"><span style="color: #41B883">V</span><span id="dingbu"
-                        style="color:#41B883">U</span><span style="color:#35495E">E</span></h1>
+                <h1 class="c-center"><span style="color: #41B883">V</span><span id="dingbu" style="color:#41B883">U</span><span style="color:#35495E">E</span></h1>
             </b></p>
         <!-- 先定义界面,要求: -->
         <!-- 1.1整个界面必须包裹在一个唯一的父元素内 -->
@@ -192,18 +188,17 @@
             <p>VUE demo</p>
 
             <div id="app_01">
-                <button @click="minus">-</button>&nbsp;&nbsp;<span>{{n}}</span>&nbsp;&nbsp;<button
-                    @click="add">+</button>
+                <button @click="minus">-</button>&nbsp;&nbsp;<span>{{n}}</span>&nbsp;&nbsp;<button @click="add">+</button>
             </div>
             <script type="text/javascript">
                 // 2.定义所有页面上所需的数据和函数,要求:
                 // 2.1 页面中所需的变量和初始值,应该放在一个名为data的对象中
-                var data = {//仓库1,专门存变量
+                var data = { //仓库1,专门存变量
                     //页面上需要几个变量,data中就要定义几个变量
                     n: 1
                 };
                 // 2.2 页面中所需的实践处理函数,必须放在一个名为methods的对象中
-                var methods = {//仓库2,专门寸函数
+                var methods = { //仓库2,专门寸函数
                     //页面上需要几个页面处理函数,methods中就有几个方法
                     // methods中的方法只管操作data中的变量即可,不用关系变量将来放在那里,如何放
                     add() {
@@ -217,7 +212,7 @@
                 };
                 // 3.创建一个Vue类型的对象 - 快递员
                 new Vue({
-                    el: '#app_01',//element:'选择器' 告诉快递员,负责哪个小区的业务
+                    el: '#app_01', //element:'选择器' 告诉快递员,负责哪个小区的业务
                     data,
                     methods,
                 });
@@ -237,7 +232,7 @@
 						<h3>今天星期{{?}}</h3> -->
                         </div>
                         <script type="text/javascript">
-                            new Vue({//快递员
+                            new Vue({ //快递员
                                 el: '#app_02',
                                 data: {
                                     uname: 'icecream',
@@ -280,7 +275,7 @@
                                 }
                             }
 
-                            new Vue({//快递员
+                            new Vue({ //快递员
                                 el: "#app_03", //快递员负责的小区
                                 data: { //仓库1: 专门保存小区中所有住户所需的变量
                                     // pm25:Math.random()*400
@@ -358,8 +353,7 @@
                     </td>
                     <td>
                         <div id="app_04">
-                            <h3 v-if='isLogin==false'><a href="javascript:;" @click='login()'>登录</a>|<a
-                                    href="javascript:;" @click=login()>注册</a></h3>
+                            <h3 v-if='isLogin==false'><a href="javascript:;" @click='login()'>登录</a>|<a href="javascript:;" @click=login()>注册</a></h3>
                             <h3 v-else>Welcome dingding,<a href="javascript:;" @click='logout()'>注销</a></h3>
                         </div>
                         <script type="text/javascript">
@@ -444,8 +438,7 @@
                 <span>其实 <span class="span-skyblue"> v-for of 统一了程序中的for of 和 for in</span>, vue 中的 v-for of 即可遍历数字下标的
                     <br>索引数组、类数组对象和字符串,还可以遍历自定义下标名称的对象 <br>和关联数组</span>
                 <span>v-for of还可以数数</span><br>
-                <span><span class="span-skyblue">此处为高频笔试题</span>缺点:默认情况下,如果原数组内容中某个元素值改变, <br><span
-                        class="span-skyblue">
+                <span><span class="span-skyblue">此处为高频笔试题</span>缺点:默认情况下,如果原数组内容中某个元素值改变, <br><span class="span-skyblue">
                         v-for会将所有元素重新生成一遍</span></span><br>
                 <span>原因:v-for 默认生成的元素处内容之外几乎都是一模一样的。当修改数组中某一个元素时,<br>
                     v-for是不知道该修改那个元素对应元素副本的
@@ -461,8 +454,7 @@
             </td>
             <td>
                 <div align="content">
-                    <audio autoplay="autoplay" controls="controls" loop="loop" preload="auto"
-                        src="../../Html_Basic/music/Thomas Greenberg - The Right Path.mp3" align="content">
+                    <audio autoplay="autoplay" controls="controls" loop="loop" preload="auto" src="../../Html_Basic/music/Thomas Greenberg - The Right Path.mp3" align="content">
                     </audio>
                 </div <fieldset style="width: 300px">
                 <div id="app_06">
@@ -603,8 +595,7 @@
                 <span>问题:尤其是移动端网络不稳定,极有可能出现js下载比网页延迟的情况</span><br>
                 <span>如果js中的new Vue()延迟加载,则HTML中的{{}}就会短暂的被用户一一看到</span><br>
                 <span><span style="color:green">解决</span>:v-cloak:</span><br>
-                <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;1.在内容中含有{{}}语法的元素 添加 <span
-                        class="span-skyblue">v-cloak</span>&gt;{{}}&lt;/元素&gt;</span><br>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;1.在内容中含有{{}}语法的元素 添加 <span class="span-skyblue">v-cloak</span>&gt;{{}}&lt;/元素&gt;</span><br>
                 <span>&nbsp;&nbsp;&nbsp;&nbsp;2.必须手动在css中定义一个属性选择器配合v-cloak: <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;[v-cloak]{display:none}</span>
                 <span>&nbsp;&nbsp;&nbsp;&nbsp;&lt;1.元素 v-cloak&gt;{{}}&lt;/元素&gt;</span><br>
@@ -627,15 +618,14 @@
                     </div>
                     <span class="span-skyblue">刷新看效果</span>
                     <script type="text/javascript">
-                        setTimeout(function () {
+                        setTimeout(function() {
                             new Vue({
                                 el: '#app_09',
                                 data: {
                                     uname: "han",
                                     age: 18
                                 },
-                                methods: {
-                                }
+                                methods: {}
                             })
                         }, 1000)
                     </script>
@@ -711,7 +701,7 @@
                                 now: new Date().toLocaleString()
                             }
                         })
-                        setInterval(function () {
+                        setInterval(function() {
                             vm.now = new Date().toLocaleString()
                         }, 1000);
                     </script>
@@ -753,8 +743,7 @@
             <td>
                 <fieldset style="width: 280px">
                     <div id="app_13">
-                        <input type="text" id='test_input_01' name="" v-model:value="keywords">&nbsp;&nbsp;&nbsp;<button
-                            @click="search">百度一下</button>
+                        <input type="text" id='test_input_01' name="" v-model:value="keywords">&nbsp;&nbsp;&nbsp;<button @click="search">百度一下</button>
                     </div>
                     <script type="text/javascript">
                         new Vue({
@@ -770,7 +759,7 @@
                                 },
                             },
                             watch: {
-                                keywords() {//当变量名keywords发生变化时,自动调用
+                                keywords() { //当变量名keywords发生变化时,自动调用
                                     this.search();
                                 }
                             }
@@ -802,8 +791,7 @@
                         <span class="span-skyblue">单选按钮</span>
                         <ul>
                             <li>特点:在 定义radio时,就已经定死了value,拱用户选择,而不是随机选择<br>
-                                单选按钮:&lt;input type='radio' value='固定值' name='分组' <span
-                                    class="span-skyblue">v-model:checked='变量/条件表达式'</span>&gt;</li>
+                                单选按钮:&lt;input type='radio' value='固定值' name='分组' <span class="span-skyblue">v-model:checked='变量/条件表达式'</span>&gt;</li>
                         </ul>
                     </li>
                     <li>
@@ -878,7 +866,7 @@
                         new Vue({
                             el: "#app_15",
                             data: {
-                                city: "bj"//保存选中的city的value
+                                city: "bj" //保存选中的city的value
                             }
                         })
                     </script>
@@ -929,7 +917,7 @@
                         new Vue({
                             el: '#app_16',
                             data: {
-                                isAgree: false,//记录是否同意
+                                isAgree: false, //记录是否同意
                             }
                         })
                     </script>
@@ -1130,7 +1118,7 @@
                                 phone: '',
                                 success: false,
                                 fail: false,
-                                msg: ''//控制span的错误提示
+                                msg: '' //控制span的错误提示
                             },
                             methods: {
                                 vali() {
@@ -1184,8 +1172,7 @@
                     </li>
                     <li>
                         如何使用指令:和使用官方的指令完全一样!<br>
-                        强调:虽然<span class="span-skyblue">定义</span>指令时<span class="span-skyblue">不加v-</span>前缀,但是<span
-                            class="span-skyblue">使用</span>指令时,<span class="span-skyblue">必须加v</span>-前缀
+                        强调:虽然<span class="span-skyblue">定义</span>指令时<span class="span-skyblue">不加v-</span>前缀,但是<span class="span-skyblue">使用</span>指令时,<span class="span-skyblue">必须加v</span>-前缀
                         &lt;元素 v-指令名&gt;
                     </li>
                     <li>原理:
@@ -1257,8 +1244,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;methods:{...}<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;watch:{...}<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;<span class='span-skyblue'>computed</span>:{...}<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;计算属性本职是一个<span class='span-skyblue'>名称为属性名</span>的<span
-                            class='span-skyblue'>函数</span>:<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;计算属性本职是一个<span class='span-skyblue'>名称为属性名</span>的<span class='span-skyblue'>函数</span>:<br>
                         &nbsp;&nbsp;&nbsp;&nbsp;属性名(){<br>
                         根据其他属性经过复杂的计算过程,获得结果<br>
                         <span class='span-skyblue'>return 计算结果</span>
@@ -1300,10 +1286,24 @@
                         new Vue({
                             el: '#app_20',
                             data: {
-                                cart: [
-                                    { pid: 1, pname: '华为', price: 5688, count: 2 },
-                                    { pid: 2, pname: '小米', price: 1999, count: 3 },
-                                    { pid: 3, pname: '水果', price: 9999, count: 1 },
+                                cart: [{
+                                        pid: 1,
+                                        pname: '华为',
+                                        price: 5688,
+                                        count: 2
+                                    },
+                                    {
+                                        pid: 2,
+                                        pname: '小米',
+                                        price: 1999,
+                                        count: 3
+                                    },
+                                    {
+                                        pid: 3,
+                                        pname: '水果',
+                                        price: 9999,
+                                        count: 1
+                                    },
                                 ]
                             },
                             methods: {
@@ -1339,13 +1339,11 @@
             <tr>
                 <td id="td-vue-index">
                     <ul>
-                        <li>什么是<span class='span-skyblue'>过滤器</span>:对变量的原始值进行加工后再显示出来的一种特殊<span
-                                class='span-skyblue'>函数</span></li>
+                        <li>什么是<span class='span-skyblue'>过滤器</span>:对变量的原始值进行加工后再显示出来的一种特殊<span class='span-skyblue'>函数</span></li>
                         <li>为什么:有些值不能直接给人看,必须加工后才能给人看 sex : 1 时间 : ms</li>
                         <li>何时使用:今后只要一个变量的原始值必须加工后才能给人看时,都要定义过滤器</li>
                         <li>如何使用:<br>
-                            <span
-                                class='span-skyblue'>Vue.filter</span>('过滤器名',function(oldVal){//要求1:必须有一个形参变量,来接住变量的原始值,<br>
+                            <span class='span-skyblue'>Vue.filter</span>('过滤器名',function(oldVal){//要求1:必须有一个形参变量,来接住变量的原始值,<br>
                             要求2 : 必须返回加工后的新值<br>
                             <span class='span-skyblue'>return</span> 新值})
                         </li>
@@ -1358,20 +1356,19 @@
                 <td>
                     <fieldset style="width: 300px;">
                         <script>
-                            Vue.filter('sexFilter', function (oldVal, language = 'cn') {
+                            Vue.filter('sexFilter', function(oldVal, language = 'cn') {
                                 if (language == 'cn') {
                                     return oldVal == 1 ? '男' : '女'
                                 } else {
                                     return oldVal == 1 ? 'Male' : 'Female'
                                 }
                             })
-                            Vue.filter('sexIcon', function (oldVal) {
+                            Vue.filter('sexIcon', function(oldVal) {
                                 if (oldVal == '1') {
                                     return "♂"
                                 } else if (oldVal == '0') {
                                     return "♀"
-                                }
-                                else if (oldVal == '男' || oldVal == 'Male') {
+                                } else if (oldVal == '男' || oldVal == 'Male') {
                                     return oldVal + ' ♂'
                                 } else {
                                     return oldVal + ' ♀'
@@ -1440,15 +1437,12 @@
                                     <span class="span-skyblue">axios.get(</span>'服务器接口地址',{<br>
                                     &nbsp;&nbsp;&nbsp;&nbsp;params:{参数1:值1,....}<br>
                                     }<span class="span-skyblue">).then(result=>{</span><br>
-                                    //result<span
-                                        class="span-skyblue">.data</span>里获得的就是服务器返回的结果(已经被json.parse()编译成对象了)<br>
+                                    //result<span class="span-skyblue">.data</span>里获得的就是服务器返回的结果(已经被json.parse()编译成对象了)<br>
                                     <span class="span-skyblue">})</span>
                                 </li>
                                 <li>
                                     发送post请求:<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;<span
-                                        class="span-skyblue">axios.post(</span>'服务器端口地址'.{参数1,值1,.....}<span
-                                        class="span-skyblue">).then(result=>{</span><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="span-skyblue">axios.post(</span>'服务器端口地址'.{参数1,值1,.....}<span class="span-skyblue">).then(result=>{</span><br>
                                     //result<span class="span-skyblue">.data</span>
                                     里获得的就是服务器端返回的结果(已经被json.parse()编译成对象了)<br>
                                     <span class="span-skyblue">})</span>
@@ -1477,25 +1471,28 @@
                             axios.get('/json.php', {
                                 params: {
                                     'appkey': 'uNIKUq+qSeRcshQufXsxk5khRF4AAAAADvkmRJ1HL4sAAAAAAAAAAA==',
-                                    'json': { "phone": "13221069695" }
+                                    'json': {
+                                        "phone": "13221069695"
+                                    }
                                 }
                             }).then(result => {
                                 // console.log(result.data)
                             })
-                            axios.post('/json.php',
-                                { type: 'appkey', postid: '4304926503813' }).then(result => {
-                                    console.log(result.data);
-                                })
+                            axios.post('/json.php', {
+                                type: 'appkey',
+                                postid: '4304926503813'
+                            }).then(result => {
+                                console.log(result.data);
+                            })
 
-							// axios.get('/details', { params: { lid: 5 } }).then(result => {
-							// 	console.log(result.data);
-							// })
+                            // axios.get('/details', { params: { lid: 5 } }).then(result => {
+                            // 	console.log(result.data);
+                            // })
 
-							// axios.post('/users/signin',
-							// 	{ uname: 'dingding', upwd: '123456' }).then(result => {
-							// 		console.log(result.data);
-							// 	})
-
+                            // axios.post('/users/signin',
+                            // 	{ uname: 'dingding', upwd: '123456' }).then(result => {
+                            // 		console.log(result.data);
+                            // 	})
                         </script>
                     </fieldset>
                 </td>
@@ -1551,13 +1548,11 @@
                                 <li>包括:<span class="span-skyblue">8个(每个阶段前后都有一个钩子函数)</span><br>
                                     &nbsp;&nbsp;<span class="span-skyblue">beforeCreate()</span><br>
                                     创建(create)<br>
-                                    &nbsp;&nbsp;<span
-                                        class="span-skyblue">created()</span><br>//可发送axios请求,因为此时已经有data了,如果请求回来的数据,可以放在data中,并自动更新到页面上<br>
+                                    &nbsp;&nbsp;<span class="span-skyblue">created()</span><br>//可发送axios请求,因为此时已经有data了,如果请求回来的数据,可以放在data中,并自动更新到页面上<br>
                                     //小风险:万一axios请求回来的很快,而后续mount阶段没有执行完,此时是不能执行DOM操作的
                                     &nbsp;&nbsp;<span class="span-skyblue">beforeMount()</span><br>
                                     挂载(mount)<br>
-                                    &nbsp;&nbsp;<span
-                                        class="span-skyblue">mounted()</span><br>//最稳妥的发送axios请求的时机:因为此时既有data,又有虚拟DOM树了<br>
+                                    &nbsp;&nbsp;<span class="span-skyblue">mounted()</span><br>//最稳妥的发送axios请求的时机:因为此时既有data,又有虚拟DOM树了<br>
                                     &nbsp;&nbsp;<span class="span-skyblue">beforeUpdate()</span><br>
                                     更新(update)<br>
                                     &nbsp;&nbsp;<span class="span-skyblue">updated()</span><br>
@@ -1582,11 +1577,11 @@
                             var vm = new Vue({
                                 el: "#app_22",
                                 data: {
-                                    products: [],//先定义一个空数组等着接axios请求回来的6个商品对象
+                                    products: [], //先定义一个空数组等着接axios请求回来的6个商品对象
                                 },
                                 methods: {
                                     del(i) {
-                                        this.products.splice(i, 1);//复习数组函数
+                                        this.products.splice(i, 1); //复习数组函数
                                     },
                                     destory() {
                                         this.$destory()
@@ -1804,22 +1799,26 @@
             <script>
                 // 组件名:因为将来组件名会成为HTML中的标签名,又因为HTML不区分大小写,所以当组件名包含多个单词时,不要用驼峰命名法,应该用 - 来分隔每个单词,而且全小写
                 Vue.component('my-counter', {
-                    template: `<div class='my-counter'>
+                        template: `<div class='my-counter'>
 						<button @click='minus'>-</button>
 						<span>{{n}}</span>
 						<button @click='add'>+</button>
 						</div>`,
-                    data() {//相当于以前的data
-                        return {
-                            n: 1
+                        data() { //相当于以前的data
+                            return {
+                                n: 1
+                            }
+                        },
+                        methods: {
+                            minus() {
+                                this.n--;
+                                this.n == 0 && (this.n = 1);
+                            },
+                            add() {
+                                this.n++;
+                            }
                         }
-                    },
-                    methods: {
-                        minus() { this.n--; this.n == 0 && (this.n = 1); },
-                        add() { this.n++; }
-                    }
-                }
-                ),
+                    }),
                     new Vue({
                         el: '#app_23',
                         data: {

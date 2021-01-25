@@ -351,18 +351,12 @@
     <!-- 提交请求,使用form,就不用ajxa,使用ajax,就不用form -->
     <!-- 但是,使用ajax,没有自动收集信息的能力,要是使用js的dom去手写代码收集 -->
 
-    <!-- action 定义表单提交时,发生的动作(要把数据提交的接口),如果不写,
-默认值是把数据提交给自己 -->
+    <!-- action 定义表单提交时,发生的动作(要把数据提交的接口),如果不写,默认值是把数据提交给自己 -->
     <!-- method 定义表单提交的方式,提交的方法 -->
-    <!-- get 默认值缺省值,明文提交,提交的内容显示在地址栏上,靠查询字符串传递参数,
-像服务器要数据的时候,使用get,提交的数据有大小限制,最大是2Kb -->
-    <!-- post 隐式提交,提交的内容不会系那是在地址栏,靠请求主体(formdata)传递参数,
-向服务器传递数据的时候使用,post提交数据,没有大小限制 -->
-    <!-- enctype 设置要提交的数据的编码方式(表单中数据的编码方式)
-设置允许将什么类型的数据传递给服务器
-默认值 application/x-www-form-urlencoded
-text/plain 允许提交普通字符(不包含特殊符号)
-multipart/form-data 允许提交文件 -->
+    <!-- get 默认值缺省值,明文提交,提交的内容显示在地址栏上,靠查询字符串传递参数,像服务器要数据的时候,使用get,提交的数据有大小限制,最大是2Kb -->
+    <!-- post 隐式提交,提交的内容不会系那是在地址栏,靠请求主体(formdata)传递参数,向服务器传递数据的时候使用,post提交数据,没有大小限制 -->
+    <!-- enctype 设置要提交的数据的编码方式(表单中数据的编码方式)设置允许将什么类型的数据传递给服务器默认值 application/x-www-form-urlencodedtext/plain 允许提交普通字符(不包含特殊符号)multipart/form-data 允许提交文件 -->
+    
     <fieldset>
         <legend>表单</legend>
 
@@ -401,7 +395,7 @@ multipart/form-data 允许提交文件 -->
         <form method="get">
             <input type="radio" name="sex">男
             <input type="radio" name="sex">女
-            <input type="submit" name="">
+            <input type="submit" name="" value="点击">
         </form>
         <span><b>多选按钮</b></span>
         <br>
@@ -447,7 +441,7 @@ multipart/form-data 允许提交文件 -->
         <!-- selected 无值属性,默认选中 -->
         <div>
             <form>
-                <select name="city" size="4" multiple="">
+                <select size="4" multiple="">
                     <option value="bj" selected="">北京</option>
                     <option value="sh">上海</option>
                     <option value="nj">南京</option>
@@ -1820,6 +1814,7 @@ multipart/form-data 允许提交文件 -->
                         height: 200px;
                         background-color: #f00;
                     }
+
                     .child_d4 {
                         width: 100px;
                         height: 100px;
@@ -1943,12 +1938,13 @@ multipart/form-data 允许提交文件 -->
             <li>
                 <p>calc()</p>
                 <style>
-                    .parent_d12{
+                    .parent_d12 {
                         width: 600px;
                         height: 600px;
                         background-color: red;
                     }
-                    .child_09{
+
+                    .child_09 {
                         width: 100px;
                         height: 100px;
                         padding: calc((100% - 100px) / 2);

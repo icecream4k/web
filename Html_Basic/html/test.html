@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吴紫叶的demo</title>
+    <style>
+        /* 样式 */
+        .tr1>td:nth-child(1) {
+            background-color: skyblue;
+
+        }
+
+        .tr1>td:nth-child(2) {
+            background-color: pink;
+        }
+
+        .tr2>td:nth-child(1) {
+            background-color: deeppink;
+        }
+
+        .tr2>td:nth-child(2) {
+            background-color: black;
+        }
+
+        .tr2>td:nth-child(3) {
+            background-color: red;
+        }
+
+        .tr3>td:nth-child(1) {
+            background-color: gold;
+        }
+
+        .tr3>td:nth-child(2) {
+            background-color: skyblue;
+        }
+
+        .tr4>td:nth-child(1) {
+            background-color: orange;
+        }
+
+        .mz>li:nth-child(1)>span {
+            color: orangered;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="2" height="300px" width="300px">
+        <tr class="tr1">
+            <td colspan="3"></td>
+            <td rowspan="3"></td>
+        </tr>
+        <tr class="tr2">
+            <td rowspan="3"></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="tr3">
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="tr4">
+            <td colspan="3"></td>
+        </tr>
+
+    </table>
+
+    <!-- 四大名著 -->
+    <ol start="6">
+        <li>
+            <span>今天天气真好</span>
+        </li>
+        <li>
+            <span>今天天气真好</span>
+        </li>
+        <li>
+            <span>今天天气真好</span>
+        </li>
+    </ol>
+    <ol class="mz" start="9">
+        <li>
+            <span>水浒传</span>
+        </li>
+        <li>
+            <span>西游记</span>
+        </li>
+        <li>
+            <span>红楼梦</span>
+        </li>
+        <li>
+            <span>三国演义</span>
+        </li>
+    </ol>
+
+    <input type="text">
+    <br>
+    <hr>
+    <label>
+        <input type="radio" name="sex">男
+    </label>
+    <label>
+        <input type="radio" name="sex">女
+    </label>
+
+    <br>
+    <hr>
+    <input type="checkbox" name="eat">吃
+    <input type="checkbox" name="drink">喝
+    <input type="checkbox" name="play">玩
+    <input type="checkbox" name="happy">乐
+    <br>
+    <hr>
+    <input type="file" width="150px" height="150px">
+    <br>
+    <hr>
+    <form action="" width="200px" height='200px'>
+        <textarea cols="30" rows="10"></textarea>
+        <br><input type="submit" name="">
+    </form>
+    <select size="5">
+        <option value="bj">北京</option>
+        <option value="sh">上海</option>
+        <option value="nj" selected="">南京</option>
+        <option value="hz">杭州</option>
+        <option value='gz'>广州</option>
+        <option value="jms">佳木斯</option>
+    </select>
+    <br>
+    <hr>
+
+    <table>
+        <tr>
+            <td>用户名</td>
+            <td>
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td>
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>性别</td>
+            <td>
+                <label for="">
+                    <input type="radio">男
+                </label>
+                <label for="">
+                    <input type="radio">女
+                </label>
+                <label for="">
+                    <input type="radio">不透露
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>头像</td>
+            <td>
+                <input type="file">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select name="" id="" size="5">
+                    <option value="bj" selected>北京</option>
+                    <option value="bj">上海</option>
+                    <option value="bj">南昌</option>
+                    <option value="bj">杭州</option>
+                    <option value="bj">广州</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                留言
+            </td>
+            <td>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                <input type="checkbox" name="" id="">
+                不要公布我的信息
+            </td>
+        </tr>
+    </table>
+    <br>
+    <hr>
+    <table width=300px height=300px>
+        <tr>
+            <td>
+                <img src="../img/jindong.jpeg" width="25%" alt="">
+                <!-- <img src="../img/jindong.jpeg" alt="" width='30%' height="30%"> -->
+            </td>
+            <td>
+                <span style="font-weight: bolder;font-size:5px;">欢迎登陆</span>
+            </td>
+        </tr>
+    </table>
+    <table width=600px height=600px border="1">
+        <tr>
+            <td>
+                <img src="../img/timg.jpeg" alt="" width="350px">
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+           
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            
+            <td></td>
+            <td></td>
+           
+        </tr>
+        <tr>
+            <td></td>
+           
+            <td></td>
+            <td></td>
+            
+        </tr>
+        <tr>
+            <td></td>
+          
+            <td></td>
+            <td></td>
+            
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            
+        </tr>
+    </table>
+</body>
+
+</html>
