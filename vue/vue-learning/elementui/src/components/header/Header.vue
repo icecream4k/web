@@ -14,7 +14,7 @@
     .Header {
         width: 100%;
         height: 35vh;
-        background: -webkit-linear-gradient(bottom, #34e1ff25, #7651ff25, #ff3cef25);
+        background: -webkit-linear-gradient(bottom, #007d8d45, #7651ff45, #ff3cef45);
 
         // background-color:skyblue;
         div {
@@ -25,7 +25,7 @@
 
             // background-color: red;
             p {
-                font-size: 40px;
+                font-size: 55px;
                 text-align: center;
                 background-image: -webkit-linear-gradient(bottom, #34e1ff, #7651ff, #ff3cef);
                 -webkit-background-clip: text;
