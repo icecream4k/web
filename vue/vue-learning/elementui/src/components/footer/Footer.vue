@@ -41,20 +41,15 @@
     @import "../../assets/less/Index.less";
 
     #Footer {
-        .wh(@h: 180px);
-        position: fixed;
-        bottom: 0;
-
-        // background-color: skyblue;
+        .wh(@h: 90px);
         .FooterContent {
             .wh(61vw);
             margin: auto;
-            // background-color: rgba(blue, 0.2);
             display: flex;
 
             .FooterContentLeft {
                 flex: 1;
-                .wh();
+                // .wh();
 
                 span {
                     font-size: 19px;
@@ -101,8 +96,8 @@
                 ;
 
                 .FooterContentRightD1 {
-                    padding: 25px 150px;
-                    .wh();
+                    // padding: 25px 150px;
+                    // .wh();
 
                     img {
                         width: 7%;

@@ -7,7 +7,7 @@
             </div>
             <!-- 主体内容 -->
             <div class="pageMain">
-                <router-view></router-view>
+                <router-view name="Main"></router-view>
             </div>
             <!-- 页脚 -->
             <div class="pageFooter">

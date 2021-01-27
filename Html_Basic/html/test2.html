@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .maindiv {
+        width: 100%;
+        height: 300px;
+        background-color: red;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .d1 {
+        flex: 1;
+        width: 30%;
+        height: 300px;
+        background-color: yellow;
+    }
+
+    .d2 {
+        flex: 2;
+        width: 30%;
+        height: 300px;
+        background-color: green;
+    }
+
+    .d3 {
+        flex: 1;
+        width: 30%;
+        height: 300px;
+        background-color: blue;
+    }
+
+    .f1 {
+        width: 500px;
+        height: 500px;
+        border-radius: 40%;
+    }
+
+    .f1>legend>h1 {
+        background-image: -webkit-linear-gradient(bottom, #34e1ff, #7651ff, #ff3cef);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .d4 {
+        width: 300px;
+        height: 300px;
+        background-color: red;
+    }
+
+    .d4:hover {
+
+        width: 400px;
+        height: 400px;
+        background-color: blue;
+    }
+
+    /*匹配链接未访问时的状态 - :link*/
+    #test-div-01>a:link {
+        color: yellow
+    }
+
+    /*匹配链接已访问后的状态 - :visited*/
+    #test-div-01>a:visited {
+        color: green
+    }
+
+    /*鼠标悬停的状态 - :hover*/
+    #test-div-01>a:hover {
+        font-size: 60px
+    }
+
+    /*鼠标激活的状态 - active*/
+    #test-div-01>a:active {
+        color: orange;
+    }
+
+    .s1>a{
+        color: blue;
+        font-size: 40px;
+        font-weight: bolder;
+        text-decoration:none;
+    }
+    .s1>a>span{
+        color: red;
+    }
+    .s1>a:hover{
+        color: rgb(94, 94, 255);
+        font-size: 40px;
+        font-weight: bolder;
+        text-decoration:none;
+    }
+    .s1>a>span:hover{
+        color: rgb(255, 28, 28);
+    }
+    .s1>a:active{
+        color:yellow
+    }
+</style>
+
+<body>
+    <div class="maindiv">
+        <div class="d1"></div>
+        <div class="d2"></div>
+        <div class="d3"></div>
+    </div><br>
+    <hr><br><br>
+    <fieldset class="f1">
+        <legend>
+            <h1>123</h1>
+        </legend>
+    </fieldset>
+
+    <br>
+    <hr><br>
+    <div class="s1">
+        <a href=""><span>this.$nextTick()</span>的使用 - 简书</a>
+    </div>
+
+</body>
+
+</html>

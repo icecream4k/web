@@ -13,7 +13,7 @@
 <style lang='less'>
     .Header {
         width: 100%;
-        height: 35vh;
+        height: 330px;
         background: -webkit-linear-gradient(bottom, #007d8d45, #7651ff45, #ff3cef45);
 
         // background-color:skyblue;

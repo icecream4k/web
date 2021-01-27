@@ -15,6 +15,7 @@ const routes = [
             path:'',
             components:{
                 Header:()=>import('../components/header/Header.vue'),
+                Main:()=>import('../components/main/Main.vue'),
                 Footer:()=>import('../components/footer/Footer.vue'),
             }
         }]
