@@ -3,26 +3,25 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const routes = [
-    {
-        path:"",
-        redirect:'/Index'
+const routes = [{
+        path: "",
+        redirect: '/Index'
     },
     {
-        path:"/Index",
-        component:()=>import('../views/Index'),
-        children:[{
-            path:'',
-            components:{
-                Header:()=>import('../components/header/Header.vue'),
-                Main:()=>import('../components/main/Main.vue'),
-                Footer:()=>import('../components/footer/Footer.vue'),
+        path: "/Index",
+        component: () => import('../views/Index'),
+        children: [{
+            path: '',
+            components: {
+                Header: () => import('../components/header/Header.vue'),
+                Main: () => import('../components/main/Main.vue'),
+                Footer: () => import('../components/footer/Footer.vue'),
             }
         }]
     },
     {
-        path:"/test",
-        component:()=>import('../components/test/test.vue')
+        path: "/test",
+        component: () => import('../components/test/test.vue')
     }
 ]
 

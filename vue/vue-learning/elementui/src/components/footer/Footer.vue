@@ -8,16 +8,6 @@
                     Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库,本网页为作者的学习笔记网页,你可以查询到一些关键知识,并且如果发现了一些bug可以发邮件给我进行反馈 hanlong5716@163.com
                 </p>
             </div>
-            <div class="FooterContentRight">
-                <p>友情链接</p>
-                <div class="FooterContentRightD1">
-                    <img src="../../assets/img/github.png" alt="" @click="goGithub">
-                    <img src="../../assets/img/gitee-fill-round.png" alt="" @click="goGitee">
-                    <img src="../../assets/img/微博.png" alt="" @click="goWeibo">
-                </div>
-
-
-            </div>
         </div>
     </div>
 </template>
@@ -41,7 +31,8 @@
     @import "../../assets/less/Index.less";
 
     #Footer {
-        .wh(@h: 90px);
+        .wh(@h: 10vh);
+
         .FooterContent {
             .wh(61vw);
             margin: auto;
@@ -62,7 +53,7 @@
                 ;
 
                 img {
-                    width: 4%
+                    width: 2%
                 }
 
                 ;
@@ -83,32 +74,6 @@
 
             ;
 
-            .FooterContentRight {
-                flex: 1;
-                .wh();
-
-                p {
-                    padding-left: 150px;
-                    font-size: 19px;
-                    color: #797979;
-                }
-
-                ;
-
-                .FooterContentRightD1 {
-                    // padding: 25px 150px;
-                    // .wh();
-
-                    img {
-                        width: 7%;
-                        margin-right: 3vw;
-                        cursor:pointer;
-                    }
-                }
-
-            }
-
-            ;
         }
     }
 </style>
