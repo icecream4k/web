@@ -1,13 +1,11 @@
 <template>
     <div id="Main">
         <div class="sideNavigation">
-            <dv-border-box-13 style="width:100%;height:100%">
-
-            </dv-border-box-13>
+            <dv-border-box-4 :color="['#34e1ff', '#ff3cef']" ></dv-border-box-4>
             <router-view></router-view>
         </div>
         <div class="primaryCoverage">
-            <dv-border-box-4 :reverse="true">dv-border-box-4</dv-border-box-4>
+            <dv-border-box-4 :color="['#34e1ff', '#ff3cef']"  :reverse="true"></dv-border-box-4>
             <router-view></router-view>
         </div>
     </div>
@@ -28,12 +26,10 @@
         .sideNavigation {
             .wh();
             flex: 1;
-            // background-color: red;
         };
         .primaryCoverage {
             .wh();
             flex: 4;
-            // background-color:blue;
         }
 
         ;
