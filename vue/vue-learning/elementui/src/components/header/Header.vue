@@ -28,7 +28,7 @@
                 font-size: 55px;
                 text-align: center;
                 background-image: -webkit-linear-gradient(bottom, #34e1ff, #7651ff, #ff3cef);
-                -webkit-background-clip: text;
+                background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
         }

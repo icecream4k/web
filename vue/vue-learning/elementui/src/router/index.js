@@ -1,28 +1,30 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
 
+import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [{
-        path: "",
-        redirect: '/Index'
+        path: '',
+        redirect: '/index'
     },
     {
-        path: "/Index",
-        component: () => import('../views/Index'),
-        children: [{
+        path: '/index',
+        component: () => import('../views/index'),
+        children: [
+            {
             path: '',
-            components: {
-                Header: () => import('../components/header/Header.vue'),
-                Main: () => import('../components/main/Main.vue'),
-                Footer: () => import('../components/footer/Footer.vue'),
-            }
+            redirect: 'introduce'
+        },{
+            path:'introduce',
+            component:()=>import('../components/main/content/introduce.vue')
+        }, {
+            path: 'transitionAnimation',
+            component: () => import('../components/main/content/transitionAnimation.vue')
+        }, {
+            path: 'test',
+            component: () => import('../components/test/test.vue')
         }]
     },
-    {
-        path: "/test",
-        component: () => import('../components/test/test.vue')
-    }
 ]
 
 const router = new VueRouter({

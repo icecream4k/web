@@ -1,32 +1,45 @@
 <template>
     <div id="Main">
         <div class="sideNavigation">
-            <dv-border-box-4 :color="['#34e1ff', '#ff3cef']" ></dv-border-box-4>
-            <router-view></router-view>
+            <dv-border-box-4 :color="['#34e1ff', '#ff3cef']">
+                <sideNavigation />
+            </dv-border-box-4>
         </div>
         <div class="primaryCoverage">
-            <dv-border-box-4 :color="['#34e1ff', '#ff3cef']"  :reverse="true"></dv-border-box-4>
-            <router-view></router-view>
+            <dv-border-box-4 :color="['#34e1ff', '#ff3cef']" :reverse="true" >
+                <!-- 缓存每次更变的组件 -->
+                <keep-alive>
+                    <router-view/>
+                </keep-alive>
+            </dv-border-box-4>
         </div>
     </div>
 </template>
 <script>
+    import sideNavigation from './nav/sideNavigation'
     export default {
-        name: 'Main'
+        name: 'Main',
+        components: {
+            sideNavigation
+        }
     };
 </script>
 <style lang='less'>
     @import "../../assets/less/Index.less";
 
     #Main {
-        .wh(@w:70vw);
+        .wh(@w: 70vw);
         margin: 0 auto;
         display: flex;
-        height: 65vh;
+        height: 63vh;
+
         .sideNavigation {
             .wh();
             flex: 1;
-        };
+        }
+
+        ;
+
         .primaryCoverage {
             .wh();
             flex: 4;
