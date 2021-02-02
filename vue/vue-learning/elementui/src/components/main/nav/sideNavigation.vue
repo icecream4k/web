@@ -7,7 +7,7 @@
             <router-link to="/Index/test">测试</router-link>
         </p>
         <p>
-
+            
         </p>
     </div>
 </template>
@@ -35,7 +35,8 @@
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
-            &:active{
+
+            &:active {
                 transition: 0.2s;
                 font-size: 25px;
                 text-align: center;

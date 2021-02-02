@@ -1,7 +1,10 @@
 <template>
     <div class="Header">
         <div>
-            <p>Element UI</p>
+
+            <p>
+                <router-link to="/index/">Element UI</router-link>
+            </p>
         </div>
     </div>
 </template>
