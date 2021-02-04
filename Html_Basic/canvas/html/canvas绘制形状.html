@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas绘制形状</title>
+</head>
+<body>
+    <canvas id="can1" width="600" height="600">
+
+    </canvas>
+    <script>
+        // let can1 = document.querySelector("#can1")
+        // let b1 = can1.getContext('2d')
+        let b1 = document.querySelector("#can1").getContext('2d')
+        // 设置绘制的起始点
+        b1.moveTo(50,50)
+        // 设置经过某个位置
+        b1.lineTo(50,300)
+        b1.lineTo(300,20)
+        // 绘制路径
+        b1.lineCap = "round" // 其实路径和末了路径的线段边缘设置为圆角
+        // b1.lineJoin = "round" // 设置拐角的位置为圆角
+        b1.miterLimit = 2 // 设置角的切断量
+        b1.strokeStyle = 'aqua'
+        b1.lineWidth = 30
+        b1.stroke()
+    </script>
+</body>
+</html>
