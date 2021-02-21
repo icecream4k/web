@@ -4,10 +4,10 @@
             <router-link to="/Index/transitionAnimation">过渡动画</router-link>
         </p>
         <p>
-            <router-link to="/Index/test">测试</router-link>
+            <router-link to="Index/layout">布局</router-link>
         </p>
         <p>
-            
+            <router-link to="/Index/test">测试</router-link>
         </p>
     </div>
 </template>

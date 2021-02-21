@@ -9,17 +9,19 @@ const routes = [{
     },
     {
         path: '/index',
-        component: () => import('../views/index'),
-        children: [
-            {
+        component: () => import('../views/Index.vue'),
+        children: [{
             path: '',
             redirect: 'introduce'
-        },{
-            path:'introduce',
-            component:()=>import('../components/main/content/introduce.vue')
+        }, {
+            path: 'introduce',
+            component: () => import('../components/main/content/introduce.vue')
         }, {
             path: 'transitionAnimation',
             component: () => import('../components/main/content/transitionAnimation.vue')
+        }, {
+            path:'layout',
+            
         }, {
             path: 'test',
             component: () => import('../components/test/test.vue')
