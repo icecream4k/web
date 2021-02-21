@@ -5,12 +5,16 @@
                 <!-- fade淡入淡出 -->
                 <div class="fade">
                     <el-button @click="fade = !fade">淡入淡出</el-button>
-                    <div style="display: flex; margin-top: 20px;">
+                    <div style="display: flex; margin-top: 20px">
                         <transition name="el-fade-in-linear">
-                            <div v-show="fade" class="transition-box">.el-fade-in-linear</div>
+                            <div v-show="fade" class="transition-box">
+                                .el-fade-in-linear
+                            </div>
                         </transition>
                         <transition name="el-fade-in">
-                            <div v-show="fade" class="transition-box">.el-fade-in</div>
+                            <div v-show="fade" class="transition-box">
+                                .el-fade-in
+                            </div>
                         </transition>
                     </div>
                 </div>
@@ -19,17 +23,23 @@
                 <!-- zoom 缩放 -->
                 <div class="zoom">
                     <el-button @click="zoom = !zoom">缩放</el-button>
-                    <div style="display: flex; margin-top: 20px;">
+                    <div style="display: flex; margin-top: 20px">
                         <transition name="el-zoom-in-center">
-                            <div v-show="zoom" class="transition-box">.el-zoom-in-center</div>
+                            <div v-show="zoom" class="transition-box">
+                                .el-zoom-in-center
+                            </div>
                         </transition>
 
                         <transition name="el-zoom-in-top">
-                            <div v-show="zoom" class="transition-box">.el-zoom-in-top</div>
+                            <div v-show="zoom" class="transition-box">
+                                .el-zoom-in-top
+                            </div>
                         </transition>
 
                         <transition name="el-zoom-in-bottom">
-                            <div v-show="zoom" class="transition-box">.el-zoom-in-bottom</div>
+                            <div v-show="zoom" class="transition-box">
+                                .el-zoom-in-bottom
+                            </div>
                         </transition>
                     </div>
                 </div>
@@ -39,11 +49,15 @@
                 <div class="collapse">
                     <el-button @click="collapse = !collapse">Click Me</el-button>
 
-                    <div style="margin-top: 20px; height: 200px;">
+                    <div style="margin-top: 20px; height: 200px">
                         <el-collapse-transition>
                             <div v-show="collapse">
-                                <div class="transition-box">el-collapse-transition</div>
-                                <div class="transition-box">el-collapse-transition</div>
+                                <div class="transition-box">
+                                    el-collapse-transition
+                                </div>
+                                <div class="transition-box">
+                                    el-collapse-transition
+                                </div>
                             </div>
                         </el-collapse-transition>
                     </div>
@@ -54,13 +68,13 @@
 </template>
 <script>
     export default {
-        name: 'transitionAnimation',
+        name: "transitionAnimation",
         data() {
             return {
                 fade: true,
                 zoom: true,
                 collapse: true,
-            }
+            };
         },
     };
 </script>
@@ -69,8 +83,6 @@
         width: @w;
         height: @h;
     }
-
-    ;
 
     #transitionAnimation {
         .wh();
@@ -82,7 +94,7 @@
             width: 150;
             height: 150;
             border-radius: 4px;
-            background-color: #409EFF;
+            background-color: #409eff;
             text-align: center;
             color: #fff;
             padding: 40px 20px;

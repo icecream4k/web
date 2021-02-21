@@ -9,20 +9,24 @@ const routes = [{
     },
     {
         path: '/index',
-        component: () => import('../views/Index.vue'),
+        component: () => import('../views/index.vue'),
         children: [{
             path: '',
             redirect: 'introduce'
         }, {
+            // 欢迎介绍页
             path: 'introduce',
             component: () => import('../components/main/content/introduce.vue')
         }, {
+            // 过渡动画
             path: 'transitionAnimation',
             component: () => import('../components/main/content/transitionAnimation.vue')
         }, {
-            path:'layout',
-            
+            // 布局
+            path: 'layout',
+            component: () => import('../components/main/content/layout.vue')
         }, {
+            // 测试页
             path: 'test',
             component: () => import('../components/test/test.vue')
         }]
