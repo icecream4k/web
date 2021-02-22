@@ -5,7 +5,9 @@
             <el-row>
                 <!-- 相当于把整行的元素切分成了24份,因为el-row中只有一个el-col占了24个:span,所以相当于占满 -->
                 <el-col :span="24">
-                    <div class="grid-content bg-purple-dark"></div>
+                    <div class="grid-content bg-purple-dark first-span-div">
+                        <p>基础布局</p>
+                    </div>
                 </el-col>
             </el-row>
             <el-row>
@@ -66,20 +68,23 @@
         </div>
         <br />
         <br />
+        <!-- 分栏间隔 -->
         <div class="columnSpacing">
             <el-row :gutter="20">
-                <el-col :span="6"
-                    ><div class="grid-content bg-purple"></div
-                ></el-col>
-                <el-col :span="6"
-                    ><div class="grid-content bg-purple"></div
-                ></el-col>
-                <el-col :span="6"
-                    ><div class="grid-content bg-purple"></div
-                ></el-col>
-                <el-col :span="6"
-                    ><div class="grid-content bg-purple"></div
-                ></el-col>
+                <el-col :span="6">
+                    <div class="grid-content bg-purple first-span-div">
+                        <p>分栏间隔</p>
+                    </div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content bg-purple"></div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content bg-purple"></div>
+                </el-col>
+                <el-col :span="6">
+                    <div class="grid-content bg-purple"></div>
+                </el-col>
             </el-row>
         </div>
     </div>
@@ -102,6 +107,11 @@ export default {
         .el-row {
             // 让每个演示元素之间的底间距为20px
             margin-bottom: 20px;
+            .first-span-div > p {
+                font-size: 26px;
+                color: white;
+                text-align: left;
+            }
             &:last-child {
                 // 最后一个元素的底部间距为0px
                 margin-bottom: 0;
@@ -135,6 +145,11 @@ export default {
     .columnSpacing {
         .el-row {
             margin-bottom: 20px;
+            .first-span-div > p {
+                font-size: 26px;
+                color: white;
+                text-align: left;
+            }
             &:last-child {
                 margin-bottom: 0;
             }
