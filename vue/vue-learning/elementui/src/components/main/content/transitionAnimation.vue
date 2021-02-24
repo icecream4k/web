@@ -48,7 +48,6 @@
                 <!-- 展开折叠 -->
                 <div class="collapse">
                     <el-button @click="collapse = !collapse">Click Me</el-button>
-
                     <div style="margin-top: 20px; height: 200px">
                         <el-collapse-transition>
                             <div v-show="collapse">

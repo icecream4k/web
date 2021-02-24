@@ -26,6 +26,14 @@ const routes = [{
             path: 'layout',
             component: () => import('../components/main/content/layout.vue')
         }, {
+            // 容器实例
+            path: 'containerInstance',
+            component: () => import('../components/main/content/containerInstance.vue')
+        }, {
+            // 按钮
+            path: 'button',
+            component: () => import('../components/main/content/button.vue')
+        }, {
             // 测试页
             path: 'test',
             component: () => import('../components/test/test.vue')
