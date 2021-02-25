@@ -29,13 +29,11 @@
                                 .el-zoom-in-center
                             </div>
                         </transition>
-
                         <transition name="el-zoom-in-top">
                             <div v-show="zoom" class="transition-box">
                                 .el-zoom-in-top
                             </div>
                         </transition>
-
                         <transition name="el-zoom-in-bottom">
                             <div v-show="zoom" class="transition-box">
                                 .el-zoom-in-bottom
