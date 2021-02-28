@@ -34,6 +34,10 @@ const routes = [{
             path: 'button',
             component: () => import('../components/main/content/button.vue')
         }, {
+            // 文字样式
+            path:'link',
+            component:()=>import('../components/main/content/link.vue')
+        },{
             // 测试页
             path: 'test',
             component: () => import('../components/test/test.vue')

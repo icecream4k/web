@@ -12,7 +12,9 @@
         <p>
             <router-link to="/Index/button">按钮</router-link>
         </p>
-
+        <p>
+            <router-link to="/Index/link">文字样式</router-link>
+        </p>
 
 
         <p>
