@@ -15,8 +15,6 @@
         <p>
             <router-link to="/Index/link">文字样式</router-link>
         </p>
-
-
         <p>
             <router-link to="/Index/test">测试</router-link>
         </p>
