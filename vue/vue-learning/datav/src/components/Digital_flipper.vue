@@ -41,7 +41,7 @@
                     number: [999],
                     content: `{nt}个`
                 },
-                // --------------------------
+                // ------------------
                 float_frequency: 1,
                 float_config: {
                     number: [100],
@@ -58,7 +58,7 @@
                     toFixed: 2,
                     content: '{nt}个'
                 },
-                // --------------------------
+                // ------------------
                 multiple_values_frequency: 1,
                 multiple_values_config: {
                     number: [10, 100],
