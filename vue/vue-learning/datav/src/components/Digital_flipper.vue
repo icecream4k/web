@@ -41,7 +41,6 @@
                     number: [999],
                     content: `{nt}个`
                 },
-                // ------------------
                 float_frequency: 1,
                 float_config: {
                     number: [100],

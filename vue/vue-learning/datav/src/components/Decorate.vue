@@ -171,7 +171,7 @@
 </template>
 <script>
     export default {
-        name: "Decorate",
+        name: "Decorate"
     };
 </script>
 <style scoped>
