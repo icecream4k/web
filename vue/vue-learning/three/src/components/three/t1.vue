@@ -1,12 +1,11 @@
 <template>
     <div>
-        <div id="container"></div>
+        <div id="container" @click="changeValue"></div>
     </div>
 </template>
 
 <script>
     import * as Three from 'three'
-
     export default {
         name: 'ThreeTest',
         data() {
@@ -18,6 +17,9 @@
             }
         },
         methods: {
+            changeValue:function(){
+
+            },
             init: function() {
                 let container = document.getElementById('container');
 
@@ -41,8 +43,9 @@
             },
             animate: function() {
                 requestAnimationFrame(this.animate);
-                this.mesh.rotation.x += 0.01;
-                this.mesh.rotation.y += 0.02;
+                // this.mesh.rotation.x += 0.01;
+                // this.mesh.rotation.y += 0.02;
+                this.mesh.rotation.y = 20.02;
                 this.renderer.render(this.scene, this.camera);
             }
         },
@@ -55,5 +58,6 @@
 <style scoped>
     #container {
         height: 500px;
+        cursor:pointer;
     }
 </style>
