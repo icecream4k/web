@@ -1,12 +1,12 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+      <p>这里是Home</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home',
+  name: 'home',
   components: {
       
   }

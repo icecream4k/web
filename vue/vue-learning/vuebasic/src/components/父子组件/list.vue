@@ -1,7 +1,8 @@
 <template>
     <div class="mylist">
         <ul>
-            <li v-for="item in list" :key="item.id">
+            <li v-for="item in zilist" :key="item.id">
+                {{ item.id }}
                 {{ item.title }}
             </li>
         </ul>
@@ -11,10 +12,9 @@
     export default {
         name: 'mylist',
         props: {
-            mylist: Array
+            zilist: Array
         }
     };
 </script>
 <style lang='less' scoped>
 </style>
- 
