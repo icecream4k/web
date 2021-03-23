@@ -16,7 +16,8 @@
         },
         data() {
             return {
-                fulist: [{
+                fulist: [
+                    {
                         id: 1,
                         title: '标题1'
                     },

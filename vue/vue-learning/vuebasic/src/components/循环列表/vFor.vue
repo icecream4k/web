@@ -1,4 +1,7 @@
 <template>
+    <!-- v-if和v-for为什么不能联用 -->
+    <!-- v-for的执行优先级会高于v-if,每次先渲染v-for,再判断v-if,所以会增大开销 -->
+    <!-- 如果非要联合使用,可以放在父级元素上面,控制整个v-for循环的执行,或者放在v-for的子标签里面 -->
     <div class="vFor">
         <h1>遍历数组</h1>
         <ul>
@@ -19,8 +22,7 @@
         name: 'vFor',
         data() {
             return {
-                array: [
-                    {
+                array: [{
                         id: 1,
                         value: "项目1"
                     },

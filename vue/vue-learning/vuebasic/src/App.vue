@@ -5,8 +5,8 @@
             <router-link to="/fuChuanZi">父传子组件</router-link> |
             <router-link to="/classAndStyle">绑定样式</router-link> |
             <router-link to="/vFor">循环列表</router-link> |
-
-
+            <router-link to="/event">事件</router-link> |
+            <router-link to="/bro">兄弟组件通信</router-link>
         </div>
         <router-view />
     </div>
