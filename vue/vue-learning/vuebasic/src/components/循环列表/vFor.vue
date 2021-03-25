@@ -24,15 +24,15 @@
             return {
                 array: [{
                         id: 1,
-                        value: "项目1"
+                        value: "值1"
                     },
                     {
                         id: 2,
-                        value: "项目2"
+                        value: "值2"
                     },
                     {
                         id: 3,
-                        value: "项目3"
+                        value: "值3"
                     }
                 ],
                 object: {
