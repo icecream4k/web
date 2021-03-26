@@ -14,9 +14,6 @@ hr{
     color: black;
     size: 2px;
 }
-/* td{
-    text-align: center;position: relative;
-} */
 /*======================================*/
 #test-ul-01{
 	list-style: none;
@@ -28,7 +25,6 @@ hr{
 }
 /*======================================*/
 /* id选择器 */
-/**{margin: 0;padding: 0}*/
 #fudongchuangkou{
 	width: 140px;
     height: 470px;
