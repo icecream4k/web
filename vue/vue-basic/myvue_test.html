@@ -37,12 +37,8 @@
 	</script> -->
 	<script>
 		// axios.defaults.baseURL='http://xzserver.applinzi.com';
+        // 设定基础路由
 		axios.defaults.baseURL='http://www.kuaidi100.com';
-		//获得学子商城首页6个商品
-		//get请求
-		// axios.get('/index').then(result=>{
-		// 	console.log(result.data);
-		// })
 		axios.get('/query',{params:{'type':'yunda','postid':'4304926503813'}}).then(result=>{
 			console.log(result.data)
 		})
