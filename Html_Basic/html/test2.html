@@ -1,20 +1,55 @@
 <html>
-    <head>
-        <title>test</title>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
-    </head>
- 
-    <body>
-        <div id="player-wrapper"></div>
-        <script>
-            var playerElement = document.getElementById("player-wrapper");
-            var player = new Clappr.Player({
-                source: 'http://60.30.52.41:80/live/zxldd.stream/playlist.m3u8',
-                mute: true,
-                height: 360,
-                width: 640
-            });
-            player.attachTo(playerElement);
-        </script>
-    </body>
+
+<head>
+    <title>test</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+</head>
+
+<body>
+    <div id="player-wrapper"></div>
+    <script>
+        var playerElement = document.getElementById("player-wrapper");
+        var player = new Clappr.Player({
+            source: 'http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8',
+            mute: false,
+            height: 360,
+            width: 640
+        });
+        player.attachTo(playerElement);
+    </script>
+</body>
+
 </html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>html5播放 m3u8示例</title>
+    <script type="text/javascript" src="chplayer.js?1333"></script>
+</head>
+
+<body>
+    <div id="video" style="width: 600px; height: 400px;"></div>
+    <script type="text/javascript">
+        var videoObject = {
+            autoplay: false, //是否自动播放，默认true=自动播放，false=默认暂停状态
+            poster: '', //封面图片地址
+            container: '#video', //“#”代表容器的ID，“.”或“”代表容器的class
+            variable: 'player', //该属性必需设置，值等于下面的new chplayer()的对象
+            video: 'http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8', //视频地址
+            volume: 0.6, //默认音量
+            front: '', //前一集按钮点击触发函数，即点击前一集时调用的函数名称，默认为空
+            next: '', //下一集按钮点击触发函数，即点击下一集时调用的函数名称，默认为空
+            html5m3u8: true //hls为true
+            //loop: true //是否循环播放
+        };
+        var player = new chplayer(videoObject);
+    </script>
+
+</body>
+
+</html> -->
