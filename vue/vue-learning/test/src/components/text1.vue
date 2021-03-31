@@ -1,8 +1,8 @@
 <template>
     <div class="player-container">
         <video-player v-show='vidShow===1' class="vjs-custom-skin" :options="player1"></video-player>
-        <video-player v-show='vidShow===2' class="vjs-custom-skin" :options="player2"></video-player>
-        <video-player v-show='vidShow===3' class="vjs-custom-skin" :options="player3"></video-player>
+        <!-- <video-player v-show='vidShow===2' class="vjs-custom-skin" :options="player2"></video-player>
+        <video-player v-show='vidShow===3' class="vjs-custom-skin" :options="player3"></video-player> -->
     </div>
 </template>
 
@@ -31,7 +31,7 @@
                     sources: [{
                         type: 'application/x-mpegURL',
                         // src: 'http://60.30.52.41:80/live/zxldd.stream/playlist.m3u8',
-                        src: 'http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8'
+                        src: 'http://60.30.52.41:80/live/zxldd.stream/playlist.m3u8'
                     }],
                     poster: "", //你的封面地址
                     width: document.documentElement.clientWidth,
@@ -92,9 +92,9 @@
 
         },
         mounted() {
-            setInterval(() => {
-                this.loopShow()
-            }, 4000);
+            // setInterval(() => {
+            //     this.loopShow()
+            // }, 4000);
         },
     }
 </script>

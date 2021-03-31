@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="container" @click="changeValue"></div>
+        <div id="container"></div>
     </div>
 </template>
 
@@ -17,10 +17,11 @@
             }
         },
         methods: {
-            changeValue:function(){
+            changeValue: function() {
 
             },
             init: function() {
+                // 获取到页面中ID对应的容器
                 let container = document.getElementById('container');
 
                 this.camera = new Three.PerspectiveCamera(70, container.clientWidth / container.clientHeight, 0.01, 10);
@@ -58,6 +59,6 @@
 <style scoped>
     #container {
         height: 500px;
-        cursor:pointer;
+        cursor: pointer;
     }
 </style>
