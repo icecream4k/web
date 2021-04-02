@@ -7,8 +7,8 @@ const routes = [{
         redirect: '/firstQuestion'
     }, {
         path: '/firstQuestion',
-        name: 'Home',
-        component: Home
+        name: 'firstQuestion',
+        component: ()=>import('../views/firstQuestion.vue')
     },
 ]
 
