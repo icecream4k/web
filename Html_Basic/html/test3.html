@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+
+<body>
+    <img src="" alt="" id="img" style="width: 400px;height: 400px;">
+    <script>
+        var ws;
+        var pyip = '127.0.0.1';
+
+        function startWS() {
+            ws = new WebSocket("ws://" + pyip + ":8124");
+            ws.onmessage = function(message) { 
+                $("#img").attr("src", message.data);
+            };
+        }
+        startWS();
+    </script>
+</body>
+
+</html>
