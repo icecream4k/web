@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo {
+            transition: 1s;
+        }
+
+        .demo:hover span {
+            opacity: 0;
+            /* display: none; */
+        }
+
+        .demo:hover:after {
+            /* opacity: 1; */
+            content: '哈哈';
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="demo">
+        <span>测试文本</span>
+    </h1>
+
+
+</body>
+
+</html>
