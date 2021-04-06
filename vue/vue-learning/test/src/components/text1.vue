@@ -21,7 +21,7 @@
                 player1: {
                     playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
                     autoplay: true, //如果true,浏览器准备好时开始回放。
-                    controls: false, //控制条
+                    controls: true, //控制条
                     preload: 'auto', //视频预加载
                     muted: false, //默认情况下将会消除任何音频。
                     loop: true, //导致视频一结束就重新开始。

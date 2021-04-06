@@ -12,11 +12,8 @@
 <body>
     <img src="" alt="" id="img" style="width: 400px;height: 400px;">
     <script>
-        var ws;
-        var pyip = '127.0.0.1';
-
         function startWS() {
-            ws = new WebSocket("ws://" + pyip + ":8124");
+            var ws = new WebSocket("rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov");
             ws.onmessage = function(message) { 
                 $("#img").attr("src", message.data);
             };
