@@ -2,7 +2,7 @@
     <div id="firstQuestion">
         <dv-border-box-7>
             <div class="titleText">
-                <h2>后端接收前端发过去的请求信息,解析请求group中的firstData,secondData,thirdData数据,返回给前端一个列表,里面包含三组数据进行升序;<br>前端请求地址<span>http://0.0.0.0:5050/firstQuestion</span> | 前端请求携带的JSON参数<span>'questionId' : '1','group': 'xxx'</span> | 请求方式:<span>post</span>;<br>不可使用高阶函数诸如:sorted()等,可随意使用框架/服务,诸如:Django,Flask,socket等</h2>
+                <h2>后端接收前端发过去的请求信息,解析请求group中的firstData,secondData,thirdData数据,返回给前端一个JSON,里面包含三组数据进行升序;<br>前端请求地址<span>http://0.0.0.0:5050/firstQuestion</span> | 前端请求携带的JSON参数<span>'questionId' : '1','group': 'xxx'</span> | 请求方式:<span>post</span>;<br>不可使用高阶函数诸如:sorted()等,可随意使用框架/服务,诸如:Django,Flask,socket等</h2>
             </div>
         </dv-border-box-7>
         <div class="buttonSpace">

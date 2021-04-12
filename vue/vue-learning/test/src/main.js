@@ -3,11 +3,18 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import VueVideoPlayer from 'vue-video-player'
+
+import axios from './network/http'
+Vue.prototype.$axios = axios
+
+
+
 Vue.use(VueVideoPlayer)
+
 Vue.config.productionTip = false
 
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')
