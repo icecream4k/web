@@ -27,6 +27,16 @@ const routes = [{
         name: 'test2',
         component: () => import('../components/test2.vue')
     },
+    {
+        path:'/timerTest',
+        name:'timerTest',
+        component:()=>import('../components/timerTest.vue')
+    },
+    {
+        path:'/echartsTest',
+        name:'echartsTest',
+        component:()=>import('../components/echartsTest.vue')
+    }
 ]
 
 const router = new VueRouter({

@@ -87,7 +87,7 @@ import {
 //     .then(res => console.log(res))
 //     .catch(err => console.log(err))
 
-// 终极解决方案,因为axios内部已经用Promise封装了,所以不需要惊醒Promise封装
+// 终极解决方案,因为axios内部已经用Promise封装了,所以不需要进行Promise封装
 request({
         url: '/home/multidata'
     })
@@ -97,3 +97,33 @@ request({
     .catch(err => {
         // console.log(err)
     })
+
+// 如果有多个全局请求地址,那么需要创建对应的axios的实例
+const instance1 = axios.create({
+    baseURL: 'http://111.222.333:4444',
+    timeout: 5000
+})
+
+instance1({
+    url: '/home/test1'
+}).then(res => console.log(res))
+
+instance1({
+    url: '/home/test2',
+    params: {
+        name: 'han',
+        id: '1'
+    }
+}).then(res => console.log(res))
+
+const instance2 = axios.create({
+    baseURL:'http:/999.888.777:6666',
+    timeout:10000,
+    headers:{
+        xxx
+    }
+})
+
+instance2({
+    
+})
