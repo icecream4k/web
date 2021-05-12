@@ -7,6 +7,7 @@
       <router-link to="/test2">test2</router-link> |
       <router-link to="/timerTest">timerTest</router-link> |
       <router-link to="/echartsTest">echartsTest</router-link> |
+      <router-link to="/v-for-button">v-for-button</router-link> |
     </div>
     <router-view/>
   </div>

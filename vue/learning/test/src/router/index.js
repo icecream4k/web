@@ -20,22 +20,27 @@ const routes = [{
     {
         path: '/test1',
         name: 'test',
-        component: () => import('../components/text1.vue')
+        component: () => import('../components/rtspVideo.vue')
     },
     {
         path: '/test2',
         name: 'test2',
-        component: () => import('../components/test2.vue')
+        component: () => import('../components/hlsVideo.vue')
     },
     {
-        path:'/timerTest',
-        name:'timerTest',
-        component:()=>import('../components/timerTest.vue')
+        path: '/timerTest',
+        name: 'timerTest',
+        component: () => import('../components/timerTest.vue')
     },
     {
-        path:'/echartsTest',
-        name:'echartsTest',
-        component:()=>import('../components/echartsTest.vue')
+        path: '/echartsTest',
+        name: 'echartsTest',
+        component: () => import('../components/echartsTest.vue')
+    },
+    {
+        path: '/v-for-button',
+        name: 'v-for-button',
+        component: () => import('../components/v-for-button.vue')
     }
 ]
 
