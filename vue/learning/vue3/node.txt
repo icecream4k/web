@@ -1,0 +1,55 @@
+5月15日笔记 -
+Mustache语法
+	普通mustache语法 <h1>{{msg}}</h1>
+	表达式的表示方式 <h1>{{counter * 10}}</h1>  <h1>{{msg.split(" ").reverse().join(" ")}}</h1>
+	也可以调用函数 <h1>{{gettest()}}</h1> # 前提定义了函数,并且有return值
+	也可以使用computed计算属性
+	也可以使用三元运算符 <h1>{{isShow?"哈哈哈":""}}</h1>
+	*错误用法1 <h1>{{var name = 'abc'}}</h1> # 此处是一个语句,不是表达式
+	*错误用法2 <h1>{{if(isShow){return '哈哈哈'}}}</h1>
+
+5月16日笔记 -
+v-once指令
+    只要加在标签上,那么这个标签与其子组件只会渲染一次,适用场景不多
+v-pre
+    用于跳过元素和它的子元素的编译过程,显示原始的Mustache标签,适用于显示双大括号,适用场景较少
+v-cloak
+    有可能组件内的内容因为网速问题还没来得及渲染,为了防止这种情况,可以使用v-cloak防止出现mustache模板
+v-bind
+    某些属性也希望动态来绑定
+        比如动态绑定a元素的herf属性
+        比如动态绑定img元素的src属性
+    v-bind 缩写为一个冒号  :
+    用法:动态绑定一个或者多个attribute,或者一个组件prop到表达式
+    *vue3中 是允许template中有多个根元素*
+绑定class介绍
+    在开发中,有时候元素class也是动态的
+    对象语法: <div :class="{'active':true}">哈哈</div>   .active{color:red} 可以通过切换来改变active的布尔值,来进行是否进行样式绑定
+    	将对象放到单独的属性当中 <div :class='classObj'>哈哈</div>  data(){return{classObj:{xxx}}}
+    数组语法: <div :class="['abc','def']"></div>
+    	三元运算符 <div :class="[isActive?'abc':'def']"></div>
+    	数组里面允许嵌套对象语法 <div :class="['abc',{active:isActive}]"></div>
+绑定style
+	可以利用v-bind:style来绑定一些css内联样式
+		比如某段文字的颜色,大小等
+直接绑定一个对象
+	<div v-bind='info'></div>    data ->  info:{name:'han',age:18,height:1.77}
+v-on绑定事件
+	前端开发中拎一个非常重要的特性就是交互
+	缩写 @
+	用法 绑定事件的监听
+    <button v-on:click='btn1click'>按钮1</button>
+    <button v-on:mousemove='btn2mousemove'>按钮2</button>
+    绑定一个对象 <div v-on='{click:btn1click,mousemove:btn2mousemove}'></div> 可以绑定多个事件
+v-on的参数传递
+
+
+
+
+
+
+
+
+
+
+

@@ -28,6 +28,10 @@ const routes = [{
         component: () => import('../components/hlsVideo.vue')
     },
     {
+        path:'/rtsp',
+        component:()=>import('../components/rtspVideo.vue')
+    },
+    {
         path: '/timerTest',
         name: 'timerTest',
         component: () => import('../components/timerTest.vue')

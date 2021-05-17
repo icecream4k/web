@@ -7,17 +7,29 @@
     import $ from 'jquery'
     export default {
         name: 'test2',
+        data() {
+            return {
+
+            }
+        },
         methods: {
             startWS() {
-                let ws = new WebSocket("ws://127.0.0.1:8124");
+                // let ws = new WebSocket("rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov");
+                // ws.onmessage = function(message) {
+                //     $("#img").attr("src", message.data);
+                // };
+                var ws = new WebSocket("http://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov");
                 ws.onmessage = function(message) {
                     $("#img").attr("src", message.data);
                 };
+
+
             }
         },
-        mounted() {
+        beforeMount() {
             this.startWS()
         },
+        mounted() {},
     };
 </script>
 <style lang='less' scoped>

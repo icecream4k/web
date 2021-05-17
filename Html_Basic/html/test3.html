@@ -13,7 +13,7 @@
     <img src="" alt="" id="img" style="width: 400px;height: 400px;">
     <script>
         function startWS() {
-            var ws = new WebSocket("rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov");
+            var ws = new WebSocket("http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8");
             ws.onmessage = function(message) { 
                 $("#img").attr("src", message.data);
             };
