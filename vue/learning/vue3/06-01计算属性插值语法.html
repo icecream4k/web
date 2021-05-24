@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_Document</title>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/axios.js"></script>
+    <script src="./lib/vue-router.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{firstName + '' + lastName}}</h2>
+        <h2>{{score>60?'及格':'不及格'}}</h2>
+        <h2>{{message.split(' ').reverse().join(' ')}}</h2>
+    </div>
+    <script>
+        const App = {
+            data() {
+                return {
+                    firstName:'kobe',
+                    lastName:'bryant',
+                    score:80,
+                    message:'hello world'
+                }
+            }
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+
+</html>

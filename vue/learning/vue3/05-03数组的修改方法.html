@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_Document</title>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/axios.js"></script>
+    <script src="./lib/vue-router.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h2>电影列表</h2>
+        <ul>
+            <li v-for="(value,key,index) in movies" :key="value">{{value}} -- {{key}}</li>
+        </ul>
+        <input type="text" v-model='newMovie'>
+        <button @click='addMovie'>添加电源</button>
+    </div>
+    <script>
+        const App = {
+            data() {
+                return {
+                    newMovie: "",
+                    movies: [
+                        '星际穿越',
+                        '盗梦空间',
+                        '大话西游',
+                        '教父',
+                        '少年派'
+                    ]
+                }
+            },
+            methods: {
+                addMovie() {
+                    this.movies.push(this.newMovie)
+                    this.newMovie = '' // 清空一下输入框内部的内容
+                    this.movies = this.movies.filter(item => item.length > 2)
+                }
+            }
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_Document</title>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/axios.js"></script>
+    <!-- <script src="./lib/vue-router.js"></script> -->
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click='changeFirstName'>修改firstName</button>
+        <h2>{{fullname}}</h2>
+        <h2>{{getFullName()}}</h2>
+
+        <h2>{{fullname}}</h2>
+        <h2>{{getFullName()}}</h2>
+
+        <h2>{{fullname}}</h2>
+        <h2>{{getFullName()}}</h2>
+    </div>
+    <script>
+        const App = {
+            data() {
+                return {
+                    firstName: 'kobe',
+                    lastName: 'bryant'
+                }
+            },
+            computed: {
+                fullname() {
+                    console.log('计算属性中的计算');
+                    return this.firstName + '' + this.lastName
+                }
+            },
+            methods: {
+                getFullName() {
+                    console.log('函数方法中的计算');
+                    return this.firstName + '' + this.lastName
+                },
+                changeFirstName(){
+                    this.firstName = '哈哈哈'
+                }
+            }
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+
+</html>

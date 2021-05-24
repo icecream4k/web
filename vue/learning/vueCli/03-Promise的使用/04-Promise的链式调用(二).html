@@ -34,24 +34,24 @@
 
 
         // 超级简写
-        // new Promise((resolve, rejcet) => {
-        //     setTimeout(() => {
-        //         resolve('aaa')
-        //     }, 1000)
-        // }).then(res => {
-        //     // 1.自己处理 10行
-        //     console.log(res, `第一层处理代码`);
-        //     // 2.对结果进行第一次的处理
-        //     return res + '111'
-        // }).then(res => {
-        //     console.log(res, `是第二层处理代码`);
-        //     return res + '222'
-        // }).then(res => {
-        //     console.log(res, `第三层处理代码`);
-        //     return res + '333'
-        // }).then((res) => {
-        //     console.log(res, `第四层处理代码`);
-        // })
+        new Promise((resolve, rejcet) => {
+            setTimeout(() => {
+                resolve('aaa')
+            }, 1000)
+        }).then(res => {
+            // 1.自己处理 10行
+            console.log(res, `第一层处理代码`);
+            // 2.对结果进行第一次的处理
+            return res + '111'
+        }).then(res => {
+            console.log(res, `是第二层处理代码`);
+            return res + '222'
+        }).then(res => {
+            console.log(res, `第三层处理代码`);
+            return res + '333'
+        }).then((res) => {
+            console.log(res, `第四层处理代码`);
+        })
 
         // 万一有reject需要用catch的情况
         // new Promise((resolve, rejcet) => {

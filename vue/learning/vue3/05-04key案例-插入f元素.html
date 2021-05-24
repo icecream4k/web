@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_Document</title>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/axios.js"></script>
+    <script src="./lib/vue-router.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in letters" :key="item">{{item}}</li>
+        </ul>
+        <button @click='insertF'>插入F元素</button>
+    </div>
+    <script>
+        const App = {
+            data() {
+                return {
+                    letters:['a','b','c','d']
+                }
+            },
+            methods:{
+                insertF(){
+                    this.letters.splice(2,0,'f') // 在b的后面插入f,因为是插入,所以splice的第二位是0,第二位代表删除
+                }
+            }  
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+
+</html>

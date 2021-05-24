@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue_Document</title>
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/axios.js"></script>
+    <!-- <script src="./lib/vue-router.js"></script> -->
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{info}}</h2>
+        <button @click='changeInfo()'>改变info</button>
+        <button @click='changeInfoName'>改变info name</button>
+        <button @click='changeInfoNameNbaName'>改变info nba name</button>
+    </div>
+    <script>
+        const App = {
+            data() {
+                return {
+                    info: {
+                        name: 'han',
+                        age: 18,
+                        nba: {
+                            name: 'kobe'
+                        }
+                    }
+                }
+            },
+            watch: {
+                // 默认情况下,侦听器只会针对监听数据本身的改变,对于内不发生的改变是不能侦听的
+                // info(newInfo,oldInfo){
+                //     console.log(newInfo,'---',oldInfo);
+                // }
+
+                // 深度侦听/立即执行(第一次渲染代码,侦听器执行一次)
+                info: {
+                    handler: function(newInfo, oldInfo) {
+                        console.log(newInfo, '---', oldInfo);
+                    },
+                    deep: true, // 配置deep为true,则为深度侦听
+                    immediate: true, // 立即执行
+                }
+            },
+            methods: {
+                changeInfo() {
+                    this.info = {
+                        name: 'kobe'
+                    }
+                },
+                changeInfoName() {
+                    this.info.name = 'kobe'
+                },
+                changeInfoNameNbaName() {
+                    this.info.nba.name = 'zhanmus'
+                }
+            },
+        }
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+
+</html>
