@@ -1,13 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-
 Vue.use(VueRouter)
 
 const routes = [{
-        path: '/',
-        name: 'Home',
-        component: Home
+        path: "",
+        redirect: "/about"
     },
     {
         path: '/about',
@@ -20,31 +17,40 @@ const routes = [{
     {
         path: '/test1',
         name: 'test',
-        component: () => import('../components/rtspVideo.vue')
+        component: () => import('@/components/rtspVideo.vue')
     },
     {
         path: '/test2',
         name: 'test2',
-        component: () => import('../components/hlsVideo.vue')
+        component: () => import('@/components/hlsVideo.vue')
     },
     {
-        path:'/rtsp',
-        component:()=>import('../components/rtspVideo.vue')
+        path: '/rtsp',
+        component: () => import('@/components/rtspVideo.vue')
     },
     {
         path: '/timerTest',
         name: 'timerTest',
-        component: () => import('../components/timerTest.vue')
+        component: () => import('@/components/timerTest.vue')
     },
     {
         path: '/echartsTest',
         name: 'echartsTest',
-        component: () => import('../components/echartsTest.vue')
+        component: () => import('@/components/echartsTest.vue')
     },
     {
         path: '/v-for-button',
         name: 'v-for-button',
-        component: () => import('../components/v-for-button.vue')
+        component: () => import('@/components/v-for-button.vue')
+    }, {
+        path: '/cacheTest1',
+        name: 'cacheTest1',
+        component: () => import('@/components/cacheTest1.vue')
+    },
+    {
+        path: '/cacheTest2',
+        name: 'cacheTest2',
+        component: () => import('@/components/cacheTest2.vue')
     }
 ]
 

@@ -1,29 +1,22 @@
 <template>
     <div class="test2">
-        <img src="" alt="" id="img" style="width: 400px;height: 400px;">
+        <img :src='imgRGB' alt="" id="img" style="width: 400px;height: 400px;">
     </div>
 </template>
 <script>
-    import $ from 'jquery'
     export default {
         name: 'test2',
         data() {
             return {
-
+                imgRGB: null
             }
         },
         methods: {
             startWS() {
-                // let ws = new WebSocket("rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov");
-                // ws.onmessage = function(message) {
-                //     $("#img").attr("src", message.data);
-                // };
-                var ws = new WebSocket("http://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov");
-                ws.onmessage = function(message) {
-                    $("#img").attr("src", message.data);
+                var ws = new WebSocket("ws://127.0.0.1:8124");
+                ws.onmessage = message => {
+                    this.imgRGB = message.data
                 };
-
-
             }
         },
         beforeMount() {
