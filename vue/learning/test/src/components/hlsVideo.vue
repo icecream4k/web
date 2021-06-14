@@ -1,8 +1,6 @@
 <template>
     <div class="player-container">
         <video-player class="vjs-custom-skin" :options="player1"></video-player>
-
-
     </div>
 </template>
 
@@ -30,7 +28,7 @@
                     sources: [{
                         type: 'application/x-mpegURL',
                         // src: 'http://60.30.52.41:80/live/zxldd.stream/playlist.m3u8',
-                        src: 'http://60.30.52.41:80/live/zxldd.stream/playlist.m3u8'
+                        src: 'http://cmgw-vpc.lechange.com:8888/LCO/6L05722PAZ7C717/1/1/20210613T023940/6e678347c0a44f6542f74d81e8430742.m3u8'
                     }],
                     poster: "", //你的封面地址
                     width: document.documentElement.clientWidth,

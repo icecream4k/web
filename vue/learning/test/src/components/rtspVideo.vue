@@ -19,9 +19,9 @@
                 };
             }
         },
-        beforeMount() {
-            this.startWS()
-        },
+        // beforeMount() {
+        //     this.startWS()
+        // },
         mounted() {},
     };
 </script>
