@@ -123,8 +123,7 @@ VueCLI 配置
      ◯ Linter / Formatter 代码格式检测
      ◯ Unit Testing 单元测试
      ◯ E2E Testing 端到端测试
-
-
+VueCLI和Vite的使用和原理  22:08
 
 
 
