@@ -2,11 +2,12 @@
   "name": "vite-project",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "serve": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "dev": "vite preview"
   },
   "dependencies": {
+    "echarts": "^5.1.2",
     "vue": "^3.0.5"
   },
   "devDependencies": {
