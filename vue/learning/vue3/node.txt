@@ -123,11 +123,15 @@ VueCLI 配置
      ◯ Linter / Formatter 代码格式检测
      ◯ Unit Testing 单元测试
      ◯ E2E Testing 端到端测试
-VueCLI和Vite的使用和原理  22:08
 
-
-
-
+Vite
+    Vite依赖Node版本,需要Node >= 12
+    本地安装Vite   npm install vite -D
+    启动vite服务  npx vite  3000端口
+    Vite 脚手架 npm install @vitejs/create-app -g全局安装
+    使用方法
+        create-app
+Vue3其他语法补充 00:00
 
 
 
