@@ -131,12 +131,18 @@ Vite
     Vite 脚手架 npm install @vitejs/create-app -g全局安装
     使用方法
         create-app
-Vue3其他语法补充 00:00
-
-
-
-
-
+Vue3知识
+    组件通信
+        父组件传递给子组件:通过props属性;
+        子组件传递给父组件:通过$emit触发事件;
+    props(父传子)
+        可以在组件上注册一些自定义的attribute;
+        父组件给这些attribute赋值,子组件通过attribute的名称获取到对应的值;  
+    props(父传子)的两种用法
+        字符串数组
+            数组只能传递名称,不能对其做一些限制
+        对象类型
+    $emit(子组件传递父组件)
 
 
 
