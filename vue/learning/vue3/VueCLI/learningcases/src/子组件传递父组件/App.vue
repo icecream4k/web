@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>当前计数:{{counter}}</h2>
-        <CounterOperation @add="addOne()" @sub="subOne()" />
+        <CounterOperation @add="addOne" @sub="subOne" @addN="addN" />
     </div>
 </template>
 <script>
@@ -22,6 +22,10 @@
             },
             subOne() {
                 this.counter--
+            },
+            addN(num) {
+                console.log(num);
+                this.counter += parseInt(num);
             }
         },
     };
