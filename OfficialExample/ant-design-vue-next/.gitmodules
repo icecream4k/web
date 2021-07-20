@@ -1,0 +1,3 @@
+[submodule "v2-doc"]
+	path = v2-doc
+	url = https://github.com/vueComponent/v2-doc
