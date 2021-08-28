@@ -1,0 +1,46 @@
+目录解析
+    assets 资源文件, less 图片 字体等
+    components  vue的通用组件,可复用,并不支持服务端钩子
+    layouts   布局,默认情况下有一个default布局
+    middleware  存放中间件
+    pages   存放nuxt一些希望路由跳转的页面,可以配置一些一级二级的子页面,可复用components
+    plugins 存放一些插件,例如echarts,elemnet等
+    serve   服务端的一些配置,呈现的是一些node的一些接口和代码,如果有自己的后端,可以不配置server
+    static  存放一些静态的文件  可以有js,css等一些内容
+    store   nuxt集成了vuex的一些状态树
+    nuxt.config.js  nuxt的个性化配置
+
+nuxt的生命周期相关
+    1,nuxtServeInit 包含对store的一些操作,对数据的初始化
+        可以在Store action中配置
+    2,middleware    nuxtconfig的一些配置,允许一些自定义的函数,中间件的一些操作,可以运行在全,局可以运行在某个布局或者组件之前
+        可以在nuxt.config.js ; layout ; pages与其children目录中进行配置
+    3,validate()   对组件进行一些动态参数的一些校验
+        可以在pages与其children目录中进行配置
+    4,asyncData() && fetch()
+        asyncData比较适合渲染组件前或者异步数据,会交给组件内部处理
+        fetch比较适合用来填充vuex状态树
+        由于会在组件渲染前去调用,所以这两个方法的this指向的其实是组件的实例对象
+        可以在pages与其children目录中进行配置
+    5,Render    开始客户端渲染  有新的页面时,会从2号钩子middleware进行生命周期操作
+        内部不要写业务逻辑,即使写了也不会执行
+
+    承接nuxt,并且同时跑在服务端与客户端的vue生命周期
+    beforeCreated && created
+        这个内部写的代码,既会跑在服务端,又会跑在客户端
+
+    其他...
+        注意,服务端渲染不存在keepalive,所以不会有其他扩展钩子
+
+路由是自动生成的,不需要router去配置
+
+链接是 <nuxt-link :to='{name:页面的名字}'>页面名</nuxt-link>
+
+asyncData方法
+    可以在渲染组件之前,异步的获取数据
+    会在服务,路由更新之前被调用
+    在每次页面组件被加载、渲染之前就调用
+
+在nuxt.config.js中,如果要载入第三方插件或者组件,在plugins中书写的路径结尾不需要跟.js,例如需要把 xx/axios.js 写成 xx/axios
+
+中间件的意义 - 类似路由守卫,发生在路由跳转到出结果之间,可以用于判断用户的登录状态

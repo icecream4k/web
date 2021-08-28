@@ -1,0 +1,22 @@
+.page-enter-active,
+.page-leave-active {
+    transition: opacity 0.3s;
+}
+
+.page-enter,
+.page-leave-active {
+    opacity: 0;
+}
+
+/* 针对单独页面的路由动画效果 */
+.about-enter-active,
+.about-leave-active {
+    transition: all 1s;
+    font-size: 12px;
+}
+
+.about-enter,
+.about-leave-active {
+    opacity: 0;
+    font-size: 50px;
+}
